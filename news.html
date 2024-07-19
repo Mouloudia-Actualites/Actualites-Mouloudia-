@@ -101,6 +101,24 @@
             color: #fff;
             padding: 20px;
         }
+
+        /* Custom styles for list items */
+        .list-unstyled li {
+            margin-bottom: 10px;
+        }
+
+        .list-unstyled li a {
+            color: #343a40; /* Text color for light mode */
+            transition: color 0.3s;
+        }
+
+        body.dark-mode .list-unstyled li a {
+            color: #fff; /* Text color for dark mode */
+        }
+
+        .list-unstyled li a:hover {
+            color: #007bff; /* Link color on hover */
+        }
     </style>
 </head>
 <body>
