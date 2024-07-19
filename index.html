@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,10 @@
             background-color: #f8f9fa;
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
+        }
+
+        body[dir="rtl"] {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
         
         .navbar {
@@ -208,7 +212,7 @@
         }
     </style>
 </head>
-<body>
+<body dir="ltr">
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
@@ -346,6 +350,22 @@
         xIcon.addEventListener('click', function() {
             xIcon.style.color = '#000000'; // Black color
         });
+
+        // Function to switch between English and Arabic
+        function switchLanguage(lang) {
+            const htmlTag = document.querySelector('html');
+            const bodyTag = document.body;
+
+            if (lang === 'ar') {
+                htmlTag.setAttribute('lang', 'ar');
+                htmlTag.setAttribute('dir', 'rtl');
+                bodyTag.setAttribute('dir', 'rtl');
+            } else {
+                htmlTag.setAttribute('lang', 'en');
+                htmlTag.setAttribute('dir', 'ltr');
+                bodyTag.setAttribute('dir', 'ltr');
+            }
+        }
     </script>
 </body>
 </html>
