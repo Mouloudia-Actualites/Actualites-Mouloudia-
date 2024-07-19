@@ -77,10 +77,35 @@
             margin-top: 20px;
         }
         
+        /* Light Mode Styles */
+        body.light-mode {
+            background-color: #f8f9fa;
+            color: #343a40; /* Dark grey text */
+        }
+        
+        body.light-mode .navbar {
+            background-color: #343a40;
+        }
+        
+        body.light-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* White text */
+        }
+        
+        body.light-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.light-mode .explore-more {
+            background-color: #e9ecef; /* Light grey background */
+            border-color: #ced4da; /* Light grey border */
+            color: #343a40; /* Dark grey text */
+            padding: 20px;
+        }
+        
         /* Dark Mode Styles */
         body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
+            background-color: #212529;
+            color: #28a745; /* Green text */
         }
         
         body.dark-mode .navbar {
@@ -88,7 +113,7 @@
         }
         
         body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
+            color: #dc3545; /* Red text */
         }
         
         body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
@@ -96,28 +121,10 @@
         }
         
         body.dark-mode .explore-more {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #28a745; /* Green text */
             padding: 20px;
-        }
-
-        /* Custom styles for list items */
-        .list-unstyled li {
-            margin-bottom: 10px;
-        }
-
-        .list-unstyled li a {
-            color: #343a40; /* Text color for light mode */
-            transition: color 0.3s;
-        }
-
-        body.dark-mode .list-unstyled li a {
-            color: #fff; /* Text color for dark mode */
-        }
-
-        .list-unstyled li a:hover {
-            color: #007bff; /* Link color on hover */
         }
     </style>
 </head>
