@@ -235,6 +235,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+                        <!-- Language toggle button -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="lang-toggle">Change Language</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -254,98 +258,95 @@
                 <div class="feature">
                     <img src="news1.jpg" alt="Feature Image 1">
                     <h2><a href="news.html">Latest News</a></h2>
-                    <p>Stay updated with the latest sports news from around the globe.</p>
+                    <p>Stay updated with the latest sports news from around the world.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="feature">
-                    <img src="live.jpg" alt="Feature Image 2">
+                    <img src="live1.jpg" alt="Feature Image 2">
                     <h2><a href="live.html">Live Scores</a></h2>
-                    <p>Follow live scores and updates of your favorite teams and matches.</p>
+                    <p>Follow live scores of your favorite sports events as they happen.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="feature">
-                    <img src="video.jpg" alt="Feature Image 3">
-                    <h2><a href="video.html">Video Highlights</a></h2>
-                    <p>Watch video highlights and match recaps on demand.</p>
+                    <img src="video1.jpg" alt="Feature Image 3">
+                    <h2><a href="video.html">Videos</a></h2>
+                    <p>Watch highlights, interviews, and analysis from sports experts.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section for Image before Social Icons -->
-    <section class="image-before-icons">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <img src="mca2.jpg" class="img-fluid" alt="Image Description">
-                </div>
+    <section class="container">
+        <div class="row">
+            <div class="col-md-6 image-before-icons">
+                <img src="image-before-icons.jpg" alt="Image Before Icons">
+            </div>
+            <div class="col-md-6 social-icons">
+                <h2>Follow Us</h2>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Section for Social Icons -->
-    <section class="social-icons">
-        <div class="container">
-            <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i id="facebook-icon" class="fab fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/mouloudia__actualites?igsh=MWhvZXVsbzkxOTRmaA==" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/MouloudiaActu" target="_blank"><i id="x-icon" class="fas fa-times"></i></a>
-            <a href="https://youtube.com/@mouloudiaactualites?si=idNCKDhmknjI_uHD"><i class="fab fa-youtube"></i></a>
-        </div>
-    </section>
-
-    <!-- Section for Authors -->
     <section class="authors-section">
         <div class="container">
-            <h2 class="text-center mb-5">Meet Our Authors</h2>
+            <h2>Meet Our Authors</h2>
             <div class="row">
-                <div class="col-lg-6 col-md-6">
+                <div class="col-md-4">
                     <div class="author">
-                        <a href="https://www.facebook.com/profile.php?id=100094343603603&locale=fr_FR" target="_blank">
-                            <img src="mca.png" class="img-fluid" alt="Admin">
-                        </a>
-                        <h3>Mohamed</h3>
-                        <p>Admin</p>
+                        <img src="author1.jpg" alt="Author 1">
+                        <h3>John Doe</h3>
+                        <p>Sports Analyst</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-md-4">
                     <div class="author">
-                        <a href="https://www.facebook.com/abdouoooooooooooooooooooooooooooooooooooooooo/?locale=fr_FR" target="_blank">
-                            <img src="dev.jpg" class="img-fluid" alt="Développer">
-                        </a>
-                        <h3>Iliesso</h3>
-                        <p>développer</p>
+                        <img src="author2.jpg" alt="Author 2">
+                        <h3>Jane Smith</h3>
+                        <p>Journalist</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="author">
+                        <img src="author3.jpg" alt="Author 3">
+                        <h3>Mike Johnson</h3>
+                        <p>Sports Reporter</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <!-- JavaScript for Language Toggle -->
+    <script>
+        const langToggle = document.getElementById('lang-toggle');
+
+        langToggle.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent the link from navigating
+
+            // Example language toggle functionality
+            const heroTitle = document.querySelector('.hero h1');
+            const heroSubtitle = document.querySelector('.hero p');
+
+            // Toggle between English and French
+            if (heroTitle.textContent === 'Welcome to Mouloudia Actualités') {
+                heroTitle.textContent = 'Bienvenue sur Mouloudia Actualités';
+                heroSubtitle.textContent = 'Votre source pour les nouvelles sportives et les scores en direct';
+            } else {
+                heroTitle.textContent = 'Welcome to Mouloudia Actualités';
+                heroSubtitle.textContent = 'Your source for sports news and live scores';
+            }
+        });
+    </script>
+
+    <!-- Bootstrap and jQuery Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Script to toggle dark mode
-        const logo = document.getElementById('logo');
-        const body = document.body;
-
-        logo.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-        });
-
-        // Script to change icon colors on click
-        const facebookIcon = document.getElementById('facebook-icon');
-        const xIcon = document.getElementById('x-icon');
-
-        facebookIcon.addEventListener('click', function() {
-            facebookIcon.style.color = '#3b5998'; // Facebook blue color
-        });
-
-        xIcon.addEventListener('click', function() {
-            xIcon.style.color = '#000000'; // Black color
-        });
-    </script>
 </body>
 </html>
