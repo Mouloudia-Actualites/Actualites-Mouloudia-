@@ -243,7 +243,7 @@
             margin-bottom: 20px;
             border: 1px solid #dee2e6;
             border-radius: 5px;
-            text-align: left;
+            text-align: center;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         
@@ -256,6 +256,42 @@
             font-size: 1rem;
             line-height: 1.8;
         }
+        
+        .match .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .match .teams .team {
+            display: flex;
+            align-items: center;
+        }
+        
+        .match .teams .team img {
+            max-width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+        
+        .match .status {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        /* Image before Social Icons */
+        
+        .image-before-icons {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .image-before-icons img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -263,171 +299,13 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#">
+                    <img src="mca.png" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" id="logo" href="#">
-                    <img src="mca.png" alt="MCA Logo">
-                </a>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="news.html">News</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="live.html">Live Scores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="video.html">Videos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to Mouloudia Actualités</h1>
-            <p>Your source for sports news and live scores</p>
-        </div>
-    </section>
-
-    <section class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
-                    <img src="news1.jpg" alt="Feature Image 1">
-                    <h2><a href="news.html">Latest News</a></h2>
-                    <p>Stay updated with the latest sports news from around the globe.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
-                    <img src="live.jpg" alt="Feature Image 2">
-                    <h2><a href="live.html">Live Scores</a></h2>
-                    <p>Follow live scores and updates of your favorite teams and matches.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="feature">
-                    <img src="video.jpg" alt="Feature Image 3">
-                    <h2><a href="video.html">Video Highlights</a></h2>
-                    <p>Watch video highlights and match recaps on demand.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="match">
-    <h2>Last Match</h2>
-    <div class="teams">
-        <div class="team">
-            <img src="MCA11.png" alt="Team 1 Logo">
-            <span>MC Alger</span>
-        </div>
-        <div class="score">0 - 1</div>
-        <div class="team">
-            <span>CR Belouizdad</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo">
-        </div>
-    </div>
-    <div class="status">
-        5 juillet 2024 à 17h00<br>
-        5 Juillet Stadium Algeria
-    </div>
-</div>
-
-
-    <!-- Section for Image before Social Icons -->
-    <section class="image-before-icons">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <img src="mca3.jpg" class="img-fluid" alt="Image Description">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section for Social Icons -->
-    <section class="social-icons">
-        <div class="container">
-            <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i id="facebook-icon" class="fab fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/mouloudia__actualites?igsh=MWhvZXVsbzkxOTRmaA==" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://twitter.com/MouloudiaActu" target="_blank"><i id="x-icon" class="fas fa-times"></i></a>
-            <a href="https://youtube.com/@mouloudiaactualites?si=idNCKDhmknjI_uHD"><i class="fab fa-youtube"></i></a>
-        </div>
-    </section>
-
-    <!-- Section for Authors -->
-    <section class="authors-section">
-        <div class="container">
-            <h2 class="text-center mb-5">Meet Our Authors</h2>
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="author">
-                        <a href="https://www.facebook.com/profile.php?id=100094343603603&locale=fr_FR" target="_blank">
-                            <img src="mca.png" class="img-fluid" alt="Admin">
-                        </a>
-                        <h3>Mohamed</h3>
-                        <p>Admin</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="author">
-                        <a href="https://www.facebook.com/abdouoooooooooooooooooooooooooooooooooooooooo/?locale=fr_FR" target="_blank">
-                            <img src="dev.jpg" class="img-fluid" alt="Développer">
-                        </a>
-                        <h3>Iliesso</h3>
-                        <p>développer</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Function to switch language
-        function switchLanguage(lang) {
-            if (lang === 'ar') {
-                document.documentElement.lang = 'ar';
-                document.body.dir = 'rtl';
-            } else {
-                document.documentElement.lang = 'en';
-                document.body.dir = 'ltr';
-            }
-        }
-
-        // Script to toggle dark mode
-        const logo = document.getElementById('logo');
-        const body = document.body;
-
-        logo.addEventListener('click', function () {
-            body.classList.toggle('dark-mode');
-        });
-
-        // Script to change icon colors on click
-        const facebookIcon = document.getElementById('facebook-icon');
-        const xIcon = document.getElementById('x-icon');
-
-        facebookIcon.addEventListener('click', function () {
-            facebookIcon.style.color = '#3b5998'; // Facebook blue color
-        });
-
-        xIcon.addEventListener('click', function () {
-            xIcon.style.color = '#000000'; // Black color
-        });
-    </script>
-</body>
-
-</html>
+         
