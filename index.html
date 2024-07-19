@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -42,7 +42,6 @@
             padding: 10px 15px;
             transition: background-color 0.3s;
         }
-        
         .live-scores-section { padding: 80px 0;}
         .match { margin-bottom: 40px; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); } .match h2 { font-size: 2rem; margin-bottom: 10px; } .match .teams { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; } .match .teams .team { display: flex; align-items: center; } .match .teams .team img { width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; } .match .score { font-size: 1.5rem; font-weight: bold; } .match .status { font-size: 1.1rem; } /* Dark Mode Styles */ body.dark-mode { background-color: #343a40; color: #fff; } body.dark-mode .navbar { background-color: #212529; } body.dark-mode .navbar-dark .navbar-nav .nav-link { color: #fff; } body.dark-mode .navbar-dark .navbar-nav .nav-link:hover { background-color: rgba(255, 255, 255, 0.1); } body.dark-mode .match { background-color: #424242; border-color: #757575; color: #fff; } body.dark-mode .match .score { color: #fff; } /* Media Query for Mobile Devices */ @media (max-width: 768px) { .navbar-brand img { width: 40px; } .match h2 { font-size: 1.5rem; } .match .teams { flex-direction: column; align-items: flex-start; } .match .teams .team img { margin-bottom: 5px; } }
         
@@ -234,232 +233,216 @@
         
         .matches-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         
-        .matches-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            justify-items: center;
-        }
-        
-        .match-card {
+        .match {
             background-color: #fff;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-            text-align: center;
-            min-width: 300px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            text-align: left;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .match-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .match-card h3 {
+        .match h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
         
-        .match-card p {
-            font-size: 1.2rem;
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-        
-        .match-card .teams {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .match-card .teams .team img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-        
-        .match-card .score {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        
-        .match-card .status {
+        .match p {
             font-size: 1rem;
-            color: #6c757d;
+            line-height: 1.8;
         }
         
-        /* Dark mode for Matches Section */
+        /* Image Before Icons Section */
         
-        body.dark-mode .matches-section {
-            background-color: #343a40;
-            color: #fff;
+        .image-before-icons {
+            margin-top: 40px;
         }
         
-        body.dark-mode .match-card {
-            background-color: #424242;
-            color: #fff;
-        }
-        
-        body.dark-mode .match-card p,
-        body.dark-mode .match-card .status {
-            color: #e0e0e0;
+        .image-before-icons img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
         }
     </style>
 </head>
 
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="mca.png" alt="Mouloudia Club Alger"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Live Scores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Standings</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Teams</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
+<body dir="ltr">
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" id="logo" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html" target="_blank">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live.html" target="_blank">Live Scores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video.html" target="_blank">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html" target="_blank">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Mouloudia Actualités</h1>
-            <p>Sports News and Live Scores</p>
-            <a href="#" class="btn btn-primary">Get Started</a>
+            <h1>Welcome to Mouloudia Actualités</h1>
+            <p>Your source for sports news and live scores</p>
         </div>
     </section>
 
-    <!-- Matches Section -->
-    <section class="matches-section">
-        <div class="container">
-            <h2>Upcoming Matches</h2>
-            <div class="matches-list">
-                <div class="match-card">
-                    <h3>Team A vs Team B</h3>
-                    <p class="date">August 15, 2024</p>
-                    <div class="teams">
-                        <div class="team">
-                            <img src="team-a.png" alt="Team A">
-                            Team A
-                        </div>
-                        <span class="score">1 - 1</span>
-                        <div class="team">
-                            <img src="team-b.png" alt="Team B">
-                            Team B
-                        </div>
-                    </div>
-                    <p class="status">Live</p>
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature">
+                    <img src="news1.jpg" alt="Feature Image 1">
+                    <h2><a href="news.html" target="_blank">Latest News</a></h2>
+                    <p>Stay updated with the latest sports news from around the globe.</p>
                 </div>
-                <div class="match-card">
-                    <h3>Team C vs Team D</h3>
-                    <p class="date">August 16, 2024</p>
-                    <div class="teams">
-                        <div class="team">
-                            <img src="team-c.png" alt="Team C">
-                            Team C
-                        </div>
-                        <span class="score">0 - 2</span>
-                        <div class="team">
-                            <img src="team-d.png" alt="Team D">
-                            Team D
-                        </div>
-                    </div>
-                    <p class="status">Upcoming</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature">
+                    <img src="live.jpg" alt="Feature Image 2">
+                    <h2><a href="live.html" target="_blank">Live Scores</a></h2>
+                    <p>Follow live scores and updates of your favorite teams and matches.</p>
                 </div>
-                <div class="match-card">
-                    <h3>Team E vs Team F</h3>
-                    <p class="date">August 17, 2024</p>
-                    <div class="teams">
-                        <div class="team">
-                            <img src="team-e.png" alt="Team E">
-                            Team E
-                        </div>
-                        <span class="score">-</span>
-                        <div class="team">
-                            <img src="team-f.png" alt="Team F">
-                            Team F
-                        </div>
-                    </div>
-                    <p class="status">Upcoming</p>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature">
+                    <img src="video.jpg" alt="Feature Image 3">
+                    <h2><a href="video.html" target="_blank">Video Highlights</a></h2>
+                    <p>Watch video highlights and match recaps on demand.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Authors Section -->
-    <section class="authors-section">
+    </section><section class="live-scores-section"> <div class="container"> <div class="row"> <div class="col-lg-8"> <div class="match"> <h2>Last Match</h2> <div class="teams"> <div class="team"> <img src="MCA11.png" alt="Team 1 Logo"> <span>MC Alger</span> </div> <div class="score">0 - 1</div> <div class="team"> <span>CR Belouizdad</span> <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo"> </div> </div> <div class="status"> 5 juillet 2024 à 17h00<br> 5 Juillet Stadium Algeria </div> </div> <div class="match"> <h2>Next Match</h2> <div class="teams"> <div class="team"> <img src="wata.png" alt="Team 3 Logo"> <span>Watanga FC</span> </div> <div class="score">0 - 0</div> <div class="team"> <span>MC Alger</span> <img src="MCA11.png" alt="Team 4 Logo"> </div> </div> <div class="status"> 16 août 2024 à 17h00 : <span id="countdown"></span> <br> To Define </div> </div> </div> <div class="col-lg-4"> <div class="sidebar"> 
+    <!-- Section for Image before Social Icons -->
+    <section class="image-before-icons">
         <div class="container">
-            <h2>Meet the Team</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="author">
-                        <img src="author1.jpg" alt="Author 1">
-                        <h3>John Doe</h3>
-                        <p>Chief Editor</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="author">
-                        <img src="author2.jpg" alt="Author 2">
-                        <h3>Jane Smith</h3>
-                        <p>Sports Analyst</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="author">
-                        <img src="author3.jpg" alt="Author 3">
-                        <h3>David Brown</h3>
-                        <p>Reporter</p>
-                    </div>
+                <div class="col text-center">
+                    <img src="mca3.jpg" class="img-fluid" alt="Image Description">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Social Icons Section -->
+    <!-- Section for Social Icons -->
     <section class="social-icons">
         <div class="container">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i
+                    class="fab fa-facebook-square" style="color: #3b5998;"></i></a>
+            <a href="https://www.instagram.com/mouloudia__actualites?igsh=MWhvZXVsbzkxOTRmaA==" target="_blank"><i
+                    class="fab fa-instagram" style="color: #e4405f;"></i></a>
+            <a href="https://twitter.com/MouloudiaActu" target="_blank"><i class="fas fa-times"
+                    style="color: #1da1f2;"></i></a>
+            <a href="https://youtube.com/@mouloudiaactualites?si=idNCKDhmknjI_uHD"><i class="fab fa-youtube"
+                    style="color: #c4302b;"></i></a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-4 text-center">
+    <!-- Section for Authors -->
+    <section class="authors-section">
         <div class="container">
-            <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
+            <h2 class="text-center mb-5">Meet Our Authors</h2>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="author">
+                        <a href="https://www.facebook.com/profile.php?id=100094343603603&locale=fr_FR"
+                            target="_blank">
+                            <img src="mca.png" class="img-fluid" alt="Admin">
+                        </a>
+                        <h3>Mohamed</h3>
+                        <p>Admin</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="author">
+                        <a href="https://www.facebook.com/abdouoooooooooooooooooooooooooooooooooooooooo/?locale=fr_FR"
+                            target="_blank">
+                            <img src="dev.jpg" class="img-fluid" alt="Développer">
+                        </a>
+                        <h3>Iliesso</h3>
+                        <p>développer</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <!-- jQuery, Popper.js, Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to switch language
+        function switchLanguage(lang) {
+            if (lang === 'ar') {
+                document.documentElement.lang = 'ar';
+                document.body.dir = 'rtl';
+            } else {
+                document.documentElement.lang = 'en';
+                document.body.dir = 'ltr';
+            }
+        }
+
+        // Script to toggle dark mode
+        const logo = document.getElementById('logo');
+        const body = document.body;
+
+        logo.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+        });
+
+        // Script to change icon colors on click
+        const icons = document.querySelectorAll('.social-icons a i');
+
+        icons.forEach(icon => {
+            icon.addEventListener('click', function () {
+                switch (icon.classList[1]) {
+                    case 'fa-facebook-square':
+                        icon.style.color = '#3b5998'; // Facebook blue color
+                        break;
+                    case 'fa-instagram':
+                        icon.style.color = '#e4405f'; // Instagram pink color
+                        break;
+                    case 'fa-times':
+                        icon.style.color = '#000000'; // Twitter blue color
+                        break;
+                    case 'fa-youtube':
+                        icon.style.color = '#c4302b'; // YouTube red color
+                        break;
+                    default:
+                        break;
+                }
+
+                // Reset color after 1 second
+                setTimeout(function () {
+                    icon.style.color = '';
+                }, 1000);
+            });
+        });
+    </script>
 </body>
 
 </html>
