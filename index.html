@@ -243,10 +243,10 @@
                             <a class="nav-link" href="#">View Menu</a>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-link nav-link" onclick="switchLanguage('en')">English</button>
+                            <button class="btn btn-link nav-link" href="index.html" >English</button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-link nav-link" onclick="switchLanguage('ar')">العربية</button>
+                            <button class="btn btn-link nav-link"  href="live.html">العربية</button>
                         </li>
                     </ul>
                 </div>
@@ -360,21 +360,7 @@
             xIcon.style.color = '#000000'; // Black color
         });
 
-        // Function to switch between English and Arabic
-        function switchLanguage(lang) {
-            const htmlTag = document.querySelector('html');
-            const bodyTag = document.body;
-
-            if (lang === 'ar') {
-                htmlTag.setAttribute('lang', 'ar');
-                htmlTag.setAttribute('dir', 'rtl');
-                bodyTag.setAttribute('dir', 'rtl');
-            } else {
-                htmlTag.setAttribute('lang', 'en');
-                htmlTag.setAttribute('dir', 'ltr');
-                bodyTag.setAttribute('dir', 'ltr');
-            }
-        }
+       
     </script>
 </body>
 </html>
