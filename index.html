@@ -1,4 +1,5 @@
 
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
@@ -55,7 +56,7 @@
             padding: 10px 15px;
             transition: background-color 0.3s;
         }
-        .live-scores-section { padding: 80px 0;}
+        .live-scores-section { padding: 60px 0;}
         .match { margin-bottom: 40px; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); } .match h2 { font-size: 2rem; margin-bottom: 10px; } .match .teams { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; } .match .teams .team { display: flex; align-items: center; } .match .teams .team img { width: 40px; height: 40px; margin-right: 10px; border-radius: 50%; } .match .score { font-size: 1.5rem; font-weight: bold; } .match .status { font-size: 1.1rem; } /* Dark Mode Styles */ body.dark-mode { background-color: #343a40; color: #fff; } body.dark-mode .navbar { background-color: #212529; } body.dark-mode .navbar-dark .navbar-nav .nav-link { color: #fff; } body.dark-mode .navbar-dark .navbar-nav .nav-link:hover { background-color: rgba(255, 255, 255, 0.1); } body.dark-mode .match { background-color: #424242; border-color: #757575; color: #fff; } body.dark-mode .match .score { color: #fff; } /* Media Query for Mobile Devices */ @media (max-width: 768px) { .navbar-brand img { width: 40px; } .match h2 { font-size: 1.5rem; } .match .teams { flex-direction: column; align-items: flex-start; } .match .teams .team img { margin-bottom: 5px; } }
         
         .navbar-dark .navbar-nav .nav-link:hover {
@@ -249,14 +250,15 @@
             margin-bottom: 30px;
         }
         
-       .match {
-        margin-bottom: 40px;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        border: 1px solid #000; /* Bordure de 1 pixel solide noire */
-    }
+        .match {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            text-align: left;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
         
         .match h3 {
             font-size: 1.5rem;
@@ -347,6 +349,7 @@
                 </div>
             </div>
         </div>
+    </section><section class="live-scores-section"> <div class="container"> <div class="row"> <div class="col-lg-8"> <div class="match"> <h2>Last Match</h2> <div class="teams"> <div class="team"> <img src="MCA11.png" alt="Team 1 Logo"> <span>MC Alger</span> </div> <div class="score">0 - 1</div> <div class="team"> <span>CR Belouizdad</span> <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="Team 2 Logo"> </div> </div> <div class="status"> 5 juillet 2024 à 17h00<br> 5 Juillet Stadium Algeria </div> </div> <div class="match"> <h2>Next Match</h2> <div class="teams"> <div class="team"> <img src="wata.png" alt="Team 3 Logo"> <span>Watanga FC</span> </div> <div class="score">0 - 0</div> <div class="team"> <span>MC Alger</span> <img src="MCA11.png" alt="Team 4 Logo"> </div> </div> <div class="status"> 16 août 2024 à 17h00 : <span id="countdown"></span> <br> To Define </div> </div> </div> <div class="col-lg-4"> <div class="sidebar"> 
     <!-- Section for Image before Social Icons -->
     <section class="image-before-icons">
         <div class="container">
