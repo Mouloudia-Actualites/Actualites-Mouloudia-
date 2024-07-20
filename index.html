@@ -23,7 +23,7 @@
         }
 
         .live-scores-section {
-            padding: 80px 0;
+            padding: 40px 0;
             background-color: #f8f9fa;
             text-align: center;
             border: 1px solid #dee2e6;
@@ -42,7 +42,7 @@
         }
 
         .match h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
@@ -51,11 +51,15 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 10px;
+            flex-wrap: wrap;
         }
 
         .match .teams .team {
             display: flex;
             align-items: center;
+            flex: 1;
+            justify-content: center;
+            margin-bottom: 10px;
         }
 
         .match .teams .team img {
@@ -66,18 +70,18 @@
         }
 
         .match .score {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: bold;
         }
 
         .match .status {
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .authors-section {
             background-color: #343a40;
             color: #fff;
-            padding: 80px 0;
+            padding: 40px 0;
             background-size: cover;
         }
 
@@ -87,8 +91,8 @@
         }
 
         .author img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
@@ -97,7 +101,7 @@
         }
 
         .author h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 10px;
         }
 
@@ -254,150 +258,46 @@
                                 <span>MC Alger</span>
                             </div>
                             <div class="score">0 - 1</div>
-                                                    <div class="team">
-                            <span>CR Belouizdad</span>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png"
-                                alt="Team 2 Logo">
-                        </div>
-                    </div>
-                    <div class="status">
-                        5 juillet 2024 à 17h00<br> 5 Juillet Stadium Algeria
-                    </div>
-                </div>
-                <div class="match">
-                    <h2>Next Match</h2>
-                    <div class="teams">
-                        <div class="team">
-                            <img src="wata.png" alt="Team 3 Logo">
-                            <span>Watanga FC</span>
-                        </div>
-                        <div class="score">0 - 0</div>
-                        <div class="team">
-                            <span>MC Alger</span>
-                            <img src="MCA11.png" alt="Team 4 Logo">
-                        </div>
-                    </div>
-                    <div class="status">
-                        16 août 2024 à 17h00 : <span id="countdown"></span> <br> To Define
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="sidebar">
-                    <!-- Section for Image before Social Icons -->
-                    <section class="image-before-icons">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <img src="mca3.jpg" class="img-fluid" alt="Image Description">
-                                </div>
+                            <div class="team">
+                                <span>CR Belouizdad</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png"
+                                    alt="Team 2 Logo">
                             </div>
                         </div>
-                    </section>
-
-                    <!-- Section for Social Icons -->
-                    <section class="social-icons my-4">
-                        <div class="container">
-                            <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i
-                                    class="fab fa-facebook-square" style="color: #3b5998;"></i></a>
-                            <a href="https://www.instagram.com/mouloudia__actualites?igsh=MWhvZXVsbzkxOTRmaA==" target="_blank"><i
-                                    class="fab fa-instagram" style="color: #e4405f;"></i></a>
-                            <a href="https://twitter.com/MouloudiaActu" target="_blank"><i class="fas fa-times"
-                                    style="color: #1da1f2;"></i></a>
-                            <a href="https://youtube.com/@mouloudiaactualites?si=idNCKDhmknjI_uHD"><i
-                                    class="fab fa-youtube" style="color: #c4302b;"></i></a>
+                        <div class="status">
+                            5 juillet 2024 à 17h00<br> 5 Juillet Stadium Algeria
                         </div>
-                    </section>
-
-                    <!-- Section for Authors -->
-                    <section class="authors-section">
-                        <div class="container">
-                            <h2 class="text-center mb-5">Meet Our Authors</h2>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="author">
-                                        <a href="https://www.facebook.com/profile.php?id=100094343603603&locale=fr_FR"
-                                            target="_blank">
-                                            <img src="mca.png" class="img-fluid" alt="Admin">
-                                        </a>
-                                        <h3>Mohamed</h3>
-                                        <p>Admin</p>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 mb-4">
-                                    <div class="author">
-                                        <a href="https://www.facebook.com/abdouoooooooooooooooooooooooooooooooooooooooo/?locale=fr_FR"
-                                            target="_blank">
-                                            <img src="dev.jpg" class="img-fluid" alt="Développer">
-                                        </a>
-                                        <h3>Iliesso</h3>
-                                        <p>développer</p>
+                    </div>
+                    <div class="match">
+                        <h2>Next Match</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="wata.png" alt="Team 3 Logo">
+                                <span>Watanga FC</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <span>MC Alger</span>
+                                <img src="MCA11.png" alt="Team 4 Logo">
+                            </div>
+                        </div>
+                        <div class="status">
+                            16 août 2024 à 17h00 : <span id="countdown"></span> <br> To Define
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <!-- Section for Image before Social Icons -->
+                        <section class="image-before-icons">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <img src="mca3.jpg" class="img-fluid" alt="Image Description">
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- jQuery, Popper.js, Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script>
-    // Function to switch language
-    function switchLanguage(lang) {
-        if (lang === 'ar') {
-            document.documentElement.lang = 'ar';
-            document.body.dir = 'rtl';
-        } else {
-            document.documentElement.lang = 'en';
-            document.body.dir = 'ltr';
-        }
-    }
-
-    // Script to toggle dark mode
-    const logo = document.getElementById('logo');
-    const body = document.body;
-
-    logo.addEventListener('click', function () {
-        body.classList.toggle('dark-mode');
-    });
-
-    // Script to change icon colors on click
-    const icons = document.querySelectorAll('.social-icons a i');
-
-    icons.forEach(icon => {
-        icon.addEventListener('click', function () {
-            switch (icon.classList[1]) {
-                case 'fa-facebook-square':
-                    icon.style.color = '#3b5998';
-                    break;
-                case 'fa-instagram':
-                    icon.style.color = '#e4405f';
-                    break;
-                case 'fa-times':
-                    icon.style.color = '#000000';
-                    break;
-                case 'fa-youtube':
-                    icon.style.color = '#c4302b';
-                    break;
-                default:
-                    break;
-            }
-
-            // Reset color after 1 second
-            setTimeout(function () {
-                icon.style.color = '';
-            }, 1000);
-        });
-    });
-</script>
+                        </section>
 </body>
 </html>
 ```
-
-                            
