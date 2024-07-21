@@ -71,15 +71,11 @@
             border: none;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        .list-unstyled {
-            color:#000000;
-        }
+        
         .explore-more .read-more-link {
             display: block;
             margin-top: 20px;
         }
-        
-     
         
         /* Dark Mode Styles */
         body.dark-mode {
@@ -111,58 +107,48 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">
                     <img src="mca.png" alt="MCA Logo">
                 </a>
-               <header>
-    <nav class="navbar navbar-expand-md navbar-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">
-                <img src="mca.png" alt="MCA Logo">
-            </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="first.html">First Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="reserv.html">Reserve Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="women.html">Women's Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="histoir.html">History of Mouloudia Algiers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="live.html">Live Scores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="video.html">Videos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contac.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="first.html">First Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reserv.html">Reserve Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="women.html">Women's Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="histoir.html">History of Mouloudia Algiers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live.html">Live Scores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video.html">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contac.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+    </header>
 
-    
- <section class="news-section">
+    <section class="news-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -176,15 +162,13 @@
                         <img src="https://scontent.forn3-5.fna.fbcdn.net/v/t39.30808-6/449749505_497371836001434_6417696445156185338_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGNQYBe9I0v19pvn9v3aeI7LmjVNCJsgLguaNU0ImyAuC35I8bKyd1PvVyCBthr-f7HloI3-RojBNQWjH09o1JX&_nc_ohc=oeybfCP6JUUQ7kNvgFFS9vQ&_nc_ht=scontent.forn3-5.fna&oh=00_AYC7hJ-96EneknXJfJL8slVqQ37Z5TvBNtYoGdaFzdTCYw&oe=66A375CB" alt="Article Image 2">
                         <h2>News of the first team of Mouloudia Algiers</h2>
                         <p>According to journalist Mohamed Lakhal, MC Alger’s negotiations with the players are continuing and are about to sign a right defender - left defender - attack center - striker</p>
-                        <a href="https://www.facebook.com/share/p/9493Db2tZYK7hQYF/"  class="btn btn-primary">Read More</a>
+                        <a href="https://www.facebook.com/share/p/9493Db2tZYK7hQYF/" class="btn btn-primary">Read More</a>
                     </article>
                 </div>
-               
             </div>
         </div>
     </section>
 
-  
     <footer class="text-center py-4">
         <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
     </footer>
@@ -204,9 +188,10 @@
                 body.classList.add('dark-mode');
             } else {
                 body.classList.remove('dark-mode');
-                   body.classList.add('light-mode');
+                body.classList.add('light-mode');
             }
         });
     </script>
 </body>
 </html>
+
