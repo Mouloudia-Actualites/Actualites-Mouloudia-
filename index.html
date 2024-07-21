@@ -347,8 +347,18 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-       
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <!-- Déplacer la navbar-brand à gauche -->
+            <a class="navbar-brand" href="#"><img src="mca.png" alt="MCA Logo"></a>
+            
+            <!-- Bouton de menu pour les écrans mobiles -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menu déroulant pour les écrans larges -->
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
@@ -364,19 +374,18 @@
                         <a class="nav-link" href="video.html">Matches</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contac.html">Contact</a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
-         <div class="container">
-            <a class="navbar-brand" href="#"><img src="mca.png" alt="MCA Logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-               </div>
     </nav>
+
+    <!-- Le reste de votre contenu HTML -->
+
+    <!-- Bootstrap JS, Popper.js, and jQuery (à inclure à la fin du body) -->
+    <!-- ... -->
+</body>
 
     <!-- Hero Section -->
     <section class="hero">
