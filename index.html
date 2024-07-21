@@ -295,230 +295,253 @@
         
         body.dark-mode .authors-section {
             background-color: #212529;
-        }
-        
-        body.dark-mode .author {
-            border: 2px solid #343a40;
-            background-color: #424242;
-        }
-        
-        /* Media Query for Mobile Devices */
-        
-        @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 40px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .feature {
-                padding: 15px;
-            }
-            
-            .author img {
-                height: 120px;
-            }
-        }
-        
-        /* Button for Toggle Dark Mode */
-        
-        .toggle-mode-btn {
-            background-color: #dc3545;
-            border-color: #dc3545;
             color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
         }
         
-        .toggle-mode-btn:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
+        /* Blogs Section */
+        
+        .blogs-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        
+        .blog {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .blog img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .blog h3 {
+            margin-top: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .blog:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Footer Section */
+        
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0;
         }
     </style>
 </head>
 
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"><img src="mca.png" alt="logo"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#"><img src="mca.png" alt="MCA Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Live Scores</a>
+                        <a class="nav-link" href="news.html">News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="live.html">Live Scores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Authors</a>
+                        <a class="nav-link" href="video.html">Matches</a>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-dark toggle-mode-btn">Toggle Dark Mode</button>
+                        <a class="nav-link" href="contac.html">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- End Navbar -->
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Welcome to Mouloudia Actualités</h1>
-            <p>Your trusted source for sports news and live scores</p>
+            <p>Your ultimate source for sports news and live scores.</p>
             <a href="#" class="btn btn-primary">Get Started</a>
         </div>
     </section>
-    <!-- End Hero Section -->
 
-    <!-- Live Scores Section -->
-    <section class="live-scores-section">
-        <div class="container">
-            <div class="match">
-                <h2>Upcoming Match</h2>
-                <div class="teams">
-                    <div class="team">
-                        <img src="team1.png" alt="Team 1">
-                        <span>Team 1</span>
-                    </div>
-                    <div class="score">vs</div>
-                    <div class="team">
-                        <img src="team2.png" alt="Team 2">
-                        <span>Team 2</span>
-                    </div>
-                </div>
-                <div class="status">Kick-off at 20:00</div>
-            </div>
 
-            <div class="match">
-                <h2>Recent Match</h2>
-                <div class="teams">
-                    <div class="team">
-                        <img src="team3.png" alt="Team 3">
-                        <span>Team 3</span>
-                    </div>
-                    <div class="score">3 - 2</div>
-                    <div class="team">
-                        <img src="team4.png" alt="Team 4">
-                        <span>Team 4</span>
-                    </div>
-                </div>
-                <div class="status">Match ended</div>
-            </div>
-        </div>
-    </section>
-    <!-- End Live Scores Section -->
 
-    <!-- Features Section -->
-    <section class="features-section">
+    <!-- Blogs Section -->
+    <section class="blogs-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="feature">
-                        <img src="feature1.png" alt="Feature 1">
-                        <h3>Live Commentary</h3>
-                        <p>Stay updated with live commentary for every match</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog">
+                        <a href="news.html" target="_blank">
+                            <img src="news1.jpg" alt="Blog 1">
+                            <h3>Latest News</h3>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature">
-                        <img src="feature2.png" alt="Feature 2">
-                        <h3>Match Highlights</h3>
-                        <p>Watch match highlights and key moments on demand</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog">
+                        <a href="live.html" target="_blank">
+                            <img src="live.jpg" alt="Blog 2">
+                            <h3>Live Score</h3>
+                        </a>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="feature">
-                        <img src="feature3.png" alt="Feature 3">
-                        <h3>Player Stats</h3>
-                        <p>View detailed stats for players and teams</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog">
+                        <a href="video.html" target="_blank">
+                            <img src="video.jpg" alt="Blog 3">
+                            <h3>Video Highlights</h3>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Features Section -->
+      <!-- Live Scores Section -->
+    <section class="live-scores-section">
+        <div class="container">
+            <h2>Live Scores</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="match">
+                        <h2>Algeria Cup 
+                            final</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/CRB-2022.png/600px-CRB-2022.png" alt="Team 1">
+                                <span>cr belouizdad</span>
+                            </div>
+                            <div class="score">1 - 0</div>
+                            <div class="team">
+                                <img src="MCA11.png" alt="Team 2">
+                                <span>MC Alger</span>
+                            </div>
+                        </div>
+                        <div class="status">July 5, 2024</div>
+                        <p>The 5 July 1962 Stadium</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="match">
+                        <h2>caf champions league</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="wata.png" alt="Team 3">
+                                <span>Watanga FC</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <img src="MCA11.png" alt="Team 4">
+                                <span>MC Alger</span>
+                            </div>
+                        </div>
+                        <div class="status">August 16, 2024</div>
+                        <p>A Definer</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="match">
+                        <h2>caf champions league</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA11.png" alt="Team 5">
+                                <span>MC Alger</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <img src="wata.png" alt="Team 6">
+                                <span>Watanga FC</span>
+                            </div>
+                        </div>
+                        <div class="status">August 23, 2024</div>
+                        <p>A Definer</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Icons Section -->
+    <section class="social-icons">
+        <div class="container">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </section>
 
     <!-- Authors Section -->
     <section class="authors-section">
         <div class="container">
-            <h2>Meet Our Authors</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="author">
-                        <img src="author1.jpg" alt="Author 1">
-                        <h3>John Doe</h3>
-                        <p>Senior Sports Writer</p>
+                        <img src="mca.png" alt="Author 1">
+                        <h3>Mohamed</h3>
+                        <p>Admin</p>
                     </div>
                 </div>
+            
                 <div class="col-md-4">
                     <div class="author">
-                        <img src="author2.jpg" alt="Author 2">
-                        <h3>Jane Smith</h3>
-                        <p>Match Analyst</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="author">
-                        <img src="author3.jpg" alt="Author 3">
-                        <h3>Michael Johnson</h3>
-                        <p>Contributor</p>
+                        <img src="dev.jpg" alt="Author 3">
+                        <h3>Iliesso</h3>
+                        <p>Developer</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Authors Section -->
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container text-center">
-            <span class="text-muted">© 2024 Mouloudia Actualités. All rights reserved.</span>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
         </div>
     </footer>
-    <!-- End Footer -->
 
-    <!-- Bootstrap JS and jQuery -->
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <!-- Toggle Dark Mode Script -->
+    <!-- Custom JS -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggleButton = document.querySelector('.toggle-mode-btn');
-            const body = document.body;
+        // Script to toggle dark mode
+        const logo = document.querySelector('.navbar-brand img');
+        const body = document.body;
+        const viewMenu = document.querySelector('.navbar-collapse');
 
-            toggleButton.addEventListener('click', function () {
-                body.classList.toggle('dark-mode');
-            });
+        logo.addEventListener('click', function () {
+            body.classList.toggle('dark-mode');
+            viewMenu.classList.toggle('show');
         });
-    </script>
 
+        // Remove previously mentioned dark mode toggle button event
+        const toggleButton = document.querySelector('.btn-primary');
+        toggleButton.parentNode.removeChild(toggleButton);
+    </script>
 </body>
 
 </html>
