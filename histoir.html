@@ -22,6 +22,16 @@
             font-size: 1.1rem;
             line-height: 1.8;
         }
+        .wikipedia-article {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.wikipedia-article iframe {
+    border: none; /* Supprime la bordure par défaut de l'iframe */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre pour un effet visuel */
+}
+
     </style>
 </head>
 <body>
@@ -81,6 +91,15 @@
             </div>
         </div>
     </section>
+<div class="wikipedia-content">
+    <h3>Extrait de l'article Wikipedia sur le Mouloudia Club d'Alger :</h3>
+    <p>Le <b>Mouloudia Club d'Alger</b> est un club omnisports algérien fondé en 1921 à Alger. Le club est principalement connu pour son équipe de football qui évolue en Ligue 1 algérienne...</p>
+    <p>...</p>
+    <p>Source : <a href="https://fr.wikipedia.org/wiki/Mouloudia_Club_d%27Alger" target="_blank">Wikipedia</a></p>
+</div>
+<div class="wikipedia-article">
+    <iframe src="https://fr.wikipedia.org/wiki/Mouloudia_Club_d%27Alger" width="100%" height="800px" frameborder="0"></iframe>
+</div>
 <div class="wikipedia-content">
     <h3>Extrait de l'article Wikipedia sur le Mouloudia Club d'Alger :</h3>
     <p>Le <b>Mouloudia Club d'Alger</b> est un club omnisports algérien fondé en 1921 à Alger. Le club est principalement connu pour son équipe de football qui évolue en Ligue 1 algérienne...</p>
