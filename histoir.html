@@ -1,188 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historique du Mouloudia Club d'Alger</title>
+    <title>Mouloudia Actualités - Latest News</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="mca.png">
     <style>
-        /* Your custom styles here */
-        .navbar-brand img {
-            max-width: 50px;
-            height: auto;
-            
-             background-color: #343a40;
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
         }
-         .navbar navbar-expand-md navbar-dark   {
-     
-             background-color: #343a40;
-           }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
         .navbar-brand img {
             width: 60px; /* Adjust logo size for larger screens */
         }
         
         .navbar-dark .navbar-nav .nav-link {
-            color: #000;
+            color: #fff;
             padding: 10px 15px;
             transition: background-color 0.3s;
-            background-color:#343a40;
-            
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
         
-        /* Styles spécifiques pour la page d'historique */
-        .history-section {
+        .news-section {
             padding: 80px 0;
         }
         
-        .history-section h2 {
-            font-size: 2.5rem;
+        .article {
+            margin-bottom: 40px;
+        }
+        
+        .article img {
+            max-width: 100%;
+            height: auto;
             margin-bottom: 20px;
-        }
-        
-        .history-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .timeline {
-            list-style-type: none;
-            padding: 0;
-            position: relative;
-            margin-top: 30px;
-        }
-        
-        .timeline:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background-color: #f00; /* Couleur de la ligne de la timeline */
-            left: 50%;
-            margin-left: -2px;
-        }
-        
-        .timeline-item {
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .timeline-item:last-child {
-            margin-bottom: 0;
-        }
-        
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            background-color: #f00; /* Couleur des cercles de la timeline */
-            left: 50%;
-            margin-left: -12.5px;
-            top: 0;
-        }
-        
-        .timeline-item .timeline-content {
-            margin-left: 60px;
-            background: #f9f9f9; /* Couleur de fond des éléments de la timeline */
-            padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
         
-        .timeline-item .timeline-content h3 {
-            font-size: 1.8rem;
-            margin-top: 0;
-            color: #333;
-        }
-        
-        .timeline-item .timeline-content p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #666;
-        }
-        
-        .timeline-item .timeline-content .year {
-            font-size: 1.2rem;
-            color: #999;
+        .article h2 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
         }
         
-        .timeline-item .timeline-content .source {
-            font-size: 0.9rem;
-            color: #777;
-            margin-top: 10px;
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .explore-more {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .explore-more .facebook-post {
+            max-width: 100%;
+            height: auto;
+            border: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .explore-more .read-more-link {
+            display: block;
+            margin-top: 20px;
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
         }
     </style>
 </head>
 <body>
-  <header>
+    <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="navbar-brand" href="#">
                     <img src="mca.png" alt="MCA Logo">
                 </a>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="news.html">News</a>
+                            <a class="nav-link" href="first.html">First Team</a>
                         </li>
-                           <li class="nav-item">
-                        <a class="nav-link" href="first.html">First Team</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="reserve.html">Reserve Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="histoir.html">History of Mouloudia Algiers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="live.html">Live Scores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="video.html">Videos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contac.html">Contact</a>
-                    </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="about.html">About Us</a>
-                    </li>
-                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="reserv.html">Reserve Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="women.html">Women's Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="histoir.html">History of Mouloudia Algiers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live.html">Live Scores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video.html">Videos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contac.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <section class="history-section">
+    <section class="news-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2 class="text-center">History of the Mouloudia Club of Algiers</h2>
-                    <p class="text-justify">Club history In the year 1921 a group of young Algerians from the Casbah (Historic district of Algiers) came into contact with their compatriots from Bab El Oued (Popular Quarter in Algiers), with the intention of founding an Algerian football club. Contact was established largely thanks to Aouf Hamoud, who acted as liaison between the two neighborhoods. The meeting which gave birth to the club took place in the back shop of the "benachere" café, currently "Yahi". Because this day (August 7, 1921) coincided with the "Mouloud", the club was called "Mouloudia Club of Algiers". As for the colors (green and red) they were chosen for these reasons: * Green: the sign of hope of the Algerian people and symbolic color of Islam. * Red: the sign of love of the homeland and sacrifice for it. Mouloudia is much more than just a football club. It was the only Algerian Muslim club. It subsequently provoked a real Muslim sports movement, with its popularity which continued to grow, to the point of worrying the French colonialist regime. His first season, in 1921/1922, in "ANAFA", had its ups and downs. The following season, the MC. Algiers was officially admitted to the Algerian regional league (FFF), in the 4th division. But despite these great performances and the quality of his game the MC. Algiers was unable to access the higher division, under the shadow of the French press which avoided publishing the results and news of the club, for fear of increasing its popularity of the club, but also by the appearance of the “BORDES” law which required Muslim clubs to contain at least two European players, with the intention of reducing the popularity of the ever-growing club. So we had to wait 14 seasons to see the MC. Algiers accession to the Legion of Honor. This was done during the 1935/1936 season, after total domination by the MC. Algiers during the year, which ended with a play-off match against the French club "Olympique Maringo", which was replayed 3 times after 2 draws, which was a first in the history of the (FFF). But at the end of the 3rd meeting it was the MC. Algiers who won with a score of 2-1. It was then the first climb in the history of the club. During his first season in the Legion of Honor, the MC. Algiers was in first place in the ranking, but saw accession always elude it during the last day of the championship, which earned it the nickname by the French press of: "The eternal dauphin". The good ranking of the MC. Algiers in this division as well as its good performance allowed it to play THE NORTH AFRICAN CUP. But the latter did not go beyond the 8th finals. The MC. Algiers also played some friendly matches against: Lokomotiv Moscow, Rapid Vienna, Olympique de Nice, ... During the 1939/1940 season, nicknamed "the season of war" due to the 2nd World War, and for the same cause, the French championship experienced a delay as well as the sharing of the division of honor in Algeria into 3 groups. The MC. Algiers had dominated in its group, then beat the leaders of groups A and B to find themselves champion of "the season of war", which put its many supporters in a euphoric state in the streets of Algiers. If the title won by the MC. Algiers in 1939/1940 was only symbolic (friendly tournament), at the end of the 1943/1944 season it was able to finish as leader and win the title of champion of the Algerian league, ahead of ASSE. This title was the last before national liberation. Before the cessation of any Algerian club, and the abstention from any participation in the various competitions, by responding to the call of the FLN in 1956, there was a certain match which remains engraved in the history of Algerian football . This match took place between the MC. Algiers and the JS. Kabylie as part of the "North African Cup" and which ended with an overwhelming victory for the MC. Algiers by 7-0. This match took place on October 4, 1951. After national liberation (1962), the MC. Algiers as well as the USM. Algiers had qualified to play in the final of the regional championship, but the MC. Algiers lost it by a score of 3-0. One year later (1964) the MC. Algiers was able to do no better than secure a place among the clubs which will play the first national championship in 1964/1965. During this season the Minister of Youth and Sports relegated the MC. Algiers in D2 where he remained for 3 seasons. The return of Mouloudia to national one with a new generation of players like Betrouni, Kaoua, Bachi and other Tahir... was in force. Especially the first 3 seasons, finishing 4th with 46pts in 68/69, 2nd with 52pts in 69/70, and 3rd with 46pts in 70/71. He also won the Algerian Cup and an Arab trophy. A great team was undoubtedly formed with talented players who made 'The great MC. Algiers in the 70s. The team that entered 2nd with 52pts in 69/70, and 3rd with 46pts in 70/71. He also won the Algerian Cup and an Arab trophy. A great team was undoubtedly formed with talented players who made 'The great MC. Algiers in the 70s. The team which entered the legend by razing several national and continental trophies. The first of these trophies was the national championship, the first for the club and this in 71/72. The second title of the same kind was won in 74/75 but the MC. Algiers during that same year also won an African place for 1976. 1976! The MC. Algiers manages to achieve a treble which until today remains unmatched in Algeria (Championship - Cup - African Cup). The oldest wins his 3rd championship, his 3rd cup, and the first Algerian African Cup. Then comes the 77/78 season Le MC. Algiers changes name to MP. Algiers (Mouloudia des Petroliers d'Alger) and wins the 4th Algerian championship title. Mouloudia struck again during the 78/79 season by winning its 5th championship title but also the 5th in the 70s, and its 3rd cup in 76. This year was the end of the series of good results, as it was the last championship for 20 years. Because we had to wait until 1999 to rediscover the flavor of winning with a team made up of several good players such as Saifi, Ben Ali, Rahmouni, Dob... Also worth mentioning during the 80s and 90s was the cup won by the club (83) and the relegation to D2 (84/85) and immediately the accession (85/86). Then the MC. Algiers came close to the title in (88-89). After that, and for 10 years, the team played without ambition and was content to remain in D1, before the title of the 1998/1999 season came with a certain Saifi in the squad, but also the year of the nickname of “CHNAOUA” to Mouloudia supporters, by their number and their travel with their team. But after the delicious season of 1998/1999 came a real nightmare for the chnaoua, because the MCA no longer won for a period of more than a year. From the Blida match (1999/2000) to the Blida match (2000/2001) at the July 5 stadium. The MCA did not escape relegation during the following season (2001/2002). According to professionals and other technicians and observers, the dean could not hope for better for him. In the meantime, the accession was made with a team that was redesigned, with a coach named Saàdi, former players like Ben Ali (to whom owes a large part of the accession) and young players or recruits such as: Belkheir, Chaouech, Hamoutane, Fodhili..</p></p>
+                <div class="col-lg-8">
+                    <article class="article">
+                        <img src="https://mca.dz/wp-content/uploads/2024/06/781C0008-1068x1068.jpg" alt="Article Image 1">
+                        <h2>News of the first team of Mouloudia Algiers</h2>
+                        <p>Mouloudia Algiers coach Amir Boummel adds Badr Eddine Toufi and Walaa Bouzkri to the list of laid-offs.</p>
+                        <a href="https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/" class="btn btn-primary">Read More</a>
+                    </article>
+                    <article class="article">
+                        <img src="https://scontent.forn3-5.fna.fbcdn.net/v/t39.30808-6/449749505_497371836001434_6417696445156185338_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGNQYBe9I0v19pvn9v3aeI7LmjVNCJsgLguaNU0ImyAuC35I8bKyd1PvVyCBthr-f7HloI3-RojBNQWjH09o1JX&_nc_ohc=oeybfCP6JUUQ7kNvgFFS9vQ&_nc_ht=scontent.forn3-5.fna&oh=00_AYC7hJ-96EneknXJfJL8slVqQ37Z5TvBNtYoGdaFzdTCYw&oe=66A375CB" alt="Article Image 2">
+                        <h2>News of the first team of Mouloudia Algiers</h2>
+                        <p>According to journalist Mohamed Lakhal, MC Alger’s negotiations with the players are continuing and are about to sign a right defender - left defender - attack center - striker</p>
+                        <a href="https://www.facebook.com/share/p/9493Db2tZYK7hQYF/" class="btn btn-primary">Read More</a>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="text-center py-4 bg-dark text-white">
-        <p>&copy; 2024 Mouloudia Actualités. Tous droits réservés.</p>
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to toggle dark mode and light mode
+        const body = document.body;
+        const navbarBrand = document.querySelector('.navbar-brand');
+
+        navbarBrand.addEventListener('click', function() {
+            // Toggle between light-mode and dark-mode classes
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
+        });
+    </script>
 </body>
 </html>
