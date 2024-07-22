@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of Mouloudia Algiers</title>
+    <title>Historique du Mouloudia Club d'Alger</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="mca.png">
@@ -22,56 +22,105 @@
             font-size: 1.1rem;
             line-height: 1.8;
         }
-        .wikipedia-article {
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.wikipedia-article iframe {
-    border: none; /* Supprime la bordure par défaut de l'iframe */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optionnel : ajoute une ombre pour un effet visuel */
-}
-
+        
+        .timeline {
+            list-style-type: none;
+            padding: 0;
+            position: relative;
+            margin-top: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #f00; /* Couleur de la ligne de la timeline */
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: #f00; /* Couleur des cercles de la timeline */
+            left: 50%;
+            margin-left: -12.5px;
+            top: 0;
+        }
+        
+        .timeline-item .timeline-content {
+            margin-left: 60px;
+            background: #f9f9f9; /* Couleur de fond des éléments de la timeline */
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item .timeline-content h3 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .timeline-item .timeline-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+        
+        .timeline-item .timeline-content .year {
+            font-size: 1.2rem;
+            color: #999;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item .timeline-content .source {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <a class="navbar-brand" href="#">
                     <img src="mca.png" alt="MCA Logo">
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="first.html">First Team</a>
+                            <a class="nav-link" href="equipe.html">Équipe Première</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="reserv.html">Reserve Team</a>
+                            <a class="nav-link" href="histoire.html">Historique</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="women.html">Women's Team</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="histoir.html">History of Mouloudia Algiers</a>
+                            <a class="nav-link" href="actualites.html">Actualités</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="live.html">Live Scores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="video.html">Videos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contac.html">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
+                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -83,52 +132,49 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h2>History of Mouloudia Algiers</h2>
-                    <p>Mouloudia Club d'Alger (MCA), fondé en 1921, est l'un des clubs de football les plus anciens et les plus prestigieux d'Algérie. Le club a joué un rôle majeur dans le développement du football algérien et a remporté de nombreux titres nationaux et internationaux au fil des ans.</p>
-                    <p>Le Mouloudia a une base de fans passionnée et une histoire riche, marquée par des périodes de succès et de défis. Le club est connu pour sa fidélité à ses traditions et pour avoir produit de nombreux grands joueurs qui ont marqué l'histoire du football algérien.</p>
-                    <p>À ce jour, le MCA continue d'être un pilier du football algérien et un symbole de fierté pour ses supporters à travers le pays.</p>
+                    <h2>Historique du Mouloudia Club d'Alger</h2>
+                    <p>Le Mouloudia Club d'Alger (MCA), fondé en 1921, est l'un des clubs de football les plus anciens et les plus prestigieux d'Algérie. Depuis sa création, le MCA a marqué l'histoire du football algérien avec de nombreux succès nationaux et internationaux.</p>
+                    <p>Voici une chronologie des moments clés de l'histoire du MCA :</p>
+                    
+                    <!-- Timeline -->
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="year">1921</span>
+                                <h3>Fondation du Mouloudia Club d'Alger</h3>
+                                <p>Le Mouloudia Club d'Alger est fondé par un groupe de jeunes Algériens de la Casbah avec pour objectif de promouvoir le football algérien.</p>
+                                <p class="source">Source : Archives du MCA</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="year">1935/1936</span>
+                                <h3>Première montée en division supérieure</h3>
+                                <p>Après une saison dominante, le MCA accède à la première division du championnat algérien.</p>
+                                <p class="source">Source : Archives du MCA</p>
+                            </div>
+                        </li>
+                        <li class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="year">1976</span>
+                                <h3>Triplé historique</h3>
+                                <p>Le MCA remporte le championnat, la coupe nationale et la coupe d'Afrique, une performance qui reste inégalée en Algérie.</p>
+                                <p class="source">Source : Archives du MCA</p>
+                            </div>
+                        </li>
+                        <!-- Ajoutez d'autres événements importants ici -->
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-<div class="wikipedia-content">
-    <h3>Extrait de l'article Wikipedia sur le Mouloudia Club d'Alger :</h3>
-    <p>Le <b>Mouloudia Club d'Alger</b> est un club omnisports algérien fondé en 1921 à Alger. Le club est principalement connu pour son équipe de football qui évolue en Ligue 1 algérienne...</p>
-    <p>...</p>
-    <p>Source : <a href="https://fr.wikipedia.org/wiki/Mouloudia_Club_d%27Alger" target="_blank">Wikipedia</a></p>
-</div>
-<div class="wikipedia-article">
-    <iframe src="https://fr.wikipedia.org/wiki/Mouloudia_Club_d%27Alger" width="100%" height="800px" frameborder="0"></iframe>
-</div>
-<div class="wikipedia-content">
-    <h3>Extrait de l'article Wikipedia sur le Mouloudia Club d'Alger :</h3>
-    <p>Le <b>Mouloudia Club d'Alger</b> est un club omnisports algérien fondé en 1921 à Alger. Le club est principalement connu pour son équipe de football qui évolue en Ligue 1 algérienne...</p>
-    <p>...</p>
-    <p>Source : <a href="https://fr.wikipedia.org/wiki/Mouloudia_Club_d%27Alger" target="_blank">Wikipedia</a></p>
-</div>
 
-    <footer class="text-center py-4">
-        <p>&copy; 2024 Mouloudia Actualités. All rights reserved.</p>
+    <footer class="text-center py-4 bg-dark text-white">
+        <p>&copy; 2024 Mouloudia Actualités. Tous droits réservés.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Script to toggle dark mode and light mode
-        const body = document.body;
-        const navbarBrand = document.querySelector('.navbar-brand');
-
-        navbarBrand.addEventListener('click', function() {
-            // Toggle between light-mode and dark-mode classes
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-            }
-        });
-    </script>
 </body>
 </html>
