@@ -349,6 +349,25 @@
             height: 100%;
          /* Center text horizontally within .center-container */
         }
+        /* Add this to your CSS file or <style> block */
+.btn-white {
+    background-color: white; /* White background */
+    color: black; /* Black text color */
+    border: 1px solid black; /* Black border */
+    padding: 10px 20px; /* Padding for the button */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline from text */
+    display: inline-block; /* Inline-block display */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btn-white:hover {
+    background-color: black; /* Black background on hover */
+    color: white; /* White text color on hover */
+}
  /* Centered Button Styles */
 
        
@@ -538,27 +557,30 @@
     </section>
 
     <!-- Authors Section -->
-    <section class="authors-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="author">
-                        <img src="mca.png" alt="Author 1">
-                        <h3>Mohamed</h3>
-                        <p>Admin</p>
-                    </div>
+   <section class="authors-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="author">
+                    <img src="mca.png" alt="Author 1">
+                    <h3>Mohamed</h3>
+                    <p>Admin</p>
+                    <!-- Add the button here -->
+                    <a href="your-link.html" class="btn btn-white">Go to Link</a>
                 </div>
-            
-                <div class="col-md-4">
-                    <div class="author">
-                        <img src="dev.jpg" alt="Author 3">
-                        <h3>Iliesso</h3>
-                        <p>Developer</p>
-                    </div>
+            </div>
+            <div class="col-md-4">
+                <div class="author">
+                    <img src="dev.jpg" alt="Author 3">
+                    <h3>Iliesso</h3>
+                    <p>Developer</p>
+                    <!-- Add the button here -->
+                    <a href="your-link.html" class="btn btn-white">Go to Link</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer>
