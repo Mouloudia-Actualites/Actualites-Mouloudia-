@@ -15,36 +15,36 @@
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
         }
-        
+
         .navbar {
             background-color: #343a40;
         }
-        
+
         .navbar-brand img {
             width: 60px;
             margin-left: auto;
             margin-right: 10px;
             cursor: pointer; /* Ajout pour montrer que le logo est cliquable */
         }
-        
+
         .navbar-nav {
             margin-left: 0;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link {
             color: #fff;
             padding: 10px 15px;
             transition: background-color 0.3s;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .live-scores-section {
             padding: 80px 0;
         }
-        
+
         .match {
             margin-bottom: 40px;
             background-color: #fff;
@@ -52,67 +52,70 @@
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .match h2 {
             font-size: 2rem;
             margin-bottom: 10px;
             text-align: center; /* Centering the heading */
         }
-        
+
         .match .teams {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
             margin-bottom: 10px;
         }
-        
+
         .match .teams .team {
             display: flex;
             align-items: center;
+            margin: 0 10px; /* Add margin to space out the teams */
         }
-        
+
         .match .teams .team img {
             width: 40px;
             height: 40px;
             margin-right: 10px;
             border-radius: 50%;
-              text-align: center;
         }
-        
+
         .match .score {
-            font-size: 1.5rem;
+            font-size: 2rem; /* Increase font size for better visibility */
             font-weight: bold;
+            margin: 0 20px; /* Add margin to space out the score from the teams */
+            text-align: center; /* Center the score text */
         }
-        
+
         .match .status {
             font-size: 1.1rem;
-            text-align: center; /* Centering the status */
+            text-align: center; /* Center the status */
+            margin-top: 10px; /* Add margin to space out the status from the teams */
         }
-        
+
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #343a40;
             color: #fff;
         }
-        
+
         body.dark-mode .navbar {
             background-color: #212529;
         }
-        
+
         body.dark-mode .navbar-dark .navbar-nav .nav-link {
             color: #fff;
         }
-        
+
         body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         body.dark-mode .match {
             background-color: #424242;
             border-color: #757575;
             color: #fff;
         }
-        
+
         body.dark-mode .match .score {
             color: #fff;
         }
@@ -140,18 +143,18 @@
             border-collapse: collapse;
             margin-top: 20px;
         }
-        
+
         table th, table td {
             padding: 12px;
             text-align: left;
             border: 1px solid #ddd;
         }
-        
+
         table th {
             background-color: #343a40;
             color: #fff;
         }
-        
+
         table td {
             background-color: #f8f9fa;
         }
@@ -160,8 +163,8 @@
         body.dark-mode table {
             background-color: #424242;
             color: #fff;
-        
         }
+
         body.dark-mode table th,
         body.dark-mode table td {
             border-color: #757575;
@@ -274,7 +277,7 @@
                                     <tr>
                                         <th>Match</th>
                                         <th>Date & Time</th>
-                                        <th>Venue</th>
+                                        <th>Venue
                                     </tr>
                                 </thead>
                                 <tbody>
