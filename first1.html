@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+        
+        .navbar {
+            background-color: #343a40;
+        }
+        
+        .navbar-brand img {
+            width: 60px; /* Adjust logo size for larger screens */
+        }
+        
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1); /* Example border color */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .news-section {
+            padding: 80px 0;
+        }
+        
+        .article {
+            margin-bottom: 40px;
+            text-align: right; /* Align text to right */
+        }
+        
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: right; /* Align heading to right */
+        }
+        
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+              
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+  <a class="navbar-brand" href="#">
+                    <img src="mca.png" alt="MCA Logo">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto"> <!-- Use ml-auto to push toggler to the right -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" style="text-align: right;">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html" style="text-align: right;">أخبار</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="first.html" style="text-align: right;">الفريق الأول</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reserve.html" style="text-align: right;">فريق الرديف</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="histoir.html" style="text-align: right;">تاريخ مولودية الجزائر</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live.html" style="text-align: right;">نتائج مباشرة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video.html" style="text-align: right;">أشرطة فيديو</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contac.html" style="text-align: right;">تواصل معي</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html" style="text-align: right;">معلومات عنا</a>
+                        </li>
+                        <li class="nav-item"> <!-- New list item for View Menu -->
+                            <a class="nav-link" href="menu.html" style="text-align: right;">عرض القائمة</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- First Article -->
+                    <article class="article">
+                        <img src="https://mca.dz/wp-content/uploads/2024/06/781C0008-1068x1068.jpg" alt="صورة المقالة 1">
+                        <h2 style="text-align: right;">أخبار الفريق الأول لمولودية الجزائر</h2>
+                        <p>أضاف مدرب مولودية الجزائر عامر بومليل اللاعبين بدر الدين توفي وولاء بوزكري إلى قائمة المعافين.</p>
+                        <a href="https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/" class="btn btn-primary">اقرأ المزيد</a>
+                    </article>
+                    <!-- Second Article -->
+                    <article class="article">
+                        <img src="https://scontent.forn3-5.fna.fbcdn.net/v/t39.30808-6/449749505_497371836001434_6417696445156185338_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGNQYBe9I0v19pvn9v3aeI7LmjVNCJsgLguaNU0ImyAuC35I8bKyd1PvVyCBthr-f7HloI3-RojBNQWjH09o1JX&_nc_ohc=oeybfCP6JUUQ7kNvgFFS9vQ&_nc_ht=scontent.forn3-5.fna&oh=00_AYC7hJ-96EneknXJfJL8slVqQ37Z5TvBNtYoGdaFzdTCYw&oe=66A375CB" alt="صورة المقالة 2">
+                        <h2 style="text-align: right;">أخبار الفريق الأول لمولودية الجزائر</h2>
+                        <p>وفقًا للصحفي محمد لخضر، مفاوضات مولودية الجزائر مع اللاعبين مستمرة وعلى وشك توقيع مدافع أيمن - مدافع أيسر - مركز هجومي - مهاجم.</p>
+                        <a href="https://www.facebook.com/share/p/9493Db2tZYK7hQYF/" class="btn btn-primary">اقرأ المزيد</a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        const body = document.body;
+        const navbarBrand = document.querySelector('.navbar-brand');
+
+        navbarBrand.addEventListener('click', function() {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+            }
+        });
+    </script>
+</body>
+</html>
