@@ -12,9 +12,9 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-image: url('https://mca.dz/wp-content/uploads/2023/07/1689099884716-01-scaled.jpeg '); /* Image de fond */
-            background-size: cover; /* Adapter l'image à la taille de l'écran */
-            background-position: center; /* Centrer l'image de fond */
+            background-image: url('https://mca.dz/wp-content/uploads/2023/07/1689099884716-01-scaled.jpeg');
+            background-size: cover;
+            background-position: center;
             font-family: Arial, sans-serif;
         }
 
@@ -23,7 +23,8 @@
             border: 2px solid #000;
             padding: 20px;
             border-radius: 10px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent pour le contenu */
+            background-color: rgba(255, 255, 255, 0.8);
+            max-width: 80%; /* Adjusted width for responsiveness */
         }
 
         h1 {
@@ -48,6 +49,20 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px; /* Adjusted padding for smaller screens */
+            }
+
+            .loader {
+                width: 40px;
+                height: 40px;
+                border-width: 10px;
+                margin: 10px auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -58,4 +73,3 @@
     </div>
 </body>
 </html>
-  
