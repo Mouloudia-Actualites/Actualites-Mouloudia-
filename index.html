@@ -349,6 +349,22 @@
             height: 100%;
          /* Center text horizontally within .center-container */
         }
+           .button-container {
+            text-align: center; /* Center align the button */
+            margin-top: 20px; /* Adjust spacing as needed */
+        }
+        .button-container button {
+            padding: 10px 20px; /* Adjust padding for the button */
+            background-color: #007bff; /* Primary button color */
+            color: #fff; /* Text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Cursor style */
+            transition: background-color 0.3s; /* Smooth transition on hover */
+        }
+        .button-container button:hover {
+            background-color: #0056b3; /* Darker color on hover */
+        }
 
        
     </style>
@@ -363,9 +379,11 @@
                 </button>
                 <div class="navbar-brand ml-auto">
                     <img src="mca.png" alt="MCA Logo">
-
-                
                 </div>
+                 <div class="button-container" id="buttonContainer">
+         <a href="first.html" class="btn btn-primary btn-lg">العربية</a>
+    </div>
+
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
