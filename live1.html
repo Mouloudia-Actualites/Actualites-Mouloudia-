@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - النتائج المباشرة</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+            direction: rtl; /* Text direction set to right-to-left for Arabic */
+        }
+        h1, h2, h3, p {
+    font-family: 'Cairo', Arial, sans-serif;
+    /* Adjust styles as needed */
+}
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand img {
+            width: 60px;
+            margin-right: 10px;
+            cursor: pointer; /* Make the logo clickable */
+        }
+
+        .navbar-nav {
+            margin-left: auto; /* Align items to the right */
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .live-scores-section {
+            padding: 80px 0;
+        }
+
+        .match {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .match h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center; /* Center the heading */
+        }
+
+        .match .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .match .teams .team {
+            display: flex;
+            align-items: center;
+        }
+
+        .match .teams .team img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .match .score {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .match .status {
+            font-size: 1.1rem;
+            text-align: center; /* Center the status */
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .match {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+
+        body.dark-mode .match .score {
+            color: #fff;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+
+            .match h2 {
+                font-size: 1.5rem;
+            }
+
+            .match .teams {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .match .teams .team img {
+                margin-bottom: 5px;
+            }
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th,
+        table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        table td {
+            background-color: #f8f9fa;
+        }
+
+        /* Dark Mode Table Styles */
+        body.dark-mode table {
+            background-color: #424242;
+            color: #fff;
+        }
+
+        body.dark-mode table th,
+        body.dark-mode table td {
+            border-color: #757575;
+            background-color: #424242;
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-brand">
+                    <img src="mca.png" alt="MCA Logo">
+                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" style="text-align: right;">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news1.html" style="text-align: right;">الأخبار</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="first1.html" style="text-align: right;">الفريق الأول</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reserve1.html" style="text-align: right;">الفريق الثاني</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="histoir1.html" style="text-align: right;">تاريخ مولودية الجزائر</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="live1.html" style="text-align: right;">النتائج المباشرة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="video1.html" style="text-align: right;">فيديوهات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contac1.html" style="text-align: right;">اتصل بنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about1.html" style="text-align: right;">من نحن</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="live-scores-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="match">
+                        <h2>آخر مباراة</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="MCA11.png" alt="شعار الفريق 1">
+                                <span>مولودية الجزائر</span>
+                            </div>
+                            <div class="score">0 - 1</div>
+                            <div class="team">
+                                <span>شباب بلوزداد</span>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="شعار الفريق 2">
+                            </div>
+                        </div>
+                        <div class="status"> 
+                            5 يوليو 2024 الساعة 17:00<br>
+                            ملعب 5 يوليو الجزائر
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="match">
+                        <h2>المباراة القادمة</h2>
+                        <div class="teams">
+                            <div class="team">
+                                <img src="wata.png" alt="شعار الفريق 3">
+                                <span>واتانغا</span>
+                            </div>
+                            <div class="score">0 - 0</div>
+                            <div class="team">
+                                <span>مولودية الجزائر</span>
+                                <img src="MCA11.png" alt="شعار الفريق 4">
+                            </div>
+                        </div>
+                        <div class="status">
+                            16 أغسطس 2024 الساعة 17:00 : <span id="countdown"></span> <br>
+                            لاحقًا
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المباريات القادمة -->
+    <section class="upcoming-matches-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <h3 style="text-align: right;">المباريات القادمة</h3>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>المباراة</th>
+                                        <th>التاريخ والوقت</th>
+                                        <th>الملعب</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="MCA11.png" alt="شعار نادي واتانغا" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                مولودية الجزائر ضد واتنقا
+                                                <img src="wata.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">      
+                                            </div>
+                                        </td>
+                                        <td>23 أغسطس 2024 الساعة 20:00</td>
+                                        <td>ملعب 5 يوليو الجزائر</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="jsk.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                شبيبة القبائل ضد مولودية الجزائر
+                                                <img src="MCA11.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>التاريخ سيتم تحديده لاحقًا</td>
+                                        <td>لتحديد</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="MCA11.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                مولودية الجزائر ضد بارادو
+                                                <img src="pac.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>التاريخ سيتم تحديده لاحقًا</td>
+                                        <td>لتحديد</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="team">
+                                                <img src="csc.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
+                                                شباب قسنطينة ضد مولودية الجزائر
+                                                <img src="MCA11.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
+                                            </div>
+                                        </td>
+                                        <td>التاريخ سيتم تحديده لاحقًا</td>
+                                        <td>لتحديد</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to toggle dark mode and light mode
+        const body = document.body;
+
+        document.querySelector('.navbar-brand').addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+
+        // Script for countdown timer until August 16, 2024, 17:00
+        const countdownDate = new Date('August 16, 2024 17:00:00').getTime();
+        const countdownElement = document.getElementById('countdown');
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdownElement.textContent = `${days} يوم ${hours} ساعة ${minutes} دقيقة ${seconds} ثانية`;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                countdownElement.textContent = 'انتهى';
+            }
+        };
+
+        updateCountdown();
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
+
+
