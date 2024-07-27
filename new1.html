@@ -12,7 +12,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <!-- Inline Styles -->
     <style>
         /* Global styles */
@@ -41,7 +41,6 @@
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-
 
         .news-section {
             padding: 80px 0;
@@ -84,7 +83,7 @@
         }
 
         .article .meta .date {
-            float: ;
+            float: right; /* Align date to right */
         }
 
         .article .btn-primary {
@@ -132,15 +131,9 @@
             color: #fff; /* Green text */
             padding: 20px;
         }
-          .news-section {
-            padding: 80px 0;
-        }
-        
- 
-        
     </style>
 </head>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
 <body>
     <!-- Header with Navbar -->
     <header>
@@ -196,7 +189,6 @@
             </div>
         </div>
     </section>
-  
 
     <!-- Footer Section -->
     <footer class="text-center py-4">
@@ -222,45 +214,41 @@
             }
         });
 
-       // Fonction pour afficher les articles de manière dynamique
-function displayArticles() {
-    const articlesContainer = document.getElementById('articlesContainer');
-    const articles = [
-        {
-            title: ' أهم الاخبار',
-            content:  '  اللاعب السابق لمولودية الجزائر جمال بلعمري يتحدث عن اللاعب طاهر فتح الله : 
-" الطاهر عشت انا معاه و نعرفو مليح . خسر الثقة برك لوكان يرجعها رح يطرطق "
-" بزاف عليه وش راهو يصرالو غير التصفار و الامور السلبية . يدخل خايف من ردة فعل الجمهور هادشي يخليه يخرج من الماتش قبل بدايته "
-" ياك راه يلعب فالمولودية لازم تصفق عليه مشي تبقا تنتاقد بيسك مراحش يفيدك فاي حاجة هاد الانتقاد مدام اللاعب مزالو ففريقك "
-" الطاهر يعرف يلعب واحد مينكر هادشي و لولاه منربحوش مع بارادو في احد اهم المباريات "',
-            imageUrl: 'bel1.jpg',
-            link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
-            date: '27/7/2024',
-            author: 'غير محدد'
-    
-    ];
+        // Function to display articles dynamically
+        function displayArticles() {
+            const articlesContainer = document.getElementById('articlesContainer');
+            const articles = [
+                {
+                    title: 'أهم الأخبار',
+                    content: 'اللاعب السابق لمولودية الجزائر جمال بلعمري يتحدث عن اللاعب طاهر فتح الله: "الطاهر عشت انا معاه و نعرفو مليح. خسر الثقة برك لوكان يرجعها رح يطرطق" "بزاف عليه وش راهو يصرالو غير التصفار والامور السلبية. يدخل خايف من ردة فعل الجمهور هادشي يخليه يخرج من الماتش قبل بدايته" "ياك راه يلعب فالمولودية لازم تصفق عليه مشي تبقا تنتاقد بيسك مراحش يفيدك فاي حاجة هاد الانتقاد مدام اللاعب مزالو ففريقك" "الطاهر يعرف يلعب واحد مينكر هادشي ولولاه منربحوش مع بارادو في احد اهم المباريات"',
+                    imageUrl: 'bel1.jpg',
+                    link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
+                    date: '2024-07-27',
+                    author: 'غير محدد'
+                }
+            ];
 
-    articles.forEach(article => {
-        const articleHTML = `
-            <div class="col-lg-6">
-                <article class="article">
-                    <img src="${article.imageUrl}" alt="${article.title}">
-                    <div class="meta">
-                        <span class="date">${article.date}</span> |
-                        <span class="author">${article.author}</span>
+            articles.forEach(article => {
+                const articleHTML = `
+                    <div class="col-lg-6">
+                        <article class="article">
+                            <img src="${article.imageUrl}" alt="${article.title}">
+                            <div class="meta">
+                                <span class="date">${article.date}</span> |
+                                <span class="author">${article.author}</span>
+                            </div>
+                            <h2>${article.title}</h2>
+                            <p>${article.content}</p>
+                        </article>
                     </div>
-                    <h2>${article.title}</h2>
-                    <p>${article.content}</p>
-                </article>
-            </div>
-        `;
-        articlesContainer.innerHTML += articleHTML;
-    });
-}
+                `;
+                articlesContainer.innerHTML += articleHTML;
+            });
+        }
 
-// Appeler la fonction displayArticles pour afficher les articles au chargement de la page
-displayArticles();
- </script>
+        // Call the displayArticles function to show articles on page load
+        displayArticles();
+    </script>
 </body>
 
 </html>
