@@ -380,145 +380,127 @@
     gap: 20px; /* Space between news items */
 }
 
-/* Styles for each news item */
+.news {
+    display: flex; /* Makes items align in a row */
+    flex-direction: column; /* Makes items align in a column */
+    gap: 20px; /* Space between news items */
+}
+
 .news-item {
-    display: flex; /* Align image and text side by side */
-    align-items: center; /* Center items vertically */
-    background-color: rgba(240, 240, 240, 0.9); /* Transparent gray background */
+     display: flex; /* Aligns image and text side by side */
+    align-items: center; /* Centers items vertically */
+    background-color: rgba(240, 240, 240, 0.9); /* Transparent gray background color */
     padding: 15px; /* Padding inside each news item */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border-radius: 8px; /* Rounded corners for news items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for news items */
     transition: transform 0.2s; /* Smooth hover effect */
-    margin-bottom: 20px; /* Space between news items */
+    margin-bottom: 20px; /* Space between each news item */
     border: 1px solid #ddd; /* Border around news items */
     width: calc(100% - 30px); /* Adjust width to fit within page boundaries */
-    margin: 20px auto; /* Center horizontally and add margin */
+       margin: 20px auto;
 }
-
-/* Hover effect */
 .news-item:hover {
-    transform: translateY(-3px); /* Move item up slightly on hover */
+    transform: translateY(-3px); /* Move the item up slightly on hover */
 }
 
-/* Image styles */
 .news-item img {
     width: 140px; /* Fixed width for the images */
     height: 140px; /* Fixed height for the images */
     margin-right: 15px; /* Space between image and text */
 }
 
-/* Text container */
 .news-text {
     flex: 1; /* Let text take remaining space */
 }
 
-/* Headline styles */
 .news-text h2 {
     font-size: 1.2em; /* Font size for headlines */
     color: #333; /* Text color */
-    margin: 0 0 10px; /* Space below headline */
-    cursor: pointer; /* Pointer cursor */
+    margin: 0 0 10px; /* Space below the headline */
+    cursor: pointer; /* Pointer cursor for clickable elements */
 }
 
-/* Date styles */
 .news-text p {
-    font-size: 0.9em; /* Font size for date */
+    font-size: 0.9em; /* Font size for the date */
     color: #666; /* Text color for date */
-    margin: 0; /* Remove default margin */
+    margin: 0; /* Removes default margin */
 }
 
-/* News item container */
+
 .news-ite {
-    display: flex; /* Align items horizontally */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
-    background-image: url('https://mca.dz/wp-content/uploads/2024/07/2024072411224921-696x554.jpg'); /* Background image */
-    background-size: cover; /* Cover entire container */
-    background-position: center; /* Center the background image */
-    padding: 20px; /* Padding inside news item */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
-    transition: transform 0.2s; /* Smooth transform on hover */
-    position: relative; /* Relative positioning */
-    overflow: hidden; /* Hide overflow */
-    width: calc(100% - 40px); /* Adjust width to fit within page boundaries */
-    margin: 10px auto; /* Center horizontally and add margin */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://mca.dz/wp-content/uploads/2024/07/2024072411224921-696x554.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* Réduire le padding pour les écrans plus petits */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - 40px); /* Ajuster la largeur pour s'adapter aux limites de la page */
+    margin: 10px auto; /* Réduire la marge pour les écrans plus petits */
 }
 
-/* Hover effect on news item */
+@media (max-width: 768px) {
+    .news-ite {
+        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
+        text-align: center; /* Centrer le texte sur les écrans plus petits */
+        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
+        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
+    }
+    
+    .news-ite::after {
+        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
+        display: block;
+        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
+    }
+}
+
 .news-ite:hover {
-    transform: scale(1.02); /* Enlarge slightly on hover */
+    transform: scale(1.02); /* Slightly enlarges the item on hover */
 }
 
-/* Image styles within news item */
 .news-ite img {
-    width: 100px; /* Fixed width for images */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px; /* Fixed width for the images */
+    height: auto; /* Maintains aspect ratio */
     margin-right: 20px; /* Space between image and text */
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px; /* Rounded corners for images */
     z-index: 1; /* Ensure image stays above background */
 }
 
-/* Media query for screens up to 768px (typically phones) */
-@media (max-width: 768px) {
-    /* Adjust news item layout for smaller screens */
-    .news-item {
-        flex-direction: column; /* Stack items vertically */
-        text-align: center; /* Center align text */
-        padding: 15px; /* Adjust padding */
-    }
+.news-tex {
+position: sticky;
+top: 20px;/* Space below .news-tex */
+}
+.news-tex h2 {
+    font-size: 1.9em; /* Font size for headlines */
+    color: #fff; /* Text color */
+    margin: 0 0 10px; /* Space below the headline */
+    cursor: pointer; /* Pointer cursor for clickable elements */
+    position: relative; /* Position relative for pseudo-element */
+}
 
-    /* Maintain aspect ratio of background image */
-    .news-ite::after {
-        content: ""; /* Pseudo-element for aspect ratio */
-        display: block;
-        padding-top: 56.25%; /* 16:9 aspect ratio */
-    }
+.news-tex p {
+    font-size: 1.2em; /* Font size for the date */
+    color: #666; /* Text color for date */
+    margin: 0; /* Removes default margin */
+     position: relative;
+  top: 110px; left: 20px; 
+}
+   .tex-button {
+    background-color: transparent;
 
-    /* Adjust image size for smaller screens */
-    .news-ite img {
-        width: 80px; /* Decrease image size */
-        margin-right: 0; /* Remove margin between image and text */
-        margin-bottom: 10px; /* Space between image and text */
-    }
+    color: #ffffff; /* White text */
+    padding: 0px 0px;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Display as block element */
+   position: relative;
+  top: 100px; left: 20px; /* Position absolute for overlay */
+    transition: background-color 0.3s ease;
 
-    /* Adjust text container positioning */
-    .news-tex {
-        position: sticky;
-        top: 20px; /* Space below .news-tex */
-    }
-
-    /* Headline styles for smaller screens */
-    .news-tex h2 {
-        font-size: 1.9em; /* Larger font size for headlines */
-        color: #fff; /* White text color */
-        margin: 0 0 10px; /* Space below headline */
-        cursor: pointer; /* Pointer cursor */
-        position: relative; /* Relative positioning */
-    }
-
-    /* Date styles for smaller screens */
-    .news-tex p {
-        font-size: 1.2em; /* Larger font size for date */
-        color: #666; /* Text color for date */
-        margin: 0; /* Remove default margin */
-        position: relative; /* Relative positioning */
-        top: 110px;
-        left: 20px;
-    }
-
-    /* Button styles */
-    .tex-button {
-        background-color: transparent; /* Transparent background */
-        color: #ffffff; /* White text color */
-        padding: 0px 0px; /* Padding for button */
-        text-decoration: none; /* Remove underline */
-        display: block; /* Display as block element */
-        position: relative; /* Relative positioning */
-        top: 100px; /* Position from top */
-        left: 20px; /* Position from left */
-        transition: background-color 0.3s ease; /* Smooth transition */
-    }
 }
 
     </style>
