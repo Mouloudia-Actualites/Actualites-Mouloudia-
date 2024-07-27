@@ -434,14 +434,32 @@
     background-image: url('bel.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Réduire le padding pour les écrans plus petits */
+    padding: 20px; /* Reduce padding for smaller screens */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     position: relative;
     overflow: hidden;
-    width: calc(100% - 40px); /* Ajuster la largeur pour s'adapter aux limites de la page */
-    margin: 10px auto; /* Réduire la marge pour les écrans plus petits */
+    width: calc(100% - 40px); /* Adjust width to fit page constraints */
+    margin: 10px auto; /* Reduce margin for smaller screens */
+    position: relative; /* Ensure relative positioning */
+}
+
+.news-ite::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+    border-radius: 8px;
+}
+
+/* Ensure text within .news-item is readable */
+.news-ite h3, .news-ite p {
+    color: #fff; /* Adjust text color for readability */
+    z-index: 1; /* Ensure text is above the overlay */
 }
 
 @media (max-width: 700px) {
@@ -558,7 +576,7 @@ top: 20px;/* Space below .news-tex */
             <div class="news-tex">
                
                  <a href="new1.html" class="tex-button"> <h2>    جمال بلعمري يتحدث عن اللاعب طاهر فتح الله </h2></a>
-                <p>2024-7-24 |  اهم الاخبار</p>
+        
             
             </div>
         </div>
@@ -566,7 +584,7 @@ top: 20px;/* Space below .news-tex */
 
         
         <div class="news-item">
-            <img src="dao.jpg" alt="News Image">
+            <img src="dao1.jpg" alt="News Image">
             <div class="news-text">
                  <a href="firs1.html" class="transparent-button"> <h2>للاعب يوسف داو سافر لفرنسا مع البعثة</h2></a>
                 <p>2024-7-27|خبار الفريق الأول</p>
@@ -574,7 +592,7 @@ top: 20px;/* Space below .news-tex */
         </div>
         
         <div class="news-item">
-            <img src="espoir.jpg" alt="News Image">
+            <img src="espoir1.jpg" alt="News Image">
             <div class="news-text">
              <a href="reser1.html" class="transparent-button"> <h2>المهاجم إلياس بولعربي لاعبًا جديدًا في صفوف رديف مولودية الجزائر </h2></a>
                 <p>2024-07-19|أخبار رديف </p>
