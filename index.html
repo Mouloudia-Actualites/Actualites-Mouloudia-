@@ -421,20 +421,29 @@
 
 
 .news-ite {
-    display: flex; /* Aligns image and text side by side */
-    align-items: center; /* Centers items vertically */
-    justify-content: center; /* Centers items horizontally */
-    background-image: url('https://mca.dz/wp-content/uploads/2024/07/2024072411224921-696x554.jpg'); /* Background image for news items */
-    background-size: cover; /* Ensure the background image covers the entire container */
-    background-position: center; /* Center the background image */
-    padding: 110px 110px; /* Padding inside each news item */
-    border-radius: 8px; /* Rounded corners for news items */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for news items */
-    transition: transform 0.2s; /* Smooth hover effect */
-    position: relative; /* Ensure position is relative for absolute positioning */
-    overflow: hidden; /* Hide any overflow */
-    width: calc(100% - 40px); /* Adjust width to fit within page boundaries */
-    margin: 20px auto; /* Center the box horizontally and add space from top and bottom */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://mca.dz/wp-content/uploads/2024/07/2024072411224921-696x554.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px; /* Reduce padding for smaller screens */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
+    width: calc(100% - 40px);
+    margin: 10px auto; /* Reduce margin for smaller screens */
+}
+
+@media (max-width: 768px) {
+    .news-ite {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center align text on smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin: 10px auto; /* Adjust margin for smaller screens */
+    }
 }
 
 .news-ite:hover {
