@@ -175,45 +175,13 @@
                         <a class="nav-link" href="video1.html"style="text-align: right;" >أشرطة فيديو</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contac1.html" style="text-align: right;">تواصل معي</a>
+                        <a class="nav-link" href="contac1.html" style="text-align: right;">تواصل معنا</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about1.html" style="text-align: right;">معلومات عنا</a>
-                    </li>
-               
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-
-    <!-- News Section -->
-    <section class="news-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- First Article -->
-                    <article class="article">
-                        <img src="https://mca.dz/wp-content/uploads/2024/06/781C0008-696x696.jpg" alt="صورة المقالة 1">
-                        <h2 style="text-align: right;">أخبار الفريق الأول لمولودية الجزائر</h2>
-                        <p>عينت إدارة مولودية الجزائر برئاسة حكيم حاج رجم، السيد رشيد رجراج مديرا عاما للإدارة لفريق مولودية الجزائر.
-
-الإتفاق جاء بعد مفاوضات بين الطرفين، حيث سيخلف المدير العام السابق لشباب قسنطينة المستقيل من منصبه محمد ساعد.
-
-وتم ترسيم تولي رجراج منصب المدير العام اليوم عقب تجديد الثقة في رئيس مجلس الإدارة حاج رجم من طرف الرئيس المدير العام لسونطراك السيد حشيشي، الذي اقترح اسم رجراج لشغل المنصب. وسبق لرجراج أن تولى ذات المنصب في فرق إتحاد العاصمة، النادي الرياضي القسنطيني ، و شبيبة بجاية كمناجير عام.</p>
-                        <a href="https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/" class="btn btn-primary">اقرأ المزيد</a>
-                    </article>
-                    <!-- Second Article -->
-                    <article class="article">
-                        <img src="https://scontent.forn3-5.fna.fbcdn.net/v/t39.30808-6/449749505_497371836001434_6417696445156185338_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGNQYBe9I0v19pvn9v3aeI7LmjVNCJsgLguaNU0ImyAuC35I8bKyd1PvVyCBthr-f7HloI3-RojBNQWjH09o1JX&_nc_ohc=oeybfCP6JUUQ7kNvgFFS9vQ&_nc_ht=scontent.forn3-5.fna&oh=00_AYC7hJ-96EneknXJfJL8slVqQ37Z5TvBNtYoGdaFzdTCYw&oe=66A375CB" alt="صورة المقالة 2">
-                        <h2 style="text-align: right;">أخبار الفريق الأول لمولودية الجزائر</h2>
-                        <p>وفقًا للصحفي محمد لخضر، مفاوضات مولودية الجزائر مع اللاعبين مستمرة وعلى وشك توقيع مدافع أيمن - مدافع أيسر - مركز هجومي - مهاجم.</p>
-                        <a href="https://www.facebook.com/share/p/9493Db2tZYK7hQYF/" class="btn btn-primary">اقرأ المزيد</a>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
  <section class="image-before-icons">
         <div class="container">
             <div class="row">
@@ -223,6 +191,7 @@
             </div>
         </div>
     </section>
+  
     <section class="social-icons">
         <div class="container">
             <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i id="facebook-icon" class="fab fa-facebook-square"></i></a>
@@ -253,6 +222,63 @@
                 body.classList.add('light-mode');
             }
         });
+        function displayArticles() {
+    const articlesContainer = document.getElementById('articlesContainer');
+    const articles = [
+        {
+            title: 'أخبار الفريق الأول لمولودية الجزائر',
+            content: 'السلام عليكم متابعينا الأعزاء الأوفياء، بخصوص آخر مشاركة قمنا بحذفها لأن الكثير من الناس فهموا معناها بشكل خاطئ...',
+            imageUrl: 'https://fennecfootball.com/wp-content/uploads/2023/12/Youcef-Belaili-3-jpg.webp?v=1701658775',
+            link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
+            date: '15/7/2024',
+            author: 'غير محدد'
+        },
+        {
+            title: 'أخبار مولودية الجزائر',
+            content: 'السلام عليكم متابعينا الأعزاء الأوفياء، بخصوص آخر مشاركة قمنا بحذفها لأن الكثير من الناس فهموا معناها بشكل خاطئ...',
+            imageUrl: 'https://mca.dz/wp-content/uploads/2024/07/781C4755-1068x1068.jpg',
+            link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
+            date: '24/7/2024',
+            author: 'غير محدد'
+        },
+        {
+            title: 'عنوان المقالة 3',
+            content: 'نص المقالة 3 يمكن أن يكون هنا، مع تفاصيل مهمة ومحتوى مثير للاهتمام.',
+            imageUrl: 'https://mca.dz/wp-content/uploads/2024/07/781C4755-1068x1068.jpg',
+            link: 'https://www.example.com/article3',
+            date: '1/8/2024',
+            author: 'المؤلف المجهول'
+        },
+        {
+            title: 'عنوان المقالة 4',
+            content: 'نص المقالة 4 يمكن أن يكون هنا، مع تفاصيل مهمة ومحتوى مثير للاهتمام.',
+            imageUrl: 'https://mca.dz/wp-content/uploads/2024/07/781C4755-1068x1068.jpg',
+            link: 'https://www.example.com/article4',
+            date: '5/8/2024',
+            author: 'المؤلف المجهول'
+        }
+    ];
+
+    articles.forEach(article => {
+        const articleHTML = `
+            <div class="col-lg-6">
+                <article class="article">
+                    <img src="${article.imageUrl}" alt="${article.title}">
+                    <div class="meta">
+                        <span class="date">${article.date}</span> |
+                        <span class="author">${article.author}</span>
+                    </div>
+                    <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                </article>
+            </div>
+        `;
+        articlesContainer.innerHTML += articleHTML;
+    });
+}
+
+// Appeler la fonction displayArticles pour afficher les articles au chargement de la page
+displayArticles();
     </script>
 </body>
 </html>
