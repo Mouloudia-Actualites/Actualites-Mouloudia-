@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        /* Section for Social Icons */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 24px; /* Icon size */
+            margin: 0 10px; /* Space between icons */
+            color: #343a40; /* Default icon color */
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #dc3545; /* Icon color on hover */
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand img {
+            width: 60px; /* Adjust logo size for larger screens */
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1); /* Example border color */
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            text-align: right; /* Right align text */
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .news-section {
+            padding: 80px 0;
+        }
+
+        .article {
+            margin-bottom: 40px;
+            text-align: right; /* Align text to right */
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: right; /* Align heading to right */
+        }
+
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
+
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
+        }
+
+        h2, p, a {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Header with Navbar -->
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container">
+            <a class="navbar-brand mr-auto" href="#">
+                <img src="mca.png" alt="MCA Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-auto" id="navbarCollapse">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="text-align: right;">الصفحة الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news1.html" style="text-align: right;">أخبار</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="first1.html" style="text-align: right;">الفريق الأول</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="reserve1.html" style="text-align: right;">فريق الرديف</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="histoir1.html" style="text-align: right;">تاريخ مولودية الجزائر</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="live1.html" style="text-align: right;">نتائج مباشرة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="video1.html" style="text-align: right;">أشرطة فيديو</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contac1.html" style="text-align: right;">تواصل معنا</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="news-section">
+    <div class="container">
+        <div class="row" id="articlesContainer">
+            <!-- Articles will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
+<section class="image-before-icons">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="mca2.jpg" class="img-fluid" alt="Image Description">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="social-icons">
+    <div class="container">
+        <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/mouloudia__actualites?igsh=MWhvZXVsbzkxOTRmaA==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@mouloudiaactualites?si=idNCKDhmknjI_uHD"><i class="fab fa-youtube"></i></a>
+    </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="text-center py-4">
+    <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Dark Mode Toggle Script -->
+<script>
+    const body = document.body;
+    const navbarBrand = document.querySelector('.navbar-brand');
+
+    navbarBrand.addEventListener('click', function() {
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        }
+    });
+
+    function displayArticles() {
+        const articlesContainer = document.getElementById('articlesContainer');
+        const articles = [
+            {
+                title: 'أخبار الفريق الأول لمولودية الجزائر',
+                content: 'للاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص',
+                imageUrl: 'dao.jpg',
+                link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
+                date: '2024/7/27',
+                author: 'غير محدد'
+            },
+        
+        ];
+
+        articles.forEach(article => {
+            const articleHTML = `
+                <div class="col-lg-6">
+                    <article class="article">
+                        <img src="${article.imageUrl}" alt="${article.title}">
+                        <div class="meta">
+                            <span class="date">${article.date}</span> |
+                            <span class="author">${article.author}</span>
+                        </div>
+                        <h2>${article.title}</h2>
+                        <p>${article.content}</p>
+                    </article>
+                </div>
+            `;
+            articlesContainer.innerHTML += articleHTML;
+        });
+    }
+
+    // Call displayArticles function to load articles on page load
+    displayArticles();
+</script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>
