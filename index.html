@@ -427,22 +427,28 @@
     background-image: url('https://mca.dz/wp-content/uploads/2024/07/2024072411224921-696x554.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Reduce padding for smaller screens */
+    padding: 20px; /* Réduire le padding pour les écrans plus petits */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     position: relative;
     overflow: hidden;
-    width: calc(100% - 40px);
-    margin: 10px auto; /* Reduce margin for smaller screens */
+    width: calc(100% - 40px); /* Ajuster la largeur pour s'adapter aux limites de la page */
+    margin: 10px auto; /* Réduire la marge pour les écrans plus petits */
 }
 
 @media (max-width: 768px) {
     .news-ite {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        text-align: center; /* Center align text on smaller screens */
-        padding: 15px; /* Adjust padding for smaller screens */
-        margin: 10px auto; /* Adjust margin for smaller screens */
+        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
+        text-align: center; /* Centrer le texte sur les écrans plus petits */
+        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
+        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
+    }
+    
+    .news-ite::after {
+        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
+        display: block;
+        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
     }
 }
 
@@ -602,22 +608,6 @@ top: 20px;/* Space below .news-tex */
             </div>
         </div>
     </section>
-   <section class="intro-section">
-    
-        <div class="row">
-            <div class="col-md-12 center-text">
-             
-            </div>
-        </div>
-       <div class="container-fluid center-container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="https://mca.dz/wp-content/uploads/2023/07/600x300-MCA-Trophet-Final-aout.png" alt="Description de l'image">
-            </div>
-        </div>
-    </div>
-</section>
-
       <!-- Live Scores Section -->
     <section class="live-scores-section">
         <div class="container">
