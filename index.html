@@ -302,7 +302,7 @@
         
         .blogs-section {
             padding: 60px 0;
-            background-color: #f8f9fa;
+            background-color: ; /* Gris avec 50% de transparence */
             text-align: center;
         }
         
@@ -312,8 +312,9 @@
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-        }
-        
+           background-color: rgba(255, 255, 0, 0.5);
+           background-color:  hsla(0, 0%, 0%, 0); 
+        } 
         .blog img {
             max-width: 100%;
             height: auto;
@@ -324,6 +325,7 @@
         .blog h3 {
             margin-top: 10px;
             font-size: 1.5rem;
+            color: black;
         }
         
         .blog:hover img {
@@ -371,9 +373,112 @@
     background-color: white; /* Black background on hover */
     color: black; /* White text color on hover */
 }
- /* Centered Button Styles */
+.news {
+    display: flex; /* Makes items align in a row */
+    flex-direction: column; /* Makes items align in a column */
+    gap: 20px; /* Space between news items */
+}
 
-       
+.news-item {
+     display: flex; /* Aligns image and text side by side */
+    align-items: center; /* Centers items vertically */
+    background-color: rgba(240, 240, 240, 0.9); /* Transparent gray background color */
+    padding: 15px; /* Padding inside each news item */
+    border-radius: 8px; /* Rounded corners for news items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for news items */
+    transition: transform 0.2s; /* Smooth hover effect */
+    margin-bottom: 20px; /* Space between each news item */
+    border: 1px solid #ddd; /* Border around news items */
+    width: calc(100% - 30px); /* Adjust width to fit within page boundaries */
+       margin: 20px auto;
+}
+.news-item:hover {
+    transform: translateY(-3px); /* Move the item up slightly on hover */
+}
+
+.news-item img {
+    width: 140px; /* Fixed width for the images */
+    height: 140px; /* Fixed height for the images */
+    margin-right: 15px; /* Space between image and text */
+}
+
+.news-text {
+    flex: 1; /* Let text take remaining space */
+}
+
+.news-text h2 {
+    font-size: 1.2em; /* Font size for headlines */
+    color: #333; /* Text color */
+    margin: 0 0 10px; /* Space below the headline */
+    cursor: pointer; /* Pointer cursor for clickable elements */
+}
+
+.news-text p {
+    font-size: 0.9em; /* Font size for the date */
+    color: #666; /* Text color for date */
+    margin: 0; /* Removes default margin */
+}
+
+
+.news-ite {
+    display: flex; /* Aligns image and text side by side */
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    background-image: url('https://mca.dz/wp-content/uploads/2024/07/2024072411224921-696x554.jpg'); /* Background image for news items */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the background image */
+    padding: 120px 120px; /* Padding inside each news item */
+    border-radius: 8px; /* Rounded corners for news items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for news items */
+    transition: transform 0.2s; /* Smooth hover effect */
+    position: relative; /* Ensure position is relative for absolute positioning */
+    overflow: hidden; /* Hide any overflow */
+    width: calc(100% - 40px); /* Adjust width to fit within page boundaries */
+    margin: 20px auto; /* Center the box horizontally and add space from top and bottom */
+}
+
+.news-ite:hover {
+    transform: scale(1.02); /* Slightly enlarges the item on hover */
+}
+
+.news-ite img {
+    width: 100px; /* Fixed width for the images */
+    height: auto; /* Maintains aspect ratio */
+    margin-right: 20px; /* Space between image and text */
+    border-radius: 8px; /* Rounded corners for images */
+    z-index: 1; /* Ensure image stays above background */
+}
+
+.news-tex {
+position: sticky;
+top: 20px;/* Space below .news-tex */
+}
+.news-tex h2 {
+    font-size: 1.9em; /* Font size for headlines */
+    color: #fff; /* Text color */
+    margin: 0 0 10px; /* Space below the headline */
+    cursor: pointer; /* Pointer cursor for clickable elements */
+    position: relative; /* Position relative for pseudo-element */
+}
+
+.news-tex p {
+    font-size: 1.2em; /* Font size for the date */
+    color: #666; /* Text color for date */
+    margin: 0; /* Removes default margin */
+     position: relative;
+  top: 110px; left: 20px; 
+}
+   .tex-button {
+    background-color: transparent;
+
+    color: #ffffff; /* White text */
+    padding: 0px 0px;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Display as block element */
+   position: relative;
+  top: 100px; left: 20px; /* Position absolute for overlay */
+    transition: background-color 0.3s ease;
+}
     </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
@@ -422,14 +527,38 @@
     </nav>
 </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>مرحبا بكم في  Mouloudia Actualités</h1>
-            <p>مصدرك النهائي للأخبار الرياضية والنتائج المباشرة.</p>
+   <!-- Hero Section -->
+<section class="hero">
+    <div class="news">
+        <div class="news-ite">
+            <div class="news-tex">
+               
+                 <a href="video.html" class="tex-button"> <h2>رفض السيد حشيشي إستقالة حاج رجم</h2></a>
+                <p>2024-7-24 | أخبار</p>
             
+            </div>
         </div>
-    </section>
+    </div>
+
+        
+        <div class="news-item">
+            <img src="https://fennecfootball.com/wp-content/uploads/2023/12/Youcef-Belaili-3-jpg.webp?v=1701658775" alt="News Image">
+            <div class="news-text">
+                 <a href="first1.html" class="transparent-button"> <h2>السلام عليكم متابعينا الأعزاء الأوفياء، بخصوص آخر مشاركة قمنا بحذفها لأن الكثير من الناس فهموا معناها بشكل خاطئ<</h2></a>
+                <p>2024-7-25|خبار الفريق الأول</p>
+            </div>
+        </div>
+        
+        <div class="news-item">
+            <img src="https://mca.dz/wp-content/uploads/2023/11/IMG-20231130-WA0000-696x521.jpg" alt="News Image">
+            <div class="news-text">
+             <a href="reserve1.html" class="transparent-button"> <h2>ارس مرمى وفاق سطيف والمنتخب الوطني لأقل من 20 سنة، أكاش يانيس، ينضم إلى مولودية الجزائر<</h2></a>
+                <p>2024-02-01|أخبار رديف </p>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 
 
@@ -440,7 +569,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="blog">
                         <a href="news1.html" target="_blank">
-                            <img src="news3.jpg" alt="Blog 1">
+                           <img src="news3.jpg" alt="Blog 2">
                             <h3>أحدث الأخبار</h3>
                         </a>
                     </div>
@@ -612,10 +741,11 @@
             body.classList.toggle('dark-mode');
             
         });
-
         // Remove previously mentioned dark mode toggle button event
         const toggleButton = document.querySelector('.btn-primary');
         toggleButton.parentNode.removeChild(toggleButton);
+
+
     </script>
 </body>
 
