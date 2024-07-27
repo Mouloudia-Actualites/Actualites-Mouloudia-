@@ -233,38 +233,40 @@
     function displayArticles() {
         const articlesContainer = document.getElementById('articlesContainer');
         const articles = [
-            {
-                title: 'أخبار الفريق الأول لمولودية الجزائر',
-                content: 'السلام عليكم متابعينا الأعزاء الأوفياء، بخصوص آخر مشاركة قمنا بحذفها لأن الكثير من الناس فهموا معناها بشكل خاطئ...',
-                imageUrl: 'https://fennecfootball.com/wp-content/uploads/2023/12/Youcef-Belaili-3-jpg.webp?v=1701658775',
-                link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
-                date: '2024/7/25',
-                author: 'غير محدد'
-            },
-            {
-                title: 'أخبار مولودية الجزائر',
-                content: 'السلام عليكم متابعينا الأعزاء الأوفياء، بخصوص آخر مشاركة قمنا بحذفها لأن الكثير من الناس فهموا معناها بشكل خاطئ...',
-                imageUrl: 'https://mca.dz/wp-content/uploads/2024/07/781C4755-1068x1068.jpg',
-                link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
-                date: '2024/7/24',
-                author: 'غير محدد'
-            },
-            {
-                title: 'عنوان المقالة 3',
-                content: 'نص المقالة 3 يمكن أن يكون هنا، مع تفاصيل مهمة ومحتوى مثير للاهتمام.',
-                imageUrl: 'https://mca.dz/wp-content/uploads/2024/07/781C4755-1068x1068.jpg',
-                link: 'https://www.example.com/article3',
-                date: '2024/8/1',
-                author: 'المؤلف المجهول'
-            },
-            {
-                title: 'عنوان المقالة 4',
-                content: 'نص المقالة 4 يمكن أن يكون هنا، مع تفاصيل مهمة ومحتوى مثير للاهتمام.',
-                imageUrl: 'https://mca.dz/wp-content/uploads/2024/07/781C4755-1068x1068.jpg',
+                  {
+                title: 'اخبار اليوم',
+                content: 'تعداد العميد شهد غياب حمزة موالي بسبب الخدمة العسكرية , إضافة إلى الحارس موساوي الذي يعاني من مشكل في تأشيرة الخروج من أرض الوطن , و أخيرا يوسف بلايلي الذي يقترب من المغادرة إثر بيعه ',
+                imageUrl: 'news1.jpg',
                 link: 'https://www.example.com/article4',
-                date: '2024/8/5',
-                author: 'المؤلف المجهول'
-            }
+                date: '',
+                author: '27/07/2024 '
+            },
+            
+        {
+            title: 'اخبار اليوم',
+            content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص ',
+            imageUrl: 'dao1.jpg',
+            link: 'https://www.example.com/article3',
+            date: '27/07/2024',
+            author: ''
+        },
+        {
+            title: 'اخبار اليوم',
+            content: 'اللاعب يوسف بلايلي يراسل إدارة مولودية الجزائر بقيادة الرئيس حكيم حاج رجم و يؤكد أنه كان مريضا و هذا سبب غيابه عن التدريبات و عن سفرية رين',
+            imageUrl: 'blob:https://www.facebook.com/2e5744f0-10bc-441b-a9e2-2cfab9a56124',
+            link: 'https://www.example.com/article4',
+            date: '27/7/2024',
+            author: ''
+        },
+
+      {
+            title: 'اخبار السابقة',
+            content: 'مركز تدريبات مولودية الجزائر بزرالدة سيدشن يوم 7 اوت المقبل',
+            imageUrl: 'news3.jpg',
+            link: 'https://www.facebook.com/share/p/GECWNgNzEtVV8wex/',
+            date: '24/7/2024',
+            author: ''
+        },
         ];
 
         articles.forEach(article => {
