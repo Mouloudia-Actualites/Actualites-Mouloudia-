@@ -697,7 +697,7 @@ top: 20px;/* Space below .news-tex */
 }
 
 .lang-btn.active {
-    background-color: #007bff; /* Blue color for active button */
+ background-image: url('green.jpg') ; 
 }
 
 .lang-btn:hover {
@@ -737,21 +737,20 @@ top: 20px;/* Space below .news-tex */
                 <div class="navbar-brand mr-auto">
                     <img src="logo.png" alt="MCA Logo">
                 </div>
+                <div class="fullscreen-menu-content">
+        <div class="language-switch">
+            <button class="lang-btn active" data-lang="ar">ar</button>
+            <button class="lang-btn" data-lang="en">en</button>
+        </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
         </nav>
     </header>
-
   <!-- Fullscreen Menu -->
 <div class="fullscreen-menu" id="fullscreenMenu">
     <span class="close-btn">&times;</span><!-- زر الإغلاق في سطر واحد مع فاصل -->
-    <div class="fullscreen-menu-content">
-        <div class="language-switch">
-            <button class="lang-btn active" data-lang="ar">ar</button>
-            <button class="lang-btn" data-lang="en">en</button>
-        </div>
         <ul class="menu-list">
             <li><a href="index.html">الصفحة الرئيسية</a></li>
             <li><a href="news1.html">أخبار</a></li>
