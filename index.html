@@ -533,25 +533,8 @@
     z-index: 1; /* Ensure text is above the overlay */
 }
 
-@media (max-width: 700px) {
-    .news-ite {
-        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
-        text-align: center; /* Centrer le texte sur les écrans plus petits */
-        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
-        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
-    }
-    
-    .news-ite::after {
-        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
-        display: block;
-        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
-    }
-}
-
-.news-ite:hover {
-    transform: scale(1.02); /* Slightly enlarges the item on hover */
-}
-
+ 
+ 
 .news-ite img {
     width: 100px; /* Fixed width for the images */
     height: auto; /* Maintains aspect ratio */
@@ -581,26 +564,16 @@ top: 20px;/* Space below .news-tex */
 }
   .tex-button {
     background-color: transparent;
-    color: #ffffff; /* White text */
-    padding: 10px 20px; /* Adjust padding as needed */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Display as inline-block */
-    position: relative;
-    transition: background-color 0.3s ease;
-    text-align: center; /* Center text horizontally */
-    margin: 0 auto; /* Center horizontally */
-    bottom: 20px; /* Position at the bottom */
-}
 
-@media only screen and (max-width: 700px) {
-    .tex-button {
-        font-size: 14px; /* Adjust font size for smaller screens */
-        padding: 8px 16px; /* Adjust padding for smaller screens */
-        position: fixed; /* Fixed position for bottom */
-        width: calc(100% - 40px); /* Full width minus margins */
-        left: 20px; /* Margin from the left */
-        bottom: 20px; /* Margin from the bottom */
-    }
+    color: #ffffff; /* White text */
+    padding: 0px 0px;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Display as block element */
+   position: relative;
+  top: 100px; left: 20px; /* Position absolute for overlay */
+    transition: background-color 0.3s ease;
+
+}
 }
 
 
