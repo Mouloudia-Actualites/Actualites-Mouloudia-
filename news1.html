@@ -271,6 +271,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Dark Mode Toggle Script -->
     <script>
+          // Close the menu when clicking outside of it
+            $(document).mouseup(function (e) {
+                var container = $("#fullscreenMenu");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.removeClass('open');
+                }
+            });
+
+            // Close the menu when close button is clicked
+            $('.close-btn').click(function () {
+                $('#fullscreenMenu').removeClass('open');
+            });
+        });
         const body = document.body;
         const navbarBrand = document.querySelector('.navbar-brand');
 
@@ -339,24 +352,7 @@ function displayArticles() {
         articlesContainer.innerHTML += articleHTML;
     });
 }
-   // JavaScript to toggle fullscreen menu
-        $(document).ready(function () {
-            $('.navbar-toggler').click(function () {
-                $('#fullscreenMenu').toggleClass('open');
-            });
-
-            // Close the menu when clicking outside of it
-            $(document).mouseup(function (e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
-
-            // Close the menu when close button is clicked
-            $('.close-btn').click(function () {
-                $('#fullscreenMenu').removeClass('open');
-            });
+  
 // Appeler la fonction displayArticles pour afficher les articles au chargement de la page
 displayArticles();
  </script>
