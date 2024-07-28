@@ -17,14 +17,15 @@
         /* Global styles */
                body {
             font-family: 'Cairo', Arial, sans-serif;
-            background-color: #f8f9fa;
+          background-image: url('green.jpg')
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
             position: relative; /* Ensure body has relative position for absolute positioning */
         }
 
+
         .navbar {
-            background-color: #343a40;
+           background-image: url('green.jpg') 
         }
 
         .navbar-brand img {
@@ -109,67 +110,149 @@
 }      
      
         
-        .live-scores-section {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-            text-align: center;
-            border: 1px solid #dee2e6; /* Bordure de 1 pixel solide avec une couleur grise */
-            border-radius: 5px; /* Coins arrondis */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
-            margin-top: 30px; /* Espacement supplémentaire en haut */
+       <!-- Live Scores Section -->
+   /* Live Scores Section */
+.live-scores-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.match {
+    margin-bottom: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+}
+
+.team img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: bold;
+       text-align: center;
+}
+
+.status {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.match .team-name {
+    font-size: 1rem;
+    margin-left: 10px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode .live-scores-section {
+    background-color: #343a40;
+}
+
+body.dark-mode .match {
+    background-color: #424242;
+    color: #fff;
+}
+
+body.dark-mode .score {
+    color: #fff;
+}
+
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
         }
-        
-        body[dir="rtl"] {
-              font-family: 'Cairo', Arial, sans-serif;
+
+        body.dark-mode .navbar {
+            background-color: #212529;
         }
-        
-        
-        
-        .live-scores-section {
-            padding: 60px 0;
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
         }
-        
-        .match {
-            margin-bottom: 30px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
         }
-        
-        .match h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+
+        body.dark-mode .match {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
         }
-        
-        .match .teams {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+
+        body.dark-mode .match .score {
+            color: #fff;
         }
-        
-        .match .teams .team {
-            display: flex;
-            align-items: center;
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            .live-scores-section {
+                padding: 20px 0; /* Reduce vertical spacing */
+            }
+
+            .match {
+                padding: 15px; /* Reduce inner padding */
+            }
+
+            .match h2 {
+                font-size: 1.2rem; /* Reduce title size */
+                margin-bottom: 8px; /* Reduce bottom margin of title */
+            }
+
+            .match .teams {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .match .teams .team {
+                margin-bottom: 5px; /* Reduce space between teams */
+            }
+
+            .match .teams .team img {
+                width: 25px; /* Reduce logo size */
+                height: 25px;
+                margin-right: 5px; /* Reduce space between logo and text */
+            }
+
+            .match .score {
+                font-size: 1.2rem; /* Reduce score size */
+            }
+
+            .match .status {
+           
+            }
         }
-        
-        .match .teams .team img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
-        
-        .match .score {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .match .status {
-            font-size: 1.1rem;
-        }
-        
         /* Dark Mode Styles */
         
         body.dark-mode {
@@ -674,68 +757,48 @@ top: 20px;/* Space below .news-tex */
 
 
    
-      <!-- Live Scores Section -->
-<br>    <section class="live-scores-section">
-        <div class="container">
-            <h2>نتائج المباريات</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="match">
-                        <h2>نهائي كأس الجزائر</h2>
-                        <div class="teams">
-                            <div class="team">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/CRB-2022.png/600px-CRB-2022.png" alt="Team 1">
-                                <span>شباب بلوزداد</span>
-                            </div>
-                            <div class="score">1 - 0</div>
-                            <div class="team">
-                                <img src="MCA11.png" alt="Team 2">
-                                <span>مولودية الجزائر</span>
-                            </div>
-                        </div>
-                        <div class="status">5 يوليو 2024</div>
-                        <p>ملعب 5 جويلية 1962</p>
-                    </div>
+     <section class="live-scores-section">
+    <div class="container">
+        <div class="match">
+            <h2>آخر مباراة</h2>
+            <div class="teams">
+                <div class="team">
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/88/MCA_logo.png/402px-MCA_logo.png?20210113233730" alt="شعار مولودية الجزائر">
+                    <span class="team-name">مولودية الجزائر</span>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="match">
-                        <h2>دوري أبطال أفريقيا</h2>
-                        <div class="teams">
-                            <div class="team">
-                                <img src="wata.png" alt="Team 3">
-                                <span>واتانغا</span>
-                            </div>
-                            <div class="score">0 - 0</div>
-                            <div class="team">
-                                <img src="MCA11.png" alt="Team 4">
-                                <span>مولودية الجزائر</span>
-                            </div>
-                        </div>
-                        <div class="status">23 أغسطس 2024</div>
-                        <p>لم يحدد بعد</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="match">
-                        <h2>دوري أبطال أفريقيا</h2>
-                        <div class="teams">
-                            <div class="team">
-                                <img src="MCA11.png" alt="Team 5">
-                                <span>مولودية الجزائر</span>
-                            </div>
-                            <div class="score">0 - 0</div>
-                            <div class="team">
-                                <img src="wata.png" alt="Team 6">
-                                <span>واتانغا</span>
-                            </div>
-                        </div>
-                        <div class="status">16 أغسطس 2024</div>
-                        <p>لم يحدد بعد</p>
-                    </div>
+                <div class="score">0 - 1</div>
+                <div class="team">
+                    <span class="team-name">شباب بلوزداد</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/CRB-2022.png" alt="شعار شباب بلوزداد">
                 </div>
             </div>
+            <div class="status">
+        17:00       5 يوليو 2024 <br>
+                ملعب 5 يوليو الجزائر
+            </div>
         </div>
-    </section><br>
+    </div>
+     <div class="container">
+        <div class="match">
+            <h2>مباراة  القادمة</h2>
+            <div class="teams">
+                <div class="team">
+                    <img src="https://file.mackolikfeeds.com/teams/24163" alt="شعار مولودية الجزائر">
+                    <span class="team-name">واتانجا</span>
+                </div>
+                <div class="score">0 - 0</div>
+                <div class="team">
+                    <span class="team-name">مولودية الجزائر</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/88/MCA_logo.png/402px-MCA_logo.png?20210113233730" alt="شعار شباب بلوزداد">
+                </div>
+            </div>
+            <div class="status">
+                     17:00   16 اوت 2024 <br>
+                لم يحدد بعد
+            </div>
+        </div>
+    </div>
+</section>
   <br>   <section class="image-before-icons">
         <div class="container">
             <div class="row">
