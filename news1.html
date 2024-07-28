@@ -64,13 +64,15 @@
             display: block; /* Display when open */
         }
 
+       
         .fullscreen-menu-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center; /* Center-align text */
-        }
+    position: absolute;
+    top: 6px; /* تعديل حسب الحاجة */
+    right: 10px; /* تعديل حسب الحاجة */
+    transform: translate(0, 0); /* تعديل حسب الحاجة */
+    text-align: right; /* توجيه النص إلى اليمين */
+}
+
 
         .fullscreen-menu-content ul {
             list-style-type: none;
@@ -94,14 +96,14 @@
             color: #ccc;
         }
 
-        .close-btn {
-            position: absolute;
-            top: 10px; /* Adjust top position */
-            right: 10px; /* Adjust right position */
-            color: #fff; /* Adjust color */
-            font-size: 50px; /* Adjust font size */
-            cursor: pointer;
-        }
+ .close-btn {
+    position: absolute;
+    top: 2px; /* تعديل حسب الحاجة */
+    left: 10px; /* تعديل لتحديد الزاوية اليسرى */
+    color: #fff; /* تعديل لون النص */
+    font-size: 50px; /* تعديل حجم الخط */
+    cursor: pointer;
+}    
 
         /* Section for Social Icons */
         .social-icons {
@@ -216,23 +218,21 @@
             </div>
         </nav>
     </header>
-
-    <!-- Fullscreen Menu -->
-    <div class="fullscreen-menu" id="fullscreenMenu">
-        <span class="close-btn">&times;</span>
-        <div class="fullscreen-menu-content">
-            <ul>
-                <li><a href="index.html">الصفحة الرئيسية</a></li>
-                <li><a href="news1.html">أخبار</a></li>
-                <li><a href="first1.html">الفريق الأول</a></li>
-                <li><a href="reserve1.html">فريق الرديف</a></li>
-                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
-                <li><a href="live1.html">نتائج مباشرة</a></li>
-                <li><a href="video1.html">أشرطة فيديو</a></li>
-                <li><a href="contac1.html">تواصل معنا</a></li>
-            </ul>
-        </div>
+ <div class="fullscreen-menu" id="fullscreenMenu">
+    <span class="close-btn">&times;</span><!-- زر الإغلاق في سطر واحد مع فاصل -->
+    <div class="fullscreen-menu-content">
+        <ul><br><br>
+            <li><a href="index.html">الصفحة الرئيسية</a></li>
+            <li><a href="news1.html">أخبار</a></li>
+            <li><a href="first1.html">الفريق الأول</a></li>
+            <li><a href="reserve1.html">فريق الرديف</a></li>
+            <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+            <li><a href="live1.html">نتائج مباشرة</a></li>
+            <li><a href="video1.html">أشرطة فيديو</a></li>
+            <li><a href="contac1.html">تواصل معنا</a></li>
+        </ul>
     </div>
+</div>
 <section class="news-section">
     <div class="container">
         <div class="row" id="articlesContainer">
