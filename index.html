@@ -580,18 +580,29 @@ top: 20px;/* Space below .news-tex */
      position: relative;
   top: 110px; left: 20px; 
 }
-   .tex-button {
+  .tex-button {
     background-color: transparent;
-
     color: #ffffff; /* White text */
-    padding: 0px 0px;
+    padding: 10px 20px; /* Adjust padding as needed */
     text-decoration: none; /* Remove underline */
-    display: block; /* Display as block element */
-   position: relative;
-  top: 100px; left: 20px; /* Position absolute for overlay */
+    display: inline-block; /* Display as inline-block */
+    position: relative;
     transition: background-color 0.3s ease;
-
+    text-align: center; /* Center text horizontally */
+    margin: 0 auto; /* Center horizontally */
 }
+
+@media only screen and (max-width: 600px) {
+    .tex-button {
+        font-size: 14px; /* Adjust font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        top: 0; /* Reset top position */
+        left: 0; /* Reset left position */
+        position: static; /* Reset position to normal flow */
+        display: block; /* Display as block on smaller screens */
+    }
+}
+
 
     </style>
 </head>
