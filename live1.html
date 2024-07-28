@@ -9,42 +9,105 @@
     <link rel="icon" type="image/x-icon" href="mca.png">
     <style>
         /* Global styles */
-        body {
+  body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
-            direction: rtl; /* Text direction set to right-to-left for Arabic */
+            position: relative; /* Ensure body has relative position for absolute positioning */
         }
-        h1, h2, h3, p {
-    font-family: 'Cairo', Arial, sans-serif;
-    /* Adjust styles as needed */
-}
 
         .navbar {
             background-color: #343a40;
         }
 
         .navbar-brand img {
-            width: 60px;
-            margin-right: 10px;
-            cursor: pointer; /* Make the logo clickable */
+            width: 60px; /* Adjust logo size for larger screens */
         }
 
-        .navbar-nav {
-            margin-left: right; /* Align items to the right */
+        .navbar-dark .navbar-toggler {
+            border: none;
+            color: white;
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #343a40;
+            width: 24px;
+            height: 17px;
         }
 
         .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
+            color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
-                text-align: right;
+            text-align: right; /* Right-align text */
         }
 
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+
+        /* Fullscreen menu styles */
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            z-index: 1000; /* Ensure it's above other content */
+            display: none; /* Initially hidden */
+            overflow-y: auto; /* Enable scrolling */
+        }
+
+        .fullscreen-menu.open {
+            display: block; /* Display when open */
+        }
+
+        .fullscreen-menu-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center; /* Center-align text */
+        }
+
+        .fullscreen-menu-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .fullscreen-menu-content ul li {
+            margin-bottom: 10px;
+        }
+
+        .fullscreen-menu-content ul li a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 10px;
+        }
+
+        .fullscreen-menu-content ul li a:hover {
+            color: #ccc;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px; /* Adjust top position */
+            right: 10px; /* Adjust right position */
+            color: #fff; /* Adjust color */
+            font-size: 50px; /* Adjust font size */
+            cursor: pointer;
+        }
+
+          h1, h2, h3, p {
+    font-family: 'Cairo', Arial, sans-serif;
+    /* Adjust styles as needed */
+}
+
 
         .live-scores-section {
             padding: 80px 0;
@@ -179,48 +242,37 @@
 </head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
 
-<body>
+<body>   
+   <!-- Header with Navbar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-brand">
+                <div class="navbar-brand mr-auto">
                     <img src="mca.png" alt="MCA Logo">
                 </div>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html" style="text-align: right;">الصفحة الرئيسية</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="news1.html" style="text-align: right;">الأخبار</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="first1.html" style="text-align: right;">الفريق الأول</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="reserve1.html" style="text-align: right;">الفريق الثاني</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="histoir1.html" style="text-align: right;">تاريخ مولودية الجزائر</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="live1.html" style="text-align: right;">النتائج المباشرة</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="video1.html" style="text-align: right;">فيديوهات</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contac1.html" style="text-align: right;">تواصل معنا</a>
-                        </li>
-                    </ul>
-                </div>
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </nav>
     </header>
+
+    <!-- Fullscreen Menu -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-btn">&times;</span>
+        <div class="fullscreen-menu-content">
+            <ul>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="news1.html">أخبار</a></li>
+                <li><a href="first1.html">الفريق الأول</a></li>
+                <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+                <li><a href="live1.html">نتائج مباشرة</a></li>
+                <li><a href="video1.html">أشرطة فيديو</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </div>
 
     <section class="live-scores-section">
         <div class="container">
@@ -355,6 +407,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
+        // Close the fullscreen menu when clicking outside of it or on close button
+        $(document).ready(function() {
+            // Toggle fullscreen menu
+            $('.navbar-toggler').click(function() {
+                $('#fullscreenMenu').toggleClass('open');
+            });
+
+            // Close the fullscreen menu when clicking outside of it
+            $(document).mouseup(function(e) {
+                var container = $("#fullscreenMenu");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.removeClass('open');
+                }
+            });
+
+            // Close the fullscreen menu when close button is clicked
+            $('.close-btn').click(function() {
+                $('#fullscreenMenu').removeClass('open');
+            });
+        });
         // Script to toggle dark mode and light mode
         const body = document.body;
 
