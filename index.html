@@ -590,18 +590,21 @@ top: 20px;/* Space below .news-tex */
     transition: background-color 0.3s ease;
     text-align: center; /* Center text horizontally */
     margin: 0 auto; /* Center horizontally */
+    bottom: 20px; /* Position at the bottom */
 }
 
 @media only screen and (max-width: 600px) {
     .tex-button {
         font-size: 14px; /* Adjust font size for smaller screens */
         padding: 8px 16px; /* Adjust padding for smaller screens */
-        top: 0; /* Reset top position */
-        left: 0; /* Reset left position */
-        position: static; /* Reset position to normal flow */
-        display: block; /* Display as block on smaller screens */
+        position: fixed; /* Fixed position for bottom */
+        width: calc(100% - 40px); /* Full width minus margins */
+        left: 20px; /* Margin from the left */
+        bottom: 20px; /* Margin from the bottom */
     }
 }
+
+
 
 
     </style>
