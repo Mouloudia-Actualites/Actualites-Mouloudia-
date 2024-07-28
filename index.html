@@ -498,23 +498,21 @@
     margin: 0; /* Removes default margin */
 }
 
-
 .news-ite {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('bel1.jpg');
+    background-image: url('bell1.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Reduce padding for smaller screens */
+    padding: 20px; /* Adjust padding for larger screens */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     position: relative;
     overflow: hidden;
     width: calc(100% - 40px); /* Adjust width to fit page constraints */
-    margin: 10px auto; /* Reduce margin for smaller screens */
-    position: relative; /* Ensure relative positioning */
+    margin: 10px auto; /* Adjust margin for larger screens */
 }
 
 .news-ite::before {
@@ -524,63 +522,65 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
     border-radius: 8px;
 }
 
-/* Ensure text within .news-item is readable */
 .news-ite h3, .news-ite p {
-    color: #fff; /* Adjust text color for readability */
+    color: #fff; /* Text color for readability */
     z-index: 1; /* Ensure text is above the overlay */
 }
 
 @media (max-width: 700px) {
     .news-ite {
-        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
-        text-align: center; /* Centrer le texte sur les écrans plus petits */
-        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
-        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        text-align: center; /* Center text on smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+        margin: 10px auto; /* Adjust margin for smaller screens */
     }
-    
-    .news-ite::after {
-        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
+
+    .news-ite::before {
+        content: ""; /* Pseudo-element for background overlay */
         display: block;
-        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
+        padding-top: 56.25%; /* 16:9 aspect ratio for responsive background image */
     }
 }
 
 .news-ite:hover {
-    transform: scale(1.02); /* Slightly enlarges the item on hover */
+    transform: scale(1.02); /* Slightly enlarge item on hover */
 }
 
 .news-ite img {
-    width: 100px; /* Fixed width for the images */
-    height: auto; /* Maintains aspect ratio */
+    width: 100px; /* Fixed width for images */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 20px; /* Space between image and text */
     border-radius: 8px; /* Rounded corners for images */
     z-index: 1; /* Ensure image stays above background */
 }
 
 .news-tex {
-position: sticky;
-top: 20px;/* Space below .news-tex */
+    position: sticky;
+    top: 20px; /* Space below .news-tex */
 }
+
 .news-tex h2 {
     font-size: 2.2em; /* Font size for headlines */
     color: #fff; /* Text color */
-    margin: 0 0 10px; /* Space below the headline */
+    margin: 0 0 10px; /* Space below headline */
     cursor: pointer; /* Pointer cursor for clickable elements */
     position: relative;
 }
 
 .news-tex p {
-    font-size: 1.2em; /* Font size for the date */
+    font-size: 1.2em; /* Font size for date */
     color: #666; /* Text color for date */
-    margin: 0; /* Removes default margin */
-     position: relative;
-  top: 110px; left: 20px; 
+    margin: 0; /* Remove default margin */
+    position: relative;
+    top: 110px; /* Adjust top position for layout */
+    left: 20px; /* Adjust left position for layout */
 }
-  .tex-button {
+
+.tex-button {
     background-color: transparent;
     color: #ffffff; /* White text */
     padding: 10px 20px; /* Adjust padding as needed */
@@ -593,7 +593,7 @@ top: 20px;/* Space below .news-tex */
     bottom: 20px; /* Position at the bottom */
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .tex-button {
         font-size: 14px; /* Adjust font size for smaller screens */
         padding: 8px 16px; /* Adjust padding for smaller screens */
@@ -650,7 +650,7 @@ top: 20px;/* Space below .news-tex */
         <div class="news-ite">
             <div class="news-tex">
                
-                 <a href="new1.html" class="tex-button"> <h2>    جمال بلعمري يتحدث عن اللاعب طاهر فتح الله </h2></a>
+                 <a href="new1.html" class="tex-button"> <h2>بلايلي يغادر العميد رسميا ويتلحق بناديه السابق</h2></a>
         
             
             </div>
