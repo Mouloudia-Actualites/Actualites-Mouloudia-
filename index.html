@@ -498,6 +498,7 @@
     margin: 0; /* Removes default margin */
 }
 
+
 .news-ite {
     display: flex;
     align-items: center;
@@ -533,8 +534,25 @@
     z-index: 1; /* Ensure text is above the overlay */
 }
 
- 
- 
+@media (max-width: 700px) {
+    .news-ite {
+        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
+        text-align: center; /* Centrer le texte sur les écrans plus petits */
+        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
+        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
+    }
+    
+    .news-ite::after {
+        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
+        display: block;
+        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
+    }
+}
+
+.news-ite:hover {
+    transform: scale(1.02); /* Slightly enlarges the item on hover */
+}
+
 .news-ite img {
     width: 100px; /* Fixed width for the images */
     height: auto; /* Maintains aspect ratio */
@@ -562,7 +580,7 @@ top: 20px;/* Space below .news-tex */
      position: relative;
   top: 110px; left: 20px; 
 }
-  .tex-button {
+   .tex-button {
     background-color: transparent;
 
     color: #ffffff; /* White text */
@@ -574,10 +592,6 @@ top: 20px;/* Space below .news-tex */
     transition: background-color 0.3s ease;
 
 }
-}
-
-
-
 
     </style>
 </head>
