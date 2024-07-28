@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Inline Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <style>
         /* Global styles */
         body {
@@ -21,10 +16,8 @@
             background-color: #f8f9fa;
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
-            position: relative; /* Ensure body has relative position for absolute positioning */
         }
-
-        .navbar {
+   .navbar {
             background-color: #343a40;
         }
 
@@ -110,6 +103,25 @@
             cursor: pointer;
         }
 
+        /* Section for Social Icons */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 24px; /* Icon size */
+            margin: 0 10px; /* Space between icons */
+            color: #343a40; /* Default icon color */
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #dc3545; /* Icon color on hover */
+        }
+
+      
+
         .news-section {
             padding: 80px 0;
         }
@@ -139,40 +151,23 @@
             /* Text alignment to right is handled automatically with dir="rtl" */
         }
 
-        .article .meta {
-            font-size: 1rem;
-            color: #6c757d;
-            text-align: right;
-            margin-bottom: 10px;
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
-        .article .meta .author {
-            float: right;
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
         }
 
-        .article .meta .date {
-            float: ;
-        }
-
-        .article .btn-primary {
-            float: right; /* Align button to the right */
-        }
-
-        .explore-more {
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .explore-more .facebook-post {
-            max-width: 100%;
-            height: auto;
-            border: none;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .explore-more .read-more-link {
-            display: block;
-            margin-top: 20px;
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
         }
 
         /* Dark Mode Styles */
@@ -182,7 +177,7 @@
         }
 
         body.dark-mode .navbar {
-            background-color: #fff;
+            background-color: #212529;
         }
 
         body.dark-mode .navbar-dark .navbar-nav .nav-link {
@@ -199,11 +194,16 @@
             color: #fff; /* Green text */
             padding: 20px;
         }
+
+        h2, p, a {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Header with Navbar -->
+<!-- Header with Navbar -->
+   <!-- Header with Navbar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
@@ -233,28 +233,44 @@
             </ul>
         </div>
     </div>
-
-    <!-- News Section -->
-    <section class="news-section">
-        <div class="container">
-            <div class="row" id="articlesContainer">
-                <!-- Articles will be dynamically inserted here -->
+<section class="news-section">
+    <div class="container">
+        <div class="row" id="articlesContainer">
+            <!-- Articles will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
+<section class="image-before-icons">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <img src="mca2.jpg" class="img-fluid" alt="Image Description">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer Section -->
-    <footer class="text-center py-4">
-        <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
-    </footer>
+<section class="social-icons">
+    <div class="container">
+        <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/mouloudia__actualites?igsh=MWhvZXVsbzkxOTRmaA==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@mouloudiaactualites?si=idNCKDhmknjI_uHD"><i class="fab fa-youtube"></i></a>
+    </div>
+</section>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom Script -->
-    <script>
-        // Close the fullscreen menu when clicking outside of it or on close button
+
+<!-- Footer Section -->
+<footer class="text-center py-4">
+    <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
+</footer>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Dark Mode Toggle Script -->
+<script>
+      // Close the fullscreen menu when clicking outside of it or on close button
         $(document).ready(function() {
             // Toggle fullscreen menu
             $('.navbar-toggler').click(function() {
@@ -275,74 +291,82 @@
             });
         });
 
-        // Toggle between light and dark mode
-        const body = document.body;
-        const navbarBrand = document.querySelector('.navbar-brand');
+    const body = document.body;
+    const navbarBrand = document.querySelector('.navbar-brand');
 
-        navbarBrand.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
+    navbarBrand.addEventListener('click', function() {
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        }
+    });
+
+    function displayArticles() {
+        const articlesContainer = document.getElementById('articlesContainer');
+        const articles = [
+                  {
+                title: 'اخبار اليوم',
+                content: 'تعداد العميد شهد غياب حمزة موالي بسبب الخدمة العسكرية , إضافة إلى الحارس موساوي الذي يعاني من مشكل في تأشيرة الخروج من أرض الوطن , و أخيرا يوسف بلايلي الذي يقترب من المغادرة إثر بيعه ',
+                imageUrl: 'news1.jpg',
+                link: 'https://www.example.com/article4',
+                date: '',
+                author: '27/07/2024 '
+            },
+            
+        {
+            title: 'اخبار اليوم',
+            content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص ',
+            imageUrl: 'dao1.jpg',
+            link: 'https://www.example.com/article3',
+            date: '27/07/2024',
+            author: ''
+        },
+        {
+            title: 'اخبار اليوم',
+            content: 'اللاعب يوسف بلايلي يراسل إدارة مولودية الجزائر بقيادة الرئيس حكيم حاج رجم و يؤكد أنه كان مريضا و هذا سبب غيابه عن التدريبات و عن سفرية رين',
+            imageUrl: 'blob:https://www.facebook.com/2e5744f0-10bc-441b-a9e2-2cfab9a56124',
+            link: 'https://www.example.com/article4',
+            date: '27/7/2024',
+            author: ''
+        },
+
+      {
+            title: 'اخبار السابقة',
+            content: 'مركز تدريبات مولودية الجزائر بزرالدة سيدشن يوم 7 اوت المقبل',
+            imageUrl: 'news3.jpg',
+            link: 'https://www.facebook.com/share/p/GECWNgNzEtVV8wex/',
+            date: '24/7/2024',
+            author: ''
+        },
+        ];
+
+        articles.forEach(article => {
+            const articleHTML = `
+                <div class="col-lg-6">
+                    <article class="article">
+                        <img src="${article.imageUrl}" alt="${article.title}">
+                        <div class="meta">
+                            <span class="date">${article.date}</span> |
+                            <span class="author">${article.author}</span>
+                        </div>
+                        <h2>${article.title}</h2>
+                        <p>${article.content}</p>
+                    </article>
+                </div>
+            `;
+            articlesContainer.innerHTML += articleHTML;
         });
+    }
 
-        // Function to display articles dynamically
-        function displayArticles() {
-            const articlesContainer = document.getElementById('articlesContainer');
-            const articles = [{
-                   {
-            title: '',
-            content: '',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ''
-        },
-        {
-            title: '',
-            content: '',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ''
-        },
-        {
-            title: '',
-            content:' ',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ''
-        },
-        {
-            title: '',
-            content: '',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ' '
-        }
-    ];
+    // Call displayArticles function to load articles on page load
+    displayArticles();
+</script>
 
-            articles.forEach(article => {
-                const articleHTML = `
-                    <div class="col-lg-6">
-                        <article class="article">
-                            <img src="${article.imageUrl}" alt="${article.title}">
-                            <div class="meta">
-                                <span class="date">${article.date}</span> |
-                                <span class="author">${article.author}</span>
-                            </div>
-                            <h2>${article.title}</h2>
-                            <p>${article.content}</p>
-                           
-                        </article>
-                    </div>
-                `;
-                articlesContainer.innerHTML += articleHTML;
-            });
-        }
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-        // Call the displayArticles function to load articles on page load
-        displayArticles();
-    </script>
 </body>
-
 </html>
