@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,10 +104,11 @@
             font-size: 50px; /* Adjust font size */
             cursor: pointer;
         }
+
         .contact-section {
             padding: 80px 0;
         }
-        
+
         .contact-info {
             max-width: 600px;
             margin: 0 auto;
@@ -116,48 +118,51 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
-        
+
         .contact-info h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
             text-align: center;
             color: #343a40;
         }
-        
+
         .contact-info p {
             font-size: 1.1rem;
             line-height: 1.8;
             text-align: right; /* Right-align text */
         }
-        
+
         /* Dark Mode Styles */
         body.dark-mode {
             background-color: #343a40;
             color: #fff;
         }
-        
+
         body.dark-mode .navbar {
             background-color: #212529;
         }
-        
+
         body.dark-mode .navbar-dark .navbar-nav .nav-link {
             color: #fff;
         }
-        
+
         body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         body.dark-mode .contact-info {
             background-color: #424242;
             color: #fff;
             border-color: #757575;
         }
-        
-        h1, p, a, h2 {
+
+        h1,
+        p,
+        a,
+        h2 {
             font-family: 'Cairo', Arial, sans-serif;
         }
-        
+
         .tex-button {
             background-color: transparent;
             color: #ffffff; /* White text */
@@ -215,7 +220,8 @@
                         <h2>اتصل بنا</h2>
                         <p><strong>العنوان:</strong> باب الواد - البزيتة، الجزائر</p>
                         <!-- Adjusted link wrapped around the paragraph -->
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScxB5UFhcP6tnhW894X1mMum2XOtWxdzjANBOHW4ymrwXRc5A/viewform" class="tex-button">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScxB5UFhcP6tnhW894X1mMum2XOtWxdzjANBOHW4ymrwXRc5A/viewform"
+                            class="tex-button">
                             <p><strong>تقديم شكوى</strong></p>
                         </a>
                     </div>
@@ -239,16 +245,17 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="ht
-         // Close the fullscreen menu when clicking outside of it or on close button
-        $(document).ready(function() {
-            // Toggle fullscreen menu
-            $('.navbar-toggler').click(function() {
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Toggle fullscreen menu
+        $(document).ready(function () {
+            $('.navbar-toggler').click(function () {
                 $('#fullscreenMenu').toggleClass('open');
             });
 
             // Close the fullscreen menu when clicking outside of it
-            $(document).mouseup(function(e) {
+            $(document).mouseup(function (e) {
                 var container = $("#fullscreenMenu");
                 if (!container.is(e.target) && container.has(e.target).length === 0) {
                     container.removeClass('open');
@@ -256,27 +263,26 @@
             });
 
             // Close the fullscreen menu when close button is clicked
-            $('.close-btn').click(function() {
+            $('.close-btn').click(function () {
                 $('#fullscreenMenu').removeClass('open');
             });
-        });
-tps://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        // Script to toggle dark mode and light mode
-        const body = document.body;
-        const navbarBrand = document.querySelector('.navbar-brand');
 
-        navbarBrand.addEventListener('click', function() {
-            // Toggle between light-mode and dark-mode classes
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-            }
+            // Toggle dark mode and light mode
+            const body = document.body;
+            const navbarBrand = document.querySelector('.navbar-brand');
+
+            navbarBrand.addEventListener('click', function () {
+                // Toggle between light-mode and dark-mode classes
+                if (body.classList.contains('light-mode')) {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                } else {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                }
+            });
         });
     </script>
 </body>
+
 </html>
