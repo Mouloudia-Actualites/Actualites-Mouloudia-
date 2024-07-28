@@ -674,7 +674,56 @@ top: 20px;/* Space below .news-tex */
   top: 100px; left: 20px; /* Position absolute for overlay */
     transition: background-color 0.3s ease;
 
+}/* Fullscreen Menu Styles */
+.fullscreen-menu-content {
+    padding-top: 20px;
 }
+
+.language-switch {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.lang-btn.active {
+    background-color: #007bff; /* Blue color for active button */
+}
+
+.lang-btn:hover {
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue on hover */
+}
+
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-list li {
+    margin-bottom: 10px;
+}
+
+.menu-list li a {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.menu-list li a:hover {
+    color: #007bff; /* Blue color on hover */
+}
+
 
     </style>
 </head>
@@ -695,11 +744,15 @@ top: 20px;/* Space below .news-tex */
         </nav>
     </header>
 
-    <!-- Fullscreen Menu -->
-   <div class="fullscreen-menu" id="fullscreenMenu">
+  <!-- Fullscreen Menu -->
+<div class="fullscreen-menu" id="fullscreenMenu">
     <span class="close-btn">&times;</span><!-- زر الإغلاق في سطر واحد مع فاصل -->
     <div class="fullscreen-menu-content">
-        <ul><br><br>
+        <div class="language-switch">
+            <button class="lang-btn active" data-lang="ar">ar</button>
+            <button class="lang-btn" data-lang="en">en</button>
+        </div>
+        <ul class="menu-list">
             <li><a href="index.html">الصفحة الرئيسية</a></li>
             <li><a href="news1.html">أخبار</a></li>
             <li><a href="first1.html">الفريق الأول</a></li>
@@ -711,7 +764,6 @@ top: 20px;/* Space below .news-tex */
         </ul>
     </div>
 </div>
-
 
    <!-- Hero Section -->
 <section class="hero">
@@ -887,6 +939,31 @@ top: 20px;/* Space below .news-tex */
         // Remove previously mentioned dark mode toggle button event
         const toggleButton = document.querySelector('.btn-primary');
         toggleButton.parentNode.removeChild(toggleButton);
+// JavaScript for toggling language links
+document.addEventListener('DOMContentLoaded', function() {
+    const langButtons = document.querySelectorAll('.lang-btn');
+    const menuItems = document.querySelectorAll('.menu-list li a');
+
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove 'active' class from all buttons
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            // Add 'active' class to the clicked button
+            button.classList.add('active');
+
+            // Toggle visibility of Arabic and English menu items
+            const lang = button.getAttribute('data-lang');
+            menuItems.forEach(item => {
+                const isArabic = lang === 'ar';
+                if (isArabic) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
 
 
     </script>
