@@ -505,14 +505,15 @@
     background-image: url('bell1.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Adjust padding for larger screens */
+    padding: 20px; /* Reduce padding for smaller screens */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     position: relative;
     overflow: hidden;
     width: calc(100% - 40px); /* Adjust width to fit page constraints */
-    margin: 10px auto; /* Adjust margin for larger screens */
+    margin: 10px auto; /* Reduce margin for smaller screens */
+    position: relative; /* Ensure relative positioning */
 }
 
 .news-ite::before {
@@ -522,65 +523,63 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
     border-radius: 8px;
 }
 
+/* Ensure text within .news-item is readable */
 .news-ite h3, .news-ite p {
-    color: #fff; /* Text color for readability */
+    color: #fff; /* Adjust text color for readability */
     z-index: 1; /* Ensure text is above the overlay */
 }
 
 @media (max-width: 700px) {
     .news-ite {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        text-align: center; /* Center text on smaller screens */
-        padding: 15px; /* Adjust padding for smaller screens */
-        margin: 10px auto; /* Adjust margin for smaller screens */
+        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
+        text-align: center; /* Centrer le texte sur les écrans plus petits */
+        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
+        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
     }
-
-    .news-ite::before {
-        content: ""; /* Pseudo-element for background overlay */
+    
+    .news-ite::after {
+        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
         display: block;
-        padding-top: 56.25%; /* 16:9 aspect ratio for responsive background image */
+        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
     }
 }
 
 .news-ite:hover {
-    transform: scale(1.02); /* Slightly enlarge item on hover */
+    transform: scale(1.02); /* Slightly enlarges the item on hover */
 }
 
 .news-ite img {
-    width: 100px; /* Fixed width for images */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px; /* Fixed width for the images */
+    height: auto; /* Maintains aspect ratio */
     margin-right: 20px; /* Space between image and text */
     border-radius: 8px; /* Rounded corners for images */
     z-index: 1; /* Ensure image stays above background */
 }
 
 .news-tex {
-    position: sticky;
-    top: 20px; /* Space below .news-tex */
+position: sticky;
+top: 20px;/* Space below .news-tex */
 }
-
 .news-tex h2 {
     font-size: 2.2em; /* Font size for headlines */
     color: #fff; /* Text color */
-    margin: 0 0 10px; /* Space below headline */
+    margin: 0 0 10px; /* Space below the headline */
     cursor: pointer; /* Pointer cursor for clickable elements */
     position: relative;
 }
 
 .news-tex p {
-    font-size: 1.2em; /* Font size for date */
+    font-size: 1.2em; /* Font size for the date */
     color: #666; /* Text color for date */
-    margin: 0; /* Remove default margin */
-    position: relative;
-    top: 110px; /* Adjust top position for layout */
-    left: 20px; /* Adjust left position for layout */
+    margin: 0; /* Removes default margin */
+     position: relative;
+  top: 110px; left: 20px; 
 }
-
-.tex-button {
+  .tex-button {
     background-color: transparent;
     color: #ffffff; /* White text */
     padding: 10px 20px; /* Adjust padding as needed */
