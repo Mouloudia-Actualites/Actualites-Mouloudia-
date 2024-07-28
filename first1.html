@@ -287,39 +287,38 @@
         function displayArticles() {
             const articlesContainer = document.getElementById('articlesContainer');
             const articles = [{
-                   {
-            title: '',
-            content: '',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ''
-        },
-        {
-            title: '',
-            content: '',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ''
-        },
-        {
-            title: '',
-            content:' ',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ''
-        },
-        {
-            title: '',
-            content: '',
-            imageUrl: '',
-            link: '',
-            date: '',
-            author: ' '
-        }
-    ];
+                    title: '',
+                    content: '',
+                    imageUrl: '',
+                    link: '',
+                    date: '',
+                    author: ''
+                },
+                {
+                    title: '',
+                    content: '',
+                    imageUrl: '',
+                    link: '',
+                    date: ' ',
+                    author: ''
+                },
+                {
+                    title: '  ',
+                    content: '',
+                    imageUrl: '',
+                    link: '',
+                    date: ' ',
+                    author: ''
+                },
+                {
+                    title: '  ',
+                    content: '  ',
+                    imageUrl: '',
+                    link: '',
+                    date: ' ',
+                    author: ''
+                }
+            ];
 
             articles.forEach(article => {
                 const articleHTML = `
@@ -332,7 +331,7 @@
                             </div>
                             <h2>${article.title}</h2>
                             <p>${article.content}</p>
-                           
+                         
                         </article>
                     </div>
                 `;
