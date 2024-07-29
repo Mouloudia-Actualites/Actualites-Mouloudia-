@@ -682,6 +682,7 @@ top: 20px;/* Space below .news-tex */
     position: relative;
      top: 160px; left: 10px; 
  text-shadow: 0 2px 4px rgba(0, 0, 1, 1.7); /* Darker drop shadow under h2 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)); /* Gradient background from transparent to rgba(0, 0, 0, 0.3) */
 
 
 }
@@ -699,6 +700,12 @@ top: 20px;/* Space below .news-tex */
             height: 24px;
             margin-left: 10px; /* Adjust spacing */
         }  
+         .ellipsis {
+    /* Style pour les points de suspension */
+    font-size: 24px; /* Taille de police (ajustez selon vos besoins) */
+    color: #fff; /* Couleur du texte */
+    margin-left: 5px; /* Marge à gauche pour l'espace entre le texte et les points de suspension */
+}
     </style>
 </head>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
@@ -739,7 +746,10 @@ top: 20px;/* Space below .news-tex */
     <div class="news">
         <div class="news-ite">
             <div class="news-tex">
-         <a href="new1.html" class="news-link"><h2>بلايلي يغادر العميد... رسميا ويتلحق</h2>
+      <a href="new1.html" class="news-link">
+    <h2>بلاايلي يغادر العميد رسميا ويتلحق<span class="ellipsis">...</span></h2>
+</a>
+
             
             </div>
         </div>
