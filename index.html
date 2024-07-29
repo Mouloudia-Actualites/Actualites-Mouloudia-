@@ -16,6 +16,7 @@
     <style>
              /* Your CSS styles here */
 /* General styles */
+/* General styles */
 body {
     font-family: 'Cairo', Arial, sans-serif;
     background-color: #fff; /* Default background color */
@@ -71,8 +72,8 @@ body {
 
 .fullscreen-menu-content {
     position: absolute;
-    top: 6px;
-    right: 10px;
+    top: 6px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
     text-align: right;
 }
 
@@ -98,7 +99,7 @@ body {
     color: #ccc;
 }
 
-/* Example of other sections */
+/* Hero Section */
 .hero {
     padding: 80px 0;
     background-color: white;
@@ -108,104 +109,17 @@ body {
     text-align: center;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-    .navbar-brand img {
-        width: 40px;
-    }
-    
-    /* Other responsive styles */
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
 }
 
-
-        .navbar {
-           background-image: url('green.jpg') 
-        }
-
-        .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
-        }
-
-        .navbar-dark .navbar-toggler {
-            border: none;
-            color: white;
-        }
-
-        .navbar-dark .navbar-toggler-icon {
-           
-            width: 24px;
-            height: 17px;
-        }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: #000;
-            padding: 10px 15px;
-            transition: background-color 0.3s;
-            text-align: right; /* Right-align text */
-        }
-
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Fullscreen menu styles */
-        .fullscreen-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            z-index: 1000; /* Ensure it's above other content */
-            display: none; /* Initially hidden */
-            overflow-y: auto; /* Enable scrolling */
-        }
-
-        .fullscreen-menu.open {
-            display: block; /* Display when open */
-        }
-
-        .fullscreen-menu-content {
-    position: absolute;
-    top: 6px; /* تعديل حسب الحاجة */
-    right: 10px; /* تعديل حسب الحاجة */
-    transform: translate(0, 0); /* تعديل حسب الحاجة */
-    text-align: right; /* توجيه النص إلى اليمين */
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
-        .fullscreen-menu-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .fullscreen-menu-content ul li {
-            margin-bottom: 10px;
-        }
-
-        .fullscreen-menu-content ul li a {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: block;
-            padding: 10px;
-        }
-
-        .fullscreen-menu-content ul li a:hover {
-            color: #ccc;
-        }
- .close-btn {
-    position: absolute;
-    top: 2px; /* تعديل حسب الحاجة */
-    left: 10px; /* تعديل لتحديد الزاوية اليسرى */
-    color: #fff; /* تعديل لون النص */
-    font-size: 50px; /* تعديل حجم الخط */
-    cursor: pointer;
-}      
-     
-        
-       <!-- Live Scores Section -->
-   /* Live Scores Section */
+/* Live Scores Section */
 .live-scores-section {
     padding: 50px 0;
     background-color: #f8f9fa;
@@ -250,7 +164,7 @@ body {
 .score {
     font-size: 2rem;
     font-weight: bold;
-       text-align: center;
+    text-align: center;
 }
 
 .status {
@@ -264,398 +178,171 @@ body {
     margin-left: 10px;
 }
 
-
 /* Dark Mode Styles */
-body.dark-mode .live-scores-section {
+body.dark-mode {
     background-color: #343a40;
-}
-
-body.dark-mode .match {
-    background-color: #424242;
     color: #fff;
 }
 
-body.dark-mode .score {
+body.dark-mode .navbar {
+    background-color: #212529;
+}
+
+body.dark-mode .navbar-nav .nav-link {
     color: #fff;
 }
 
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
-        }
-
-        body.dark-mode .navbar {
-            background-color: #212529;
-        }
-
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        body.dark-mode .match {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
-        }
-
-        body.dark-mode .match .score {
-            color: #fff;
-        }
-
-           /* Media Query for Mobile Devices */
-      
-          
-        /* Dark Mode Styles */
-        
-        body.dark-mode {
-            background-color: #22262a;
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar {
-            background-color:#0b0d0e;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        body.dark-mode .match {
-            background-color: #0d0d0d;
-            border-color: #757575;
-            color: #fff;
-        }
-        
-        body.dark-mode .match .score {
-            color: #fff;
-        }
-        
-        /* Media Query for Mobile Devices */
-         @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 40px;
-            }
-            
-            .match h2 {
-                font-size: 1.5rem;
-            }
-            
-            .match .teams {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .match .teams .team img {
-                margin-bottom: 5px;
-            }
-        }
-        
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .hero {
-            background-color: white;
-            background-size: cover;
-            background-position: center;
-            color: #000;
-            text-align: center;
-            padding: 80px 0;
-        }
-    
-        
-        @media (max-width: 768px) {
-            .hero {
-                padding:20px 0;
-            }
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn-primary {
-            background-image: url('green.jpg');
-         
-        }
-        
-        .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-        
-        .feature {
-              background-image: url('green.jpg');
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            text-align: center;
-        }
-        
-        .feature img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        
-        /* Section for Social Icons */
-        
-        .social-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            font-size: 24px;
-            margin: 0 10px;
-            color: #343a40;
-            transition: color 0.3s;
-           
-        }
-        
-        /* Section for Authors */
-        
-        .authors-section {
-             background-image: url('dd.jpg');
-            color: #fff;
-            padding: 15px 0;
-        }
-        
-        .author {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .author img {
-            width: auto;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .author h3 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-        }
-        
-        .author p {
-            font-size: 1.0rem;
-            margin-bottom:18px;
-        }
-        
-        /* Dark Mode Styles */
-        
-        body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar {
-            background-color: #212529;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        body.dark-mode .hero {
-            background-color: #343a40;
-            color: #fff;
-        }
-        
-        body.dark-mode .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        
-        body.dark-mode .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-        
-        body.dark-mode .feature {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
-        }
-        
-        body.dark-mode .social-icons a {
-            color: #fff;
-        }
-        
-        body.dark-mode .authors-section {
-            background-color: #212529;
-            color: #fff;
-        }
-        
-        /* Blogs Section */
-        
-        .blogs-section {
-            padding: 60px 0;
-     background-image: url('green.jpg');
-            text-align: center;
-        }
-        
-        .blog {
-            margin-bottom: 30px;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-           background-color: rgba(255, 255, 0, 0.5);
-           background-color:  hsla(0, 0%, 0%, 0); 
-        } 
-        .blog img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            transition: transform 0.3s;
-        }
-        
-        .blog h3 {
-            margin-top: 10px;
-            font-size: 1.5rem;
-            color: black;
-        }
-        
-        .blog:hover img {
-            transform: scale(1.1);
-        }
-        
-        /* Footer Section */
-        
-        footer {
-               background-image: url('green.jpg');
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
-        }
-        
-        footer p {
-            margin-bottom: 0;
-        }
-             .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-         /* Center text horizontally within .center-container */
-        }
-        h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cairo', Arial, sans-serif;
+body.dark-mode .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
-        /* Add this to your CSS file or <style> block */
-.btn-white {   background-image: url('green.jpg');
-    color: white; /* Black text color */
-    border: 1px solid black; /* Black border */
-    padding: 10px 20px; /* Padding for the button */
-    text-align: center; /* Center the text */
-    text-decoration: none; /* Remove underline from text */
-    display: inline-block; /* Inline-block display */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+
+body.dark-mode .fullscreen-menu {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+body.dark-mode .fullscreen-menu-content ul li a {
+    color: #fff;
+}
+
+body.dark-mode .hero {
+    background-color: #343a40;
+    color: #fff;
+}
+
+/* Blogs Section */
+.blogs-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.blog {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: rgba(255, 255, 0, 0.5);
+}
+
+.blog img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.blog h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: black;
+}
+
+.blog:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer Section */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+/* Additional Styles */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-white {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-white:hover {
-    background-color: white; /* Black background on hover */
-    color: black; /* White text color on hover */
-}
-/* Base styles for news container */
-.news {
-    display: flex; /* Arrange items in a column */
-    flex-direction: column;
-    gap: 20px; /* Space between news items */
+    background-color: white;
+    color: black;
 }
 
+/* News Section */
 .news {
-    display: flex; /* Makes items align in a row */
-    flex-direction: column; /* Makes items align in a column */
-    gap: 20px; /* Space between news items */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .news-item {
-     display: flex; /* Aligns image and text side by side */
-    align-items: center; /* Centers items vertically */
-              background-image: url('dd.jpg') ; /* Transparent gray background color */
-    padding: 15px; /* Padding inside each news item */
-    border-radius: 8px; /* Rounded corners for news items */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for news items */
-    transition: transform 0.2s; /* Smooth hover effect */
-    margin-bottom: 20px; /* Space between each news item */
-    border: 1px solid :#003311; /* Border around news items */
-    width: calc(100% - 30px); /* Adjust width to fit within page boundaries */
-       margin: 20px auto;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    margin-bottom: 20px;
+    width: calc(100% - 30px);
+    margin: 20px auto;
 }
+
 .news-item:hover {
-    transform: translateY(-3px); /* Move the item up slightly on hover */
+    transform: translateY(-3px);
 }
 
 .news-item img {
-    width: 140px; /* Fixed width for the images */
-    height: 140px; /* Fixed height for the images */
-    margin-right: 15px; /* Space between image and text */
+    width: 140px;
+    height: 140px;
+    margin-right: 15px;
 }
 
 .news-text {
-    flex: 1; /* Let text take remaining space */
+    flex: 1;
 }
 
 .news-text h2 {
-    font-size: 1.2em; /* Font size for headlines */
-    color: white; /* Text color */
-    margin: 0 0 10px; /* Space below the headline */
-    cursor: pointer; /* Pointer cursor for clickable elements */
+    font-size: 1.2em;
+    color: white;
+    margin: 0 0 10px;
+    cursor: pointer;
 }
 
 .news-text p {
-    font-size: 0.9em; /* Font size for the date */
-    color: #666; /* Text color for date */
-    margin: 0; /* Removes default margin */
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
 }
 
-
+/* News Item with Image */
 .news-ite {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('bell1.jpg');
     background-size: cover;
     background-position: center;
-    padding: 20px; /* Reduce padding for smaller screens */
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
     position: relative;
     overflow: hidden;
-    width: calc(100% - 40px); /* Adjust width to fit page constraints */
-    margin: 10px auto; /* Reduce margin for smaller screens */
-    position: relative; /* Ensure relative positioning */
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    position: relative;
 }
 
 .news-ite::before {
@@ -665,148 +352,101 @@ body.dark-mode .score {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 8px;
 }
 
-/* Ensure text within .news-item is readable */
-.news-ite h3, .news-ite p {
-    color: #fff; /* Adjust text color for readability */
-    z-index: 1; /* Ensure text is above the overlay */
+.news-ite h3,
+.news-ite p {
+    color: #fff;
+    z-index: 1;
 }
 
 @media (max-width: 700px) {
     .news-ite {
-        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
-        text-align: center; /* Centrer le texte sur les écrans plus petits */
-        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
-        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        margin: 10px auto;
     }
-    
+
     .news-ite::after {
-        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
+        content: "";
         display: block;
-        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
+        padding-top: 56.25%;
     }
 }
 
 .news-ite:hover {
-    transform: scale(1.02); /* Slightly enlarges the item on hover */
+    transform: scale(1.02);
 }
 
 .news-ite img {
-    width: 100px; /* Fixed width for the images */
-    height: auto; /* Maintains aspect ratio */
-    margin-right: 20px; /* Space between image and text */
-    border-radius: 8px; /* Rounded corners for images */
-    z-index: 1; /* Ensure image stays above background */
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 8px;
+    z-index: 1;
 }
 
-.news-tex {
-position: sticky;
-top: 20px;/* Space below .news-tex */
-}
-.news-tex h2 {
-    font-size: 2.2em; /* Font size for headlines */
-    color: #fff; /* Text color */
-    margin: 0 0 10px; /* Space below the headline */
-    cursor: pointer; /* Pointer cursor for clickable elements */
-    position: relative;
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 40px;
+    }
+
+    .match h2 {
+        font-size: 1.5rem;
+    }
+
+    .match .teams {
+        flex-direction: column;
+    }
+
+    .match .team {
+        margin-bottom: 10px;
+    }
+
+    .team img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .score {
+        font-size: 1.5rem;
+    }
+
+    .status {
+        font-size: 0.8rem;
+    }
 }
 
-.news-tex p {
-    font-size: 1.2em; /* Font size for the date */
-    color: #666; /* Text color for date */
-    margin: 0; /* Removes default margin */
-     position: relative;
-  top: 110px; left: 20px; 
-}
-   .tex-button {
-    background-color: transparent;
+@media (max-width: 576px) {
+    .navbar-brand img {
+        width: 30px;
+    }
 
-    color: #ffffff; /* White text */
-    padding: 0px 0px;
-    text-decoration: none; /* Remove underline */
-    display: block; /* Display as block element */
-   position: relative;
-  top: 100px; left: 20px; /* Position absolute for overlay */
-    transition: background-color 0.3s ease;
+    .hero h1 {
+        font-size: 2.5rem;
+    }
 
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .fullscreen-menu-content ul li a {
+        font-size: 18px;
+    }
+
+    .blogs-section .blog h3 {
+        font-size: 1.2rem;
+    }
+
+    .blogs-section .blog img {
+        max-width: 80%;
+    }
 }
- @media (max-width: 768px) {
- 
-       @media (max-width: 768px) {
-            .hero {
-                padding:20px 0;
-            }
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-        
-        .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        
-        .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-        
-        .feature {
-            background-color: #fff;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            text-align: center;
-        }
-        
-        .feature img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-        
-        /* Section for Social Icons */
-        
-        .social-icons {
-            text-align: center;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            font-size: 24px;
-            margin: 0 10px;
-            color: #343a40;
-            transition: color 0.3s;
-        }
-      @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 40px;
-            }
-            
-            .match h2 {
-                font-size: 1.5rem;
-            }
-            
-            .match .teams {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .match .teams .team img {
-                margin-bottom: 5px;
-            }
-        }
+
 
     </style>
 </head>
