@@ -14,13 +14,13 @@
         body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
-            color: #343a40;
+            color: #000;
             transition: background-color 0.5s, color 0.5s;
             position: relative; /* Ensure body has relative position for absolute positioning */
         }
 
-        .navbar {
-            background-color: #343a40;
+         .navbar {
+          background-image: url('green.jpg');
         }
 
         .navbar-brand img {
@@ -33,7 +33,7 @@
         }
 
         .navbar-dark .navbar-toggler-icon {
-            background-color: #343a40;
+      color:white;
             width: 24px;
             height: 17px;
         }
@@ -48,6 +48,31 @@
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+         @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+            
+           
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero {
+            background-color:white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
+        }
+
 
         /* Fullscreen menu styles */
         .fullscreen-menu {
@@ -180,6 +205,23 @@
         h2, p, a {
             font-family: 'Cairo', Arial, sans-serif;
         }
+          footer {
+            background-image: url('green.jpg');
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0;
+        }
+             .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+         /* Center text horizontally within .center-container */
+        }
     </style>
 </head>
 
@@ -189,7 +231,7 @@
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <div class="navbar-brand mr-auto">
-                    <img src="mca.png" alt="MCA Logo">
+                    <img src="logo.png" alt="MCA Logo">
                 </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
