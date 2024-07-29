@@ -109,17 +109,6 @@
     font-size: 50px; /* تعديل حجم الخط */
     cursor: pointer;
 }      
-     
-        
-        .live-scores-section {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-            text-align: center;
-            border: 1px solid #dee2e6; /* Bordure de 1 pixel solide avec une couleur grise */
-            border-radius: 5px; /* Coins arrondis */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
-            margin-top: 30px; /* Espacement supplémentaire en haut */
-        }
         
         body[dir="rtl"] {
               font-family: 'Cairo', Arial, sans-serif;
@@ -127,49 +116,101 @@
         
         
         
-        .live-scores-section {
-            padding: 60px 0;
-        }
-        
-        .match {
-            margin-bottom: 30px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .match h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .match .teams {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .match .teams .team {
-            display: flex;
-            align-items: center;
-        }
-        
-        .match .teams .team img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
-        
-        .match .score {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
-        .match .status {
-            font-size: 1.1rem;
+      .live-scores-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+.match {
+    margin-bottom: 40px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+}
+
+.team img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: bold;
+       text-align: center;
+}
+
+.status {
+    font-size: 1rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.match .team-name {
+    font-size: 1rem;
+    margin-left: 10px;
+}
+ @media (max-width: 768px) {
+            .live-scores-section {
+                padding: 20px 0; /* Reduce vertical spacing */
+            }
+
+            .match {
+                padding: 15px; /* Reduce inner padding */
+            }
+
+            .match h2 {
+                font-size: 1.2rem; /* Reduce title size */
+                margin-bottom: 8px; /* Reduce bottom margin of title */
+            }
+
+            .match .teams {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+            }
+
+            .match .teams .team {
+                margin-bottom: 5px; /* Reduce space between teams */
+            }
+
+            .match .teams .team img {
+                width: 25px; /* Reduce logo size */
+                height: 25px;
+                margin-right: 5px; /* Reduce space between logo and text */
+            }
+
+            .match .score {
+                font-size: 1.2rem; /* Reduce score size */
+            }
+
+            .match .status {
+           
+            }
         }
         
         /* Dark Mode Styles */
@@ -208,18 +249,7 @@
                 width: 40px;
             }
             
-            .match h2 {
-                font-size: 1.5rem;
-            }
-            
-            .match .teams {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .match .teams .team img {
-                margin-bottom: 5px;
-            }
+
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
@@ -732,8 +762,7 @@ top: 20px;/* Space below .news-tex */
     </section><br>
 
 
-   
-     <section class="live-scores-section">
+    <section class="live-scores-section">
     <div class="container">
         <div class="match">
             <h2>آخر مباراة</h2>
@@ -749,7 +778,7 @@ top: 20px;/* Space below .news-tex */
                 </div>
             </div>
             <div class="status">
-        17:00       5 يوليو 2024 <br>
+                5 يوليو 2024 الساعة 17:00<br>
                 ملعب 5 يوليو الجزائر
             </div>
         </div>
@@ -762,15 +791,15 @@ top: 20px;/* Space below .news-tex */
                     <img src="https://file.mackolikfeeds.com/teams/24163" alt="شعار مولودية الجزائر">
                     <span class="team-name">واتانجا</span>
                 </div>
-                <div class="score">0 - 0</div>
+                <div class="score">0 - 1</div>
                 <div class="team">
                     <span class="team-name">مولودية الجزائر</span>
                     <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/88/MCA_logo.png/402px-MCA_logo.png?20210113233730" alt="شعار شباب بلوزداد">
                 </div>
             </div>
             <div class="status">
-                     17:00   16 اوت 2024 <br>
-                لم يحدد بعد
+                5 يوليو 2024 الساعة 17:00<br>
+                ملعب 5 يوليو الجزائر
             </div>
         </div>
     </div>
