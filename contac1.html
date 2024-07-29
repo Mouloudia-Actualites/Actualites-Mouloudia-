@@ -19,8 +19,8 @@
             position: relative; /* Ensure body has relative position for absolute positioning */
         }
 
-        .navbar {
-            background-color: #343a40;
+         .navbar {
+          background-image: url('green.jpg');
         }
 
         .navbar-brand img {
@@ -33,13 +33,13 @@
         }
 
         .navbar-dark .navbar-toggler-icon {
-            background-color: #343a40;
+      color:white;
             width: 24px;
             height: 17px;
         }
 
         .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
+            color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right; /* Right-align text */
@@ -48,6 +48,31 @@
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+         @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+            
+           
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero {
+            background-color:white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
+        }
+
 
         /* Fullscreen menu styles */
         .fullscreen-menu {
@@ -178,6 +203,23 @@
 
         .tex-button:hover {
             background-color: rgba(255, 255, 255, 0.1);
+        }
+          footer {
+            background-image: url('green.jpg');
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 0;
+        }
+             .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+         /* Center text horizontally within .center-container */
         }
     </style>
 </head>
