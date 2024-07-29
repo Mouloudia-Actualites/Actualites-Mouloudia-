@@ -14,18 +14,16 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
     <style>
-        /* Global styles */
-               body {
+        body {
             font-family: 'Cairo', Arial, sans-serif;
-          background-color:white;
+            background-color: white;
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
             position: relative; /* Ensure body has relative position for absolute positioning */
         }
 
-
         .navbar {
-           background-image: url('green.jpg') 
+            background-image: url('green.jpg');
         }
 
         .navbar-brand img {
@@ -38,7 +36,6 @@
         }
 
         .navbar-dark .navbar-toggler-icon {
-           
             width: 24px;
             height: 17px;
         }
@@ -72,12 +69,12 @@
         }
 
         .fullscreen-menu-content {
-    position: absolute;
-    top: 6px; /* تعديل حسب الحاجة */
-    right: 10px; /* تعديل حسب الحاجة */
-    transform: translate(0, 0); /* تعديل حسب الحاجة */
-    text-align: right; /* توجيه النص إلى اليمين */
-}
+            position: absolute;
+            top: 6px; /* Adjust as needed */
+            right: 10px; /* Adjust as needed */
+            transform: translate(0, 0); /* Adjust as needed */
+            text-align: right; /* Right-align text */
+        }
 
         .fullscreen-menu-content ul {
             list-style-type: none;
@@ -100,91 +97,74 @@
         .fullscreen-menu-content ul li a:hover {
             color: #ccc;
         }
- .close-btn {
-    position: absolute;
-    top: 2px; /* تعديل حسب الحاجة */
-    left: 10px; /* تعديل لتحديد الزاوية اليسرى */
-    color: #fff; /* تعديل لون النص */
-    font-size: 50px; /* تعديل حجم الخط */
-    cursor: pointer;
-}      
-     
-        
-       <!-- Live Scores Section -->
-   /* Live Scores Section */
-.live-scores-section {
-    padding: 50px 0;
-    background-color: #f8f9fa;
-}
 
-.match {
-    margin-bottom: 40px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+        .close-btn {
+            position: absolute;
+            top: 2px; /* Adjust as needed */
+            left: 10px; /* Adjust for left alignment */
+            color: #fff;
+            font-size: 50px;
+            cursor: pointer;
+        }
 
-.match h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
+        /* Live Scores Section */
+        .live-scores-section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
 
-.teams {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
+        .match {
+            margin-bottom: 40px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-.team {
-    display: flex;
-    align-items: center;
-}
+        .match h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-.team img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
+        .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-.score {
-    font-size: 2rem;
-    font-weight: bold;
-       text-align: center;
-}
+        .team {
+            display: flex;
+            align-items: center;
+        }
 
-.status {
-    font-size: 1rem;
-    margin-top: 10px;
-    text-align: center;
-}
+        .team img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
 
-.match .team-name {
-    font-size: 1rem;
-    margin-left: 10px;
-}
+        .score {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+        }
 
+        .status {
+            font-size: 1rem;
+            margin-top: 10px;
+            text-align: center;
+        }
 
-/* Dark Mode Styles */
-body.dark-mode .live-scores-section {
-    background-color: #343a40;
-}
-
-body.dark-mode .match {
-    background-color: #424242;
-    color: #fff;
-}
-
-body.dark-mode .score {
-    color: #fff;
-}
-
+        .match .team-name {
+            font-size: 1rem;
+            margin-left: 10px;
+        }
 
         /* Dark Mode Styles */
         body.dark-mode {
@@ -214,62 +194,30 @@ body.dark-mode .score {
             color: #fff;
         }
 
-           /* Media Query for Mobile Devices */
-      
-          
-        /* Dark Mode Styles */
-        
-        body.dark-mode {
-            background-color: #22262a;
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar {
-            background-color:#0b0d0e;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        body.dark-mode .match {
-            background-color: #0d0d0d;
-            border-color: #757575;
-            color: #fff;
-        }
-        
-        body.dark-mode .match .score {
-            color: #fff;
-        }
-        
         /* Media Query for Mobile Devices */
-         @media (max-width: 768px) {
+        @media (max-width: 768px) {
             .navbar-brand img {
                 width: 40px;
             }
-            
+
             .match h2 {
                 font-size: 1.5rem;
             }
-            
+
             .match .teams {
                 flex-direction: column;
                 align-items: flex-start;
             }
-            
+
             .match .teams .team img {
                 margin-bottom: 5px;
             }
         }
-        
+
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        
+
         .hero {
             background-color: white;
             background-size: cover;
@@ -278,77 +226,72 @@ body.dark-mode .score {
             text-align: center;
             padding: 80px 0;
         }
-    
-        
-     
+
+        @media (max-width: 768px) {
             .hero {
-                padding:20px 0;
+                padding: 20px 0;
             }
         }
-        
+
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 20px;
         }
-        
+
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 30px;
         }
-        
+
         .btn-primary {
             background-image: url('green.jpg');
-         
         }
-        
+
         .btn-primary:hover {
             background-color: #c82333;
             border-color: #bd2130;
         }
-        
+
         .feature {
-              background-image: url('green.jpg');
+            background-image: url('green.jpg');
             padding: 20px;
             margin-bottom: 20px;
             border: 1px solid #dee2e6;
             border-radius: 5px;
             text-align: center;
         }
-        
+
         .feature img {
             max-width: 100%;
             height: auto;
             border-radius: 5px;
         }
-        
+
         /* Section for Social Icons */
-        
         .social-icons {
             text-align: center;
             margin-top: 20px;
         }
-        
+
         .social-icons a {
             font-size: 24px;
             margin: 0 10px;
             color: #343a40;
             transition: color 0.3s;
-           
         }
-        
+
         /* Section for Authors */
-        
         .authors-section {
-             background-image: url('dd.jpg');
+            background-image: url('dd.jpg');
             color: #fff;
             padding: 15px 0;
         }
-        
+
         .author {
             text-align: center;
             margin-bottom: 30px;
         }
-        
+
         .author img {
             width: auto;
             height: 80px;
@@ -358,287 +301,129 @@ body.dark-mode .score {
             border: 4px solid #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .author h3 {
             font-size: 1.5rem;
             margin-bottom: 8px;
         }
-        
+
         .author p {
             font-size: 1.0rem;
-            margin-bottom:18px;
+            margin-bottom: 18px;
         }
-        
-        /* Dark Mode Styles */
-        
-        body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar {
-            background-color: #212529;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-        
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        body.dark-mode .hero {
-            background-color: #343a40;
-            color: #fff;
-        }
-        
-        body.dark-mode .btn-primary {
-            background-color: #dc3545;
-            border-color: #dc3545;
-        }
-        
-        body.dark-mode .btn-primary:hover {
-            background-color: #c82333;
-            border-color: #bd2130;
-        }
-        
-        body.dark-mode .feature {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
-        }
-        
-        body.dark-mode .social-icons a {
-            color: #fff;
-        }
-        
-        body.dark-mode .authors-section {
-            background-color: #212529;
-            color: #fff;
-        }
-        
+
         /* Blogs Section */
-        
         .blogs-section {
             padding: 60px 0;
-     background-image: url('green.jpg');
+            background-image: url('green.jpg');
             text-align: center;
         }
-        
+
         .blog {
             margin-bottom: 30px;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-           background-color: rgba(255, 255, 0, 0.5);
-           background-color:  hsla(0, 0%, 0%, 0); 
-        } 
-        .blog img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
+            background-color: #fff;
             transition: transform 0.3s;
         }
-        
+
+        .blog:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
         .blog h3 {
-            margin-top: 10px;
             font-size: 1.5rem;
-            color: black;
+            margin-bottom: 10px;
         }
-        
-        .blog:hover img {
-            transform: scale(1.1);
+
+        .blog p {
+            font-size: 1rem;
+            line-height: 1.6;
         }
-        
+
+        .blog .btn-primary {
+            margin-top: 15px;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .blog .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
         /* Footer Section */
-        
-        footer {
-               background-image: url('green.jpg');
+        .footer {
+            background-color: #343a40;
             color: #fff;
-            padding: 30px 0;
+            padding: 60px 0;
+        }
+
+        .footer h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer ul li a:hover {
+            color: #ccc;
+        }
+
+        .footer .social-icons a {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .footer .social-icons a:hover {
+            color: #ccc;
+        }
+
+        .copyright {
             text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
         }
-        
-        footer p {
-            margin-bottom: 0;
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
-             .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-         /* Center text horizontally within .center-container */
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
         }
-        h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cairo', Arial, sans-serif;
-}
-        /* Add this to your CSS file or <style> block */
-.btn-white {   background-image: url('green.jpg');
-    color: white; /* Black text color */
-    border: 1px solid black; /* Black border */
-    padding: 10px 20px; /* Padding for the button */
-    text-align: center; /* Center the text */
-    text-decoration: none; /* Remove underline from text */
-    display: inline-block; /* Inline-block display */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-}
 
-.btn-white:hover {
-    background-color: white; /* Black background on hover */
-    color: black; /* White text color on hover */
-}
-/* Base styles for news container */
-.news {
-    display: flex; /* Arrange items in a column */
-    flex-direction: column;
-    gap: 20px; /* Space between news items */
-}
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
 
-.news {
-    display: flex; /* Makes items align in a row */
-    flex-direction: column; /* Makes items align in a column */
-    gap: 20px; /* Space between news items */
-}
-
-.news-item {
-     display: flex; /* Aligns image and text side by side */
-    align-items: center; /* Centers items vertically */
-              background-image: url('dd.jpg') ; /* Transparent gray background color */
-    padding: 15px; /* Padding inside each news item */
-    border-radius: 8px; /* Rounded corners for news items */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for news items */
-    transition: transform 0.2s; /* Smooth hover effect */
-    margin-bottom: 20px; /* Space between each news item */
-    border: 1px solid :#003311; /* Border around news items */
-    width: calc(100% - 30px); /* Adjust width to fit within page boundaries */
-       margin: 20px auto;
-}
-.news-item:hover {
-    transform: translateY(-3px); /* Move the item up slightly on hover */
-}
-
-.news-item img {
-    width: 140px; /* Fixed width for the images */
-    height: 140px; /* Fixed height for the images */
-    margin-right: 15px; /* Space between image and text */
-}
-
-.news-text {
-    flex: 1; /* Let text take remaining space */
-}
-
-.news-text h2 {
-    font-size: 1.2em; /* Font size for headlines */
-    color: white; /* Text color */
-    margin: 0 0 10px; /* Space below the headline */
-    cursor: pointer; /* Pointer cursor for clickable elements */
-}
-
-.news-text p {
-    font-size: 0.9em; /* Font size for the date */
-    color: #666; /* Text color for date */
-    margin: 0; /* Removes default margin */
-}
-
-
-.news-ite {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('bell1.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 20px; /* Reduce padding for smaller screens */
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    position: relative;
-    overflow: hidden;
-    width: calc(100% - 40px); /* Adjust width to fit page constraints */
-    margin: 10px auto; /* Reduce margin for smaller screens */
-    position: relative; /* Ensure relative positioning */
-}
-
-.news-ite::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
-    border-radius: 8px;
-}
-
-/* Ensure text within .news-item is readable */
-.news-ite h3, .news-ite p {
-    color: #fff; /* Adjust text color for readability */
-    z-index: 1; /* Ensure text is above the overlay */
-}
-
-@media (max-width: 700px) {
-    .news-ite {
-        flex-direction: column; /* Empiler les éléments verticalement sur les écrans plus petits */
-        text-align: center; /* Centrer le texte sur les écrans plus petits */
-        padding: 15px; /* Ajuster le padding pour les écrans plus petits */
-        margin: 10px auto; /* Ajuster la marge pour les écrans plus petits */
-    }
-    
-    .news-ite::after {
-        content: ""; /* Ajouter un pseudo-élément pour conserver le ratio de l'image */
-        display: block;
-        padding-top: 56.25%; /* Ratio 16:9 (hauteur / largeur) pour une image responsive */
-    }
-}
-
-.news-ite:hover {
-    transform: scale(1.02); /* Slightly enlarges the item on hover */
-}
-
-.news-ite img {
-    width: 100px; /* Fixed width for the images */
-    height: auto; /* Maintains aspect ratio */
-    margin-right: 20px; /* Space between image and text */
-    border-radius: 8px; /* Rounded corners for images */
-    z-index: 1; /* Ensure image stays above background */
-}
-
-.news-tex {
-position: sticky;
-top: 20px;/* Space below .news-tex */
-}
-.news-tex h2 {
-    font-size: 2.2em; /* Font size for headlines */
-    color: #fff; /* Text color */
-    margin: 0 0 10px; /* Space below the headline */
-    cursor: pointer; /* Pointer cursor for clickable elements */
-    position: relative;
-}
-
-.news-tex p {
-    font-size: 1.2em; /* Font size for the date */
-    color: #666; /* Text color for date */
-    margin: 0; /* Removes default margin */
-     position: relative;
-  top: 110px; left: 20px; 
-}
-   .tex-button {
-    background-color: transparent;
-
-    color: #ffffff; /* White text */
-    padding: 0px 0px;
-    text-decoration: none; /* Remove underline */
-    display: block; /* Display as block element */
-   position: relative;
-  top: 100px; left: 20px; /* Position absolute for overlay */
-    transition: background-color 0.3s ease;
-
-}
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
 
 
     </style>
