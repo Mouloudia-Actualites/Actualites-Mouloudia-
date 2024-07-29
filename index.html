@@ -652,20 +652,25 @@ footer p {
                 $('#fullscreenMenu').removeClass('open');
             });
         });
-        // Remove previously mentioned dark mode toggle button event
-        const toggleButton = document.querySelector('.btn-primary');
-        toggleButton.parentNode.removeChild(toggleButton);
-// JavaScript for toggling language links
-document.addEventListener('DOMContentLoaded', function() {
-    const langButtons = document.querySelectorAll('.lang-btn');
-    const menuItems = document.querySelectorAll('.menu-list li a');
+  // JavaScript for Mouloudia Actualités website
 
-    langButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove 'active' class from all buttons
-            langButtons.forEach(btn => btn.classList.remove('active'));
-            // Add 'active' class to the clicked button
-            button.classList.add('active');
+// Toggle fullscreen menu
+const toggleMenu = () => {
+    const fullscreenMenu = document.querySelector('.fullscreen-menu');
+    fullscreenMenu.classList.toggle('show');
+}
+
+// Event listener for fullscreen menu toggle
+document.querySelector('.navbar-toggler').addEventListener('click', toggleMenu);
+
+// Close fullscreen menu when clicking outside of it
+document.addEventListener('click', (event) => {
+    const fullscreenMenu = document.querySelector('.fullscreen-menu');
+    if (!event.target.closest('.navbar-toggler') && !event.target.closest('.fullscreen-menu-content') && fullscreenMenu.classList.contains('show')) {
+        fullscreenMenu.classList.remove('show');
+    }
+});
+
     </script>
 </body>
 
