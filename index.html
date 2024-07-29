@@ -769,12 +769,12 @@ top: 20px;/* Space below .news-tex */
 
 
     <!-- Bootstrap JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom JS -->
     <script>
-        // Script to toggle dark mode
+       // Script to toggle dark mode
         const logo = document.querySelector('.navbar-brand img');
         const body = document.body;
         const viewMenu = document.querySelector('.navbar-collapse');
@@ -802,25 +802,9 @@ top: 20px;/* Space below .news-tex */
                 $('#fullscreenMenu').removeClass('open');
             });
         });
-  // JavaScript for Mouloudia Actualités website
-
-// Toggle fullscreen menu
-const toggleMenu = () => {
-    const fullscreenMenu = document.querySelector('.fullscreen-menu');
-    fullscreenMenu.classList.toggle('show');
-}
-
-// Event listener for fullscreen menu toggle
-document.querySelector('.navbar-toggler').addEventListener('click', toggleMenu);
-
-// Close fullscreen menu when clicking outside of it
-document.addEventListener('click', (event) => {
-    const fullscreenMenu = document.querySelector('.fullscreen-menu');
-    if (!event.target.closest('.navbar-toggler') && !event.target.closest('.fullscreen-menu-content') && fullscreenMenu.classList.contains('show')) {
-        fullscreenMenu.classList.remove('show');
-    }
-});
-
+        // Remove previously mentioned dark mode toggle button event
+        const toggleButton = document.querySelector('.btn-primary');
+        toggleButton.parentNode.removeChild(toggleButton);
     </script>
 </body>
 
