@@ -13,43 +13,44 @@
     <link rel="icon" type="image/x-icon" href="mca.png">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9568912999082528"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9568912999082528" crossorigin="anonymous"></script>
     <!-- Inline Styles -->
     <style>
         /* Global styles */
-       body {
+        
+        body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
-            position: relative; /* Ensure body has relative position for absolute positioning */
+            position: relative;
+            /* Ensure body has relative position for absolute positioning */
         }
-
-       .navbar {
-          background-image: url('green.jpg');
+        
+        .navbar {
+            background-image: url('green.jpg');
         }
-
+        
         .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
+            width: 60px;
+            /* Adjust logo size for larger screens */
         }
-
+        
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
         }
-
+        
         .navbar-dark .navbar-toggler-icon {
-      color:white;
+            color: white;
             width: 24px;
             height: 17px;
         }
-         @media (max-width: 768px) {
+        
+        @media (max-width: 768px) {
             .navbar-brand img {
                 width: 40px;
             }
-            
-           
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
@@ -57,61 +58,69 @@
         }
         
         .hero {
-            background-color:white;
+            background-color: white;
             background-size: cover;
             background-position: center;
             color: #000;
             text-align: center;
             padding: 80px 0;
         }
-
+        
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
-            text-align: right; /* Right-align text */
+            text-align: right;
+            /* Right-align text */
         }
-
+        
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-
         /* Fullscreen menu styles */
+        
         .fullscreen-menu {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            z-index: 1000; /* Ensure it's above other content */
-            display: none; /* Initially hidden */
-            overflow-y: auto; /* Enable scrolling */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            z-index: 1000;
+            /* Ensure it's above other content */
+            display: none;
+            /* Initially hidden */
+            overflow-y: auto;
+            /* Enable scrolling */
         }
-
+        
         .fullscreen-menu.open {
-            display: block; /* Display when open */
+            display: block;
+            /* Display when open */
         }
-
-     
+        
         .fullscreen-menu-content {
-    position: absolute;
-    top: 6px; /* تعديل حسب الحاجة */
-    right: 10px; /* تعديل حسب الحاجة */
-    transform: translate(0, 0); /* تعديل حسب الحاجة */
-    text-align: right; /* توجيه النص إلى اليمين */
-}
-
-
+            position: absolute;
+            top: 6px;
+            /* تعديل حسب الحاجة */
+            right: 10px;
+            /* تعديل حسب الحاجة */
+            transform: translate(0, 0);
+            /* تعديل حسب الحاجة */
+            text-align: right;
+            /* توجيه النص إلى اليمين */
+        }
+        
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
         }
-
+        
         .fullscreen-menu-content ul li {
             margin-bottom: 10px;
         }
-
+        
         .fullscreen-menu-content ul li a {
             color: #fff;
             font-size: 24px;
@@ -120,30 +129,34 @@
             display: block;
             padding: 10px;
         }
-
+        
         .fullscreen-menu-content ul li a:hover {
             color: #ccc;
         }
-
-       .close-btn {
-    position: absolute;
-    top: 2px; /* تعديل حسب الحاجة */
-    left: 10px; /* تعديل لتحديد الزاوية اليسرى */
-    color: #fff; /* تعديل لون النص */
-    font-size: 50px; /* تعديل حجم الخط */
-    cursor: pointer;
-}   
-
-
+        
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            /* تعديل حسب الحاجة */
+            left: 10px;
+            /* تعديل لتحديد الزاوية اليسرى */
+            color: #fff;
+            /* تعديل لون النص */
+            font-size: 50px;
+            /* تعديل حجم الخط */
+            cursor: pointer;
+        }
+        
         .news-section {
             padding: 80px 0;
         }
-
+        
         .article {
             margin-bottom: 40px;
-            text-align: right; /* Align text to right */
+            text-align: right;
+            /* Align text to right */
         }
-
+        
         .article img {
             max-width: 100%;
             height: auto;
@@ -151,84 +164,105 @@
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-
+        
         .article h2 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            text-align: right; /* Align heading to right */
+            text-align: right;
+            /* Align heading to right */
         }
-
+        
         .article p {
             font-size: 1.1rem;
             line-height: 1.8;
             /* Text alignment to right is handled automatically with dir="rtl" */
         }
-
+        
         .article .meta {
             font-size: 1rem;
             color: #6c757d;
             text-align: right;
             margin-bottom: 10px;
         }
-
+        
         .article .meta .author {
             float: right;
         }
-
+        
         .article .meta .date {
-            float:left; /* Align date to right */
+            float: left;
+            /* Align date to right */
         }
-
+        
         .article .btn-primary {
-            float: right; /* Align button to the right */
+            float: right;
+            /* Align button to the right */
         }
-
+        
         .explore-more {
             margin-top: 50px;
             text-align: center;
         }
-
+        
         .explore-more .facebook-post {
             max-width: 100%;
             height: auto;
             border: none;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-
+        
         .explore-more .read-more-link {
             display: block;
             margin-top: 20px;
         }
-
         /* Dark Mode Styles */
+        
         body.dark-mode {
             background-color: #212529;
-            color: #fff; /* Green text */
+            color: #fff;
+            /* Green text */
         }
-
+        
         body.dark-mode .navbar {
             background-color: #fff;
         }
-
+        
         body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff; /* Red text */
+            color: #fff;
+            /* Red text */
         }
-
+        
         body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-
+        
         body.dark-mode .explore-more {
-            background-color: #343a40; /* Dark grey background */
-            border-color: #6c757d; /* Medium grey border */
-            color: #fff; /* Green text */
+            background-color: #343a40;
+            /* Dark grey background */
+            border-color: #6c757d;
+            /* Medium grey border */
+            color: #fff;
+            /* Green text */
             padding: 20px;
+        }
+        /* Footer Section */
+        
+        footer {
+            background-image: url('green.jpg');
+            /* Ajoutez l'image de fond pour le pied de page */
+            background-size: cover;
+            /* Assurez-vous que l'image de fond couvre toute la section */
+            background-position: center;
+            /* Centrez l'image de fond */
+            color: white;
+            /* Couleur du texte du pied de page en blanc */
+            padding: 20px 0;
+            /* Espacement intérieur du pied de page */
         }
     </style>
 </head>
 
 <body>
-    <!-- Header with Navbar -->
     <!-- Header with Navbar -->
     <header>
         <nav class="navbar navbar-expand-md navbar-dark">
@@ -243,30 +277,44 @@
         </nav>
     </header>
 
-   <!-- Fullscreen Menu -->
-   <div class="fullscreen-menu" id="fullscreenMenu">
-    <span class="close-btn">&times;</span><!-- زر الإغلاق في سطر واحد مع فاصل -->
-    <div class="fullscreen-menu-content">
-        <ul><br><br>
-            <li><a href="index.html">الصفحة الرئيسية</a></li>
-            <li><a href="news1.html">أخبار</a></li>
-            <li><a href="first1.html">الفريق الأول</a></li>
-            <li><a href="reserve1.html">فريق الرديف</a></li>
-            <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
-            <li><a href="live1.html">نتائج مباشرة</a></li>
-            <li><a href="video1.html">أشرطة فيديو</a></li>
-            <li><a href="contac1.html">تواصل معنا</a></li>
-        </ul>
+    <!-- Fullscreen Menu -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-btn">&times;</span>
+        <div class="fullscreen-menu-content">
+            <ul>
+                <br><br>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="news1.html">أخبار</a></li>
+                <li><a href="first1.html">الفريق الأول</a></li>
+                <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+                <li><a href="live1.html">نتائج مباشرة</a></li>
+                <li><a href="video1.html">أشرطة فيديو</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+            </ul>
+        </div>
     </div>
-</div>
-
-
 
     <!-- News Section -->
     <section class="news-section">
         <div class="container">
             <div class="row" id="articlesContainer">
-                <!-- Articles will be dynamically inserted here -->
+                <!-- Articles will be inserted here dynamically -->
+                <div class="col-lg-6">
+                    <article class="article">
+                        <img src="bell1.jpg" alt="بلايلي يغادر العميد رسميا ويتلحق بناديه السابق">
+                        <div class="meta">
+                            <span class="date">2024/07/30</span>
+                            <span class="author">برنجي اسماء</span>
+                        </div><br>
+                        <h2>قضية يوسف بلايلي....أخر حلقة</h2><br>
+                        <p>بعدما عادت قضية يوسف بلايلي مع العميد ،ليلة أمس ، تطفو إلى السطح مجددا ،ها هي الأمور تتضح لتضع حدا لمسلسل "بلايلي في المولودية " . فبعد أن باعت ادارة نادي مولودية الجزائر يوم الاحد ،أوراق تسريح يوسف بلايلي للترجي الرياضي التونسي،
+                            .تراجع ابن الباهية عن قراره بشكل مفاجئ و أراد البقاء في صفوف المولودية لموسم أخر <br>بدأ الكلام عن حقيقة عودة يوسف للعميد و ما خلفية ذلك ، خاصة بعد نشر الأخوة بلايلي "يوسف ونعيم " لستوري عبر منصة انستغرام ، صورا ليوسف لحظة
+                            تتويجه بلقب البطولة الثامن للمولودية ، ليؤكد نية المهاجم السابق لعميد الأندية الجزائرية بالعودة إلى توليفة المدرب الفرنسي أمير بوميل <br>بلايلي إنتظر صبيحة اليوم اتصالا من إدارة المولودية في أخر الدقائق لكن ذلك لم يكن فإدارة
+                            الحاج رجم اغلقت ملف الدولي الجزائري نهائيا ،ليقرر يوسف التوجه إلى المطار بغية السفر إلى تونس و التوقيع للترجي التونسي ، وهو منتظر مساء اليوم ، لترسيم صفقة انضمامه الى الترجي بصفة رسمية</p>
+
+                    </article>
+                </div>
             </div>
         </div>
     </section>
@@ -282,13 +330,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Dark Mode Toggle Script -->
     <script>
-         $(document).ready(function () {
-            $('.navbar-toggler').click(function () {
+        $(document).ready(function() {
+            $('.navbar-toggler').click(function() {
                 $('#fullscreenMenu').toggleClass('open');
             });
 
             // Close the menu when clicking outside of it
-            $(document).mouseup(function (e) {
+            $(document).mouseup(function(e) {
                 var container = $("#fullscreenMenu");
                 if (!container.is(e.target) && container.has(e.target).length === 0) {
                     container.removeClass('open');
@@ -296,14 +344,15 @@
             });
 
             // Close the menu when close button is clicked
-            $('.close-btn').click(function () {
+            $('.close-btn').click(function() {
                 $('#fullscreenMenu').removeClass('open');
             });
         });
+
         const body = document.body;
         const navbarBrand = document.querySelector('.navbar-brand');
 
-        navbarBrand.addEventListener('click', function () {
+        navbarBrand.addEventListener('click', function() {
             if (body.classList.contains('light-mode')) {
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
@@ -312,41 +361,6 @@
                 body.classList.add('light-mode');
             }
         });
-
-        // Function to display articles dynamically
-        function displayArticles() {
-            const articlesContainer = document.getElementById('articlesContainer');
-            const articles = [
-    {
-        title: 'بلايلي يغادر العميد رسميا ويتلحق بناديه السابق',
-        content: '.نشرت  إدارة مولودية الجزائر اليوم الأحد، بيانا عبر صفحاتها الرسمية في مواقع التواصل الاجتماعي،  أعلنت فيه عن رحيل لاعبها يوسف بلايلي ،بعد موسم استناني قضاه رفقة العميد توج من خلاله بلقب البطولة  الثامن للمولودية. ووفق ماجاء في البيان فإن إدارة النادي بقيادة الحاج رجم توصلت إلى اتفاق رسمي مع نادي الترجي التونسي على بيع عقد اللاعب ، ولم تفصح إدارة العميد عن قيمة بيع عقد لاعبها السابق. وأكدت إدارة المولودية في ذات البيان أن  نادي الترجي الرياضي التونسي  هو نادي الوحيد الذي تقدم بعرض لضم  يوسف بلايلي الذي كان يرتبط بالعميد لموسم أخر . وفي الاخير توجه نادي مولودية الجزائر  بتشكره للاعب يوسف بلايلي نظيرا للمجهودات التي قدمها طيلة الموسم الفارط الذي كان فيه احد صانعي فرحة البطولة الثامنة،  كما تمنت له حظا موفقا في وجهته القادمة . يجدر الاشارة أن يوسف بلايلي قد قاطع تربص المولودية برين وفضل البقاء في الجزائر إلى غاية الحسم في مستقبله والذي فصل فيه اليوم بعد أن قرر العودة إلى ناديه السابق الترجي الرياضي التونسي ومغادرة صفوف العميد',
-        imageUrl: 'bell1.jpg',
-        link: 'https://www.example.com/article1',
-        date: '2024/07/28',
-        author: 'برنجي اسماء'
-    },
-            ];
-
-            articles.forEach(article => {
-                const articleHTML = `
-                    <div class="col-lg-6">
-                        <article class="article">
-                            <img src="${article.imageUrl}" alt="${article.title}">
-                            <div class="meta">
-                               <span class="date">${article.date}</span>
-                               <span class="author">${article.author}</span>
-                            </div><br>
-                            <h2>${article.title}</h2><br>
-                            <p>${article.content}</p>
-                        </article>
-                    </div>
-                `;
-                articlesContainer.innerHTML += articleHTML;
-            });
-        }
-
-        // Call the displayArticles function to show articles on page load
-        displayArticles();
     </script>
 </body>
 
