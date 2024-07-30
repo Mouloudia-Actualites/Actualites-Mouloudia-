@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
- <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -14,52 +15,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <!-- Inline Styles -->
     <style>
-    body {
+        body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #343a40;
             transition: background-color 0.5s, color 0.5s;
-            position: relative; /* Ensure body has relative position for absolute positioning */
+            position: relative;
+            /* Ensure body has relative position for absolute positioning */
         }
-  .navbar {
-          background-image: url('green.jpg');
+        
+        .navbar {
+            background-image: url('green.jpg');
         }
-
+        
         .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
+            width: 60px;
+            /* Adjust logo size for larger screens */
         }
-
+        
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
         }
-
+        
         .navbar-dark .navbar-toggler-icon {
-      color:white;
+            color: white;
             width: 24px;
             height: 17px;
         }
-
+        
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
-            text-align: right; /* Right-align text */
+            text-align: right;
+            /* Right-align text */
         }
-
+        
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-
+        
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-         @media (max-width: 768px) {
+        
+        @media (max-width: 768px) {
             .navbar-brand img {
                 width: 40px;
             }
-            
-           
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
@@ -67,50 +71,57 @@
         }
         
         .hero {
-            background-color:white;
+            background-color: white;
             background-size: cover;
             background-position: center;
             color: #000;
             text-align: center;
             padding: 80px 0;
         }
-
         /* Fullscreen menu styles */
+        
         .fullscreen-menu {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            z-index: 1000; /* Ensure it's above other content */
-            display: none; /* Initially hidden */
-            overflow-y: auto; /* Enable scrolling */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            z-index: 1000;
+            /* Ensure it's above other content */
+            display: none;
+            /* Initially hidden */
+            overflow-y: auto;
+            /* Enable scrolling */
         }
-
+        
         .fullscreen-menu.open {
-            display: block; /* Display when open */
+            display: block;
+            /* Display when open */
         }
-
-       
+        
         .fullscreen-menu-content {
-    position: absolute;
-    top: 6px; /* تعديل حسب الحاجة */
-    right: 10px; /* تعديل حسب الحاجة */
-    transform: translate(0, 0); /* تعديل حسب الحاجة */
-    text-align: right; /* توجيه النص إلى اليمين */
-}
-
-
+            position: absolute;
+            top: 6px;
+            /* تعديل حسب الحاجة */
+            right: 10px;
+            /* تعديل حسب الحاجة */
+            transform: translate(0, 0);
+            /* تعديل حسب الحاجة */
+            text-align: right;
+            /* توجيه النص إلى اليمين */
+        }
+        
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
         }
-
+        
         .fullscreen-menu-content ul li {
             margin-bottom: 10px;
         }
-
+        
         .fullscreen-menu-content ul li a {
             color: #fff;
             font-size: 24px;
@@ -119,100 +130,113 @@
             display: block;
             padding: 10px;
         }
-
+        
         .fullscreen-menu-content ul li a:hover {
             color: #ccc;
         }
-
-       .close-btn {
-    position: absolute;
-    top: 2px; /* تعديل حسب الحاجة */
-    left: 10px; /* تعديل لتحديد الزاوية اليسرى */
-    color: #fff; /* تعديل لون النص */
-    font-size: 50px; /* تعديل حجم الخط */
-    cursor: pointer;
-}      
-
-    .news-section {
-        padding: 50px 0 80px; /* Adjust top padding to move articles section up */
-    }
-
-    .article {
-        margin-bottom: 40px;
-        text-align: right; /* Align text to right */
-    }
-
-    .article img {
-        max-width: 100%;
-        height: auto;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .article h2 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        text-align: right; /* Align heading to right */
-    }
-
-    .article p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        /* Text alignment to right is handled automatically with dir="rtl" */
-    }
-
-    .article .meta {
-        font-size: 1rem;
-        color: #6c757d;
-        text-align: right;
-        margin-bottom: 10px;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        border-color: #007bff;
-        color: #fff;
-        font-size: 1.1rem;
-        padding: 10px 20px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-    }
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-        border-color: #0056b3;
-    }
-
-    .btn-primary:focus {
-        box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-    }
-
-    /* Dark Mode Styles */
-    body.dark-mode {
-        background-color: #212529;
-        color: #fff; /* Green text */
-    }
-
-    body.dark-mode .navbar {
-        background-color: #212529;
-    }
-
-    body.dark-mode .navbar-dark .navbar-nav .nav-link {
-        color: #fff; /* Red text */
-    }
-
-    body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    body.dark-mode .explore-more {
-        background-color: #343a40; /* Dark grey background */
-        border-color: #6c757d; /* Medium grey border */
-        color: #fff; /* Green text */
-        padding: 20px;
-    }
-         footer {
+        
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            /* تعديل حسب الحاجة */
+            left: 10px;
+            /* تعديل لتحديد الزاوية اليسرى */
+            color: #fff;
+            /* تعديل لون النص */
+            font-size: 50px;
+            /* تعديل حجم الخط */
+            cursor: pointer;
+        }
+        
+        .news-section {
+            padding: 50px 0 80px;
+            /* Adjust top padding to move articles section up */
+        }
+        
+        .article {
+            margin-bottom: 40px;
+            text-align: right;
+            /* Align text to right */
+        }
+        
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: right;
+            /* Align heading to right */
+        }
+        
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+        }
+        
+        .article .meta {
+            font-size: 1rem;
+            color: #6c757d;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
+        /* Dark Mode Styles */
+        
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff;
+            /* Green text */
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+            /* Red text */
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .explore-more {
+            background-color: #343a40;
+            /* Dark grey background */
+            border-color: #6c757d;
+            /* Medium grey border */
+            color: #fff;
+            /* Green text */
+            padding: 20px;
+        }
+        
+        footer {
             background-image: url('green.jpg');
             color: #fff;
             padding: 30px 0;
@@ -222,19 +246,21 @@
         footer p {
             margin-bottom: 0;
         }
-             .center-container {
+        
+        .center-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 50%;
-         /* Center text horizontally within .center-container */
+            /* Center text horizontally within .center-container */
         }
-</style>
+    </style>
 
 </head>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
 <body>
-   <header>
+    <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <div class="navbar-brand mr-auto">
@@ -247,22 +273,23 @@
         </nav>
     </header>
 
-       <!-- Fullscreen Menu -->
-   <div class="fullscreen-menu" id="fullscreenMenu">
-    <span class="close-btn">&times;</span><!-- زر الإغلاق في سطر واحد مع فاصل -->
-    <div class="fullscreen-menu-content">
-        <ul><br><br>
-            <li><a href="index.html">الصفحة الرئيسية</a></li>
-            <li><a href="news1.html">أخبار</a></li>
-            <li><a href="first1.html">الفريق الأول</a></li>
-            <li><a href="reserve1.html">فريق الرديف</a></li>
-            <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
-            <li><a href="live1.html">نتائج مباشرة</a></li>
-            <li><a href="video1.html">أشرطة فيديو</a></li>
-            <li><a href="contac1.html">تواصل معنا</a></li>
-        </ul>
+    <!-- Fullscreen Menu -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-btn">&times;</span>
+        <!-- زر الإغلاق في سطر واحد مع فاصل -->
+        <div class="fullscreen-menu-content">
+            <ul><br><br>
+                <li><a href="index.html">الصفحة الرئيسية</a></li>
+                <li><a href="news1.html">أخبار</a></li>
+                <li><a href="first1.html">الفريق الأول</a></li>
+                <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+                <li><a href="live1.html">نتائج مباشرة</a></li>
+                <li><a href="video1.html">أشرطة فيديو</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+            </ul>
+        </div>
     </div>
-</div>
 
     <section class="news-section">
         <div class="container">
@@ -285,7 +312,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Dark Mode Toggle Script -->
     <script>
-          // Close the fullscreen menu when clicking outside of it or on close button
+        // Close the fullscreen menu when clicking outside of it or on close button
         $(document).ready(function() {
             // Toggle fullscreen menu
             $('.navbar-toggler').click(function() {
@@ -308,7 +335,7 @@
         const body = document.body;
         const navbarBrand = document.querySelector('.navbar-brand');
 
-        navbarBrand.addEventListener('click', function () {
+        navbarBrand.addEventListener('click', function() {
             if (body.classList.contains('light-mode')) {
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
@@ -321,17 +348,15 @@
         // Function to display articles
         function displayArticles() {
             const articlesContainer = document.querySelector('.news-section .row');
-            const articles = [
+            const articles = [{
+                title: 'أخبار رديف نادي مولودية الجزائر',
+                content: 'التحق مدافع المنتخب الوطني  لأقل من عشرين سنة ،آدم ميلي برديف مولودية الجزائر قادما  من نادي مولودية العلمة ونجح مدير الفئات الشبانية محمد ميخازني بخطف الموهبة سطايفية، لتدعيم خط دفاع رديف العميد الموسم القادم، الذي يعول على تقديم موسم استثنائي وتعويض خسارة لقب بطولة رديف الموسم الفارط لصالح شباب بلوزاد صاحب 19 سنة بصم على اداء رائع مع رديف و اكابر فريقه السابق مولودية العلمة ليستدعى إلى تربص المنتخب الوطني لأقل من 20 سنة في أكثر من مناسبة.',
+                imageUrl: 'espoir12.jpg',
+                link: 'https://www.facebook.com/share/p/RrmTxfK3UmnFxt6N/',
+                date: '2024-07-30',
+                author: 'برنجي اسماء'
+            }];
 
-                {
-                    title: 'أخبار رديف نادي مولودية الجزائر',
-                    content: 'المهاجم إلياس بولعربي لاعبًا جديدًا في صفوف رديف مولودية الجزائر',
-                    imageUrl: 'espoir1.jpg',
-                    link: 'https://www.facebook.com/share/p/RrmTxfK3UmnFxt6N/',
-                    date: '2024-07-20',
-                    author: ''
-                }
-            ];
 
             articles.forEach(article => {
                 const articleHTML = `
