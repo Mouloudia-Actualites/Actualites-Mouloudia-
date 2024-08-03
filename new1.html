@@ -257,6 +257,19 @@
             padding: 20px 0;
             /* Espacement intérieur du pied de page */
         }
+        .product-image {
+  max-width: 100%; /* Ensure the image does not exceed the width of its container */
+  height: auto; /* Allow the height to adjust proportionally */
+  display: block; /* Ensure the image behaves as a block element */
+  margin: 0 auto; /* Center the image horizontally */
+}
+
+.product-image img {
+  width: 100%; /* Make the image fill its container */
+  height: auto; /* Allow the height to adjust proportionally */
+  display: block; /* Ensure the image behaves as a block element */
+}
+
     </style>
 </head>
 
@@ -312,6 +325,7 @@
             </div>
         </div>
     </section>
+    <div class="product-image">
 <a href="https://amzn.to/3YsTwP2" target="_blank">
   <img src="https://m.media-amazon.com/images/I/71HzbCsnQmL._AC_SX569_.jpg" alt="صورة المنتج">
 </a>
