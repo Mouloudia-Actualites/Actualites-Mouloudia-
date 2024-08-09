@@ -17,22 +17,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Inline Styles -->
     <style>
-        body {
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
             font-family: 'Cairo', Arial, sans-serif;
-           /* The image used */
-  background-image: url("bmq.jpg");
-
-  /* Full height */
-  height: auto;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
             color: #343a40;
+            background-image: url("bmq.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             transition: background-color 0.5s, color 0.5s;
-            position: relative;
-            /* Ensure body has relative position for absolute positioning */
         }
         
         .navbar {
@@ -41,7 +37,6 @@
         
         .navbar-brand img {
             width: 60px;
-            /* Adjust logo size for larger screens */
         }
         
         .navbar-dark .navbar-toggler {
@@ -60,7 +55,6 @@
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
-            /* Right-align text */
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
@@ -68,14 +62,12 @@
         }
         
         .hero {
-          
             background-size: cover;
             background-position: center;
             color: #000;
             text-align: center;
             padding: 80px 0;
         }
-        /* Fullscreen menu styles */
         
         .fullscreen-menu {
             position: fixed;
@@ -83,31 +75,22 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color:#054e3c ;
-            /* Semi-transparent black background */
+            background-color: #054e3c;
             z-index: 1000;
-            /* Ensure it's above other content */
             display: none;
-            /* Initially hidden */
             overflow-y: auto;
-            /* Enable scrolling */
         }
         
         .fullscreen-menu.open {
             display: block;
-            /* Display when open */
         }
         
         .fullscreen-menu-content {
             position: absolute;
             top: 6px;
-            /* تعديل حسب الحاجة */
             right: 10px;
-            /* تعديل حسب الحاجة */
             transform: translate(0, 0);
-            /* تعديل حسب الحاجة */
             text-align: right;
-            /* توجيه النص إلى اليمين */
         }
         
         .fullscreen-menu-content ul {
@@ -135,18 +118,13 @@
         .close-btn {
             position: absolute;
             top: 2px;
-            /* تعديل حسب الحاجة */
             left: 10px;
-            /* تعديل لتحديد الزاوية اليسرى */
             color: #fff;
-            /* تعديل لون النص */
             font-size: 50px;
-            /* تعديل حجم الخط */
             cursor: pointer;
         }
         
         .container1 {
-    
             padding: 20px;
             border-radius: 10px;
             max-width: 300px;
@@ -177,33 +155,23 @@
         
         .social-button img {
             width: 40px;
-            /* Ajuster la taille de l'image */
             margin-right: 10px;
-            /* Espace à droite de l'image */
             border-radius: 50%;
-            /* Coins arrondis */
         }
         
         .social-button.youtube img {
             width: 50px;
-            /* Ajuster la taille de l'image */
             margin-right: 10px;
-            /* Espace à droite de l'image */
             border-radius: 50%;
-            /* Coins arrondis */
         }
         
         .social-button .button-text {
             flex: 1;
             text-align: center;
             font-size: 18px;
-            /* Taille du texte */
             line-height: 1.2;
-            /* Hauteur de ligne pour espacement */
             text-transform: uppercase;
-            /* Texte en majuscules */
             letter-spacing: 1px;
-            /* Espacement des lettres */
         }
         
         footer {
@@ -211,12 +179,20 @@
             bottom: 0;
             left: 0;
             right: 0;
-          
+            background-color: rgba(0, 0, 0, 0.7);
             color: #fff;
             padding: 30px 0;
             text-align: center;
             font-size: 16px;
-            /* Adjust font size as needed */
+        }
+        
+        /* Full-Section Background */
+        .full-background {
+            background-image: url("bmq.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
         }
     </style>
 
@@ -239,15 +215,16 @@
     <!-- Fullscreen Menu -->
     <div class="fullscreen-menu" id="fullscreenMenu">
         <span class="close-btn">&times;</span>
-        <!-- زر الإغلاق في سطر واحد مع فاصل -->
         <div class="fullscreen-menu-content">
             <ul><br><br><br>
-               <br>  <li><a href="nous.html">الصفحة الرئيسية</a></li><br>
+                <li><a href="nous.html">الصفحة الرئيسية</a></li><br>
                 <li><a href="index.html">موقعنا الرسمي</a></li><br>
-                 <li><a href="index1.html"></a>من نحن</li>
+                <li><a href="index1.html">من نحن</a></li>
             </ul>
         </div>
     </div>
+
+    <!-- Social Media Links -->
     <div class="container1">
         <a class="social-button facebook" href="https://www.facebook.com/profile.php?id=61563005763935">
             <img src="ff.png" alt="Facebook Logo">
@@ -261,12 +238,11 @@
             <img src="tt.png" alt="Telegram Logo">
             <span class="button-text">TELEGRAM</span>
         </a>
-        <a class="social-button youtube" href ="https://www.youtube.com/@mouloudiaactualites">
+        <a class="social-button youtube" href="https://www.youtube.com/@mouloudiaactualites">
             <img src="yyy.png" alt="YouTube Logo">
             <span class="button-text">YOUTUBE</span>
         </a>
     </div>
-
 
     <!-- Footer Section -->
     <footer class="text-center py-4">
@@ -279,7 +255,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Dark Mode Toggle Script -->
     <script>
-        // Close the fullscreen menu when clicking outside of it or on close button
         $(document).ready(function() {
             // Toggle fullscreen menu
             $('.navbar-toggler').click(function() {
@@ -299,6 +274,7 @@
                 $('#fullscreenMenu').removeClass('open');
             });
         });
+
         const body = document.body;
         const navbarBrand = document.querySelector('.navbar-brand');
 
@@ -306,9 +282,7 @@
             if (body.classList.contains('light-mode')) {
                 body.classList.remove('light-mode');
                 body.classList.add('dark-mode');
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
+        
             }
         });
     </script>
