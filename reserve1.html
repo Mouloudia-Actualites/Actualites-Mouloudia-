@@ -316,50 +316,36 @@
         });
 
         // Function to display articles dynamically
-        function displayArticles() {
-            const articlesContainer = document.getElementById('articlesContainer');
-            const articles = [{
-                    title: 'إعارة متوسط الميدان مولودية الجزائر',
-                content: 'إدارة مولودية الجزائر تقرر إعارة متوسط الميدان عماد بينارة لأحد أندية القسم المحترف الأول بما أنه لا يزال مرتبط بعقد لغاية 2026',
-                imageUrl: 'espoir123.jpg',
-                link: 'https://www.facebook.com/share/p/RrmTxfK3UmnFxt6N/',
-                date: '2024-08-03',
-                author: 'فاروق'
-                },
-                {
-                    title: ' ',
-                    content: '',
-                    imageUrl: '',
-                    date: '',
-                    author: ''
-                },
-                {
-                    title: '',
-                    content: '',
-                    imageUrl: '',
-                    date: ' ',
-                    author: ''
-                }
-      
-            ];
+     function displayArticles() {
+    const articlesContainer = document.getElementById('articlesContainer');
+    const articles = [{
+        title: 'إعارة متوسط الميدان مولودية الجزائر',
+        content: 'إدارة مولودية الجزائر تقرر إعارة متوسط الميدان عماد بينارة لأحد أندية القسم المحترف الأول بما أنه لا يزال مرتبط بعقد لغاية 2026',
+        imageUrl: 'espoir123.jpg',
+        link: 'https://www.facebook.com/share/p/RrmTxfK3UmnFxt6N/',
+        date: '2024-08-03',
+        author: 'فاروق'
+    }];
 
-            articles.forEach(article => {
-                const articleHTML = `
-                    <div class="col-lg-6">
-                        <article class="article">
-                            <img src="${article.imageUrl}" alt="${article.title}">
-                            <div class="meta">
-                                <span class="date">${article.date}</span> |
-                                <span class="author">${article.author}</span>
-                            </div>
-                            <h2>${article.title}</h2>
-                            <p>${article.content}</p>
-                        </article>
+    articles.forEach(article => {
+        const articleHTML = `
+            <div class="col-lg-6">
+                <article class="article">
+                    <img src="${article.imageUrl}" alt="${article.title}">
+                    <div class="meta">
+                        <span class="date">${article.date}</span> |
+                        <span class="author">${article.author}</span>
                     </div>
-                `;
-                articlesContainer.innerHTML += articleHTML;
-            });
-        }
+                    <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                </article>
+            </div>
+        `;
+        articlesContainer.innerHTML += articleHTML;
+    });
+}
+
+
 
         // Call the displayArticles function to load articles on page load
         displayArticles();
