@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 
 <head>
@@ -18,21 +18,28 @@
             margin: 0;
             flex-direction: column;
         }
-
+        
         .logo {
             max-width: 250px;
             max-height: 250px;
             opacity: 0;
             animation: fadeIn 2s ease-in-out forwards;
         }
-
-       
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container text-center">
-        <img class="logo" src="mca.png" alt="Logo">
+        <img class="logo" src="mm.png" alt="Logo">
     </div>
 
     <script>
