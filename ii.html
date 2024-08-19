@@ -1,0 +1,45 @@
+<<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة البداية</title>
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        .logo {
+            max-width: 250px;
+            max-height: 250px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <img class="logo" src=mca".png" alt="Logo">
+    </div>
+
+    <script>
+        setTimeout(function() {
+            window.location.href = "inde.html"; // رابط الصفحة الرئيسية
+        }, 5000); // 5000 مللي ثانية = 5 ثوانٍ
+    </script>
+</body>
+
+</html>
