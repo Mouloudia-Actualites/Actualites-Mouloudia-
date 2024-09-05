@@ -175,8 +175,8 @@
             position: absolute;
             top: 10px;
             left: 50%;
-        transform: translateX(-50%);
-            color: #00b33c;
+            transform: translateX(-50%);
+            color: red;
             /* لون النص */
             padding: 10px 20px;
             border-radius: 5px;
@@ -196,20 +196,22 @@
             /* التأكد من أن العد التنازلي يمتد على عرض الحاوية */
             text-align: center;
             /* توسيط النص داخل العد التنازلي */
-            text-shadow: 1px 1px 3px rgba(0, 204, 68, 0.7), -1px -1px 3px rgba(0, 204, 68, 0.7);
             /* تحسين وضوح النص بإضافة ظلال متعددة */
         }
         
         .carousel-slide img {
             width: 100%;
             height: calc(100% - 50px);
-            /* Adjust height to leave space for the countdown */
+            /* ترك مساحة للعد التنازلي */
             object-fit: cover;
-            /* Ensure images cover the slide area */
-            border-radius: 10px;
+            /* التأكد من أن الصورة تغطي المساحة بالكامل */
+            border-radius: 0;
+            /* إزالة الزوايا الدائرية لجعلها مربعة */
+            /* إضافة حدود خضراء للصورة */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* إضافة ظل للصورة لجعلها بارزة */
             margin-top: 50px;
-            /* Add margin-top to ensure image is below the countdown */
+            /* ترك مسافة أعلى الصورة */
         }
         /* Dark Mode Styles */
         
