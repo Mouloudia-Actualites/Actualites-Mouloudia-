@@ -162,33 +162,6 @@
             padding-right: 10px;
         }
         
-        .countdown {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: red;
-            /* لون النص */
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 20px;
-            /* حجم الخط */
-            font-weight: bold;
-            /* سمك الخط */
-            font-family: 'Arial', sans-serif;
-            /* نوع الخط */
-            letter-spacing: 1px;
-            /* تباعد الأحرف */
-            white-space: nowrap;
-            /* منع التفاف النص */
-            z-index: 1;
-            /* التأكد من أن العد التنازلي فوق الصورة */
-            width: 100%;
-            /* التأكد من أن العد التنازلي يمتد على عرض الحاوية */
-            text-align: center;
-            /* توسيط النص داخل العد التنازلي */
-            /* تحسين وضوح النص بإضافة ظلال متعددة */
-        }
         
         .carousel-slide {
             flex: 0 0 auto;
@@ -890,7 +863,6 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
     <!-- Photo 2 avec le countdown -->
     <div class="carousel-slide">
-        <div class="countdown" id="countdown2">J: 00 H: 00 M: 00 S: 00</div>
         <img src="991.jpg" alt="Photo 2">
     </div>
 </div>
@@ -963,45 +935,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 });
             });
 
-            // Fonction de compte à rebours
-    function startCountdown(endTime, elementId) {
-        const countdownElement = document.getElementById(elementId);
-
-        // Vérification que l'élément existe
-        if (!countdownElement) {
-            console.error('Élément non trouvé : ' + elementId);
-            return;
-        }
-
-        function updateCountdown() {
-            const now = new Date();
-            const timeRemaining = endTime - now;
-
-            if (timeRemaining <= 0) {
-                countdownElement.textContent = 'J: 00 H: 00 M: 00 S: 00';
-                clearInterval(intervalId);
-                return;
-            }
-
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 3600));
-            const minutes = Math.floor((timeRemaining % (1000 * 3600)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            countdownElement.textContent = `J: ${String(days).padStart(2, '0')} H: ${String(hours).padStart(2, '0')} M: ${String(minutes).padStart(2, '0')} S: ${String(seconds).padStart(2, '0')}`;
-        }
-
-        const intervalId = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    }
-
-    // Définir l'heure de fin pour le compte à rebours countdown2
-    const endTime2 = new Date('2024-09-21T19:00:00'); // Date valide
-
-    // Démarrer le compte à rebours pour countdown2
-    startCountdown(endTime2, 'countdown2');
-            }
-
+           
             nextBtn.addEventListener('click', () => {
                 if (currentIndex < articleGrid.children.length - 1) {
                     currentIndex++;
