@@ -687,19 +687,20 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .featured-articles {
+         .featured-articles {
             text-align: center;
             padding: 20px;
             position: relative;
+            overflow: hidden;
         }
-        
+
         .article-grid {
             display: flex;
             overflow: hidden;
             width: 100%;
             scroll-behavior: smooth;
         }
-        
+
         .article {
             flex: 0 0 calc(100% - 40px);
             background-color: #f0f0f0;
@@ -707,31 +708,31 @@
             transition: transform 0.3s ease;
             box-sizing: border-box;
         }
-        
+
         .article img {
             width: 100%;
             border-radius: 8px;
         }
-        
+
         .article h3 {
             font-size: 24px;
             margin: 15px 0;
         }
-        
+
         .article p {
             color: #666;
             font-size: 18px;
         }
-        
+
         .article a {
             text-decoration: none;
             color: #007bff;
         }
-        
+
         .article:hover {
             transform: scale(1.02);
         }
-        
+
         .nav-btn {
             position: absolute;
             top: 50%;
@@ -743,15 +744,15 @@
             cursor: pointer;
             z-index: 10;
         }
-        
+
         .prev-btn {
             left: 10px;
         }
-        
+
         .next-btn {
             right: 10px;
         }
-        
+
         .nav-btn:focus {
             outline: none;
         }
@@ -934,19 +935,18 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 $('#fullscreenMenu').removeClass('open');
             });
 
-            // Article navigation
+            $(document).ready(function() {
             const articleGrid = document.getElementById('articleGrid');
             const articles = Array.from(articleGrid.getElementsByClassName('article'));
             let currentIndex = 0;
 
             function updateView() {
-                articles.forEach((article, index) => {
-                    article.classList.toggle('active', index === currentIndex);
-                });
+                const offset = -currentIndex * 100; // Assuming each article takes full width
+                articleGrid.style.transform = `translateX(${offset}%)`;
             }
 
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.querySelector('.next-btn');
+            const prevBtn = document.querySelector('.prev-btn');
 
             nextBtn.addEventListener('click', () => {
                 if (currentIndex < articles.length - 1) {
@@ -962,9 +962,27 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 }
             });
 
+            // Swipe functionality
+            const mc = new Hammer(articleGrid);
+
+            mc.on('swipeleft', function() {
+                if (currentIndex < articles.length - 1) {
+                    currentIndex++;
+                    updateView();
+                }
+            });
+
+            mc.on('swiperight', function() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateView();
+                }
+            });
+
             // Initial positioning to ensure the first article is centered
             updateView();
         });
+              }
     </script>
 </body>
 
