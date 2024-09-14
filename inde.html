@@ -916,28 +916,40 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!-- Custom JS -->
         <!-- Scripts -->
-        <script>
+       <script>
+        $(document).ready(function() {
             // Fullscreen menu toggle
-            $(document).ready(function() {
-                $('.navbar-toggler').click(function() {
-                    $('#fullscreenMenu').toggleClass('open');
-                });
-
-                $(document).mouseup(function(e) {
-                    var container = $("#fullscreenMenu");
-                    if (!container.is(e.target) && container.has(e.target).length === 0) {
-                        container.removeClass('open');
-                    }
-                });
-
-                $('.close-btn').click(function() {
-                    $('#fullscreenMenu').removeClass('open');
-                });
+            $('.navbar-toggler').click(function() {
+                $('#fullscreenMenu').toggleClass('open');
             });
 
-           
+            $(document).mouseup(function(e) {
+                var container = $("#fullscreenMenu");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.removeClass('open');
+                }
+            });
+
+            $('.close-btn').click(function() {
+                $('#fullscreenMenu').removeClass('open');
+            });
+
+            // Article navigation
+            const articleGrid = document.getElementById('articleGrid');
+            const articles = Array.from(articleGrid.getElementsByClassName('article'));
+            let currentIndex = 0;
+
+            function updateView() {
+                articles.forEach((article, index) => {
+                    article.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+
             nextBtn.addEventListener('click', () => {
-                if (currentIndex < articleGrid.children.length - 1) {
+                if (currentIndex < articles.length - 1) {
                     currentIndex++;
                     updateView();
                 }
@@ -952,7 +964,8 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
             // Initial positioning to ensure the first article is centered
             updateView();
-        </script>
+        });
+    </script>
 </body>
 
 </html>
