@@ -917,73 +917,73 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!-- Custom JS -->
         <!-- Scripts -->
-       <script>
-        $(document).ready(function() {
-            // Fullscreen menu toggle
-            $('.navbar-toggler').click(function() {
-                $('#fullscreenMenu').toggleClass('open');
-            });
-
-            $(document).mouseup(function(e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
-
-            $('.close-btn').click(function() {
-                $('#fullscreenMenu').removeClass('open');
-            });
-
-            $(document).ready(function() {
-            const articleGrid = document.getElementById('articleGrid');
-            const articles = Array.from(articleGrid.getElementsByClassName('article'));
-            let currentIndex = 0;
-
-            function updateView() {
-                const offset = -currentIndex * 100; // Assuming each article takes full width
-                articleGrid.style.transform = `translateX(${offset}%)`;
-            }
-
-            const nextBtn = document.querySelector('.next-btn');
-            const prevBtn = document.querySelector('.prev-btn');
-
-            nextBtn.addEventListener('click', () => {
-                if (currentIndex < articles.length - 1) {
-                    currentIndex++;
-                    updateView();
-                }
-            });
-
-            prevBtn.addEventListener('click', () => {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateView();
-                }
-            });
-
-            // Swipe functionality
-            const mc = new Hammer(articleGrid);
-
-            mc.on('swipeleft', function() {
-                if (currentIndex < articles.length - 1) {
-                    currentIndex++;
-                    updateView();
-                }
-            });
-
-            mc.on('swiperight', function() {
-                if (currentIndex > 0) {
-                    currentIndex--;
-                    updateView();
-                }
-            });
-
-            // Initial positioning to ensure the first article is centered
-            updateView();
+      <script>
+    $(document).ready(function() {
+        // Fullscreen menu toggle
+        $('.navbar-toggler').click(function() {
+            $('#fullscreenMenu').toggleClass('open');
         });
-              }
-    </script>
+
+        $(document).mouseup(function(e) {
+            var container = $("#fullscreenMenu");
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+                container.removeClass('open');
+            }
+        });
+
+        $('.close-btn').click(function() {
+            $('#fullscreenMenu').removeClass('open');
+        });
+
+        // Article carousel
+        const articleGrid = document.getElementById('articleGrid');
+        const articles = Array.from(articleGrid.getElementsByClassName('article'));
+        let currentIndex = 0;
+
+        function updateView() {
+            const offset = -currentIndex * 100; // Assuming each article takes full width
+            articleGrid.style.transform = `translateX(${offset}%)`;
+        }
+
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < articles.length - 1) {
+                currentIndex++;
+                updateView();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateView();
+            }
+        });
+
+        // Swipe functionality
+        const mc = new Hammer(articleGrid);
+
+        mc.on('swipeleft', function() {
+            if (currentIndex < articles.length - 1) {
+                currentIndex++;
+                updateView();
+            }
+        });
+
+        mc.on('swiperight', function() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateView();
+            }
+        });
+
+        // Initial positioning to ensure the first article is centered
+        updateView();
+    });
+</script>
+
 </body>
 
 </html>
