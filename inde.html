@@ -887,13 +887,14 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
             <div class="carousel-slide">
                 <img src="881.jpg" alt="Photo 1">
             </div>
+<div class="carousel-container">
+    <!-- Photo 2 avec le countdown -->
+    <div class="carousel-slide">
+        <div class="countdown" id="countdown2">J: 00 H: 00 M: 00 S: 00</div>
+        <img src="991.jpg" alt="Photo 2">
+    </div>
+</div>
 
-            <!-- Photo 2 -->
-            <div class="carousel-slide">
-                <div class="countdown" id="countdown2">J: 00 H: 00 M: 00 S: 00</div>
-                <img src="991.jpg" alt="Photo 2">
-            </div>
-        </div>
 
     </section> <br>
     <section class="image-before-icons">
@@ -962,51 +963,43 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 });
             });
 
-            // Countdown timer function
-            function startCountdown(endTime, elementId) {
-                const countdownElement = document.getElementById(elementId);
+            // Fonction de compte à rebours
+    function startCountdown(endTime, elementId) {
+        const countdownElement = document.getElementById(elementId);
 
-                function updateCountdown() {
-                    const now = new Date();
-                    const timeRemaining = endTime - now;
-                    if (timeRemaining <= 0) {
-                        countdownElement.textContent = 'J: 00 H: 00 M: 00 S: 00';
-                        clearInterval(intervalId);
-                        return;
-                    }
-                    const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 3600));
-                    const minutes = Math.floor((timeRemaining % (1000 * 3600)) / (1000 * 60));
-                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-                    countdownElement.textContent = `J: ${String(days).padStart(2, '0')} H: ${String(hours).padStart(2, '0')} M: ${String(minutes).padStart(2, '0')} S: ${String(seconds).padStart(2, '0')}`;
-                }
+        // Vérification que l'élément existe
+        if (!countdownElement) {
+            console.error('Élément non trouvé : ' + elementId);
+            return;
+        }
 
-                const intervalId = setInterval(updateCountdown, 1000);
-                updateCountdown();
+        function updateCountdown() {
+            const now = new Date();
+            const timeRemaining = endTime - now;
+
+            if (timeRemaining <= 0) {
+                countdownElement.textContent = 'J: 00 H: 00 M: 00 S: 00';
+                clearInterval(intervalId);
+                return;
             }
 
-           // Define end times and start countdowns
-const endTime1 = new Date('2024-09-14T20:00:00'); // Remplace par la date et heure que tu veux
-const endTime2 = new Date('2024-09-21T19:00:00'); // Remplace par une autre date
-startCountdown(endTime1, 'countdown1');
-startCountdown(endTime2, 'countdown2');
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 3600));
+            const minutes = Math.floor((timeRemaining % (1000 * 3600)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            // Image change on click
-            function changeImage(imgElement, newImageUrl) {
-                imgElement.src = newImageUrl;
-            }
-            const articleGrid = document.getElementById('articleGrid');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
+            countdownElement.textContent = `J: ${String(days).padStart(2, '0')} H: ${String(hours).padStart(2, '0')} M: ${String(minutes).padStart(2, '0')} S: ${String(seconds).padStart(2, '0')}`;
+        }
 
-            let currentIndex = 0;
+        const intervalId = setInterval(updateCountdown, 1000);
+        updateCountdown();
+    }
 
-            function updateView() {
-                const articleWidth = articleGrid.clientWidth;
-                articleGrid.scrollTo({
-                    left: currentIndex * articleWidth,
-                    behavior: 'smooth'
-                });
+    // Définir l'heure de fin pour le compte à rebours countdown2
+    const endTime2 = new Date('2024-09-21T19:00:00'); // Date valide
+
+    // Démarrer le compte à rebours pour countdown2
+    startCountdown(endTime2, 'countdown2');
             }
 
             nextBtn.addEventListener('click', () => {
