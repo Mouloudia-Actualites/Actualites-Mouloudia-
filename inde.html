@@ -688,75 +688,74 @@
         }
         
          .featured-articles {
-            text-align: center;
-            padding: 20px;
-            position: relative;
-            overflow: hidden;
-        }
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+    }
 
-        .article-grid {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            scroll-behavior: smooth;
-        }
+    .article-grid {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+    }
 
-        .article {
-            flex: 0 0 calc(100% - 40px);
-            background-color: #f0f0f0;
-            padding: 20px;
-            transition: transform 0.3s ease;
-            box-sizing: border-box;
-        }
+    .article {
+        flex: 0 0 100%;
+        padding: 20px;
+        background-color: #f0f0f0;
+        box-sizing: border-box;
+    }
 
-        .article img {
-            width: 100%;
-            border-radius: 8px;
-        }
+    .article img {
+        width: 100%;
+        border-radius: 8px;
+    }
 
-        .article h3 {
-            font-size: 24px;
-            margin: 15px 0;
-        }
+    .article h3 {
+        font-size: 24px;
+        margin: 15px 0;
+    }
 
-        .article p {
-            color: #666;
-            font-size: 18px;
-        }
+    .article p {
+        color: #666;
+        font-size: 18px;
+    }
 
-        .article a {
-            text-decoration: none;
-            color: #007bff;
-        }
+    .article a {
+        text-decoration: none;
+        color: #007bff;
+    }
 
-        .article:hover {
-            transform: scale(1.02);
-        }
+    .article:hover {
+        transform: scale(1.02);
+    }
 
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: transparent;
-            color: black;
-            border: none;
-            font-size: 30px;
-            cursor: pointer;
-            z-index: 10;
-        }
+    .nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        color: black;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 10;
+    }
 
-        .prev-btn {
-            left: 10px;
-        }
+    .prev-btn {
+        left: 10px;
+    }
 
-        .next-btn {
-            right: 10px;
-        }
+    .next-btn {
+        right: 10px;
+    }
 
-        .nav-btn:focus {
-            outline: none;
-        }
-    </style>
+    .nav-btn:focus {
+        outline: none;
+    } 
+        </style>
 </head>
 <!-- Default Statcounter code for Actualites-Mouloudia
 https://mouloudia-actualites.github.io/Actualites-Mouloudia- -->
@@ -803,30 +802,30 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
             </ul>
         </div>
     </div>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="featured-articles">
-            <button class="nav-btn prev-btn">&#10094;</button>
-            <div class="article-grid" id="articleGrid">
-                <div class="article">
-                    <img src="bm.jpg" alt="مقال 1">
-                    <h3><a href="#">عنوان المقال 1</a></h3>
-                    <p>ملخص قصير عن المقال الأول يوضح الفكرة الرئيسية.</p>
-                </div>
-                <div class="article">
-                    <img src="bel1.jpg" alt="مقال 2">
-                    <h3><a href="#">عنوان المقال 2</a></h3>
-                    <p>ملخص قصير عن المقال الثاني يوضح الفكرة الرئيسية.</p>
-                </div>
-                <div class="article">
-                    <img src="bmq.jpg" alt="مقال 3">
-                    <h3><a href="#">عنوان المقال 3</a></h3>
-                    <p>ملخص قصير عن المقال الثالث يوضح الفكرة الرئيسية.</p>
-                </div>
-                <!-- يمكنك إضافة المزيد من المقالات هنا -->
+   <!-- Hero Section -->
+<section class="hero">
+    <div class="featured-articles">
+        <button class="nav-btn prev-btn">&#10094;</button>
+        <div class="article-grid" id="articleGrid">
+            <div class="article">
+                <img src="bm.jpg" alt="مقال 1">
+                <h3><a href="#">عنوان المقال 1</a></h3>
+                <p>ملخص قصير عن المقال الأول يوضح الفكرة الرئيسية.</p>
             </div>
-            <button class="nav-btn next-btn">&#10095;</button>
+            <div class="article">
+                <img src="bel1.jpg" alt="مقال 2">
+                <h3><a href="#">عنوان المقال 2</a></h3>
+                <p>ملخص قصير عن المقال الثاني يوضح الفكرة الرئيسية.</p>
+            </div>
+            <div class="article">
+                <img src="bmq.jpg" alt="مقال 3">
+                <h3><a href="#">عنوان المقال 3</a></h3>
+                <p>ملخص قصير عن المقال الثالث يوضح الفكرة الرئيسية.</p>
+            </div>
+            <!-- Add more articles if needed -->
         </div>
+        <button class="nav-btn next-btn">&#10095;</button>
+    </div>
 
 
         <div class="news-item">
@@ -935,33 +934,43 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
             $('#fullscreenMenu').removeClass('open');
         });
 
-        // Article carousel
-        const articleGrid = document.getElementById('articleGrid');
-        const articles = Array.from(articleGrid.getElementsByClassName('article'));
-        let currentIndex = 0;
+       // Article carousel functionality
+const articleGrid = document.getElementById('articleGrid');
+const articles = document.querySelectorAll('.article');
+let currentIndex = 0;
 
-        function updateView() {
-            const offset = -currentIndex * 100; // Assuming each article takes full width
-            articleGrid.style.transform = `translateX(${offset}%)`;
-        }
+function updateView() {
+    const articleWidth = articles[0].clientWidth;
+    const offset = -currentIndex * articleWidth;
+    articleGrid.style.transform = `translateX(${offset}px)`;
+}
 
-        const nextBtn = document.querySelector('.next-btn');
-        const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
 
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < articles.length - 1) {
-                currentIndex++;
-                updateView();
-            }
-        });
+// Next button click event
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < articles.length - 1) {
+        currentIndex++;
+        updateView();
+    }
+});
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateView();
-            }
-        });
+// Previous button click event
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateView();
+    }
+});
 
+// Adjust view on window resize to handle dynamic widths
+window.addEventListener('resize', updateView);
+
+// Initial positioning to ensure the first article is centered
+updateView();
+
+});
         // Swipe functionality
         const mc = new Hammer(articleGrid);
 
