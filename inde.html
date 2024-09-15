@@ -916,7 +916,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!-- Custom JS -->
         <!-- Scripts -->
-      <script>
+     <script>
     $(document).ready(function() {
         // Fullscreen menu toggle
         $('.navbar-toggler').click(function() {
@@ -934,44 +934,40 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
             $('#fullscreenMenu').removeClass('open');
         });
 
-       // Article carousel functionality
-const articleGrid = document.getElementById('articleGrid');
-const articles = document.querySelectorAll('.article');
-let currentIndex = 0;
+        // Article carousel functionality
+        const articleGrid = document.getElementById('articleGrid');
+        const articles = document.querySelectorAll('.article');
+        let currentIndex = 0;
 
-function updateView() {
-    const articleWidth = articles[0].clientWidth;
-    const offset = -currentIndex * articleWidth;
-    articleGrid.style.transform = `translateX(${offset}px)`;
-}
+        function updateView() {
+            const articleWidth = articles[0].clientWidth; // Get width of the first article
+            const offset = -currentIndex * articleWidth;  // Calculate offset
+            articleGrid.style.transform = `translateX(${offset}px)`; // Move the container
+        }
 
-const nextBtn = document.querySelector('.next-btn');
-const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const prevBtn = document.querySelector('.prev-btn');
 
-// Next button click event
-nextBtn.addEventListener('click', () => {
-    if (currentIndex < articles.length - 1) {
-        currentIndex++;
-        updateView();
-    }
-});
+        // Next button click event
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < articles.length - 1) {
+                currentIndex++;
+                updateView();
+            }
+        });
 
-// Previous button click event
-prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateView();
-    }
-});
+        // Previous button click event
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateView();
+            }
+        });
 
-// Adjust view on window resize to handle dynamic widths
-window.addEventListener('resize', updateView);
+        // Adjust view on window resize to handle dynamic widths
+        window.addEventListener('resize', updateView);
 
-// Initial positioning to ensure the first article is centered
-updateView();
-
-});
-        // Swipe functionality
+        // Swipe functionality with Hammer.js
         const mc = new Hammer(articleGrid);
 
         mc.on('swipeleft', function() {
@@ -992,6 +988,7 @@ updateView();
         updateView();
     });
 </script>
+
 
 </body>
 
