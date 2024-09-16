@@ -1093,56 +1093,53 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         // Initial positioning to ensure the first article is centered
         updateView();
     });
-            // JavaScript to handle dragging (swiping) articles from right to left for RTL
-        const articleContainer = document.getElementById('articleContainer');
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+       // JavaScript to handle dragging (swiping) articles
+        document.querySelectorAll('.articleContainer').forEach(articleContainer => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
 
-        articleContainer.addEventListener('mousedown', (e) => {
-            isDown = true;
-            articleContainer.classList.add('active');
-            startX = e.pageX - articleContainer.offsetLeft;
-            scrollLeft = articleContainer.scrollLeft;
-        });
+            articleContainer.addEventListener('mousedown', (e) => {
+                isDown = true;
+                articleContainer.classList.add('active');
+                startX = e.pageX - articleContainer.offsetLeft;
+                scrollLeft = articleContainer.scrollLeft;
+            });
 
-        articleContainer.addEventListener('mouseleave', () => {
-            isDown = false;
-            articleContainer.classList.remove('active');
-        });
+            articleContainer.addEventListener('mouseleave', () => {
+                isDown = false;
+                articleContainer.classList.remove('active');
+            });
 
-        articleContainer.addEventListener('mouseup', () => {
-            isDown = false;
-            articleContainer.classList.remove('active');
-        });
+            articleContainer.addEventListener('mouseup', () => {
+                isDown = false;
+                articleContainer.classList.remove('active');
+            });
 
-        articleContainer.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - articleContainer.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll faster
+            articleContainer.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - articleContainer.offsetLeft;
+                const walk = (x - startX) * 2; // Scroll faster
+                articleContainer.scrollLeft = scrollLeft - walk; // Scroll direction for LTR
+            });
 
-            // Reverse scroll direction for RTL
-            articleContainer.scrollLeft = scrollLeft - walk;
-        });
+            articleContainer.addEventListener('touchstart', (e) => {
+                isDown = true;
+                startX = e.touches[0].pageX - articleContainer.offsetLeft;
+                scrollLeft = articleContainer.scrollLeft;
+            });
 
-        articleContainer.addEventListener('touchstart', (e) => {
-            isDown = true;
-            startX = e.touches[0].pageX - articleContainer.offsetLeft;
-            scrollLeft = articleContainer.scrollLeft;
-        });
+            articleContainer.addEventListener('touchend', () => {
+                isDown = false;
+            });
 
-        articleContainer.addEventListener('touchend', () => {
-            isDown = false;
-        });
-
-        articleContainer.addEventListener('touchmove', (e) => {
-            if (!isDown) return;
-            const x = e.touches[0].pageX - articleContainer.offsetLeft;
-            const walk = (x - startX) * 2;
-
-            // Reverse scroll direction for RTL
-            articleContainer.scrollLeft = scrollLeft - walk;
+            articleContainer.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                const x = e.touches[0].pageX - articleContainer.offsetLeft;
+                const walk = (x - startX) * 2;
+                articleContainer.scrollLeft = scrollLeft - walk; // Scroll direction for LTR
+            });
         });
 </script>
 
