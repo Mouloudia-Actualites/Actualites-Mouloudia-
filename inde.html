@@ -755,95 +755,88 @@
     .nav-btn:focus {
         outline: none;
     } 
-          /* General reset */
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
-        /* Adding Real Madrid font */
-        
-        @font-face {
-            font-family: 'RMNeueBold';
-            src: url('https://www.realmadrid.com/RMNeue-Bold.woff2') format('woff2');
-            font-weight: bold;
-            font-style: normal;
-        }
-        /* Apply RMNeueBold to specific elements */
-        
-        .rm-bold {
-            font-family: 'RMNeueBold', sans-serif;
-        }
-        /* Container grid layout for articles */
-        
-        .container {
-            display: flex;
-            gap: 15px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            width: 100%;
-            justify-content: space-between;
-            cursor: grab;
-        }
-        
-        .item {
-            min-width: 23%;
-            background-color: white;
-            border-radius: 8px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .item img {
-            width: 100%;
-            height: 150px;
-            /* Set height to maintain the rectangular shape */
-            object-fit: contain;
-            /* Ensure the entire image is visible */
-            border-radius: 8px;
-        }
-        
-        .item p {
-            margin: 10px 0 0;
-            font-size: 16px;
-            color: #333;
-        }
-        /* Media queries */
-        
-        @media (max-width: 1200px) {
-            .item {
-                min-width: 30%;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .item {
-                min-width: 45%;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .item {
-                min-width: 100%;
-                /* Ensure the image fits well */
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            .item img {
-                height: 200px;
-                /* Adjust height for better appearance on small screens */
-            }
-            .item p {
-                font-size: 18px;
-                /* Adjust text size for better readability */
-            }
-        }
+         /* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Adding Real Madrid font */
+@font-face {
+    font-family: 'RMNeueBold';
+    src: url('https://www.realmadrid.com/RMNeue-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Apply RMNeueBold to specific elements */
+.rm-bold {
+    font-family: 'RMNeueBold', sans-serif;
+}
+
+/* Container grid layout for articles */
+.container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    justify-content: space-between;
+    cursor: grab;
+}
+
+.item {
+    min-width: 23%;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+}
+
+.item img {
+    width: 100%;
+    height: 150px; /* Maintain rectangular shape */
+    object-fit: contain; /* Ensure the entire image is visible */
+}
+
+.item p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Media queries */
+@media (max-width: 1200px) {
+    .item {
+        min-width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .item {
+        min-width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .item img {
+        height: 200px; /* Adjust height for better appearance on small screens */
+    }
+    .item p {
+        font-size: 18px; /* Adjust text size for better readability */
+    }
+}
 
         </style>
 </head>
