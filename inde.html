@@ -755,7 +755,7 @@
     .nav-btn:focus {
         outline: none;
     } 
-         /* General reset */
+ /* General reset */
 * {
     margin: 0;
     padding: 0;
@@ -796,12 +796,14 @@
     align-items: center;
     background: none; /* Remove background */
     border: none; /* Remove border */
+    background-color: #f8f9fa; /* Optional: Light gray background */
 }
 
 .item img {
     width: 100%;
     height: 150px; /* Maintain rectangular shape */
-    object-fit: contain; /* Ensure the entire image is visible */
+    object-fit: cover; /* Ensure the entire image is visible */
+    border-radius: 15px; /* Rounded corners for the image */
 }
 
 .item p {
@@ -832,11 +834,13 @@
     }
     .item img {
         height: 200px; /* Adjust height for better appearance on small screens */
+        border-radius: 20px; /* More rounded corners on smaller screens */
     }
     .item p {
         font-size: 18px; /* Adjust text size for better readability */
     }
 }
+
 
         </style>
 </head>
