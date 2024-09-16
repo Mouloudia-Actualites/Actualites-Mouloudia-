@@ -755,6 +755,91 @@
     .nav-btn:focus {
         outline: none;
     } 
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+        /* Adding Real Madrid font */
+        
+        @font-face {
+            font-family: 'RMNeueBold';
+            src: url('https://www.realmadrid.com/RMNeue-Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+        /* Apply RMNeueBold to specific elements */
+        
+        .rm-bold {
+            font-family: 'RMNeueBold', sans-serif;
+        }
+        /* Container grid layout for articles */
+        
+        .container {
+            display: flex;
+            gap: 15px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            width: 100%;
+            justify-content: space-between;
+            cursor: grab;
+        }
+        
+        .item {
+            min-width: 23%;
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .item img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        
+        .item p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            color: #333;
+        }
+        /* Media queries */
+        
+        @media (max-width: 1200px) {
+            .item {
+                min-width: 30%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .item {
+                min-width: 45%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .item {
+                min-width: 100%;
+            }
+            /* تكبير حجم الخط في الشاشات الصغيرة */
+            .item p {
+                font-size: 20px;
+            }
+            .item img {
+                height: auto;
+                max-height: 250px;
+            }
+            /* جعل النص يظهر مباشرة تحت الصورة */
+            .item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
         </style>
 </head>
 <!-- Default Statcounter code for Actualites-Mouloudia
@@ -828,27 +913,28 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
     </div>
 
 
-        <div class="news-item">
-            <img src="jdid.jpg" alt="News Image">
-            <div class="news-text">
-                <a href="reser1.html" class="transparent-button">
-                    <h2>خامس لاعب ايفواري يتلحق بالعميد</h2>
-
-                    <p>2024-8-21|برنجي اسماء</p>
+        </div>
+    </section>
+     <section class="hero">
+        <div class="container" id="articleContainer">
+            <div class="item">
+                <img src="badj.jpg" alt="كريستيانو رونالدو و ليونيل ميسي">
+                <p class="rm-bold">كريستيانو رونالدو و ليونيل ميسي في السعودية...</p>
+            </div>
+            <div class="item">
+                <img src="bel1.jpg" alt="المنتخب الجزائري">
+                <p>الخضر يحققون النقاط الثلاث...</p>
+            </div>
+            <div class="item">
+                <img src="bm.jpg" alt="مباراة كرة القدم">
+                <p>رديف العميد يعود بالنقاط الثلاث...</p>
+            </div>
+            <div class="item">
+                <img src="bel1.jpg" alt="تدريبات كرة القدم">
+                <p>دراوي و بوراس من التدريبات...</p>
             </div>
         </div>
-
-        <div class="news-item">
-            <img src="tahar.jpg" alt="News Image">
-            <div class="news-text">
-                <a href="first1.html" class="transparent-button">
-                    <h2>فسخ عقد اللاعب الطاهر فتح الله</h2>
-                </a>
-                <p>2024-8-19|اسماء</p>
-            </div>
-        </div>
-        </div>
-    </section><br>
+    </section>
 
     <br>
     <br>
@@ -987,6 +1073,57 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         // Initial positioning to ensure the first article is centered
         updateView();
     });
+           // JavaScript to handle dragging (swiping) articles from right to left for RTL
+        const articleContainer = document.getElementById('articleContainer');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        articleContainer.addEventListener('mousedown', (e) => {
+            isDown = true;
+            articleContainer.classList.add('active');
+            startX = e.pageX - articleContainer.offsetLeft;
+            scrollLeft = articleContainer.scrollLeft;
+        });
+
+        articleContainer.addEventListener('mouseleave', () => {
+            isDown = false;
+            articleContainer.classList.remove('active');
+        });
+
+        articleContainer.addEventListener('mouseup', () => {
+            isDown = false;
+            articleContainer.classList.remove('active');
+        });
+
+        articleContainer.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - articleContainer.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll faster
+
+            // Reverse scroll direction for RTL
+            articleContainer.scrollLeft = scrollLeft + walk;
+        });
+
+        articleContainer.addEventListener('touchstart', (e) => {
+            isDown = true;
+            startX = e.touches[0].pageX - articleContainer.offsetLeft;
+            scrollLeft = articleContainer.scrollLeft;
+        });
+
+        articleContainer.addEventListener('touchend', () => {
+            isDown = false;
+        });
+
+        articleContainer.addEventListener('touchmove', (e) => {
+            if (!isDown) return;
+            const x = e.touches[0].pageX - articleContainer.offsetLeft;
+            const walk = (x - startX) * 2;
+
+            // Reverse scroll direction for RTL
+            articleContainer.scrollLeft = scrollLeft + walk;
+        });
 </script>
 
 
