@@ -755,27 +755,29 @@
     .nav-btn:focus {
         outline: none;
     } 
-            * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Cairo', sans-serif;
-        }
-        /* Adding Real Madrid font */
-        
-        @font-face {
-            font-family: 'RMNeueBold';
-            src: url('https://www.realmadrid.com/RMNeue-Bold.woff2') format('woff2');
-            font-weight: bold;
-            font-style: normal;
-        }
-        /* Apply RMNeueBold to specific elements */
-        
-        .rm-bold {
-            font-family: 'RMNeueBold', sans-serif;
-        }
-        /* Container grid layout for articles */
-       .container {
+          /* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Adding Real Madrid font */
+@font-face {
+    font-family: 'RMNeueBold';
+    src: url('https://www.realmadrid.com/RMNeue-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Apply RMNeueBold to specific elements */
+.rm-bold {
+    font-family: 'RMNeueBold', sans-serif;
+}
+
+/* Container grid layout for articles */
+.container {
     display: flex;
     gap: 15px;
     overflow-x: auto;
@@ -788,7 +790,7 @@
 .item {
     min-width: 23%;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 16px; /* Round the corners of the container */
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -799,9 +801,9 @@
 
 .item img {
     width: 100%;
-    height: 200px;
-    object-fit: contain;
-    border-radius: 8px;
+    height: 150px; /* Set height to maintain the rectangular shape */
+    object-fit: cover; /* Ensure the image covers the container area */
+    border-radius: 16px; /* Round the corners of the image */
 }
 
 .item p {
@@ -826,14 +828,17 @@
 @media (max-width: 480px) {
     .item {
         min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    /* تكبير حجم الخط في الشاشات الصغيرة */
-    .item p {
-        font-size: 20px;
-    }
+
     .item img {
-        height: auto;
-        max-height: 250px;
+        height: 200px; /* Adjust height for better appearance on small screens */
+    }
+
+    .item p {
+        font-size: 18px; /* Adjust text size for better readability */
     }
 }
 
