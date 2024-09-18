@@ -19,51 +19,107 @@
             position: relative; /* Ensure body has relative position for absolute positioning */
         }
 
-       .navbar {
-          background-image: url('green.jpg');
+     .navbar {
+            background-image: url('mama.jpg');
+            background-size: cover;
+            /* Ensures the image covers the entire navbar */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            background-position: center;
+            /* Centers the image in the navbar */
         }
-
-        .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
-        }
-
+        
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
         }
-
+        
         .navbar-dark .navbar-toggler-icon {
-      color:white;
-            width: 24px;
-            height: 17px;
+            color: white;
+            width: 44px;
+            height: 27px;
         }
-
+        
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
-            text-align: right; /* Right-align text */
-        }
-
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-         @media (max-width: 768px) {
-            .navbar-brand img {
-                width: 40px;
-            }
-            
-           
+            text-align: right;
+            /* Right-align text */
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+        /* Fullscreen menu styles */
         
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            z-index: 1000;
+            /* Ensure it's above other content */
+            display: none;
+            /* Initially hidden */
+            overflow-y: auto;
+            /* Enable scrolling */
+        }
+        
+        .fullscreen-menu.open {
+            display: block;
+            /* Display when open */
+        }
+        
+        .fullscreen-menu-content {
+            position: absolute;
+            top: 6px;
+            /* تعديل حسب الحاجة */
+            right: 10px;
+            /* تعديل حسب الحاجة */
+            transform: translate(0, 0);
+            /* تعديل حسب الحاجة */
+            text-align: right;
+            /* توجيه النص إلى اليمين */
+        }
+        
+        .fullscreen-menu-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .fullscreen-menu-content ul li {
+            margin-bottom: 10px;
+        }
+        
+        .fullscreen-menu-content ul li a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 10px;
+        }
+        
+        .fullscreen-menu-content ul li a:hover {
+            color: #ccc;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            /* تعديل حسب الحاجة */
+            left: 10px;
+            /* تعديل لتحديد الزاوية اليسرى */
+            color: #fff;
+            /* تعديل لون النص */
+            font-size: 50px;
+            /* تعديل حجم الخط */
+            cursor: pointer;
+        }
         .hero {
             background-color:white;
             background-size: cover;
@@ -73,172 +129,58 @@
             padding: 80px 0;
         }
 
-        /* Fullscreen menu styles */
-        .fullscreen-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            z-index: 1000; /* Ensure it's above other content */
-            display: none; /* Initially hidden */
-            overflow-y: auto; /* Enable scrolling */
-        }
-
-        .fullscreen-menu.open {
-            display: block; /* Display when open */
-        }
-
-          .fullscreen-menu-content {
-    position: absolute;
-    top: 6px; /* تعديل حسب الحاجة */
-    right: 10px; /* تعديل حسب الحاجة */
-    transform: translate(0, 0); /* تعديل حسب الحاجة */
-    text-align: right; /* توجيه النص إلى اليمين */
-}
-
-        .fullscreen-menu-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .fullscreen-menu-content ul li {
-            margin-bottom: 10px;
-        }
-
-        .fullscreen-menu-content ul li a {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: block;
-            padding: 10px;
-        }
-
-        .fullscreen-menu-content ul li a:hover {
-            color: #ccc;
-        }
-
-          .fullscreen-menu-content {
-    position: absolute;
-    top: 6px; /* تعديل حسب الحاجة */
-    right: 10px; /* تعديل حسب الحاجة */
-    transform: translate(0, 0); /* تعديل حسب الحاجة */
-    text-align: right; /* توجيه النص إلى اليمين */
-}
-
+        
           h1, h2, h3, p {
     font-family: 'Cairo', Arial, sans-serif;
     /* Adjust styles as needed */
 }
 
 
-      .live-scores-section {
-    padding: 50px 0;
-    background-color: #f8f9fa;
-}
-
-.match {
-    margin-bottom: 40px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.match h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-         .match h21 {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.teams {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.team {
-    display: flex;
-    align-items: center;
-}
-
-.team img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-
-.score {
-    font-size: 2rem;
-    font-weight: bold;
-       text-align: center;
-}
-
-.status {
-    font-size: 1rem;
-    margin-top: 10px;
-    text-align: center;
-}
-
-.match .team-name {
-    font-size: 1rem;
-    margin-left: 10px;
-}
- @media (max-width: 768px) {
-            .live-scores-section {
-                padding: 20px 0; /* Reduce vertical spacing */
-            }
-
-            .match {
-                padding: 15px; /* Reduce inner padding */
-            }
-
-            .match h2 {
-                font-size: 1.2rem; /* Reduce title size */
-                margin-bottom: 8px; /* Reduce bottom margin of title */
-            }
-       .match h21 {
-                font-size: 1.0rem; /* Reduce title size */
-                margin-bottom: 8px; /* Reduce bottom margin of title */
-            }
-
-            .match .teams {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 10px;
-            }
-
-            .match .teams .team {
-                margin-bottom: 5px; /* Reduce space between teams */
-            }
-
-            .match .teams .team img {
-                width: 25px; /* Reduce logo size */
-                height: 25px;
-                margin-right: 5px; /* Reduce space between logo and text */
-            }
-
-            .match .score {
-                font-size: 1.2rem; /* Reduce score size */
-            }
-
-            .match .status {
-           
-            }
+      .carousel-container {
+            width: 90%;
+            max-width: 1000px;
+            overflow-x: auto;
+            /* السماح بالتمرير الأفقي */
+            scroll-snap-type: x mandatory;
+            display: flex;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            margin-left: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
         }
+        
+        
+        .carousel-slide {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10px;
+            height: 400px;
+            /* تحديد ارتفاع الحاوية */
+            width: calc(100% - 20px);
+            /* عرض الصورة مع مراعاة المسافة على الجانبين */
+        }
+        
+     .carousel-slide img {
+    width: 100%;
+    /* عرض الصورة بما يتناسب مع الحاوية */
+    height: 100%;
+    /* ملء ارتفاع الحاوية */
+    object-fit: contain;
+    /* عرض الصورة بالكامل بدون قص */
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 0; /* تعيين margin-top إلى 0 */
+}
 
         /* Dark Mode Styles */
         body.dark-mode {
@@ -277,38 +219,7 @@
         
         }
 
-        /* Table styles */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table th,
-        table td {
-            padding: 12px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-
-        table th {
-            background-image: url('green.jpg');
-            color: #fff;
-        }
-
-        table td {
-            background-color: #f8f9fa;
-        }
-        .close-btn {
-    position: absolute;
-    top: 2px; /* تعديل حسب الحاجة */
-    left: 10px; /* تعديل لتحديد الزاوية اليسرى */
-    color: #fff; /* تعديل لون النص */
-    font-size: 50px; /* تعديل حجم الخط */
-    cursor: pointer;
-}    
-
-
+        
         /* Dark Mode Table Styles */
         body.dark-mode table {
             background-color: #424242;
@@ -321,175 +232,117 @@
             background-color: #424242;
         }
          footer {
-            background-image: url('green.jpg');
             color: #fff;
-            padding: 30px 0;
+            padding: 15px 0;
             text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
-        footer p {
-            margin-bottom: 0;
-        }
-             .center-container {
+        .center-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 50%;
-         /* Center text horizontally within .center-container */
+            height: 100%;
+            /* Center text horizontally within .center-container */
         }
+        
+        
     </style>
 </head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
 
 <body>   
-   <!-- Header with Navbar -->
-    <header>
-        <nav class="navbar navbar-expand-md navbar-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <div class="navbar-brand mr-auto">
-                    <img src="logo.png" alt="MCA Logo">
                 </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
             </div>
         </nav>
     </header>
-
-      <!-- Fullscreen Menu -->
-   <div class="fullscreen-menu" id="fullscreenMenu">
-    <span class="close-btn">&times;</span><!-- زر الإغلاق في سطر واحد مع فاصل -->
-    <div class="fullscreen-menu-content">
-        <ul><br><br>
-            <li><a href="inde.html">الصفحة الرئيسية</a></li>
-            <li><a href="news1.html">أخبار</a></li>
-            <li><a href="first1.html">الفريق الأول</a></li>
-            <li><a href="reserve1.html">فريق الرديف</a></li>
-            <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
-            <li><a href="live1.html">نتائج مباشرة</a></li>
-            <li><a href="video1.html">أشرطة فيديو</a></li>
-            <li><a href="contac1.html">تواصل معنا</a></li>
-        </ul>
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-btn">&times;</span>
+        <!-- زر الإغلاق في سطر واحد مع فاصل -->
+        <div class="fullscreen-menu-content">
+            <ul><br><br>
+                <li><a href="inde.html">الصفحة الرئيسية</a></li>
+                <li><a href="news1.html">أخبار</a></li>
+                <li><a href="first1.html">الفريق الأول</a></li>
+                <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+                <li><a href="live1.html">نتائج مباشرة</a></li>
+                <li><a href="video1.html">أشرطة فيديو</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+            </ul>
+        </div>
     </div>
-</div>
-
-
    
-  <section class="live-scores-section">
-    <div class="container">
-        <div class="match">
-            <h2>دوري ابطال افريقيا</h2>
-            <h2>2024/08/16</h2>
-            <div class="teams">
-                <div class="team">
-                    <img src="https://file.mackolikfeeds.com/teams/24163" alt="شعار نادي واتانجا">
-                    <span class="team-name">نادي واتانجا</span>
-                </div>
-                <div class="score">0 - 2</div>
-                <div class="team">
-                    <span class="team-name">مولودية الجزائر</span>
-                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/88/MCA_logo.png/402px-MCA_logo.png?20210113233730" alt="شعار مولودية الجزائر">
-                </div>
-            </div>
-            <div class="status">
-                ملعب براقي الجزائر     
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="match">
-            <h2>دوري ابطال افريقيا</h2>
-            <h2>2024/08/22</h2>
-            <div class="teams">
-                <div class="team">
-                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/8/88/MCA_logo.png/402px-MCA_logo.png?20210113233730" alt="شعار مولودية الجزائر">
-                    <span class="team-name">مولودية الجزائر</span>
-                </div>
-                <div class="score">2 - 0</div>
-                <div class="team">
-                    <img src="https://file.mackolikfeeds.com/teams/24163" alt="شعار نادي واتانجا">
-                    <span class="team-name">نادي واتانجا</span>
-                </div>
-            </div>
-            <div class="status">
-                ملعب مصطفى تشاكر بليدة
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <!-- قسم المباريات القادمة -->
-    <section class="upcoming-matches-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="sidebar">
-                        <h3 style="text-align: right;">المباريات القادمة</h3>
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>المباراة</th>
-                                        <th>التاريخ والوقت</th>
-                                        <th>الملعب</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                           
-                                    <tr>
-                                        <td>
-                                            <div class="team">
-                                                <img src="jsk.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                شبيبة القبائل ضد مولودية الجزائر
-                                                <img src="MCA11.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
-                                            </div>
-                                        </td>
-                                        <td>التاريخ سيتم تحديده لاحقًا</td>
-                                        <td>لم يحدد</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="team">
-                                                <img src="MCA11.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                مولودية الجزائر ضد بارادو
-                                                <img src="pac.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
-                                            </div>
-                                        </td>
-                                        <td>التاريخ سيتم تحديده لاحقًا</td>
-                                        <td>لم يحدد</td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="team">
-                                                <img src="csc.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
-                                                شباب قسنطينة ضد مولودية الجزائر
-                                                <img src="MCA11.png" alt="شعار إم سي الجزائر" style="width: 30px; height: 30px; margin-right: 10px;">
-                                            </div>
-                                        </td>
-                                        <td>التاريخ سيتم تحديده لاحقًا</td>
-                                        <td>لم يحدد</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<section class="image-before-icons">
+ <br> <section class="image-before-icons">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    <img src="mca2.jpg" class="img-fluid" alt="Image Description">
+                    <img src="class.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
                 </div>
             </div>
         </div>
-    </section><br><br>
+    </section><br>
+<section>
+        <div class="carousel-container">
+            <!-- Photo 1 -->
+            <div class="carousel-slide">
+                <img src="8.jpg" alt="Photo 1">
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="carousel-slide">
+                <img src="9.jpg" alt="Photo 2">
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="carousel-slide">
+                <img src="100.jpg" alt="Photo 3">
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="carousel-slide">
+                <img src="110.jpg" alt="Photo 4">
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="carousel-slide">
+                <img src="120.jpg" alt="Photo 5">
+            </div>
+        </div>
+    </section> <br>
+    <section class="image-before-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <img src="troph.jpg" class="img-fluid" alt="Image Description" onclick="openImage('troph.jpg')"><br>
+                </div>
+            </div>
+        </div>
+    </section><br>
+
+ <section class="image-before-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
+                </div>
+            </div>
+        </div>
+    </section><br>
     <footer class="text-center py-4">
-        <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
-    </footer>
+      
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
