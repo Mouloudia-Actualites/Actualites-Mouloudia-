@@ -18,63 +18,30 @@
             transition: background-color 0.5s, color 0.5s;
             position: relative; /* Ensure body has relative position for absolute positioning */
         }
-         footer {
+          .navbar {
             background-image: url('green.jpg');
-            color: #fff;
-            padding: 30px 0;
-            text-align: center;
         }
         
-        footer p {
-            margin-bottom: 0;
-        }
-             .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50%;
-         /* Center text horizontally within .center-container */
-        }
-
-     .navbar {
-          background-image: url('green.jpg');
-        }
-
         .navbar-brand img {
-            width: 60px; /* Adjust logo size for larger screens */
+            width: 60px;
+            /* Adjust logo size for larger screens */
         }
-
+        
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
         }
-
+        
         .navbar-dark .navbar-toggler-icon {
-      color:white;
+            color: white;
             width: 24px;
             height: 17px;
         }
-
-        .navbar-dark .navbar-nav .nav-link {
-            color: #000;
-            padding: 10px 15px;
-            transition: background-color 0.3s;
-            text-align: right; /* Right-align text */
-        }
-
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-         @media (max-width: 768px) {
+        
+        @media (max-width: 768px) {
             .navbar-brand img {
                 width: 40px;
             }
-            
-           
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
@@ -82,49 +49,69 @@
         }
         
         .hero {
-            background-color:white;
+            background-color: white;
             background-size: cover;
             background-position: center;
             color: #000;
             text-align: center;
             padding: 80px 0;
         }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #000;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            text-align: right;
+            /* Right-align text */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
         /* Fullscreen menu styles */
+        
         .fullscreen-menu {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-            z-index: 1000; /* Ensure it's above other content */
-            display: none; /* Initially hidden */
-            overflow-y: auto; /* Enable scrolling */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            z-index: 1000;
+            /* Ensure it's above other content */
+            display: none;
+            /* Initially hidden */
+            overflow-y: auto;
+            /* Enable scrolling */
         }
-
+        
         .fullscreen-menu.open {
-            display: block; /* Display when open */
+            display: block;
+            /* Display when open */
         }
-
         
         .fullscreen-menu-content {
-    position: absolute;
-    top: 6px; /* تعديل حسب الحاجة */
-    right: 10px; /* تعديل حسب الحاجة */
-    transform: translate(0, 0); /* تعديل حسب الحاجة */
-    text-align: right; /* توجيه النص إلى اليمين */
-}
-
-
+            position: absolute;
+            top: 6px;
+            /* تعديل حسب الحاجة */
+            right: 10px;
+            /* تعديل حسب الحاجة */
+            transform: translate(0, 0);
+            /* تعديل حسب الحاجة */
+            text-align: right;
+            /* توجيه النص إلى اليمين */
+        }
+        
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
         }
-
+        
         .fullscreen-menu-content ul li {
             margin-bottom: 10px;
         }
-
+        
         .fullscreen-menu-content ul li a {
             color: #fff;
             font-size: 24px;
@@ -133,19 +120,24 @@
             display: block;
             padding: 10px;
         }
-
+        
         .fullscreen-menu-content ul li a:hover {
             color: #ccc;
         }
-
-       .close-btn {
-    position: absolute;
-    top: 2px; /* تعديل حسب الحاجة */
-    left: 10px; /* تعديل لتحديد الزاوية اليسرى */
-    color: #fff; /* تعديل لون النص */
-    font-size: 50px; /* تعديل حجم الخط */
-    cursor: pointer;
-}      
+        
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            /* تعديل حسب الحاجة */
+            left: 10px;
+            /* تعديل لتحديد الزاوية اليسرى */
+            color: #fff;
+            /* تعديل لون النص */
+            font-size: 50px;
+            /* تعديل حجم الخط */
+            cursor: pointer;
+        }
+        
         
         .news-section {
             padding: 80px 0;
@@ -221,43 +213,59 @@
         }
         h2,p {
              font-family: 'Cairo', Arial, sans-serif;
+            
+        }
+           footer {
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
         }
     </style>
 </head>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 <body>
-    <!-- Header with Navbar -->
-    <header>
+<header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <div class="navbar-brand mr-auto">
-                    <img src="logo.png" alt="MCA Logo">
                 </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
             </div>
         </nav>
     </header>
-
-  <!-- Fullscreen Menu -->
-   <div class="fullscreen-menu" id="fullscreenMenu">
-    <span class="close-btn">&times;</span><!-- زر الإغلاق في سطر واحد مع فاصل -->
-    <div class="fullscreen-menu-content">
-        <ul><br><br>
-            <li><a href="index.html">الصفحة الرئيسية</a></li>
-            <li><a href="news1.html">أخبار</a></li>
-            <li><a href="first1.html">الفريق الأول</a></li>
-            <li><a href="reserve1.html">فريق الرديف</a></li>
-            <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
-            <li><a href="live1.html">طاقم اداري و الفني</a></li>
-            <li><a href="live1.html">نتائج مباشرة</a></li>
-            <li><a href="video1.html">أشرطة فيديو</a></li>
-            <li><a href="contac1.html">تواصل معنا</a></li>
-        </ul>
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-btn">&times;</span>
+        <!-- زر الإغلاق في سطر واحد مع فاصل -->
+        <div class="fullscreen-menu-content">
+            <ul><br><br>
+                <li><a href="inde.html">الصفحة الرئيسية</a></li>
+                <li><a href="news1.html">أخبار</a></li>
+                <li><a href="first1.html">الفريق الأول</a></li>
+                <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+                <li><a href="live1.html">نتائج مباشرة</a></li>
+                <li><a href="video1.html">أشرطة فيديو</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+            </ul>
+        </div>
     </div>
-</div>
-
 
     <!-- News Section -->
     <section class="news-section">
@@ -295,8 +303,7 @@
  
     <!-- Footer Section -->
     <footer class="text-center py-4">
-        <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
-    </footer>
+       
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
