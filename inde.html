@@ -765,8 +765,6 @@
         outline: none;
     } 
 
-
-/* Container grid layout for articles */
 .container1 {
     display: flex;
     gap: 15px;
@@ -775,7 +773,9 @@
     width: 100%;
     justify-content: space-between;
     cursor: grab;
-      background-color: #f8f9fa; /* Optional: Light gray background */
+    background-color: #f8f9fa; /* لون خلفية رمادي فاتح */
+    flex-direction: row-reverse; /* عرض العناصر من اليمين إلى اليسار */
+    scroll-snap-type: x mandatory; /* تمرير سلس ومحدد */
 }
 
 .item {
@@ -785,16 +785,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: none; /* Remove background */
-    border: none; /* Remove border */
-    background-color: #f8f9fa; /* Optional: Light gray background */
+    background: none; /* إزالة الخلفية */
+    border: none; /* إزالة الحدود */
+    background-color: #f8f9fa; /* لون خلفية رمادي فاتح */
 }
 
 .item img {
     width: 100%;
-    height: 150px; /* Maintain rectangular shape */
-    object-fit: cover; /* Ensure the entire image is visible */
-    border-radius: 15px; /* Rounded corners for the image */
+    height: 150px; /* الحفاظ على الشكل المستطيل */
+    object-fit: cover; /* الحفاظ على كامل الصورة */
+    border-radius: 15px; /* زوايا مدورة للصورة */
 }
 
 .item p {
@@ -802,7 +802,8 @@
     font-size: 16px;
     color: #333;
 }
-        .hero .item a {
+
+.hero .item a {
     color: #000;
     text-decoration: none;
     font-weight: bold;
@@ -833,12 +834,14 @@
         align-items: center;
     }
     .item img {
-        height: 200px; /* Adjust height for better appearance on small screens */
-        border-radius: 20px; /* More rounded corners on smaller screens */
+        height: 200px; /* تعديل الارتفاع */
+        border-radius: 20px; /* زوايا مدورة أكثر */
     }
     .item p {
-        font-size: 18px; /* Adjust text size for better readability */
+        font-size: 18px; /* تعديل حجم الخط */
     }
+}
+
         </style>
 </head>
 <!-- Default Statcounter code for Actualites-Mouloudia
