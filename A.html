@@ -61,19 +61,21 @@ body {
 .navbar-dark .navbar-nav .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
-.search-box {
-    width: 80%;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 20px;
+/* General page styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    direction: rtl;
     text-align: right;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #fff;
+    height: 100%;
+    overflow: hidden; /* Prevents scrolling */
 }
 
-/* Fullscreen menu */
+/* Fullscreen menu container */
 .fullscreen-menu {
-  display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -85,12 +87,14 @@ body {
     background-color: #fff;
     z-index: 1000;
     padding: 20px;
+    display: none; /* Hidden by default */
 }
 
 .fullscreen-menu.open {
-    display: block;
+    display: flex; /* Show menu when open */
 }
 
+/* Fullscreen menu content */
 .fullscreen-menu-content {
     position: absolute;
     top: 60px;
@@ -99,26 +103,54 @@ body {
 }
 
 .fullscreen-menu-content ul {
-   list-style-type: none;
+    list-style-type: none;
     padding: 0;
     margin: 0;
     width: 100%;
 }
 
-/* Add long lines (spacing between menu items) */
+/* Menu items */
 .fullscreen-menu-content ul li {
     padding: 15px;
-    padding-right: 50px;
-    /* Adjust this value as needed */
+    padding-right: 50px; /* Adjust this value for spacing */
     font-size: 18px;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
     text-align: right;
 }
 
+.fullscreen-menu-content ul li:hover {
+    background-color: #f0f0f0;
+}
+
 /* Search box styling */
+.search-box {
+    width: 80%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: right;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
+/* Search button */
+.search-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
 
+.search-btn:hover {
+    background-color: #333;
+}
+
+/* Close button */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -127,6 +159,28 @@ body {
     font-size: 40px;
     cursor: pointer;
 }
+
+/* Menu list items (standard styling) */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+ul li {
+    padding: 15px;
+    padding-right: 50px; /* Adjust this value for space */
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    text-align: right;
+}
+
+ul li:hover {
+    background-color: #f0f0f0;
+}
+
 
 /* Articles */
 .news-section {
