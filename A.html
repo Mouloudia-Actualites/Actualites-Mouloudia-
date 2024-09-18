@@ -149,20 +149,17 @@ body {
 }
 
 /* Menu list items (standard styling) */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
 ul li {
     padding: 15px;
-    padding-right: 50px; /* Adjust this value for space */
     font-size: 18px;
-    border-bottom: 1px solid #ccc;
-    cursor: pointer;
     text-align: right;
+    border-bottom: 1px solid #ccc; /* Ligne entre les éléments */
+    cursor: pointer;
+    color: #000; /* Couleur du texte en noir */
+}
+
+ul li:last-child {
+    border-bottom: none; /* Supprime la ligne du dernier élément */
 }
 
 ul li:hover {
