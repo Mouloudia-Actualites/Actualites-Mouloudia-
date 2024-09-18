@@ -305,34 +305,34 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Dark Mode Toggle Script -->
 <script>
-$(document).ready(function () {
-    // Toggle the fullscreen menu
-    $('.navbar-toggler').click(function () {
-        $('#fullscreenMenu').toggleClass('open');
-    });
+   // Close the fullscreen menu when clicking outside of it or on close button
+        $(document).ready(function() {
+            // Toggle fullscreen menu
+            $('.navbar-toggler').click(function() {
+                $('#fullscreenMenu').toggleClass('open');
+            });
 
-    // Close the menu when clicking outside of it
-    $(document).mouseup(function (e) {
-        var container = $("#fullscreenMenu");
-        if (!container.is(e.target) && container.has(e.target).length === 0) {
-            container.removeClass('open');
-        }
-    });
+            // Close the fullscreen menu when clicking outside of it
+            $(document).mouseup(function(e) {
+                var container = $("#fullscreenMenu");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.removeClass('open');
+                }
+            });
 
-    // Close the menu when the close button is clicked
-    $('.close-btn').click(function () {
-        $('#fullscreenMenu').removeClass('open');
-    });
+            // Close the fullscreen menu when close button is clicked
+            $('.close-btn').click(function() {
+                $('#fullscreenMenu').removeClass('open');
+            });
+        });
 
-    // Close the menu if clicking the navbar-toggler again when open
-    $('.navbar-toggler').click(function () {
-        if ($('#fullscreenMenu').hasClass('open')) {
-            $('#fullscreenMenu').removeClass('open');
-        } else {
-            $('#fullscreenMenu').addClass('open');
-        }
-    });
-});
+        // Toggle between light and dark mode
+        const body = document.body;
+        const navbarBrand = document.querySelector('.navbar-brand');
+
+        navbarBrand.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
 
     function displayArticles() {
         const articlesContainer = document.getElementById('articlesContainer');
