@@ -247,18 +247,25 @@
         }
         /* Footer Section */
         
-        footer {
-            background-image: url('green.jpg');
-            /* Ajoutez l'image de fond pour le pied de page */
-            background-size: cover;
-            /* Assurez-vous que l'image de fond couvre toute la section */
+           footer {
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
             background-position: center;
-            /* Centrez l'image de fond */
-            color: white;
-            /* Couleur du texte du pied de page en blanc */
-            padding: 20px 0;
-            /* Espacement intérieur du pied de page */
+            background-repeat: no-repeat;
         }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
+        }
+        
         .product-image {
   max-width: 100%; /* Ensure the image does not exceed the width of its container */
   height: auto; /* Allow the height to adjust proportionally */
@@ -276,30 +283,28 @@
 </head>
 
 <body>
-    <!-- Header with Navbar -->
-    <header>
+ <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <div class="navbar-brand mr-auto">
-                    <img src="logo.png" alt="MCA Logo">
                 </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
             </div>
         </nav>
     </header>
-
-    <!-- Fullscreen Menu -->
     <div class="fullscreen-menu" id="fullscreenMenu">
         <span class="close-btn">&times;</span>
+        <!-- زر الإغلاق في سطر واحد مع فاصل -->
         <div class="fullscreen-menu-content">
-            <ul>
-                <br><br>
+            <ul><br><br>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="news1.html">أخبار</a></li>
                 <li><a href="first1.html">الفريق الأول</a></li>
                 <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
                 <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
                 <li><a href="live1.html">نتائج مباشرة</a></li>
                 <li><a href="video1.html">أشرطة فيديو</a></li>
@@ -330,8 +335,7 @@
 
     <!-- Footer Section -->
     <footer class="text-center py-4">
-        <p>&copy; 2024 Mouloudia Actualités. جميع الحقوق محفوظة.</p>
-    </footer>
+       
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
