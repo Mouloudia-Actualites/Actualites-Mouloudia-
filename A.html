@@ -91,24 +91,22 @@ body {
     padding: 0;
 }
 
+/* Add long lines (spacing between menu items) */
 .fullscreen-menu-content ul li {
-    margin-bottom: 20px;
-    border: 1px solid #000;
+    margin-bottom: 50px; /* Larger space between items */
+    border: none;
+    border-bottom: 2px solid #000; /* Long line separator */
+    padding-bottom: 10px;
+}
+
+/* Search box styling */
+.search-box {
+    width: 80%;
     padding: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border: 1px solid #000;
     border-radius: 5px;
-}
-
-.fullscreen-menu-content ul li a {
-    color: #000;
-    font-size: 22px;
-    text-decoration: none;
-    font-family: 'Cairo', sans-serif;
-    transition: color 0.3s;
-    display: block;
-}
-
-.fullscreen-menu-content ul li a:hover {
-    color: #666;
 }
 
 .close-btn {
