@@ -378,12 +378,12 @@ articles.forEach(article => {
             const articleHTML = `
                 <div class="col-lg-6">
                     <article class="article">
-                        <img src="${article.imageUrl}" alt="${article.title}">
+                     <h2>${article.title}</h2>
                         <div class="meta">
                             <span class="date">${article.date}</span> |
                             <span class="author">${article.author}</span>
                         </div>
-                        <h2>${article.title}</h2>
+                       <img src="${article.imageUrl}" alt="${article.title}">
                         <p>${article.content}</p>
                     </article>
                 </div>
