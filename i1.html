@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Inline Styles -->
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #000;
+            transition: background-color 0.5s, color 0.5s;
+            position: relative; /* Ensure body has relative position for absolute positioning */
+        }
+
+    .navbar {
+            background-image: url('mama.jpg');
+            background-size: cover;
+            /* Ensures the image covers the entire navbar */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            background-position: center;
+            /* Centers the image in the navbar */
+        }
+        
+        .navbar-dark .navbar-toggler {
+            border: none;
+            color: white;
+        }
+        
+        .navbar-dark .navbar-toggler-icon {
+            color: white;
+            width: 44px;
+            height: 27px;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #000;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            text-align: right;
+            /* Right-align text */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        /* Fullscreen menu styles */
+        
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            z-index: 1000;
+            /* Ensure it's above other content */
+            display: none;
+            /* Initially hidden */
+            overflow-y: auto;
+            /* Enable scrolling */
+        }
+        
+        .fullscreen-menu.open {
+            display: block;
+            /* Display when open */
+        }
+        
+        .fullscreen-menu-content {
+            position: absolute;
+            top: 6px;
+            /* تعديل حسب الحاجة */
+            right: 10px;
+            /* تعديل حسب الحاجة */
+            transform: translate(0, 0);
+            /* تعديل حسب الحاجة */
+            text-align: right;
+            /* توجيه النص إلى اليمين */
+        }
+        
+        .fullscreen-menu-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .fullscreen-menu-content ul li {
+            margin-bottom: 10px;
+        }
+        
+        .fullscreen-menu-content ul li a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 10px;
+        }
+        
+        .fullscreen-menu-content ul li a:hover {
+            color: #ccc;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            /* تعديل حسب الحاجة */
+            left: 10px;
+            /* تعديل لتحديد الزاوية اليسرى */
+            color: #fff;
+            /* تعديل لون النص */
+            font-size: 50px;
+            /* تعديل حجم الخط */
+            cursor: pointer;
+        }
+        .hero {
+            background-color:white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+          
+        .news-section {
+            padding: 80px 0;
+        }
+
+        .article {
+            margin-bottom: 40px;
+            text-align: right; /* Align text to right */
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: right; /* Align heading to right */
+        }
+
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+        }
+
+        .article .meta {
+            font-size: 1rem;
+            color: #6c757d;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .article .meta .author {
+            float: right;
+        }
+
+        .article .meta .date {
+            float: ;
+        }
+
+        .article .btn-primary {
+            float: right; /* Align button to the right */
+        }
+
+        .explore-more {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .explore-more .facebook-post {
+            max-width: 100%;
+            height: auto;
+            border: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .explore-more .read-more-link {
+            display: block;
+            margin-top: 20px;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
+
+        body.dark-mode .navbar {
+            background-color: #fff;
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
+        }
+        
+             footer {
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <div class="navbar-brand mr-auto">
+                </div>
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+        </nav>
+    </header>
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-btn">&times;</span>
+        <!-- زر الإغلاق في سطر واحد مع فاصل -->
+        <div class="fullscreen-menu-content">
+            <ul><br><br>
+                <li><a href="inde.html">الصفحة الرئيسية</a></li>
+                <li><a href="news1.html">أخبار</a></li>
+                <li><a href="first1.html">الفريق الأول</a></li>
+                <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+                <li><a href="live1.html">نتائج مباشرة</a></li>
+                <li><a href="video1.html">أشرطة فيديو</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="row" id="articlesContainer">
+                <!-- Articles will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+  <br> <section class="image-before-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
+                </div>
+            </div>
+        </div>
+    </section><br>
+    <footer class="text-center py-4">
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+        // Close the fullscreen menu when clicking outside of it or on close button
+        $(document).ready(function() {
+            // Toggle fullscreen menu
+            $('.navbar-toggler').click(function() {
+                $('#fullscreenMenu').toggleClass('open');
+            });
+
+            // Close the fullscreen menu when clicking outside of it
+            $(document).mouseup(function(e) {
+                var container = $("#fullscreenMenu");
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
+                    container.removeClass('open');
+                }
+            });
+
+            // Close the fullscreen menu when close button is clicked
+            $('.close-btn').click(function() {
+                $('#fullscreenMenu').removeClass('open');
+            });
+        });
+
+        // Toggle between light and dark mode
+        const body = document.body;
+        const navbarBrand = document.querySelector('.navbar-brand');
+
+        navbarBrand.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+
+        // Function to display articles dynamically
+        function displayArticles() {
+            const articlesContainer = document.getElementById('articlesContainer');
+            const articles = [ 
+              
+                {
+                    title: 'مباراة الإياب بين العميد و المنستيري',
+                    content: 'تتجه أنظار عشاق كرة القدم إلى مباراة الإياب المنتظرة بين مولودية الجزائر و الإتحاد الرياضي المنستيري، والتي تُعد لقاء الحسم في إطار المسابقات القارية<br> تأتي هذه المباراة بعد لقاء الذهاب الذي شهد فوز الإتحاد الرياضي المنستيري بـ𝟭-𝟬 على أرضه، مما يزيد من التحدي الذي يواجهه الفريق الجزائري في لقاء العودة<br> المباراة ستقام في ملعب الشهيد علي عمار المدعو "علي لابوانت" بالدويرة" مساء يوم السبت بداية من الساعة 𝟭𝟵:𝟬𝟬',
+                    imageUrl: 'll.jpg',
+                    date: '2024/09/18',
+                    author: 'محمد'
+                }
+            ];
+
+            articles.forEach(article => {
+                const articleHTML = `
+                    <div class="col-lg-6">
+                        <article class="article">
+                            <img src="${article.imageUrl}" alt="${article.title}">
+                            <div class="meta">
+                                <span class="date">${article.date}</span> |
+                                <span class="author">${article.author}</span>
+                            </div>
+                            <h2>${article.title}</h2>
+                            <p>${article.content}</p>
+                         
+                        </article>
+                    </div>
+                `;
+                articlesContainer.innerHTML += articleHTML;
+            });
+        }
+
+        // Call the displayArticles function to load articles on page load
+        displayArticles();
+    </script>
+</body>
+
+</html>
