@@ -334,7 +334,7 @@ footer p {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Dark Mode Toggle Script -->
 <script>
- $(document).ready(function () {
+$(document).ready(function () {
     // Toggle the fullscreen menu
     $('.navbar-toggler').click(function () {
         $('#fullscreenMenu').toggleClass('open');
@@ -348,24 +348,20 @@ footer p {
         }
     });
 
-    // Close the menu when close button is clicked
+    // Close the menu when the close button is clicked
     $('.close-btn').click(function () {
         $('#fullscreenMenu').removeClass('open');
     });
-});
 
-    const body = document.body;
-    const navbarBrand = document.querySelector('.navbar-brand');
-
-    navbarBrand.addEventListener('click', function() {
-        if (body.classList.contains('light-mode')) {
-            body.classList.remove('light-mode');
-            body.classList.add('dark-mode');
+    // Close the menu if clicking the navbar-toggler again when open
+    $('.navbar-toggler').click(function () {
+        if ($('#fullscreenMenu').hasClass('open')) {
+            $('#fullscreenMenu').removeClass('open');
         } else {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
+            $('#fullscreenMenu').addClass('open');
         }
     });
+});
 
     function displayArticles() {
         const articlesContainer = document.getElementById('articlesContainer');
