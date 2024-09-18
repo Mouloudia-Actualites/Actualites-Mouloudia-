@@ -61,18 +61,6 @@ body {
 .navbar-dark .navbar-nav .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
-/* General page styling */
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    direction: rtl;
-    text-align: right;
-    background-color: #fff;
-    height: 100%;
-    overflow: hidden; /* Prevents scrolling */
-}
-
 /* Fullscreen menu container */
 .fullscreen-menu {
     display: flex;
@@ -284,23 +272,24 @@ footer p {
 
 <body>
  <!-- Navbar -->
- <header>
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container">
-                <div class="navbar-brand mr-auto">
-                </div>
-                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
+<!-- Navbar -->
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container">
+            <div class="navbar-brand mr-auto">
+                <!-- You can add your brand/logo here -->
             </div>
-        </nav>
-    </header>
-  <div class="fullscreen-menu" id="fullscreenMenu">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<!-- Fullscreen Menu -->
+<div class="fullscreen-menu" id="fullscreenMenu">
     <span class="close-btn">&times;</span>
-    <!-- زر الإغلاق في سطر واحد مع فاصل -->
     <div class="fullscreen-menu-content">
-        
         <input type="text" placeholder="... ادخل كلمة للبحث" class="search-box">
         <button class="search-btn">إبحث</button>
         <ul>
@@ -308,7 +297,7 @@ footer p {
             <li><a href="news1.html">أخبار</a></li>
             <li><a href="first1.html">الفريق الأول</a></li>
             <li><a href="reserve1.html">فريق الرديف</a></li>
-            <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+            <li><a href="idr1.html">الطاقم الفني</a></li>
             <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
             <li><a href="live1.html">نتائج مباشرة</a></li>
             <li><a href="video1.html">أشرطة فيديو</a></li>
@@ -317,6 +306,7 @@ footer p {
     </div>
 </div>
 
+  
 
 <section class="news-section">
     <div class="container">
@@ -346,24 +336,26 @@ footer p {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Dark Mode Toggle Script -->
 <script>
-     $(document).ready(function () {
-            $('.navbar-toggler').click(function () {
-                $('#fullscreenMenu').toggleClass('open');
-            });
+ $(document).ready(function () {
+    // Toggle the fullscreen menu
+    $('.navbar-toggler').click(function () {
+        $('#fullscreenMenu').toggleClass('open');
+    });
 
-            // Close the menu when clicking outside of it
-            $(document).mouseup(function (e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
+    // Close the menu when clicking outside of it
+    $(document).mouseup(function (e) {
+        var container = $("#fullscreenMenu");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.removeClass('open');
+        }
+    });
 
-            // Close the menu when close button is clicked
-            $('.close-btn').click(function () {
-                $('#fullscreenMenu').removeClass('open');
-            });
-        });
+    // Close the menu when close button is clicked
+    $('.close-btn').click(function () {
+        $('#fullscreenMenu').removeClass('open');
+    });
+});
+
     const body = document.body;
     const navbarBrand = document.querySelector('.navbar-brand');
 
