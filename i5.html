@@ -23,47 +23,35 @@
             transition: background-color 0.5s, color 0.5s;
             position: relative;
         }
-        /* Navbar styles */
-        .navbar {
+   .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
+            /* Ensures the image covers the entire navbar */
             background-repeat: no-repeat;
+            /* Prevents the image from repeating */
             background-position: center;
-            height: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            position: fixed;
-            top: 0;
-            z-index: 1002;
-            width: 100%;
+            /* Centers the image in the navbar */
         }
-
+        
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
-            margin-top: -5px;
         }
-
+        
         .navbar-dark .navbar-toggler-icon {
-            width: 54px;
-            height: 37px;
-        }
-
-        .navbar-content .navbar-brand {
-            font-size: 24px;
             color: white;
-            text-decoration: none;
+            width: 44px;
+            height: 27px;
         }
-
+        
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
+            /* Right-align text */
         }
-
+        
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
@@ -313,12 +301,6 @@
     </div>
 </div>
 
-<section class="hero">
-    <div class="container">
-        <h1>أخبار مولودية الجزائر</h1>
-    </div>
-</section>
-
 <section class="news-section">
     <div class="container">
         <div class="row" id="articles">
@@ -329,7 +311,6 @@
 
 <footer>
     <div class="container">
-        <p>&copy; 2024 Mouloudia Actualités</p>
     </div>
 </footer>
 
@@ -341,38 +322,49 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const articles = [
-            {
-                title: "عنوان المقال 1",
-                description: "وصف المقال 1",
-                date: "2024-09-18",
-                image: "image1.jpg",
-                link: "#"
-            },
-            {
-                title: "عنوان المقال 2",
-                description: "وصف المقال 2",
-                date: "2024-09-19",
-                image: "image2.jpg",
-                link: "#"
-            }
-        ];
+          // Toggle between light and dark mode
+        const body = document.body;
+        const navbarBrand = document.querySelector('.navbar-brand');
 
-        const articlesContainer = document.getElementById('articles');
-        articles.forEach(article => {
-            const articleElement = `
-                <div class="col-md-6 article">
-                    <img src="${article.image}" alt="${article.title}">
-                    <h2>${article.title}</h2>
-                    <p class="meta"><span class="author">الكاتب</span> - <span class="date">${article.date}</span></p>
-                    <p>${article.description}</p>
-                    <a href="${article.link}" class="btn btn-primary">اقرأ المزيد</a>
-                </div>
-            `;
-            articlesContainer.innerHTML += articleElement;
+        navbarBrand.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
         });
 
+        // Function to display articles dynamically
+        function displayArticles() {
+            const articlesContainer = document.getElementById('articlesContainer');
+            const articles = [ 
+              
+                {
+                    title: 'بينارة يغادر رديف مولودية الجزائر',
+                    content: 'اللاعب الشاب عماد الدين بينارة، الذي تألق سابقًا في صفوف رديف مولودية الجزائر، إنتقل رسميًا إلى نادي شبيبة الأبيار<br><br> حيث يعتبر هذا الإنتقال خطوة مهمة في مسيرة اللاعب الطموحة، حيث يسعى للحصول على فرصة أكبر لإبراز موهبته و تطوير أدائه على المستوى التنافسي<br><br> و بينما أمضى سنوات في تكوينه مع الفئات الشبانية لمولودية الجزائر، يأمل بينارة أن يكون إضافة قوية لفريق شبيبة الأبيار',
+                    imageUrl: 'binar.jpg',
+                    date: '13:30',
+                    author: 'الثلاثاء 20 اوت 2024'
+                }
+            ];
+
+            articles.forEach(article => {
+                const articleHTML = `
+                    <div class="col-lg-6">
+                        <article class="article">
+                          <h2>${article.title}</h2>
+                            <div class="meta">
+                                <span class="date">${article.date}</span> |
+                                <span class="author">${article.author}</span>
+                            </div>
+                            <img src="${article.imageUrl}" alt="${article.title}">
+                            <p>${article.content}</p>
+                         
+                        </article>
+                    </div>
+                `;
+                articlesContainer.innerHTML += articleHTML;
+            });
+        }
+
+        // Call the displayArticles function to load articles on page load
+        displayArticles();
         const menuToggle = document.querySelector('.navbar-toggler');
         const fullscreenMenu = document.getElementById('fullscreenMenu');
         const closeBtn = document.querySelector('.close-btn');
