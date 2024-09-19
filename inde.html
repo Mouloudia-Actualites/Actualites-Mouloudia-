@@ -143,50 +143,43 @@
             font-family: 'Cairo', Arial, sans-serif;
         }
         
-        .carousel-container {
-            width: 90%;
-            max-width: 1000px;
-            overflow-x: auto;
-            /* السماح بالتمرير الأفقي */
-            scroll-snap-type: x mandatory;
-            display: flex;
-            scroll-behavior: smooth;
-            background-color: #ffffff;
-            border-radius: 10px;
-            border: 2px solid #ccc;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            position: relative;
-            margin-left: 20px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        
-        
-        .carousel-slide {
-            flex: 0 0 auto;
-            scroll-snap-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 10px;
-            height: 400px;
-            /* تحديد ارتفاع الحاوية */
-            width: calc(100% - 20px);
-            /* عرض الصورة مع مراعاة المسافة على الجانبين */
-        }
-        
-     .carousel-slide img {
+  .carousel-container {
+    width: 90%;
+    max-width: 1000px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    scroll-behavior: smooth;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.carousel-slide {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0; /* إزالة الهوامش من الأعلى والأسفل */
+    height: 400px;
+    width: calc(100% - 20px);
+}
+
+.carousel-slide img {
     width: 100%;
-    /* عرض الصورة بما يتناسب مع الحاوية */
     height: 100%;
-    /* ملء ارتفاع الحاوية */
     object-fit: contain;
-    /* عرض الصورة بالكامل بدون قص */
     border-radius: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 0; /* تعيين margin-top إلى 0 */
+    margin: 0; /* إزالة المسافة العلوية */
 }
 
         /* Dark Mode Styles */
