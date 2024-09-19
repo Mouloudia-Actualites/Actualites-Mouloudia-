@@ -688,9 +688,9 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-        .featured-articles {
+      .featured-articles {
     text-align: center;
-    padding: 10px; /* تقليل المسافة العلوية */
+    padding: 0 10px; /* حذف المسافة الزائدة من الأعلى والأسفل، والإبقاء على مسافة من الجانبين */
     position: relative;
     overflow: hidden;
     max-width: 100%;
@@ -704,8 +704,9 @@
 
 .article {
     flex: 0 0 100%;
-    padding: 20px;
+    padding: 20px 0; /* حذف المسافة من الأعلى والأسفل */
     box-sizing: border-box;
+    margin-right: 15px; /* إضافة مسافة من اليمين */
 }
 
 .article img {
@@ -742,6 +743,7 @@
 .article:hover {
     transform: scale(1.02);
 }
+
 
 
     .nav-btn {
