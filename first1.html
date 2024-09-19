@@ -338,8 +338,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom Script -->
-    <script>
-        // Close the fullscreen menu when clicking outside of it or on close button
+   <script>
+      // Close the fullscreen menu when clicking outside of it or on close button
         $(document).ready(function() {
             // Toggle fullscreen menu
             $('.navbar-toggler').click(function() {
@@ -360,71 +360,70 @@
             });
         });
 
-        // Toggle between light and dark mode
-        const body = document.body;
-        const navbarBrand = document.querySelector('.navbar-brand');
+    const body = document.body;
+    const navbarBrand = document.querySelector('.navbar-brand');
 
-        navbarBrand.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-        });
+    navbarBrand.addEventListener('click', function() {
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        }
+    });
 
-        // Function to display articles dynamically
-        function displayArticles() {
-            const articlesContainer = document.getElementById('articlesContainer');
-            const articles = [ 
-                    {
-       title: 'العميد يخوض ثاني مباراة تحضيرية له أمام نادي فرنسي',
-                    content: 'العميد يخوض ثاني مباراة تحضيرية له أمام نادي فرنسي',
-                    imageUrl: 'mm1.jpg',
-                    date: '2024/8/3',
-                    author: 'سيخوض نادي مولودية الجزائر غدا السبت ، ثاني مباراة ودية له خلال تربص رين، أمام نادي  fc  Blois الفرنسي الناشط في الدوري الثاني ، و ستنطلق المباراة على الساعة الثالثة مساءا بمركب رين بفرنسا<br> هذا وخاض العميد يوم الخميس الفارط، أول مباراة تحضيرية أمام رديف نادي باريس سان جيرمان، أين تغلب عليه رفقاء دراوي بثلاثية كاملة من توقيع نعيجي وبن حوى والوافد الجديد أنتوني بادجو<br> و من المنتظر أي يلعب العميد أخر مباراة تحضرية له في رين ، يوم ثامن أوت، أمام فريق لافال الفرنسي الناشط في الدرجة الثانية على أرضية مركب رين ، على أن تعود تشكيلة العميد إلى الجزائر يوم التاسع من أوت الجاري بدلا من ثاني عشر أوت ، بعد أن قدم المدرب أمير باتريس بوميل، تاريخ عودة كتيبة العميد إلى أرض الوطن بثلاثة أيام'
+   function displayArticles() {
+    const articlesContainer = document.getElementById('articlesContainer');
+    const articles = [
+         {
+        title: 'أنتوني بادجو":أنا معجب بأنصار المولودية  وما يفعلونه ....وكنت اتابع النادي قبل إلتحاقي به',
+      content: 'أدلى الوافد الجديد لبيت العميد ،المدافع الايفواري ستيفن أنتوني بادجو  بتصريحات لصفحة الرسمية لنادي مولودية الجزائر ، على هامش التحاقه  بتربص الفريق في مدينة رين الفرنسية',
+        imageUrl: 'badj.jpg',
+        date: '2024/08/03',
+        author: 'برنجي اسماء'
     },
-   {
-                title: '"psg" أهم تصريحات المدرب أمير بوميل بعد الفوز على رديف',
-                content: 'أدلى  المدرب أمير باتريس بوميل يوم أمس ،  بتصريحات خص بها الصفحة الرسمية للعميد على مواقع التواصل الاجتماعي  عقب مباراة نادي مولودية الجزائر امام رديف باريس سان جيرمان .<br> وصرح بوميل أن تربص رين يجري في ظروف رائعة ، و الكل يعمل بجد لانجاحه، وأن الإدارة وفرت للاعبين جميع الإمكانيات لوضعهم في رواق جيد للعمل ،حتى لاعبين الجدد تأقلمو سريعا مع المجموعة وكل المؤشرات إيجابية لحد الان.<br> و أشاد التقني الفرنسي بأداء مدافعه الجديد أنتوني بادجو  في التدريبات الأولى  له في الفريق  وكذا المباراة الودية التي خاضها أمام البياسجي، وبات قريبا من حجز مكانا في التشكيلة الأساسية ، و قد منحت المولودية لبادجو القميص رقم 4 الشهير دفاعيا في الفريق لارتدائه الموسم المقبل ، خلفا لجمال بلعمري الذي يعد  أخر لاعب حمل هذا الرقم في نادي. <br>وأكد بوميل أن ميركاتو العميد  لم ينتهي بعد ، ستستقدم إدارة الحاج رجم في الأيام المقبلة  ثلاثة  أو أربعة لاعبين جدد ، لتدعيم تولفيته تحسبا للموسم الكروي القادم الذي ستلعب فيه المولودية على أربع جبهات : كأس إفريقيا ، البطولة الوطنية، كأس الجزائر، كأس سوبر',
+             {
+                title: 'النيجيري ايوالا على أعتاب العميد',
+                content: 'يقترب جناح العربي الكويتي النيجيري أنايو إيوالا صاحب 25سنة من التوقيع في مولودية الجزائر لتعويض رحيل يوسف بلايلي<br>في حال توصل  إدارة الحاج رجم لاتفاق رسمي مع ادارة العربي الكويتي سيكون أخر ورقة أجنيبة في المولودية. وتعد إحصائيات النيجري ايوالا  هذا الموسم طيبة نوعا ما بعد 21 مباراة  لعبها في البطولة الكويتية سجل من خلالها 4 أهداف أما في كأس الإتحاد الأسيوي فخاض اربع مباريات  (مباراة واحدة لعبها بشكل كامل) و  لم يسجل أي هدف ، و حسب موقع ترانسفير ماركت فإن قيمة اللاعب ايوالا تباع 600 ألف أورو<br>ادارة العميد ترى بأن اللاعب السابق لترجي التونسي و شباب بلوزداد أفضل من يمكنه تعويض مغادرة يوسف بلايلي ، وستتواصل الإدارة في ساعات القليلة القادمة مع نظيرتها من نادي العربي الكويتي  بخصوص ورقة تسريحه',
+                imageUrl: 'iwa.jpg',
                 link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
-                date: '2024/8/1',
+                date: '2024/7/31',
                 author: 'برنجي اسماء'
             },
-        
-                {
-                    title: '',
-                    content: '',
-                    imageUrl: '',
-                     date: ' ',
-                    author: ''
-                },
-                {
-                    title: '  ',
-                    content: '  ',
-                    imageUrl: '',
-                    date: ' ',
-                    author: ''
-                }
-            ];
+         
+    {
+        title: 'اللاعب يوسف داو سافر لفرنسا',
+        content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص',
+        imageUrl: 'dao1.jpg',
+        date: '2024/07/27',
+        author: 'برنجي اسماء'
+    }
+];
 
-            articles.forEach(article => {
-                const articleHTML = `
-                    <div class="col-lg-6">
-                        <article class="article">
-                            <img src="${article.imageUrl}" alt="${article.title}">
-                            <div class="meta">
-                                <span class="date">${article.date}</span> |
-                                <span class="author">${article.author}</span>
-                            </div>
-                            <h2>${article.title}</h2>
-                            <p>${article.content}</p>
-                         
-                        </article>
+
+    articles.forEach(article => {
+        const articleHTML = `
+            <div class="col-lg-6">
+                <article class="article">
+                    <img src="${article.imageUrl}" alt="${article.title}">
+                    <div class="meta">
+                        <span class="date">${article.date}</span> |
+                        <span class="author">${article.author}</span>
                     </div>
-                `;
-                articlesContainer.innerHTML += articleHTML;
-            });
-        }
+                    <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                </article>
+            </div>
+        `;
+        articlesContainer.innerHTML += articleHTML;
+    });
+}
 
-        // Call the displayArticles function to load articles on page load
-        displayArticles();
-    </script>
+// Appeler la fonction displayArticles pour charger les articles au chargement de la page
+displayArticles();
+
+</script>
 </body>
 
 </html>
