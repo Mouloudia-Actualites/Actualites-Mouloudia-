@@ -1047,26 +1047,26 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <!-- Custom JS -->
         <!-- Scripts -->
      <script>
- // Close the fullscreen menu when clicking outside of it or on close button
-        $(document).ready(function() {
-            // Toggle fullscreen menu
-            $('.navbar-toggler').click(function() {
-                $('#fullscreenMenu').toggleClass('open');
-            });
+$(document).ready(function() {
+    // Toggle fullscreen menu
+    $('.navbar-toggler').click(function() {
+        $('fullscreenMenu').toggleClass('open');
+    });
 
-            // Close the fullscreen menu when clicking outside of it
-            $(document).mouseup(function(e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
+    // Close the fullscreen menu when clicking outside of it
+    $(document).mouseup(function(e) {
+        var container = $("fullscreenMenu");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.removeClass('open');
+        }
+    });
 
-            // Close the fullscreen menu when close button is clicked
-            $('.close-btn').click(function() {
-                $('#fullscreenMenu').removeClass('open');
-            });
-        });
+    // Close the fullscreen menu when close button is clicked
+    $('.close-btn').click(function() {
+        $('fullscreenMenu').removeClass('open');
+    });
+});
+
         // Article carousel functionality
         const articleGrid = document.getElementById('articleGrid');
         const articles = document.querySelectorAll('.article');
