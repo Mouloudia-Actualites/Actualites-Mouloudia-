@@ -278,8 +278,7 @@
             color: #fff; /* Green text */
             padding: 20px;
         }
-        
-             footer {
+              footer {
             color: #fff;
             padding: 15px 0;
             text-align: center;
@@ -340,10 +339,7 @@
     </div>
 </section>
 
-<footer>
-    <div class="container">
-    </div>
-</footer>
+   <footer class="text-center py-4">
 
 <!-- Font Awesome Icons -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -353,28 +349,14 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-   
-
-        // Call the displayArticles function to load articles on page load
-        displayArticles();
-        const menuToggle = document.querySelector('.navbar-toggler');
-        const fullscreenMenu = document.getElementById('fullscreenMenu');
-        const closeBtn = document.querySelector('.close-btn');
-
-        menuToggle.addEventListener('click', () => {
-            fullscreenMenu.classList.toggle('open');
+ // Ouvrir le menu plein écran
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            document.getElementById('fullscreenMenu').style.display = 'block'; // Afficher le menu
         });
 
-        closeBtn.addEventListener('click', () => {
-            fullscreenMenu.classList.remove('open');
-        });
-    });
-           // Toggle between light and dark mode
-        const body = document.body;
-        const navbarBrand = document.querySelector('.navbar-brand');
-
-        navbarBrand.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
+        // Fermer le menu plein écran
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('fullscreenMenu').style.display = 'none'; // Cacher le menu
         });
 
         // Function to display articles dynamically
