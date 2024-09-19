@@ -153,13 +153,30 @@
 
 
         .close-btn {
-            position: absolute;
-            top: 10px; /* Adjusted for visibility */
-            left: 10px;
-            color: #000;
-            font-size: 40px;
-            cursor: pointer;
-        }
+    position: absolute;
+    top: 10px; /* Adjusted for visibility */
+    left: 10px;
+    color: #000;
+    font-size: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-icon {
+    display: none;
+    font-size: 40px;
+}
+
+.fullscreen-menu.open .fa-arrow-left {
+    display: block; /* Show back icon when menu is open */
+}
+
+.fullscreen-menu.open .fa-times {
+    display: none; /* Hide close icon when menu is open */
+}
+
 
         .hero {
             background-color: white;
@@ -294,27 +311,29 @@
         </nav>
     </header><br><br>
 
-    <div class="fullscreen-menu" id="fullscreenMenu">
-        <span class="close-btn"><i class="fas fa-arrow-left"></i></span><br>
-        <div class="fullscreen-menu-content"><br>
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="...ابحث">
-                <button class="search-button">بحث</button>
-            </div>
-            <ul>
-                <li><a href="inde.html">الصفحة الرئيسية</a></li>
-                <li><a href="news1.html">أخبار</a></li>
-                <li><a href="first1.html">الفريق الأول</a></li>
-                <li><a href="reserve1.html">فريق الرديف</a></li>
-                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
-                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
-                <li><a href="live1.html">نتائج مباشرة</a></li>
-                <li><a href="video1.html">أشرطة فيديو</a></li>
-                <li><a href="contac1.html">تواصل معنا</a></li>
-            </ul>
+   <div class="fullscreen-menu" id="fullscreenMenu">
+    <span class="close-btn">
+        <i class="fas fa-arrow-left close-icon"></i>
+        <i class="fas fa-times close-icon"></i>
+    </span><br>
+    <div class="fullscreen-menu-content"><br>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="...ابحث">
+            <button class="search-button">بحث</button>
         </div>
+        <ul>
+            <li><a href="inde.html">الصفحة الرئيسية</a></li>
+            <li><a href="news1.html">أخبار</a></li>
+            <li><a href="first1.html">الفريق الأول</a></li>
+            <li><a href="reserve1.html">فريق الرديف</a></li>
+            <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+            <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+            <li><a href="live1.html">نتائج مباشرة</a></li>
+            <li><a href="video1.html">أشرطة فيديو</a></li>
+            <li><a href="contac1.html">تواصل معنا</a></li>
+        </ul>
     </div>
-
+</div>
 
     <!-- News Section -->
     <section class="news-section">
@@ -341,10 +360,13 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom Script -->
    <script>
-     $(document).ready(function() {
+ $(document).ready(function() {
     // Toggle fullscreen menu on button click
     $('.navbar-toggler').click(function() {
         $('#fullscreenMenu').toggleClass('open');
+        // Toggle icons
+        $('.fa-arrow-left').toggle();
+        $('.fa-times').toggle();
     });
 
     // Close the fullscreen menu when clicking outside of it
@@ -353,13 +375,21 @@
         // Only close if the menu is open and the click is outside the menu
         if (container.hasClass('open') && !container.is(e.target) && container.has(e.target).length === 0) {
             container.removeClass('open');
+            // Hide icons
+            $('.fa-arrow-left').hide();
+            $('.fa-times').hide();
         }
     });
 
     // Close the fullscreen menu when the close button is clicked
     $('.close-btn').click(function() {
         $('#fullscreenMenu').removeClass('open');
+        // Hide icons
+        $('.fa-arrow-left').hide();
+        $('.fa-times').hide();
     });
+});
+
 });
 
     const body = document.body;
