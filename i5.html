@@ -38,12 +38,14 @@
             top: 0;
             z-index: 1002;
             width: 100%;
+            transition: background-color 0.3s;
         }
         
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
             margin-top: -5px;
+            z-index: 1003;
         }
         
         .navbar-dark .navbar-toggler-icon {
@@ -121,7 +123,7 @@
         }
         
         /* Close button styles */
-        .navbar .close-btn {
+        .close-btn {
             display: none;
             position: absolute;
             top: 10px;
@@ -135,7 +137,12 @@
             z-index: 1100;
         }
 
-        .fullscreen-menu.open + .navbar .close-btn {
+        /* Toggle visibility of buttons */
+        .fullscreen-menu.open ~ .navbar .navbar-toggler {
+            display: none;
+        }
+        
+        .fullscreen-menu.open ~ .navbar .close-btn {
             display: block;
         }
         
