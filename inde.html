@@ -688,26 +688,25 @@
 .featured-articles {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Space between articles */
+    gap: 20px; /* Adds space between articles */
 }
 
 .article {
-    flex: 1 1 calc(33.333% - 20px); /* Adjusts to fit 3 articles per row, accounting for gap */
+    flex: 1 1 calc(33.333% - 20px); /* Adjust to fit 3 articles per row, accounting for gap */
     position: relative; /* Allows absolute positioning for the image */
     overflow: hidden; /* Hides overflow from the image */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds shadow for better appearance */
     margin-bottom: 20px;
     background-color: #fff; /* Ensures background color for the article */
-    height: 200px; /* Fixed height for consistency */
 }
 
 /* Article Image */
 .article img {
     width: 100%; /* Ensures the image covers the full width */
-    height: 100%; /* Ensures the image covers the full height */
+    height: auto; /* Keeps the image height proportional */
+    aspect-ratio: 4 / 3; /* Ensures the image maintains a 4:3 aspect ratio */
     object-fit: cover; /* Ensures the image covers the container without distortion */
-    border-radius: 8px; /* Adds rounded corners */
     display: block; /* Ensures no extra space below the image */
 }
 
