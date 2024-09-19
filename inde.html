@@ -688,52 +688,57 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-         .featured-articles {
-        text-align: center;
-        padding: 20px;
-        position: relative;
-        overflow: hidden;
-        max-width: 100%;
-    }
+        .featured-articles {
+    text-align: center;
+    padding: 10px; /* تقليل المسافة العلوية */
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
 
-    .article-grid {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: 100%;
-    }
+.article-grid {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
 
-    .article {
-        flex: 0 0 100%;
-        padding: 20px;
-      
-        box-sizing: border-box;
-    }
+.article {
+    flex: 0 0 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-    .article img {
-        width: 100%;
-        border-radius: 8px;
-    }
+.article img {
+    width: 110%; /* تكبير الصورة */
+    border-radius: 8px;
+    margin-bottom: 15px; /* إضافة مسافة بين الصورة والنص */
+}
 
-    .article h3 {
+.article h3 {
     font-size: 18px;
     color: #333;
 }
+
 .article h3 a {
     color: #000;
     text-decoration: none;
 }
+
 .article h3 a:hover {
     text-decoration: underline;
 }
+
 .article p {
     margin: 10px 0 0;
     font-size: 18px;
     color: #333;
 }
+
 .article a {
     text-decoration: none;
     color: #007bff;
 }
+
 .article:hover {
     transform: scale(1.02);
 }
