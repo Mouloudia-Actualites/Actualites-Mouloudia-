@@ -23,25 +23,39 @@
             transition: background-color 0.5s, color 0.5s;
             position: relative;
         }
-   .navbar {
+  
+        .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
-            /* Ensures the image covers the entire navbar */
             background-repeat: no-repeat;
-            /* Prevents the image from repeating */
             background-position: center;
-            /* Centers the image in the navbar */
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: fixed;
+            top: 0;
+            z-index: 1002;
+            width: 100%;
         }
         
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
+            margin-top: -5px;
+            /* Adjust this value to move the toggler icon upwards */
         }
         
         .navbar-dark .navbar-toggler-icon {
+            width: 54px;
+            height: 37px;
+        }
+        
+        .navbar-content .navbar-brand {
+            font-size: 24px;
             color: white;
-            width: 44px;
-            height: 27px;
+            text-decoration: none;
         }
         
         .navbar-dark .navbar-nav .nav-link {
@@ -49,39 +63,39 @@
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
-            /* Right-align text */
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
         /* Fullscreen Menu */
+        
         .fullscreen-menu {
             position: fixed;
-            top: 55px;
+            top: 60px;
             left: 0;
             width: 100%;
-            height: calc(100% - 55px);
+            height: calc(100% - 60px);
             background-color: #fff;
             z-index: 1001;
             display: none;
             overflow-y: auto;
             transition: transform 0.3s ease-in-out;
         }
-
+        
         .fullscreen-menu.open {
             display: block;
         }
-
+        
         .fullscreen-menu-content {
             padding: 20px;
             display: flex;
             flex-direction: column;
-            height: calc(100% - 55px);
+            height: calc(100% - 60px);
             box-sizing: border-box;
             position: relative;
         }
-
+        
         .close-btn {
             position: absolute;
             top: 20px;
@@ -90,9 +104,10 @@
             color: #000;
             cursor: pointer;
             z-index: 1100;
+            /* Add this to create space below the close button */
             margin-bottom: 30px;
         }
-
+        
         @media (max-width: 768px) {
             .close-btn {
                 font-size: 30px;
@@ -101,11 +116,13 @@
             }
         }
         /* Adjust the search bar position */
+        
         .search-bar {
             margin-top: 70px;
+            /* Adjust the space between the close button and search bar */
             margin-bottom: 20px;
         }
-
+        
         .search-input {
             padding: 10px;
             border: 1px solid #ccc;
@@ -114,7 +131,7 @@
             border-radius: 5px;
             text-align: right;
         }
-
+        
         .search-button {
             background-color: #000;
             color: #fff;
@@ -126,22 +143,22 @@
             margin-top: 10px;
             width: 100%;
         }
-
+        
         .search-button:hover {
             background-color: #333;
         }
-
+        
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
-
+        
         .fullscreen-menu-content ul li {
             margin-bottom: 10px;
             border-bottom: 1px solid #ccc;
         }
-
+        
         .fullscreen-menu-content ul li a {
             color: #000;
             font-size: 18px;
@@ -149,11 +166,11 @@
             display: block;
             padding: 10px;
         }
-
+        
         .fullscreen-menu-content ul li a:hover {
             color: #000;
         }
-
+        
         @media (max-width: 768px) {
             .navbar {
                 height: 45px;
@@ -314,22 +331,35 @@
         </nav>
 </header>
 
-<div class="fullscreen-menu" id="fullscreenMenu">
-    <div class="fullscreen-menu-content">
-        <span class="close-btn"><i class="fas fa-arrow-left"></i></span>
-        <div class="search-bar">
-            <input type="text" class="search-input" placeholder="...ابحث">
-            <button class="search-button">بحث</button>
+<header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="fullscreen-menu-content">
+            <span class="close-btn"><i class="fas fa-arrow-left"></i></span>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="...ابحث">
+                <button class="search-button">بحث</button>
+            </div>
+            <ul>
+                <li><a href="inde.html">الصفحة الرئيسية</a></li>
+                <li><a href="news1.html">أخبار</a></li>
+                <li><a href="first1.html">الفريق الأول</a></li>
+                <li><a href="reserve1.html">فريق الرديف</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
+                <li><a href="live1.html">نتائج مباشرة</a></li>
+                <li><a href="video1.html">أشرطة فيديو</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+            </ul>
         </div>
-        <ul>
-            <li><a href="inde.html">الصفحة الرئيسية</a></li>
-            <li><a href="news1.html">أخبار</a></li>
-            <li><a href="first1.html">الفريق الأول</a></li>
-            <li><a href="reserve1.html">فريق الرديف</a></li>
-            <li class="nav-item"><a class="nav-link" href="idr1.html">اللاعبون</a></li>
-        </ul>
-    </div>
-</div>
 
 <section class="news-section">
     <div class="container">
@@ -340,13 +370,6 @@
 </section>
 
    <footer class="text-center py-4">
-
-<!-- Font Awesome Icons -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<!-- jQuery and Bootstrap Bundle with Popper -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
  // Ouvrir le menu plein écran
