@@ -1071,22 +1071,25 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <!-- Custom JS -->
         <!-- Scripts -->
      <script>
-    $(document).ready(function() {
-        // Fullscreen menu toggle
-        $('.navbar-toggler').click(function() {
-            $('#fullscreenMenu').toggleClass('open');
-        });
+   $(document).ready(function() {
+    // Fullscreen menu toggle
+    $('.navbar-toggler').click(function() {
+        $('#fullscreenMenu').toggleClass('open');
+    });
 
-        $(document).mouseup(function(e) {
-            var container = $("#fullscreenMenu");
-            if (!container.is(e.target) && container.has(e.target).length === 0) {
-                container.removeClass('open');
-            }
-        });
+    // Close menu when clicking outside of it
+    $(document).mouseup(function(e) {
+        var container = $("#fullscreenMenu");
+        if (!container.is(e.target) && container.has(e.target).length === 0) {
+            container.removeClass('open');
+        }
+    });
 
-        $('.close-btn').click(function() {
-            $('#fullscreenMenu').removeClass('open');
-        });
+    // Close menu when clicking on close button
+    $('.close-btn').click(function() {
+        $('#fullscreenMenu').removeClass('open');
+    });
+});
 
         // Article carousel functionality
         const articleGrid = document.getElementById('articleGrid');
