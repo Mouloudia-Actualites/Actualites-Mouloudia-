@@ -682,7 +682,6 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-    /* Article Container */
 .featured-articles {
     display: flex;
     flex-wrap: wrap;
@@ -694,8 +693,10 @@
     position: relative;
     overflow: hidden; /* Hides overflow from the image */
     margin-bottom: 20px;
-    background-color: #fff;
+    background-color: #fff; /* White background for the article */
     padding: 10px; /* Creates padding inside the article */
+    border-radius: 8px; /* Optional: Add border radius to the article */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better appearance */
 }
 
 /* Article Image */
@@ -704,10 +705,9 @@
     height: auto; /* Keeps the image height proportional */
     aspect-ratio: 4 / 3; /* Maintains the 4:3 aspect ratio */
     object-fit: cover; /* Ensures the image covers the entire container without distortion */
-    border-radius: 8px; /* Adds rounded corners */
+    border-radius: 8px; /* Adds rounded corners to the image */
     display: block; /* Prevents any extra space below the image */
 }
-
 
 /* Article Title */
 .article h3 {
