@@ -682,57 +682,44 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-     .featured-articles {
-    text-align: center;
-    padding: 0 10px;
-    position: relative;
-    overflow: hidden;
-    max-width: 100%;
-}
+    /* Article Container */
 
-.article-grid {
+
+.featured-articles {
     display: flex;
-    transition: transform 0.5s ease-in-out;
-    justify-content: center; /* لتوسيط المحتوى */
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between articles */
 }
 
-/* Article Container */
 .article {
-    flex: 0 0 100%; /* Ensures the article takes full width in flex container */
-    padding: 20px 15px; /* Adjust padding for consistency */
-    box-sizing: border-box;
-    margin: 0 15px; /* Adds the same margin to the left and right */
+    flex: 1 1 calc(33.333% - 20px); /* Adjust to fit 3 articles per row, accounting for gap */
     position: relative; /* Allows absolute positioning for the image */
-    overflow: hidden; /* Hides any overflow from the image */
-    height: 0; /* Initially set to 0 */
-    padding-bottom: 56.25%; /* Maintains 16:9 aspect ratio (9/16 * 100) */
-    background-color: #f8f9fa; /* Optional: background color for better readability */
+    overflow: hidden; /* Hides overflow from the image */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds shadow for better appearance */
+    margin-bottom: 20px;
 }
 
 /* Article Image */
 .article img {
-    position: absolute; /* Position image absolutely within container */
-    top: 0;
-    left: 0;
     width: 100%; /* Ensures the image covers the full width */
-    height: 100%; /* Ensures the image covers the full height */
+    height: auto; /* Keeps the image height proportional */
+    aspect-ratio: 16 / 9; /* Ensures the image maintains a 16:9 aspect ratio */
     object-fit: cover; /* Ensures the image covers the container without distortion */
-    border-radius: 8px;
-    margin-bottom: 15px; /* Space below the image */
+    border-radius: 8px; /* Adds rounded corners */
 }
 
 /* Article Title */
 .article h3 {
     font-size: 18px;
-    color: #000; /* Black color for the title */
-    font-family: 'Cairo', Arial, sans-serif; /* Replace with your desired font */
-    margin: 15px 0 5px; /* Space around the title */
+    color: #333;
+    font-family: "Cairo", Arial, sans-serif; /* Replace with your desired font */
+    margin-top: 10px;
+    text-align: center; /* Centers the title text */
 }
 
-/* Article Title Link */
 .article h3 a {
-    color: #000; /* Black color for links in the title */
+    color: #000;
     text-decoration: none;
 }
 
@@ -740,23 +727,6 @@
     text-decoration: underline;
 }
 
-/* Article Content */
-.article p {
-    margin: 10px 0 0;
-    font-size: 16px; /* Adjust font size if needed */
-    color: #333; /* Dark gray for the content text */
-    font-family: 'Cairo', Arial, sans-serif; /* Replace with your desired font */
-}
-
-/* Article Links */
-.article a {
-    text-decoration: none;
-    color: #007bff; /* Blue color for links */
-}
-
-.article:hover {
-    transform: scale(1.02); /* Slight zoom effect on hover */
-}
 
     .nav-btn {
         position: absolute;
