@@ -15,157 +15,166 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <!-- Inline Styles -->
     <style>
-        /* Global styles */
-        body {
-            font-family: 'Cairo', Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #000;
-            transition: background-color 0.5s, color 0.5s;
-            position: relative;
-        }
-        /* Navbar styles */
-        .navbar {
-            background-image: url('mama.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            position: fixed;
-            top: 0;
-            z-index: 1002;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-        
-        .navbar-dark .navbar-toggler {
-            border: none;
-            color: white;
-            margin-top: -5px;
-            z-index: 1003;
-        }
-        
-        .navbar-dark .navbar-toggler-icon {
-            width: 54px;
-            height: 37px;
-        }
-        
-        .navbar-content .navbar-brand {
-            font-size: 24px;
-            color: white;
-            text-decoration: none;
-        }
-        
-        .navbar-dark .navbar-nav .nav-link {
-            color: #000;
-            padding: 10px 15px;
-            transition: background-color 0.3s;
-            text-align: right;
-        }
-        
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        /* Fullscreen Menu */
-        .fullscreen-menu {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            height: calc(100% - 60px);
-            background-color: #fff;
-            z-index: 1001;
-            display: none;
-            overflow-y: auto;
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .fullscreen-menu.open {
-            display: block;
-        }
-        
-        .fullscreen-menu-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            height: calc(100% - 60px);
-            box-sizing: border-box;
-            position: relative;
-        }
-        
-        .fullscreen-menu-content ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            direction: rtl;
-            text-align: right;
-        }
-        
-        .fullscreen-menu-content ul li {
-            margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        
-        .fullscreen-menu-content ul li a {
-            color: #000;
-            font-size: 18px;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            text-align: right;
-        }
-        
-        .fullscreen-menu-content ul li a:hover {
-            color: #000;
-        }
-        
-        /* Close button styles */
-        .close-btn {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: transparent;
-            color: #000;
-            border: none;
-            font-size: 24px;
-            padding: 0;
-            cursor: pointer;
-            z-index: 1100;
-        }
+     /* Global styles */
+body {
+    font-family: 'Cairo', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #000;
+    transition: background-color 0.5s, color 0.5s;
+    position: relative;
+}
 
-        /* Toggle visibility of buttons */
-        .fullscreen-menu.open ~ .navbar .navbar-toggler {
-            display: none;
-        }
-        
-        .fullscreen-menu.open ~ .navbar .close-btn {
-            display: block;
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                height: 45px;
-            }
-            .navbar-content .navbar-brand {
-                font-size: 18px;
-            }
-            .navbar-dark .navbar-nav .nav-link {
-                padding: 8px 10px;
-            }
-            .fullscreen-menu-content ul li {
-                margin-bottom: 5px;
-            }
-            .fullscreen-menu-content ul li a {
-                font-size: 16px;
-            }
-            .close-btn {
-                font-size: 20px;
-            }
-        }
+/* Navbar styles */
+.navbar {
+    background-image: url('mama.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: fixed;
+    top: 0;
+    z-index: 1002;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.navbar-dark .navbar-toggler {
+    border: none;
+    color: white;
+    margin-top: -5px;
+    z-index: 1003;
+}
+
+.navbar-dark .navbar-toggler-icon {
+    width: 54px;
+    height: 37px;
+}
+
+.navbar-content .navbar-brand {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #000;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
+    text-align: right;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Fullscreen Menu */
+.fullscreen-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #fff;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fullscreen-menu.open {
+    display: block;
+}
+
+.fullscreen-menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.fullscreen-menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.fullscreen-menu-content ul li a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li a:hover {
+    color: #000;
+}
+
+/* Close button styles */
+.close-btn {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    font-size: 24px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Toggle button styles */
+.navbar-toggler {
+    display: block;
+    z-index: 1003;
+}
+
+/* Show and hide buttons based on menu state */
+.fullscreen-menu.open ~ .navbar .navbar-toggler {
+    display: none; /* Hide toggle button when menu is open */
+}
+
+.fullscreen-menu.open ~ .navbar .close-btn {
+    display: block; /* Show close button when menu is open */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 45px;
+    }
+    .navbar-content .navbar-brand {
+        font-size: 18px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 10px;
+    }
+    .fullscreen-menu-content ul li {
+        margin-bottom: 5px;
+    }
+    .fullscreen-menu-content ul li a {
+        font-size: 16px;
+    }
+    .close-btn {
+        font-size: 20px;
+    }
+}
+
     </style>
 </head>
 
@@ -207,29 +216,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Custom JS -->
-    <script>
-        // Open fullscreen menu
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
-            document.querySelector('.close-btn').style.display = 'block'; // Show close button
-        });
+  <!-- Custom JS -->
+<script>
+    // Open fullscreen menu
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+        document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+        document.querySelector('.close-btn').style.display = 'block'; // Show close button
+        document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+    });
 
-        // Close fullscreen menu
-        document.getElementById('closeMenuBtn').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
-            document.querySelector('.close-btn').style.display = 'none'; // Hide close button
-        });
+    // Close fullscreen menu
+    document.getElementById('closeMenuBtn').addEventListener('click', function() {
+        document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+        document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+        document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+    });
 
-        // Ensure that the navbar-toggler button is displayed when the menu is closed
-        function updateNavbarToggler() {
-            const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
-            document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
-        }
+    // Ensure that the navbar-toggler button is displayed when the menu is closed
+    function updateNavbarButtons() {
+        const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+        document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+        document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+    }
 
-        // Update navbar-toggler visibility on page load and resize
-        window.addEventListener('load', updateNavbarToggler);
-        window.addEventListener('resize', updateNavbarToggler);
-    </script>
+    // Update navbar buttons visibility on page load and resize
+    window.addEventListener('load', updateNavbarButtons);
+    window.addEventListener('resize', updateNavbarButtons);
+</script>
+
 
 </body>
 
