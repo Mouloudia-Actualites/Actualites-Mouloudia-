@@ -16,7 +16,7 @@
     <!-- Inline Styles -->
     <style>
         /* Global styles */
-     body {
+        body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #000;
@@ -24,8 +24,6 @@
             position: relative;
         }
         /* Navbar styles */
-        /* Navbar styles */
-        
         .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
@@ -41,63 +39,61 @@
             z-index: 1002;
             width: 100%;
         }
-        
+
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
             margin-top: -5px;
-            /* Adjust this value to move the toggler icon upwards */
         }
-        
+
         .navbar-dark .navbar-toggler-icon {
             width: 54px;
             height: 37px;
         }
-        
+
         .navbar-content .navbar-brand {
             font-size: 24px;
             color: white;
             text-decoration: none;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
         }
-        
+
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
         /* Fullscreen Menu */
-        
         .fullscreen-menu {
             position: fixed;
-            top: 60px;
+            top: 55px;
             left: 0;
             width: 100%;
-            height: calc(100% - 60px);
+            height: calc(100% - 55px);
             background-color: #fff;
             z-index: 1001;
             display: none;
             overflow-y: auto;
             transition: transform 0.3s ease-in-out;
         }
-        
+
         .fullscreen-menu.open {
             display: block;
         }
-        
+
         .fullscreen-menu-content {
             padding: 20px;
             display: flex;
             flex-direction: column;
-            height: calc(100% - 60px);
+            height: calc(100% - 55px);
             box-sizing: border-box;
             position: relative;
         }
-        
+
         .close-btn {
             position: absolute;
             top: 20px;
@@ -106,10 +102,9 @@
             color: #000;
             cursor: pointer;
             z-index: 1100;
-            /* Add this to create space below the close button */
             margin-bottom: 30px;
         }
-        
+
         @media (max-width: 768px) {
             .close-btn {
                 font-size: 30px;
@@ -118,13 +113,11 @@
             }
         }
         /* Adjust the search bar position */
-        
         .search-bar {
             margin-top: 70px;
-            /* Adjust the space between the close button and search bar */
             margin-bottom: 20px;
         }
-        
+
         .search-input {
             padding: 10px;
             border: 1px solid #ccc;
@@ -133,7 +126,7 @@
             border-radius: 5px;
             text-align: right;
         }
-        
+
         .search-button {
             background-color: #000;
             color: #fff;
@@ -145,22 +138,22 @@
             margin-top: 10px;
             width: 100%;
         }
-        
+
         .search-button:hover {
             background-color: #333;
         }
-        
+
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
         }
-        
+
         .fullscreen-menu-content ul li {
             margin-bottom: 10px;
             border-bottom: 1px solid #ccc;
         }
-        
+
         .fullscreen-menu-content ul li a {
             color: #000;
             font-size: 18px;
@@ -168,11 +161,11 @@
             display: block;
             padding: 10px;
         }
-        
+
         .fullscreen-menu-content ul li a:hover {
             color: #000;
         }
-        
+
         @media (max-width: 768px) {
             .navbar {
                 height: 45px;
@@ -200,7 +193,7 @@
             }
         }
         .hero {
-            background-color:white;
+            background-color: white;
             background-size: cover;
             background-position: center;
             color: #000;
@@ -208,14 +201,13 @@
             padding: 80px 0;
         }
 
-          
         .news-section {
             padding: 80px 0;
         }
 
         .article {
             margin-bottom: 40px;
-            text-align: right; /* Align text to right */
+            text-align: right;
         }
 
         .article img {
@@ -229,13 +221,12 @@
         .article h2 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            text-align: right; /* Align heading to right */
+            text-align: right;
         }
 
         .article p {
             font-size: 1.1rem;
             line-height: 1.8;
-            /* Text alignment to right is handled automatically with dir="rtl" */
         }
 
         .article .meta {
@@ -250,11 +241,11 @@
         }
 
         .article .meta .date {
-            float: ;
+            float: left;
         }
 
         .article .btn-primary {
-            float: right; /* Align button to the right */
+            float: right;
         }
 
         .explore-more {
@@ -274,132 +265,127 @@
             margin-top: 20px;
         }
 
-        
-             footer {
+        footer {
             color: #fff;
             padding: 15px 0;
             text-align: center;
             background-image: url('footr.jpg');
             background-size: contain;
-            /* Resize the image to fit within the footer */
             background-position: center;
             background-repeat: no-repeat;
         }
-        
+
         .center-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
-            /* Center text horizontally within .center-container */
         }
-        
+
     </style>
 </head>
 
 <body>
 <header>
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container">
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+</header>
 
-    <div class="fullscreen-menu" id="fullscreenMenu">
-        <div class="fullscreen-menu-content">
-            <span class="close-btn"><i class="fas fa-arrow-left"></i></span>
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="...ابحث">
-                <button class="search-button">بحث</button>
-            </div>
-            <ul>
-                <li><a href="inde.html">الصفحة الرئيسية</a></li>
-                <li><a href="news1.html">أخبار</a></li>
-                <li><a href="first1.html">الفريق الأول</a></li>
-                <li><a href="reserve1.html">فريق الرديف</a></li>
-                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
-                <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
-                <li><a href="live1.html">نتائج مباشرة</a></li>
-                <li><a href="video1.html">أشرطة فيديو</a></li>
-                <li><a href="contac1.html">تواصل معنا</a></li>
-            </ul>
+<div class="fullscreen-menu" id="fullscreenMenu">
+    <div class="fullscreen-menu-content">
+        <span class="close-btn"><i class="fas fa-arrow-left"></i></span>
+        <div class="search-bar">
+            <input type="text" class="search-input" placeholder="...ابحث">
+            <button class="search-button">بحث</button>
+        </div>
+        <ul>
+            <li><a href="inde.html">الصفحة الرئيسية</a></li>
+            <li><a href="news1.html">أخبار</a></li>
+            <li><a href="first1.html">الفريق الأول</a></li>
+            <li><a href="reserve1.html">فريق الرديف</a></li>
+            <li class="nav-item"><a class="nav-link" href="idr1.html">اللاعبون</a></li>
+        </ul>
+    </div>
+</div>
+
+<section class="hero">
+    <div class="container">
+        <h1>أخبار مولودية الجزائر</h1>
+    </div>
+</section>
+
+<section class="news-section">
+    <div class="container">
+        <div class="row" id="articles">
+            <!-- Articles will be inserted here dynamically -->
         </div>
     </div>
+</section>
 
-    <!-- News Section -->
-    <section class="news-section">
-        <div class="container">
-            <div class="row" id="articlesContainer">
-                <!-- Articles will be dynamically inserted here -->
-            </div>
-        </div>
-    </section>
-  <br> <section class="image-before-icons">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Mouloudia Actualités</p>
+    </div>
+</footer>
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<!-- jQuery and Bootstrap Bundle with Popper -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const articles = [
+            {
+                title: "عنوان المقال 1",
+                description: "وصف المقال 1",
+                date: "2024-09-18",
+                image: "image1.jpg",
+                link: "#"
+            },
+            {
+                title: "عنوان المقال 2",
+                description: "وصف المقال 2",
+                date: "2024-09-19",
+                image: "image2.jpg",
+                link: "#"
+            }
+        ];
+
+        const articlesContainer = document.getElementById('articles');
+        articles.forEach(article => {
+            const articleElement = `
+                <div class="col-md-6 article">
+                    <img src="${article.image}" alt="${article.title}">
+                    <h2>${article.title}</h2>
+                    <p class="meta"><span class="author">الكاتب</span> - <span class="date">${article.date}</span></p>
+                    <p>${article.description}</p>
+                    <a href="${article.link}" class="btn btn-primary">اقرأ المزيد</a>
                 </div>
-            </div>
-        </div>
-    </section><br>
-    <footer class="text-center py-4">
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <!-- Custom Script -->
-    <script>
-         // Ouvrir le menu plein écran
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').style.display = 'block'; // Afficher le menu
+            `;
+            articlesContainer.innerHTML += articleElement;
         });
 
-        // Fermer le menu plein écran
-        document.querySelector('.close-btn').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').style.display = 'none'; // Cacher le menu
+        const menuToggle = document.querySelector('.navbar-toggler');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+        const closeBtn = document.querySelector('.close-btn');
+
+        menuToggle.addEventListener('click', () => {
+            fullscreenMenu.classList.toggle('open');
         });
 
-        // Function to display articles dynamically
-        function displayArticles() {
-            const articlesContainer = document.getElementById('articlesContainer');
-            const articles = [ 
-              
-                {
-                    title: 'رديف العميد يسقط في خرجته الأولى',
-                    content: 'إفتتح رديف مولودية الجزائر موسمه الجديد بخيبة أمل، حيث سقط في فخ الهزيمة أمام نظيره رديف شبيبة القبائل بنتيجة 3-1 في مباراة شهدت تنافسًا كبيرًا على أرضية ميدان ملعب 1 نوفمبر 1954 بتيزي وزو<br><br> جاءت هذه النتيجة مخيبة لآمال الفريق العاصمي الذي كان يتطلع لبداية قوية، في حين أن شبيبة القبائل حققت إنتصارًا يعزز معنويات الفريق في بداية مشواره',
-                    imageUrl: '03.jpg',
-                    date: '22:20',
-                    author: 'الخميس 19 سبتمبر 2024'
-                }
-            ];
-
-            articles.forEach(article => {
-                const articleHTML = `
-                    <div class="col-lg-6">
-                        <article class="article">
-                             <h2>${article.title}</h2>
-                            <div class="meta">
-                                <span class="date">${article.date}</span> |
-                                <span class="author">${article.author}</span>
-                            </div>
-                              <img src="${article.imageUrl}" alt="${article.title}">
-                            <p>${article.content}</p>
-                         
-                        </article>
-                    </div>
-                `;
-                articlesContainer.innerHTML += articleHTML;
-            });
-        }
-
-        // Call the displayArticles function to load articles on page load
-        displayArticles();
-    </script>
+        closeBtn.addEventListener('click', () => {
+            fullscreenMenu.classList.remove('open');
+        });
+    });
+</script>
 </body>
 
 </html>
