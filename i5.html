@@ -193,9 +193,9 @@
             padding: 80px 0;
         }
 
-        .article {
+       .article {
             margin-bottom: 40px;
-            text-align: right;
+            text-align: right; /* Align text to right */
         }
 
         .article img {
@@ -209,12 +209,13 @@
         .article h2 {
             font-size: 2.5rem;
             margin-bottom: 10px;
-            text-align: right;
+            text-align: right; /* Align heading to right */
         }
 
         .article p {
             font-size: 1.1rem;
             line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
         }
 
         .article .meta {
@@ -229,11 +230,11 @@
         }
 
         .article .meta .date {
-            float: left;
+            float: ;
         }
 
         .article .btn-primary {
-            float: right;
+            float: right; /* Align button to the right */
         }
 
         .explore-more {
@@ -253,35 +254,65 @@
             margin-top: 20px;
         }
 
-        footer {
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
+
+        body.dark-mode .navbar {
+            background-color: #fff;
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
+        }
+        
+             footer {
             color: #fff;
             padding: 15px 0;
             text-align: center;
             background-image: url('footr.jpg');
             background-size: contain;
+            /* Resize the image to fit within the footer */
             background-position: center;
             background-repeat: no-repeat;
         }
-
+        
         .center-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
+            /* Center text horizontally within .center-container */
         }
-
+        
     </style>
 </head>
 
 <body>
 <header>
     <nav class="navbar navbar-expand-md navbar-dark">
-        <div class="container">
-            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
+            <div class="container">
+                <div class="navbar-brand mr-auto">
+                </div>
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+            </div>
+        </nav>
 </header>
 
 <div class="fullscreen-menu" id="fullscreenMenu">
@@ -322,7 +353,23 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-          // Toggle between light and dark mode
+   
+
+        // Call the displayArticles function to load articles on page load
+        displayArticles();
+        const menuToggle = document.querySelector('.navbar-toggler');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+        const closeBtn = document.querySelector('.close-btn');
+
+        menuToggle.addEventListener('click', () => {
+            fullscreenMenu.classList.toggle('open');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            fullscreenMenu.classList.remove('open');
+        });
+    });
+           // Toggle between light and dark mode
         const body = document.body;
         const navbarBrand = document.querySelector('.navbar-brand');
 
@@ -362,21 +409,6 @@
                 articlesContainer.innerHTML += articleHTML;
             });
         }
-
-        // Call the displayArticles function to load articles on page load
-        displayArticles();
-        const menuToggle = document.querySelector('.navbar-toggler');
-        const fullscreenMenu = document.getElementById('fullscreenMenu');
-        const closeBtn = document.querySelector('.close-btn');
-
-        menuToggle.addEventListener('click', () => {
-            fullscreenMenu.classList.toggle('open');
-        });
-
-        closeBtn.addEventListener('click', () => {
-            fullscreenMenu.classList.remove('open');
-        });
-    });
 </script>
 </body>
 
