@@ -691,29 +691,24 @@
 
 .article {
     flex: 1 1 calc(33.333% - 20px); /* Adjust to fit 3 articles per row, accounting for gap */
-    position: relative; /* Allows absolute positioning for the image */
+    position: relative;
     overflow: hidden; /* Hides overflow from the image */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds shadow for better appearance */
     margin-bottom: 20px;
-    background-color: #fff; /* Ensures background color for the article */
-    padding: 10px; /* Add padding to create space around the content */
-    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+    background-color: #fff;
+    padding: 10px; /* Creates padding inside the article */
 }
 
 /* Article Image */
 .article img {
-    width: 100%; /* Ensures the image covers the full width of the article */
-    height: auto; /* Keeps the image height proportional */
-    aspect-ratio: 4 / 3; /* Ensures the image maintains a 4:3 aspect ratio */
+    width: 100%; /* Ensures the image covers the full width of the container */
+    aspect-ratio: 4 / 3; /* Maintains the 4:3 aspect ratio */
     object-fit: contain; /* Ensures the image fits entirely within the container */
     border-radius: 8px; /* Adds rounded corners */
-    display: block; /* Ensures no extra space below the image */
-    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Prevents any extra space below the image */
     background-color: #f0f0f0; /* Adds a background color in case of empty spaces */
 }
-
-
 
 /* Article Title */
 .article h3 {
