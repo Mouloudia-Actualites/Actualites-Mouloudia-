@@ -7,6 +7,7 @@
     <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
     <!-- Favicon -->
@@ -16,6 +17,7 @@
     <!-- Inline Styles -->
     <style>
         /* Global styles */
+        
         body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
@@ -23,7 +25,9 @@
             transition: background-color 0.5s, color 0.5s;
             position: relative;
         }
-  
+        /* Navbar styles */
+        /* Navbar styles */
+        
         .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
@@ -197,141 +201,11 @@
                 font-size: 30px;
             }
         }
-        .hero {
-            background-color: white;
-            background-size: cover;
-            background-position: center;
-            color: #000;
-            text-align: center;
-            padding: 80px 0;
-        }
-
-        .news-section {
-            padding: 80px 0;
-        }
-
-       .article {
-            margin-bottom: 40px;
-            text-align: right; /* Align text to right */
-        }
-
-        .article img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .article h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            text-align: right; /* Align heading to right */
-        }
-
-        .article p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            /* Text alignment to right is handled automatically with dir="rtl" */
-        }
-
-        .article .meta {
-            font-size: 1rem;
-            color: #6c757d;
-            text-align: right;
-            margin-bottom: 10px;
-        }
-
-        .article .meta .author {
-            float: right;
-        }
-
-        .article .meta .date {
-            float: ;
-        }
-
-        .article .btn-primary {
-            float: right; /* Align button to the right */
-        }
-
-        .explore-more {
-            margin-top: 50px;
-            text-align: center;
-        }
-
-        .explore-more .facebook-post {
-            max-width: 100%;
-            height: auto;
-            border: none;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .explore-more .read-more-link {
-            display: block;
-            margin-top: 20px;
-        }
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #212529;
-            color: #fff; /* Green text */
-        }
-
-        body.dark-mode .navbar {
-            background-color: #fff;
-        }
-
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff; /* Red text */
-        }
-
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        body.dark-mode .explore-more {
-            background-color: #343a40; /* Dark grey background */
-            border-color: #6c757d; /* Medium grey border */
-            color: #fff; /* Green text */
-            padding: 20px;
-        }
-              footer {
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-            background-image: url('footr.jpg');
-            background-size: contain;
-            /* Resize the image to fit within the footer */
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            /* Center text horizontally within .center-container */
-        }
-        
     </style>
 </head>
 
 <body>
-<header>
-    <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container">
-                <div class="navbar-brand mr-auto">
-                </div>
-                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-            </div>
-        </nav>
-</header>
-
-<header>
+    <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
@@ -360,19 +234,16 @@
                 <li><a href="contac1.html">تواصل معنا</a></li>
             </ul>
         </div>
-
-<section class="news-section">
-    <div class="container">
-        <div class="row" id="articles">
-            <!-- Articles will be inserted here dynamically -->
-        </div>
     </div>
-</section>
 
-   <footer class="text-center py-4">
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-<script>
- // Ouvrir le menu plein écran
+    <!-- Custom JS -->
+    <script>
+        // Ouvrir le menu plein écran
         document.querySelector('.navbar-toggler').addEventListener('click', function() {
             document.getElementById('fullscreenMenu').style.display = 'block'; // Afficher le menu
         });
@@ -381,40 +252,8 @@
         document.querySelector('.close-btn').addEventListener('click', function() {
             document.getElementById('fullscreenMenu').style.display = 'none'; // Cacher le menu
         });
+    </script>
 
-        // Function to display articles dynamically
-        function displayArticles() {
-            const articlesContainer = document.getElementById('articlesContainer');
-            const articles = [ 
-              
-                {
-                    title: 'بينارة يغادر رديف مولودية الجزائر',
-                    content: 'اللاعب الشاب عماد الدين بينارة، الذي تألق سابقًا في صفوف رديف مولودية الجزائر، إنتقل رسميًا إلى نادي شبيبة الأبيار<br><br> حيث يعتبر هذا الإنتقال خطوة مهمة في مسيرة اللاعب الطموحة، حيث يسعى للحصول على فرصة أكبر لإبراز موهبته و تطوير أدائه على المستوى التنافسي<br><br> و بينما أمضى سنوات في تكوينه مع الفئات الشبانية لمولودية الجزائر، يأمل بينارة أن يكون إضافة قوية لفريق شبيبة الأبيار',
-                    imageUrl: 'binar.jpg',
-                    date: '13:30',
-                    author: 'الثلاثاء 20 اوت 2024'
-                }
-            ];
-
-            articles.forEach(article => {
-                const articleHTML = `
-                    <div class="col-lg-6">
-                        <article class="article">
-                          <h2>${article.title}</h2>
-                            <div class="meta">
-                                <span class="date">${article.date}</span> |
-                                <span class="author">${article.author}</span>
-                            </div>
-                            <img src="${article.imageUrl}" alt="${article.title}">
-                            <p>${article.content}</p>
-                         
-                        </article>
-                    </div>
-                `;
-                articlesContainer.innerHTML += articleHTML;
-            });
-        }
-</script>
 </body>
 
 </html>
