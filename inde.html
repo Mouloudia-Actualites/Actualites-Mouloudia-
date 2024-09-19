@@ -38,14 +38,23 @@
         }
         
         .navbar {
-            background-image: url('mama.jpg');
-            background-size: cover;
-            /* Ensures the image covers the entire navbar */
-            background-repeat: no-repeat;
-            /* Prevents the image from repeating */
-            background-position: center;
-            /* Centers the image in the navbar */
-        }
+    background-image: url('mama.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60px; /* هذا هو الارتفاع السابق المتوقع */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.navbar-content .navbar-brand {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
         
         .navbar-dark .navbar-toggler {
             border: none;
