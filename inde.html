@@ -846,7 +846,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
 
 <body>
- <header>
+   <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <div class="navbar-brand mr-auto">
@@ -854,20 +854,18 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
             </div>
         </nav>
     </header>
     <div class="fullscreen-menu" id="fullscreenMenu">
         <span class="close-btn">&times;</span>
-        <!-- زر الإغلاق في سطر واحد مع فاصل -->
         <div class="fullscreen-menu-content">
-            <ul><br><br>
+            <ul>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="news1.html">أخبار</a></li>
                 <li><a href="first1.html">الفريق الأول</a></li>
                 <li><a href="reserve1.html">فريق الرديف</a></li>
-                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li><a href="idr1.html">الطاقم الفني</a></li>
                 <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
                 <li><a href="live1.html">نتائج مباشرة</a></li>
                 <li><a href="video1.html">أشرطة فيديو</a></li>
@@ -875,7 +873,6 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
             </ul>
         </div>
     </div>
-
 <section class="hero">
     <div class="featured-articles">
             <div class="article">
@@ -1015,8 +1012,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <!-- Custom JS -->
         <!-- Scripts -->
      <script>
-  // Close the fullscreen menu when clicking outside of it or on close button
-        $(document).ready(function() {
+ $(document).ready(function() {
             // Toggle fullscreen menu
             $('.navbar-toggler').click(function() {
                 $('#fullscreenMenu').toggleClass('open');
@@ -1034,8 +1030,7 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
             $('.close-btn').click(function() {
                 $('#fullscreenMenu').removeClass('open');
             });
-        });
-
+    
     const body = document.body;
     const navbarBrand = document.querySelector('.navbar-brand');
 
