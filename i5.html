@@ -24,25 +24,38 @@
             position: relative; /* Ensure body has relative position for absolute positioning */
         }
 
-    .navbar {
+     .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
-            /* Ensures the image covers the entire navbar */
             background-repeat: no-repeat;
-            /* Prevents the image from repeating */
             background-position: center;
-            /* Centers the image in the navbar */
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: fixed;
+            top: 0;
+            z-index: 1002;
+            width: 100%;
         }
         
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
+            margin-top: -5px;
+            /* Adjust this value to move the toggler icon upwards */
         }
         
         .navbar-dark .navbar-toggler-icon {
+            width: 54px;
+            height: 37px;
+        }
+        
+        .navbar-content .navbar-brand {
+            font-size: 24px;
             color: white;
-            width: 44px;
-            height: 27px;
+            text-decoration: none;
         }
         
         .navbar-dark .navbar-nav .nav-link {
@@ -50,80 +63,139 @@
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
-            /* Right-align text */
         }
         
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        /* Fullscreen menu styles */
+        /* Fullscreen Menu */
         
         .fullscreen-menu {
             position: fixed;
-            top: 0;
+            top: 60px;
             left: 0;
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Semi-transparent black background */
-            z-index: 1000;
-            /* Ensure it's above other content */
+            height: calc(100% - 60px);
+            background-color: #fff;
+            z-index: 1001;
             display: none;
-            /* Initially hidden */
             overflow-y: auto;
-            /* Enable scrolling */
+            transition: transform 0.3s ease-in-out;
         }
         
         .fullscreen-menu.open {
             display: block;
-            /* Display when open */
         }
         
         .fullscreen-menu-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 60px);
+            box-sizing: border-box;
+            position: relative;
+        }
+        
+        .close-btn {
             position: absolute;
-            top: 6px;
-            /* تعديل حسب الحاجة */
-            right: 10px;
-            /* تعديل حسب الحاجة */
-            transform: translate(0, 0);
-            /* تعديل حسب الحاجة */
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            color: #000;
+            cursor: pointer;
+            z-index: 1100;
+            /* Add this to create space below the close button */
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .close-btn {
+                font-size: 30px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+        /* Adjust the search bar position */
+        
+        .search-bar {
+            margin-top: 70px;
+            /* Adjust the space between the close button and search bar */
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 16px;
+            border-radius: 5px;
             text-align: right;
-            /* توجيه النص إلى اليمين */
+        }
+        
+        .search-button {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        
+        .search-button:hover {
+            background-color: #333;
         }
         
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
         
         .fullscreen-menu-content ul li {
             margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
         }
         
         .fullscreen-menu-content ul li a {
-            color: #fff;
-            font-size: 24px;
+            color: #000;
+            font-size: 18px;
             text-decoration: none;
-            transition: color 0.3s;
             display: block;
             padding: 10px;
         }
         
         .fullscreen-menu-content ul li a:hover {
-            color: #ccc;
+            color: #000;
         }
         
-        .close-btn {
-            position: absolute;
-            top: 2px;
-            /* تعديل حسب الحاجة */
-            left: 10px;
-            /* تعديل لتحديد الزاوية اليسرى */
-            color: #fff;
-            /* تعديل لون النص */
-            font-size: 50px;
-            /* تعديل حجم الخط */
-            cursor: pointer;
+        @media (max-width: 768px) {
+            .navbar {
+                height: 45px;
+            }
+            .navbar-content .navbar-brand {
+                font-size: 18px;
+            }
+            .navbar-dark .navbar-nav .nav-link {
+                padding: 8px 10px;
+            }
+            .search-input {
+                font-size: 14px;
+            }
+            .search-button {
+                font-size: 14px;
+            }
+            .fullscreen-menu-content ul li {
+                margin-bottom: 5px;
+            }
+            .fullscreen-menu-content ul li a {
+                font-size: 16px;
+            }
+            .close-btn {
+                font-size: 30px;
+            }
         }
         .hero {
             background-color:white;
@@ -248,24 +320,24 @@
 </head>
 
 <body>
-
-    <header>
+<header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <div class="navbar-brand mr-auto">
-                </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
             </div>
         </nav>
     </header>
+
     <div class="fullscreen-menu" id="fullscreenMenu">
-        <span class="close-btn">&times;</span>
-        <!-- زر الإغلاق في سطر واحد مع فاصل -->
         <div class="fullscreen-menu-content">
-            <ul><br><br>
+            <span class="close-btn"><i class="fas fa-arrow-left"></i></span>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="...ابحث">
+                <button class="search-button">بحث</button>
+            </div>
+            <ul>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="news1.html">أخبار</a></li>
                 <li><a href="first1.html">الفريق الأول</a></li>
@@ -278,7 +350,6 @@
             </ul>
         </div>
     </div>
-    
 
     <!-- News Section -->
     <section class="news-section">
@@ -305,25 +376,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom Script -->
     <script>
-        // Close the fullscreen menu when clicking outside of it or on close button
-        $(document).ready(function() {
-            // Toggle fullscreen menu
-            $('.navbar-toggler').click(function() {
-                $('#fullscreenMenu').toggleClass('open');
-            });
+         // Ouvrir le menu plein écran
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            document.getElementById('fullscreenMenu').style.display = 'block'; // Afficher le menu
+        });
 
-            // Close the fullscreen menu when clicking outside of it
-            $(document).mouseup(function(e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
-
-            // Close the fullscreen menu when close button is clicked
-            $('.close-btn').click(function() {
-                $('#fullscreenMenu').removeClass('open');
-            });
+        // Fermer le menu plein écran
+        document.querySelector('.close-btn').addEventListener('click', function() {
+            document.getElementById('fullscreenMenu').style.display = 'none'; // Cacher le menu
+        });
         });
 
         // Toggle between light and dark mode
