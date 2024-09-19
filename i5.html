@@ -79,15 +79,17 @@
 /* Fullscreen Menu Styles */
 .fullscreen-menu {
     position: fixed;
-    top: 60px;
+    top: 0; /* Adjusted for full-screen coverage */
     left: 0;
     width: 100%;
-    height: calc(100% - 60px);
-    background-color: #fff;
+    height: 100%; /* Full screen height */
+    background-color: #fff; /* White background */
     z-index: 1001;
     display: none;
     overflow-y: auto;
     transition: transform 0.3s ease-in-out;
+    border-top: 4px solid green; /* Green top border */
+    border-bottom: 4px solid red; /* Red bottom border */
 }
 
 .fullscreen-menu.open {
@@ -98,7 +100,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    height: calc(100% - 60px);
+    height: 100%; /* Full screen height */
     box-sizing: border-box;
     position: relative;
 }
@@ -137,6 +139,16 @@
 
 .search-button:active {
     background-color: #004080; /* Even darker blue on click */
+}
+
+/* Back Icon Styling */
+.back-icon {
+    position: absolute;
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer; /* Pointer cursor on hover */
+    color: #000; /* Adjust color as needed */
 }
 
     </style>
