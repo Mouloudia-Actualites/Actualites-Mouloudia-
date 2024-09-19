@@ -219,8 +219,19 @@
             document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
             document.querySelector('.close-btn').style.display = 'none'; // Hide close button
         });
+
+        // Ensure that the navbar-toggler button is displayed when the menu is closed
+        function updateNavbarToggler() {
+            const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+            document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+        }
+
+        // Update navbar-toggler visibility on page load and resize
+        window.addEventListener('load', updateNavbarToggler);
+        window.addEventListener('resize', updateNavbarToggler);
     </script>
 
 </body>
 
 </html>
+
