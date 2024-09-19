@@ -703,12 +703,13 @@
 /* Article Image */
 .article img {
     width: 100%; /* Ensures the image covers the full width of the container */
+    height: auto; /* Keeps the image height proportional */
     aspect-ratio: 4 / 3; /* Maintains the 4:3 aspect ratio */
-    object-fit: contain; /* Ensures the image fits entirely within the container */
+    object-fit: cover; /* Ensures the image covers the entire container without distortion */
     border-radius: 8px; /* Adds rounded corners */
     display: block; /* Prevents any extra space below the image */
-    background-color: #f0f0f0; /* Adds a background color in case of empty spaces */
 }
+
 
 /* Article Title */
 .article h3 {
