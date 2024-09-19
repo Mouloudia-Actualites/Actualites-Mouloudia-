@@ -26,21 +26,6 @@ body {
 }
 
 /* Navbar styles */
-.navbar {
-    background-image: url('mama.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1001;
-    width: 100%;
-}
 
 /* Navbar Brand */
 .navbar-content .navbar-brand {
@@ -74,6 +59,23 @@ body {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Navbar */
+.navbar {
+    background-image: url('mama.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: fixed; /* Fixed position to stay on top */
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    width: 100%;
+}
+
 /* Fullscreen Menu */
 .fullscreen-menu {
     position: fixed;
@@ -82,10 +84,11 @@ body {
     width: 100%;
     height: 100%;
     background-color: #fff;
-    z-index: 1000;
+    z-index: 1001; /* Ensure it’s above the navbar */
     display: none;
     overflow-y: auto;
     transition: transform 0.3s ease-in-out;
+    padding-top: 60px; /* Ensure there's enough space for the navbar */
 }
 
 /* Fullscreen Menu Open */
@@ -98,9 +101,36 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: calc(100% - 60px); /* Adjust for the navbar height */
     box-sizing: border-box;
+    position: relative; /* Ensure it does not obscure the close button */
 }
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: #000;
+    cursor: pointer;
+    z-index: 1100; /* Ensure it’s above other content */
+}
+
+/* Make sure the navbar doesn’t overlap */
+.navbar {
+    z-index: 1000; /* Ensure the navbar stays below the fullscreen menu */
+}
+
+/* Adjust styling for mobile devices */
+@media (max-width: 768px) {
+    .close-btn {
+        font-size: 30px; /* Smaller size for smaller screens */
+        top: 10px; /* Adjust top position */
+        right: 10px; /* Adjust right position */
+    }
+}
+
 
 /* Search Bar */
 .search-bar {
