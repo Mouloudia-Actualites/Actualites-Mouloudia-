@@ -25,7 +25,6 @@
             position: relative;
         }
         /* Navbar styles */
-        /* Navbar styles */
         
         .navbar {
             background-image: url('mama.jpg');
@@ -103,17 +102,19 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            font-size: 40px;
-            color: #000;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            font-size: 24px;
+            padding: 10px;
+            border-radius: 5px;
             cursor: pointer;
             z-index: 1100;
-            /* Add this to create space below the close button */
-            margin-bottom: 30px;
         }
         
         @media (max-width: 768px) {
             .close-btn {
-                font-size: 30px;
+                font-size: 20px;
                 top: 10px;
                 right: 10px;
             }
@@ -155,8 +156,8 @@
             list-style-type: none;
             padding: 0;
             margin: 0;
-             direction: rtl; /* Sets the direction of the list items to right-to-left */
-    text-align: right; /* Aligns text to the right */
+            direction: rtl; /* Sets the direction of the list items to right-to-left */
+            text-align: right; /* Aligns text to the right */
         }
         
         .fullscreen-menu-content ul li {
@@ -170,7 +171,7 @@
             text-decoration: none;
             display: block;
             padding: 10px;
-               text-align: right; /* Aligns text to the right within the list items */
+            text-align: right; /* Aligns text to the right within the list items */
         }
         
         .fullscreen-menu-content ul li a:hover {
@@ -200,7 +201,7 @@
                 font-size: 16px;
             }
             .close-btn {
-                font-size: 30px;
+                font-size: 20px;
             }
         }
     </style>
@@ -219,7 +220,7 @@
 
     <div class="fullscreen-menu" id="fullscreenMenu">
         <div class="fullscreen-menu-content">
-            <span class="close-btn"><i class="fas fa-arrow-left"></i></span>
+            <button class="close-btn"><i class="fas fa-times"></i></button>
             <div class="search-bar">
                 <input type="text" class="search-input" placeholder="...ابحث">
                 <button class="search-button">بحث</button>
@@ -245,17 +246,19 @@
 
     <!-- Custom JS -->
     <script>
-        // Ouvrir le menu plein écran
+        // Open fullscreen menu
         document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').style.display = 'block'; // Afficher le menu
+            document.getElementById('fullscreenMenu').style.display = 'block'; // Show menu
+            document.querySelector('.navbar-toggler-icon').style.display = 'none'; // Hide toggler icon
         });
 
-        // Fermer le menu plein écran
+        // Close fullscreen menu
         document.querySelector('.close-btn').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').style.display = 'none'; // Cacher le menu
+            document.getElementById('fullscreenMenu').style.display = 'none'; // Hide menu
+            document.querySelector('.navbar-toggler-icon').style.display = 'block'; // Show toggler icon
         });
     </script>
 
 </body>
-
 </html>
+
