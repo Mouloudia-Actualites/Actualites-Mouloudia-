@@ -681,9 +681,9 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
-      .featured-articles {
+     .featured-articles {
     text-align: center;
-    padding: 0 10px; /* حذف المسافة الزائدة من الأعلى والأسفل، والإبقاء على مسافة من الجانبين */
+    padding: 0 10px;
     position: relative;
     overflow: hidden;
     max-width: 100%;
@@ -692,25 +692,28 @@
 .article-grid {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    justify-content: center; /* لتوسيط المحتوى */
     width: 100%;
 }
 
 .article {
     flex: 0 0 100%;
-    padding: 20px 0; /* حذف المسافة من الأعلى والأسفل */
+    padding: 20px 0;
     box-sizing: border-box;
-    margin-right: 15px; /* إضافة مسافة من اليمين */
+    margin-right: 15px;
+    margin-left: 15px; /* إضافة نفس المسافة من اليسار */
 }
 
 .article img {
-    width: 110%; /* تكبير الصورة */
+    width: 100%; /* التأكد من أن الصورة تأخذ العرض الكامل مع الحفاظ على المسافة */
     border-radius: 8px;
-    margin-bottom: 15px; /* إضافة مسافة بين الصورة والنص */
+    margin-bottom: 15px;
 }
 
 .article h3 {
     font-size: 18px;
     color: #333;
+    font-family: "اسم الخط الذي تريده"; /* استبدل "اسم الخط" بالخط المطلوب */
 }
 
 .article h3 a {
@@ -726,6 +729,7 @@
     margin: 10px 0 0;
     font-size: 18px;
     color: #333;
+    font-family: "اسم الخط الذي تريده"; /* استبدل هنا أيضًا */
 }
 
 .article a {
@@ -736,7 +740,6 @@
 .article:hover {
     transform: scale(1.02);
 }
-
 
 
     .nav-btn {
