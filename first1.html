@@ -119,33 +119,37 @@
         .fullscreen-menu-content ul li a:hover {
             color: #000;
         }
-        .search-bar {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+    .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    margin-bottom: 20px;
+}
 
-        .search-input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            width: 70%; /* Make the search input longer */
-            font-size: 16px;
-            border-radius: 5px;
-            margin-left: 10px; /* Space between input and button */
-        }
+.search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 70%; /* Make the search input longer */
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 10px; /* Space between input and button */
+    text-align: right; /* Align text to the right within the input */
+}
 
-        .search-button {
-            background-color: #000;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px; /* Optional: to match the input's border radius */
-        }
+.search-button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Match the input's border radius */
+    font-size: 16px; /* Optional: match font size with the input */
+}
 
-        .search-button:hover {
-            background-color: #333;
-        }
+.search-button:hover {
+    background-color: #333;
+}
+
 
         .close-btn {
             position: absolute;
@@ -290,8 +294,8 @@
     </header><br><br>
 
     <div class="fullscreen-menu" id="fullscreenMenu">
-        <span class="close-btn"><i class="fas fa-arrow-left"></i></span><br><br>
-        <div class="fullscreen-menu-content"><br><br>
+        <span class="close-btn"><i class="fas fa-arrow-left"></i></span><br>
+        <div class="fullscreen-menu-content"><br>
             <div class="search-bar">
                 <input type="text" class="search-input" placeholder="ابحث...">
                 <button class="search-button">بحث</button>
