@@ -359,103 +359,98 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom Script -->
-   <script>
- $(document).ready(function() {
-    // Toggle fullscreen menu on button click
-    $('.navbar-toggler').click(function() {
-        $('#fullscreenMenu').toggleClass('open');
-        // Toggle icons
-        $('.fa-arrow-left').toggle();
-        $('.fa-times').toggle();
-    });
+  <script>
+        $(document).ready(function() {
+            // Toggle fullscreen menu on button click
+            $('.navbar-toggler').click(function() {
+                $('#fullscreenMenu').toggleClass('open');
+            });
 
-    // Close the fullscreen menu when clicking outside of it
-    $(document).mouseup(function(e) {
-        var container = $("#fullscreenMenu");
-        // Only close if the menu is open and the click is outside the menu
-        if (container.hasClass('open') && !container.is(e.target) && container.has(e.target).length === 0) {
-            container.removeClass('open');
-            // Hide icons
-            $('.fa-arrow-left').hide();
-            $('.fa-times').hide();
-        }
-    });
+            // Close the fullscreen menu when clicking outside of it
+            $(document).mouseup(function(e) {
+                var container = $("#fullscreenMenu");
+                if (container.hasClass('open') && !container.is(e.target) && container.has(e.target).length === 0) {
+                    container.removeClass('open');
+                }
+            });
 
-    // Close the fullscreen menu when the close button is clicked
-    $('.close-btn').click(function() {
-        $('#fullscreenMenu').removeClass('open');
-        // Hide icons
-        $('.fa-arrow-left').hide();
-        $('.fa-times').hide();
-    });
-});
+            // Close the fullscreen menu when the close button is clicked
+            $('.close-btn').click(function() {
+                $('#fullscreenMenu').removeClass('open');
+            });
 
-});
+            // Dark mode toggle
+            const body = document.body;
+            const navbarBrand = document.querySelector('.navbar-brand');
 
-    const body = document.body;
-    const navbarBrand = document.querySelector('.navbar-brand');
+            navbarBrand.addEventListener('click', function() {
+                if (body.classList.contains('light-mode')) {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                } else {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                }
+            });
 
-    navbarBrand.addEventListener('click', function() {
-        if (body.classList.contains('light-mode')) {
-            body.classList.remove('light-mode');
-            body.classList.add('dark-mode');
-        } else {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
-        }
-    });
+            // Display articles
+            function displayArticles() {
+                const articlesContainer = document.getElementById('articlesContainer');
+                if (!articlesContainer) {
+                    console.error('Articles container not found!');
+                    return;
+                }
 
-   function displayArticles() {
-    const articlesContainer = document.getElementById('articlesContainer');
-    const articles = [
-         {
-        title: 'أنتوني بادجو":أنا معجب بأنصار المولودية  وما يفعلونه ....وكنت اتابع النادي قبل إلتحاقي به',
-      content: 'أدلى الوافد الجديد لبيت العميد ،المدافع الايفواري ستيفن أنتوني بادجو  بتصريحات لصفحة الرسمية لنادي مولودية الجزائر ، على هامش التحاقه  بتربص الفريق في مدينة رين الفرنسية',
-        imageUrl: 'badj.jpg',
-        date: '2024/08/03',
-        author: 'برنجي اسماء'
-    },
-             {
-                title: 'النيجيري ايوالا على أعتاب العميد',
-                content: 'يقترب جناح العربي الكويتي النيجيري أنايو إيوالا صاحب 25سنة من التوقيع في مولودية الجزائر لتعويض رحيل يوسف بلايلي<br>في حال توصل  إدارة الحاج رجم لاتفاق رسمي مع ادارة العربي الكويتي سيكون أخر ورقة أجنيبة في المولودية. وتعد إحصائيات النيجري ايوالا  هذا الموسم طيبة نوعا ما بعد 21 مباراة  لعبها في البطولة الكويتية سجل من خلالها 4 أهداف أما في كأس الإتحاد الأسيوي فخاض اربع مباريات  (مباراة واحدة لعبها بشكل كامل) و  لم يسجل أي هدف ، و حسب موقع ترانسفير ماركت فإن قيمة اللاعب ايوالا تباع 600 ألف أورو<br>ادارة العميد ترى بأن اللاعب السابق لترجي التونسي و شباب بلوزداد أفضل من يمكنه تعويض مغادرة يوسف بلايلي ، وستتواصل الإدارة في ساعات القليلة القادمة مع نظيرتها من نادي العربي الكويتي  بخصوص ورقة تسريحه',
-                imageUrl: 'iwa.jpg',
-                link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
-                date: '2024/7/31',
-                author: 'برنجي اسماء'
-            },
-         
-    {
-        title: 'اللاعب يوسف داو سافر لفرنسا',
-        content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص',
-        imageUrl: 'dao1.jpg',
-        date: '2024/07/27',
-        author: 'برنجي اسماء'
-    }
-];
+                const articles = [
+                    {
+                        title: 'أنتوني بادجو":أنا معجب بأنصار المولودية  وما يفعلونه ....وكنت اتابع النادي قبل إلتحاقي به',
+                        content: 'أدلى الوافد الجديد لبيت العميد ،المدافع الايفواري ستيفن أنتوني بادجو  بتصريحات لصفحة الرسمية لنادي مولودية الجزائر ، على هامش التحاقه  بتربص الفريق في مدينة رين الفرنسية',
+                        imageUrl: 'badj.jpg',
+                        date: '2024/08/03',
+                        author: 'برنجي اسماء'
+                    },
+                    {
+                        title: 'النيجيري ايوالا على أعتاب العميد',
+                        content: 'يقترب جناح العربي الكويتي النيجيري أنايو إيوالا صاحب 25سنة من التوقيع في مولودية الجزائر لتعويض رحيل يوسف بلايلي<br>في حال توصل  إدارة الحاج رجم لاتفاق رسمي مع ادارة العربي الكويتي سيكون أخر ورقة أجنيبة في المولودية. وتعد إحصائيات النيجري ايوالا  هذا الموسم طيبة نوعا ما بعد 21 مباراة  لعبها في البطولة الكويتية سجل من خلالها 4 أهداف أما في كأس الإتحاد الأسيوي فخاض اربع مباريات  (مباراة واحدة لعبها بشكل كامل) و  لم يسجل أي هدف ، و حسب موقع ترانسفير ماركت فإن قيمة اللاعب ايوالا تباع 600 ألف أورو<br>ادارة العميد ترى بأن اللاعب السابق لترجي التونسي و شباب بلوزداد أفضل من يمكنه تعويض مغادرة يوسف بلايلي ، وستتواصل الإدارة في ساعات القليلة القادمة مع نظيرتها من نادي العربي الكويتي  بخصوص ورقة تسريحه',
+                        imageUrl: 'iwa.jpg',
+                        link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
+                        date: '2024/7/31',
+                        author: 'برنجي اسماء'
+                    },
+                    {
+                        title: 'اللاعب يوسف داو سافر لفرنسا',
+                        content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص',
+                        imageUrl: 'dao1.jpg',
+                        date: '2024/07/27',
+                        author: 'برنجي اسماء'
+                    }
+                ];
 
+                if (articles.length === 0) {
+                    console.log('No articles to display.');
+                }
 
-    articles.forEach(article => {
-        const articleHTML = `
-            <div class="col-lg-6">
-                <article class="article">
-                    <img src="${article.imageUrl}" alt="${article.title}">
-                    <div class="meta">
-                        <span class="date">${article.date}</span> |
-                        <span class="author">${article.author}</span>
-                    </div>
-                    <h2>${article.title}</h2>
-                    <p>${article.content}</p>
-                </article>
-            </div>
-        `;
-        articlesContainer.innerHTML += articleHTML;
-    });
-}
+                articles.forEach(article => {
+                    const articleHTML = `
+                        <div class="col-lg-6">
+                            <article class="article">
+                                <img src="${article.imageUrl}" alt="${article.title}">
+                                <div class="meta">
+                                    <span class="date">${article.date}</span> |
+                                    <span class="author">${article.author}</span>
+                                </div>
+                                <h2>${article.title}</h2>
+                                <p>${article.content}</p>
+                            </article>
+                        </div>
+                    `;
+                    articlesContainer.innerHTML += articleHTML;
+                });
+            }
 
-// Appeler la fonction displayArticles pour charger les articles au chargement de la page
-displayArticles();
-
-</script>
+            displayArticles();
+        });
+    </script>
 </body>
 
 </html>
