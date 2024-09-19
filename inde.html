@@ -700,23 +700,24 @@
     margin-bottom: 20px;
     background-color: #fff; /* Ensures background color for the article */
     padding: 10px; /* Add padding to create space around the content */
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
 }
 
 /* Article Image */
 .article img {
-    width: calc(100% - 20px); /* Add space on both sides */
+    width: 100%; /* Ensures the image covers the full width of the article */
     height: auto; /* Keeps the image height proportional */
     aspect-ratio: 4 / 3; /* Ensures the image maintains a 4:3 aspect ratio */
     object-fit: cover; /* Ensures the image covers the container without distortion */
     border-radius: 8px; /* Adds rounded corners */
     display: block; /* Ensures no extra space below the image */
-    margin-left: 10px; /* Adds space on the left */
-    margin-right: 10px; /* Adds space on the right */
+    margin: 0 auto; /* Center the image horizontally */
 }
+
 
 /* Article Title */
 .article h3 {
-    font-size: 16px; /* Adjust font size as needed */
+    font-size: 20px; /* Adjust font size as needed */
     color: #333; /* Text color */
     font-family: "Cairo", Arial, sans-serif; /* Font family */
     margin-top: 10px; /* Margin on top */
