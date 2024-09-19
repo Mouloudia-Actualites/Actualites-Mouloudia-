@@ -341,26 +341,26 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom Script -->
    <script>
-      // Close the fullscreen menu when clicking outside of it or on close button
-        $(document).ready(function() {
-            // Toggle fullscreen menu
-            $('.navbar-toggler').click(function() {
-                $('#fullscreenMenu').toggleClass('open');
-            });
+     $(document).ready(function() {
+    // Toggle fullscreen menu on button click
+    $('.navbar-toggler').click(function() {
+        $('#fullscreenMenu').toggleClass('open');
+    });
 
-            // Close the fullscreen menu when clicking outside of it
-            $(document).mouseup(function(e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
+    // Close the fullscreen menu when clicking outside of it
+    $(document).mouseup(function(e) {
+        var container = $("#fullscreenMenu");
+        // Only close if the menu is open and the click is outside the menu
+        if (container.hasClass('open') && !container.is(e.target) && container.has(e.target).length === 0) {
+            container.removeClass('open');
+        }
+    });
 
-            // Close the fullscreen menu when close button is clicked
-            $('.close-btn').click(function() {
-                $('#fullscreenMenu').removeClass('open');
-            });
-        });
+    // Close the fullscreen menu when the close button is clicked
+    $('.close-btn').click(function() {
+        $('#fullscreenMenu').removeClass('open');
+    });
+});
 
     const body = document.body;
     const navbarBrand = document.querySelector('.navbar-brand');
