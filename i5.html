@@ -16,7 +16,6 @@
     <!-- Inline Styles -->
     <style>
         /* Global styles */
-        
         body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
@@ -25,7 +24,6 @@
             position: relative;
         }
         /* Navbar styles */
-        
         .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
@@ -46,7 +44,6 @@
             border: none;
             color: white;
             margin-top: -5px;
-            /* Adjust this value to move the toggler icon upwards */
         }
         
         .navbar-dark .navbar-toggler-icon {
@@ -71,7 +68,6 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
         /* Fullscreen Menu */
-        
         .fullscreen-menu {
             position: fixed;
             top: 60px;
@@ -98,69 +94,12 @@
             position: relative;
         }
         
-       /* Close button styles */
-.close-btn {
-    position: absolute;
-    top: 10px; /* Move button to the top */
-    right: 10px; /* Position button on the right */
-    background-color: transparent; /* Remove background color */
-    color: #000; /* Set text color */
-    border: none; /* Remove border */
-    font-size: 24px; /* Adjust font size */
-    padding: 0; /* Remove padding */
-    cursor: pointer; /* Add pointer cursor */
-    z-index: 1100;
-    /* Optional: Add a shadow or border if needed */
-    /* box-shadow: 0 2px 5px rgba(0,0,0,0.2); */
-}
-
-@media (max-width: 768px) {
-    .close-btn {
-        font-size: 20px;
-        top: 10px;
-        right: 10px;
-    }
-}
-
-        /* Adjust the search bar position */
-        
-        .search-bar {
-            margin-top: 70px;
-            /* Adjust the space between the close button and search bar */
-            margin-bottom: 20px;
-        }
-        
-        .search-input {
-            padding: 10px;
-            border: 1px solid #ccc;
-            width: 100%;
-            font-size: 16px;
-            border-radius: 5px;
-            text-align: right;
-        }
-        
-        .search-button {
-            background-color: #000;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-top: 10px;
-            width: 100%;
-        }
-        
-        .search-button:hover {
-            background-color: #333;
-        }
-        
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            direction: rtl; /* Sets the direction of the list items to right-to-left */
-            text-align: right; /* Aligns text to the right */
+            direction: rtl;
+            text-align: right;
         }
         
         .fullscreen-menu-content ul li {
@@ -174,11 +113,30 @@
             text-decoration: none;
             display: block;
             padding: 10px;
-            text-align: right; /* Aligns text to the right within the list items */
+            text-align: right;
         }
         
         .fullscreen-menu-content ul li a:hover {
             color: #000;
+        }
+        
+        /* Close button styles */
+        .navbar .close-btn {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: transparent;
+            color: #000;
+            border: none;
+            font-size: 24px;
+            padding: 0;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        .fullscreen-menu.open + .navbar .close-btn {
+            display: block;
         }
         
         @media (max-width: 768px) {
@@ -190,12 +148,6 @@
             }
             .navbar-dark .navbar-nav .nav-link {
                 padding: 8px 10px;
-            }
-            .search-input {
-                font-size: 14px;
-            }
-            .search-button {
-                font-size: 14px;
             }
             .fullscreen-menu-content ul li {
                 margin-bottom: 5px;
@@ -217,13 +169,13 @@
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <button class="close-btn" id="closeMenuBtn"><i class="fas fa-times"></i></button>
             </div>
         </nav>
     </header>
 
     <div class="fullscreen-menu" id="fullscreenMenu">
         <div class="fullscreen-menu-content">
-            <button class="close-btn"><i class="fas fa-times"></i></button>
             <div class="search-bar">
                 <input type="text" class="search-input" placeholder="...ابحث">
                 <button class="search-button">بحث</button>
@@ -251,17 +203,16 @@
     <script>
         // Open fullscreen menu
         document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').style.display = 'block'; // Show menu
-            document.querySelector('.navbar-toggler-icon').style.display = 'none'; // Hide toggler icon
+            document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
         });
 
         // Close fullscreen menu
-        document.querySelector('.close-btn').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').style.display = 'none'; // Hide menu
-            document.querySelector('.navbar-toggler-icon').style.display = 'block'; // Show toggler icon
+        document.getElementById('closeMenuBtn').addEventListener('click', function() {
+            document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
         });
     </script>
 
 </body>
+
 </html>
 
