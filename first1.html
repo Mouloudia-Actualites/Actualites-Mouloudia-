@@ -119,11 +119,12 @@
         .fullscreen-menu-content ul li a:hover {
             color: #000;
         }
-    .search-bar {
+   .search-bar {
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Align items to the right */
     margin-bottom: 20px;
+    flex-direction: row-reverse; /* Reverse the order of items */
 }
 
 .search-input {
@@ -132,7 +133,7 @@
     width: 70%; /* Make the search input longer */
     font-size: 16px;
     border-radius: 5px;
-    margin-right: 10px; /* Space between input and button */
+    margin-left: 10px; /* Space between input and button */
     text-align: right; /* Align text to the right within the input */
 }
 
@@ -297,7 +298,7 @@
         <span class="close-btn"><i class="fas fa-arrow-left"></i></span><br>
         <div class="fullscreen-menu-content"><br>
             <div class="search-bar">
-                <input type="text" class="search-input" placeholder="ابحث...">
+                <input type="text" class="search-input" placeholder="...ابحث">
                 <button class="search-button">بحث</button>
             </div>
             <ul>
