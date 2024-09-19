@@ -126,23 +126,18 @@ body {
 
 /* Close button styles */
 .close-btn {
-    display: none;
+    display: none; /* Initially hidden */
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: transparent;
-    color: #000;
-    border: none;
-    font-size: 24px;
-    padding: 0;
-    cursor: pointer;
-    z-index: 1100;
-}
-
-/* Toggle button styles */
-.navbar-toggler {
-    display: block;
-    z-index: 1003;
+    top: 10px; /* Distance from the top */
+    right: 20px; /* Move slightly to the left */
+    background-color: transparent; /* Transparent background */
+    color: #fff; /* White color for the icon */
+    border: none; /* Remove border */
+    font-size: 30px; /* Increase icon size */
+    padding: 10px; /* Padding around the icon */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1100; /* Ensure it's above other content */
+    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transform */
 }
 
 /* Show and hide buttons based on menu state */
@@ -154,26 +149,23 @@ body {
     display: block; /* Show close button when menu is open */
 }
 
+/* Hover and active state styles */
+.close-btn:hover {
+    color: #ff0000; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.close-btn:active {
+    color: #cc0000; /* Change color when button is clicked */
+    transform: scale(1); /* Reset size when button is clicked */
+}
+
 @media (max-width: 768px) {
-    .navbar {
-        height: 45px;
-    }
-    .navbar-content .navbar-brand {
-        font-size: 18px;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        padding: 8px 10px;
-    }
-    .fullscreen-menu-content ul li {
-        margin-bottom: 5px;
-    }
-    .fullscreen-menu-content ul li a {
-        font-size: 16px;
-    }
     .close-btn {
-        font-size: 20px;
+        font-size: 24px; /* Adjust font size for smaller screens */
     }
 }
+
 
     </style>
 </head>
