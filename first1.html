@@ -6,360 +6,271 @@
     <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Inline Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     <style>
-       /* Global styles */
-/* Global styles */
-body {
-    font-family: 'Cairo', Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #000;
-    transition: background-color 0.5s, color 0.5s;
-    position: relative;
-}
+        /* Global styles */
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #000;
+            transition: background-color 0.5s, color 0.5s;
+        }
+ 
+        
+        .hero {
+            background-color:white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
+        }
 
-/* Navbar styles */
+        .navbar {
+            background-image: url('mama.jpg');
+            background-size: cover;
+            /* Ensures the image covers the entire navbar */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            background-position: center;
+            /* Centers the image in the navbar */
+        }
+        
+        .navbar-dark .navbar-toggler {
+            border: none;
+            color: white;
+        }
+        
+        .navbar-dark .navbar-toggler-icon {
+            color: white;
+            width: 44px;
+            height: 27px;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #000;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            text-align: right;
+            /* Right-align text */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        /* Fullscreen menu styles */
+        
+        .fullscreen-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            /* Semi-transparent black background */
+            z-index: 1000;
+            /* Ensure it's above other content */
+            display: none;
+            /* Initially hidden */
+            overflow-y: auto;
+            /* Enable scrolling */
+        }
+        
+        .fullscreen-menu.open {
+            display: block;
+            /* Display when open */
+        }
+        
+        .fullscreen-menu-content {
+            position: absolute;
+            top: 6px;
+            /* تعديل حسب الحاجة */
+            right: 10px;
+            /* تعديل حسب الحاجة */
+            transform: translate(0, 0);
+            /* تعديل حسب الحاجة */
+            text-align: right;
+            /* توجيه النص إلى اليمين */
+        }
+        
+        .fullscreen-menu-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .fullscreen-menu-content ul li {
+            margin-bottom: 10px;
+        }
+        
+        .fullscreen-menu-content ul li a {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: block;
+            padding: 10px;
+        }
+        
+        .fullscreen-menu-content ul li a:hover {
+            color: #ccc;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 2px;
+            /* تعديل حسب الحاجة */
+            left: 10px;
+            /* تعديل لتحديد الزاوية اليسرى */
+            color: #fff;
+            /* تعديل لون النص */
+            font-size: 50px;
+            /* تعديل حجم الخط */
+            cursor: pointer;
+        }
+        
+        body[dir="rtl"] {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
 
-/* Navbar Brand */
-.navbar-content .navbar-brand {
-    font-size: 24px;
-    color: white;
-    text-decoration: none;
-}
+        /* Section for Social Icons */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-/* Navbar Toggler */
-.navbar-dark .navbar-toggler {
-    border: none;
-    color: white;
-}
+        .social-icons a {
+            font-size: 24px; /* Icon size */
+            margin: 0 10px; /* Space between icons */
+            color: #343a40; /* Default icon color */
+            transition: color 0.3s;
+        }
 
-/* Navbar Toggler Icon */
-.navbar-dark .navbar-toggler-icon {
-    width: 54px;
-    height: 37px;
-}
+        .social-icons a:hover {
+            color: #dc3545; /* Icon color on hover */
+        }
 
-/* Navbar Links */
-.navbar-dark .navbar-nav .nav-link {
-    color: #000;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
-    text-align: right;
-}
+      
 
-/* Navbar Links Hover */
-.navbar-dark .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
+        .news-section {
+            padding: 80px 0;
+        }
 
-/* Navbar */
-.navbar {
-    background-image: url('mama.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    position: fixed; /* Fixed position to stay on top */
-    top: 0;
-    z-index: 1000; /* Ensure it's above other content */
-    width: 100%;
-}
+        .article {
+            margin-bottom: 40px;
+            text-align: right; /* Align text to right */
+        }
 
-/* Fullscreen Menu */
-.fullscreen-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 1001; /* Ensure it’s above the navbar */
-    display: none;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-    padding-top: 60px; /* Ensure there's enough space for the navbar */
-}
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
-/* Fullscreen Menu Open */
-.fullscreen-menu.open {
-    display: block;
-}
+        .article h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: right; /* Align heading to right */
+        }
 
-/* Fullscreen Menu Content */
-.fullscreen-menu-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 60px); /* Adjust for the navbar height */
-    box-sizing: border-box;
-    position: relative; /* Ensure it does not obscure the close button */
-}
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+        }
 
-/* Close Button */
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
-    color: #000;
-    cursor: pointer;
-    z-index: 1100; /* Ensure it’s above other content */
-}
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
 
-/* Make sure the navbar doesn’t overlap */
-.navbar {
-    z-index: 1000; /* Ensure the navbar stays below the fullscreen menu */
-}
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
 
-/* Adjust styling for mobile devices */
-@media (max-width: 768px) {
-    .close-btn {
-        font-size: 30px; /* Smaller size for smaller screens */
-        top: 10px; /* Adjust top position */
-        right: 10px; /* Adjust right position */
-    }
-}
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
 
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
 
-/* Search Bar */
-.search-bar {
-    margin-bottom: 20px;
-}
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
 
-/* Search Input */
-.search-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 100%;
-    font-size: 16px;
-    border-radius: 5px;
-    text-align: right;
-}
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
 
-/* Search Button */
-.search-button {
-    background-color: #000;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-top: 10px;
-    width: 100%;
-}
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
-/* Search Button Hover */
-.search-button:hover {
-    background-color: #333;
-}
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
+        }
 
-/* Close Button */
-.close-btn {
-    color: #000;
-    font-size: 40px;
-    cursor: pointer;
-    align-self: flex-end;
-    margin-bottom: 20px;
-}
-
-/* Fullscreen Menu List */
-.fullscreen-menu-content ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-/* Fullscreen Menu List Item */
-.fullscreen-menu-content ul li {
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-/* Fullscreen Menu Links */
-.fullscreen-menu-content ul li a {
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-}
-
-/* Fullscreen Menu Links Hover */
-.fullscreen-menu-content ul li a:hover {
-    color: #000;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #212529;
-    color: #fff;
-}
-
-body.dark-mode .navbar {
-    background-color: #fff;
-}
-
-body.dark-mode .navbar-dark .navbar-nav .nav-link {
-    color: #fff;
-}
-
-body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .explore-more {
-    background-color: #343a40;
-    border-color: #6c757d;
-    color: #fff;
-}
-
-footer {
-    color: #fff;
-    padding: 15px 0;
-    text-align: center;
-    background-image: url('footr.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Center Container */
-.center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-/* Mobile Styles */
-@media (max-width: 768px) {
-    .navbar {
-        height: 45px;
-    }
-
-    .navbar-content .navbar-brand {
-        font-size: 18px;
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
-        padding: 8px 10px;
-    }
-
-    .search-input {
-        font-size: 14px;
-    }
-
-    .search-button {
-        font-size: 14px;
-    }
-
-    .fullscreen-menu-content ul li {
-        margin-bottom: 5px;
-    }
-
-    .fullscreen-menu-content ul li a {
-        font-size: 16px;
-    }
-
-    .close-btn {
-        font-size: 30px;
-    }
-
-    /* Article Styles for Mobile */
-    .article img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-
-    .news-section {
-        padding: 10px;
-    }
-
-    .news-section .article {
-        margin-bottom: 20px;
-    }
-}
-
-/* Extra Small Devices */
-@media (max-width: 576px) {
-    .navbar {
-        height: 40px;
-    }
-
-    .navbar-content .navbar-brand {
-        font-size: 16px;
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
-        padding: 6px 8px;
-    }
-
-    .search-input {
-        font-size: 12px;
-    }
-
-    .search-button {
-        font-size: 12px;
-    }
-
-    .fullscreen-menu-content ul li {
-        margin-bottom: 2px;
-    }
-
-    .fullscreen-menu-content ul li a {
-        font-size: 14px;
-    }
-
-    .close-btn {
-        font-size: 24px;
-    }
-
-    .footer {
-        padding: 5px 0;
-    }
-
-    /* Article Styles for Extra Small Devices */
-    .article img {
-        width: 100%;
-        height: auto;
-        max-width: 100%;
-    }
-}
-
+        h2, p, a {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
+             footer {
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
+        }
+        }
     </style>
 </head>
+
 <body>
-    <header>
+<!-- Header with Navbar -->
+   <!-- Header with Navbar -->
+ <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
+                <div class="navbar-brand mr-auto">
+                </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
             </div>
         </nav>
     </header>
-
     <div class="fullscreen-menu" id="fullscreenMenu">
+        <span class="close-btn">&times;</span>
+        <!-- زر الإغلاق في سطر واحد مع فاصل -->
         <div class="fullscreen-menu-content">
-            <span class="close-btn"><i class="fas fa-arrow-left"></i></span>
-            <div class="search-bar">
-                <input type="text" class="search-input" placeholder="...ابحث">
-                <button class="search-button">بحث</button>
-            </div>
-            <ul>
+            <ul><br><br>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="news1.html">أخبار</a></li>
                 <li><a href="first1.html">الفريق الأول</a></li>
@@ -372,28 +283,43 @@ footer {
             </ul>
         </div>
     </div>
-
-    <!-- News Section -->
-    <section class="news-section">
+<section class="news-section">
+    <div class="container">
+        <div class="row" id="articlesContainer">
+            <!-- Articles will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
+ <section class="image-before-icons">
         <div class="container">
-            <div class="row" id="articlesContainer">
-                <!-- Articles will be inserted here by JavaScript -->
+            <div class="row">
+                <div class="col text-center">
+                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
+                </div>
             </div>
         </div>
     </section>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<section class="social-icons">
+    <div class="container">
+        <a href="https://www.facebook.com/mouloudianiyouten.21.mca/?locale=fr_FR" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/mouloudia__actualites?igsh=MWhvZXVsbzkxOTRmaA==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@mouloudiaactualites?si=idNCKDhmknjI_uHD"><i class="fab fa-youtube"></i></a>
+    </div>
+</section>
 
-    <footer>
-        <div class="center-container">
-            <p></p>
-        </div>
-    </footer>
 
-    <!-- jQuery and Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
+  <footer class="text-center py-4">
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+<!-- Dark Mode Toggle Script -->
+<script>
+      // Close the fullscreen menu when clicking outside of it or on close button
         $(document).ready(function() {
-            // Toggle fullscreen menu on button click
+            // Toggle fullscreen menu
             $('.navbar-toggler').click(function() {
                 $('#fullscreenMenu').toggleClass('open');
             });
@@ -401,87 +327,84 @@ footer {
             // Close the fullscreen menu when clicking outside of it
             $(document).mouseup(function(e) {
                 var container = $("#fullscreenMenu");
-                if (container.hasClass('open') && !container.is(e.target) && container.has(e.target).length === 0) {
+                if (!container.is(e.target) && container.has(e.target).length === 0) {
                     container.removeClass('open');
                 }
             });
 
-            // Close the fullscreen menu when the close button is clicked
+            // Close the fullscreen menu when close button is clicked
             $('.close-btn').click(function() {
                 $('#fullscreenMenu').removeClass('open');
             });
-
-            // Dark mode toggle
-            const body = document.body;
-            const navbarBrand = document.querySelector('.navbar-brand');
-
-            navbarBrand.addEventListener('click', function() {
-                if (body.classList.contains('light-mode')) {
-                    body.classList.remove('light-mode');
-                    body.classList.add('dark-mode');
-                } else {
-                    body.classList.remove('dark-mode');
-                    body.classList.add('light-mode');
-                }
-            });
-
-            // Display articles
-            function displayArticles() {
-                const articlesContainer = document.getElementById('articlesContainer');
-                if (!articlesContainer) {
-                    console.error('Articles container not found!');
-                    return;
-                }
-
-                const articles = [
-                    {
-                        title: 'أنتوني بادجو":أنا معجب بأنصار المولودية  وما يفعلونه ....وكنت اتابع النادي قبل إلتحاقي به',
-                        content: 'أدلى الوافد الجديد لبيت العميد ،المدافع الايفواري ستيفن أنتوني بادجو  بتصريحات لصفحة الرسمية لنادي مولودية الجزائر ، على هامش التحاقه  بتربص الفريق في مدينة رين الفرنسية',
-                        imageUrl: 'badj.jpg',
-                        date: '2024/08/03',
-                        author: 'برنجي اسماء'
-                    },
-                    {
-                        title: 'النيجيري ايوالا على أعتاب العميد',
-                        content: 'يقترب جناح العربي الكويتي النيجيري أنايو إيوالا صاحب 25سنة من التوقيع في مولودية الجزائر لتعويض رحيل يوسف بلايلي<br>في حال توصل  إدارة الحاج رجم لاتفاق رسمي مع ادارة العربي الكويتي سيكون أخر ورقة أجنيبة في المولودية. وتعد إحصائيات النيجري ايوالا  هذا الموسم طيبة نوعا ما بعد 21 مباراة  لعبها في البطولة الكويتية سجل من خلالها 4 أهداف أما في كأس الإتحاد الأسيوي فخاض اربع مباريات  (مباراة واحدة لعبها بشكل كامل) و  لم يسجل أي هدف ، و حسب موقع ترانسفير ماركت فإن قيمة اللاعب ايوالا تباع 600 ألف أورو<br>ادارة العميد ترى بأن اللاعب السابق لترجي التونسي و شباب بلوزداد أفضل من يمكنه تعويض مغادرة يوسف بلايلي ، وستتواصل الإدارة في ساعات القليلة القادمة مع نظيرتها من نادي العربي الكويتي  بخصوص ورقة تسريحه',
-                        imageUrl: 'iwa.jpg',
-                        link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
-                        date: '2024/7/31',
-                        author: 'برنجي اسماء'
-                    },
-                    {
-                        title: 'اللاعب يوسف داو سافر لفرنسا',
-                        content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص',
-                        imageUrl: 'dao1.jpg',
-                        date: '2024/07/27',
-                        author: 'برنجي اسماء'
-                    }
-                ];
-
-                if (articles.length === 0) {
-                    console.log('No articles to display.');
-                }
-
-                articles.forEach(article => {
-                    const articleHTML = `
-                        <div class="col-lg-6">
-                            <article class="article">
-                                <img src="${article.imageUrl}" alt="${article.title}">
-                                <div class="meta">
-                                    <span class="date">${article.date}</span> |
-                                    <span class="author">${article.author}</span>
-                                </div>
-                                <h2>${article.title}</h2>
-                                <p>${article.content}</p>
-                            </article>
-                        </div>
-                    `;
-                    articlesContainer.innerHTML += articleHTML;
-                });
-            }
-
-            displayArticles();
         });
-    </script>
+
+    const body = document.body;
+    const navbarBrand = document.querySelector('.navbar-brand');
+
+    navbarBrand.addEventListener('click', function() {
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+        }
+    });
+
+   function displayArticles() {
+    const articlesContainer = document.getElementById('articlesContainer');
+    const articles = [
+         {
+        title: 'أنتوني بادجو":أنا معجب بأنصار المولودية  وما يفعلونه ....وكنت اتابع النادي قبل إلتحاقي به',
+      content: 'أدلى الوافد الجديد لبيت العميد ،المدافع الايفواري ستيفن أنتوني بادجو  بتصريحات لصفحة الرسمية لنادي مولودية الجزائر ، على هامش التحاقه  بتربص الفريق في مدينة رين الفرنسية',
+        imageUrl: 'badj.jpg',
+        date: '2024/08/03',
+        author: 'برنجي اسماء'
+    },
+             {
+                title: 'النيجيري ايوالا على أعتاب العميد',
+                content: 'يقترب جناح العربي الكويتي النيجيري أنايو إيوالا صاحب 25سنة من التوقيع في مولودية الجزائر لتعويض رحيل يوسف بلايلي<br>في حال توصل  إدارة الحاج رجم لاتفاق رسمي مع ادارة العربي الكويتي سيكون أخر ورقة أجنيبة في المولودية. وتعد إحصائيات النيجري ايوالا  هذا الموسم طيبة نوعا ما بعد 21 مباراة  لعبها في البطولة الكويتية سجل من خلالها 4 أهداف أما في كأس الإتحاد الأسيوي فخاض اربع مباريات  (مباراة واحدة لعبها بشكل كامل) و  لم يسجل أي هدف ، و حسب موقع ترانسفير ماركت فإن قيمة اللاعب ايوالا تباع 600 ألف أورو<br>ادارة العميد ترى بأن اللاعب السابق لترجي التونسي و شباب بلوزداد أفضل من يمكنه تعويض مغادرة يوسف بلايلي ، وستتواصل الإدارة في ساعات القليلة القادمة مع نظيرتها من نادي العربي الكويتي  بخصوص ورقة تسريحه',
+                imageUrl: 'iwa.jpg',
+                link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
+                date: '2024/7/31',
+                author: 'برنجي اسماء'
+            },
+         
+    {
+        title: 'اللاعب يوسف داو سافر لفرنسا',
+        content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص',
+        imageUrl: 'dao1.jpg',
+        date: '2024/07/27',
+        author: 'برنجي اسماء'
+    }
+];
+
+
+    articles.forEach(article => {
+        const articleHTML = `
+            <div class="col-lg-6">
+                <article class="article">
+                    <img src="${article.imageUrl}" alt="${article.title}">
+                    <div class="meta">
+                        <span class="date">${article.date}</span> |
+                        <span class="author">${article.author}</span>
+                    </div>
+                    <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                </article>
+            </div>
+        `;
+        articlesContainer.innerHTML += articleHTML;
+    });
+}
+
+// Appeler la fonction displayArticles pour charger les articles au chargement de la page
+displayArticles();
+
+</script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </body>
 </html>
