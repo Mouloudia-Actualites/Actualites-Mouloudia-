@@ -68,27 +68,59 @@
         }
 
         /* Fullscreen menu styles */
-        .fullscreen-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            z-index: 1000;
-            display: none;
-            overflow-y: auto;
-        }
+.fullscreen-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: none;
+    overflow-y: auto;
+}
 
-        .fullscreen-menu.open {
-            display: block;
-            /* Display when open */
-        }
+.fullscreen-menu.open {
+    transform: translateX(0); /* Slide in from the left */
+}
 
-        .fullscreen-menu-content {
-            padding: 20px;
-        }
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
 
+.fullscreen-menu-content {
+    position: relative;
+    top: 20px;
+    right: 10px;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px; 
+}
+
+.fullscreen-menu-content ul li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.fullscreen-menu-content ul li a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+.fullscreen-menu-content ul li a:hover {
+    color: #007bff;
+}
         .search-bar {
             display: flex;
             align-items: center;
