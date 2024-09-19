@@ -204,15 +204,16 @@
         // Open fullscreen menu
         document.querySelector('.navbar-toggler').addEventListener('click', function() {
             document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+            document.querySelector('.close-btn').style.display = 'block'; // Show close button
         });
 
         // Close fullscreen menu
         document.getElementById('closeMenuBtn').addEventListener('click', function() {
             document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+            document.querySelector('.close-btn').style.display = 'none'; // Hide close button
         });
     </script>
 
 </body>
 
 </html>
-
