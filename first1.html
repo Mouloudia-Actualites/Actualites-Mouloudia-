@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
             padding: 80px 0;
         }
 
-        .navbar {
+      .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
             /* Ensures the image covers the entire navbar */
@@ -60,75 +60,145 @@
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        /* Fullscreen menu styles */
-        
-        .fullscreen-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Semi-transparent black background */
-            z-index: 1000;
-            /* Ensure it's above other content */
-            display: none;
-            /* Initially hidden */
-            overflow-y: auto;
-            /* Enable scrolling */
-        }
-        
-        .fullscreen-menu.open {
-            display: block;
-            /* Display when open */
-        }
-        
-        .fullscreen-menu-content {
-            position: absolute;
-            top: 6px;
-            /* تعديل حسب الحاجة */
-            right: 10px;
-            /* تعديل حسب الحاجة */
-            transform: translate(0, 0);
-            /* تعديل حسب الحاجة */
-            text-align: right;
-            /* توجيه النص إلى اليمين */
-        }
-        
-        .fullscreen-menu-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .fullscreen-menu-content ul li {
-            margin-bottom: 10px;
-        }
-        
-        .fullscreen-menu-content ul li a {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: block;
-            padding: 10px;
-        }
-        
-        .fullscreen-menu-content ul li a:hover {
-            color: #ccc;
-        }
-        
-        .close-btn {
-            position: absolute;
-            top: 2px;
-            /* تعديل حسب الحاجة */
-            left: 10px;
-            /* تعديل لتحديد الزاوية اليسرى */
-            color: #fff;
-            /* تعديل لون النص */
-            font-size: 50px;
-            /* تعديل حجم الخط */
-            cursor: pointer;
-        }
+/* Adjust the navbar for the full-screen menu */
+.fullscreen-menu.open ~ .navbar .navbar-toggler {
+    display: none; /* Hide toggle button when menu is open */
+
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000; /* اللون الأساسي للزر */
+    color: white;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* تغيير اللون عند التمرير فوق الزر */
+}
+/* Fullscreen Menu */
+.fullscreen-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #fff;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fullscreen-menu.open {
+    display: block;
+}
+
+.fullscreen-menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.fullscreen-menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li {
+  margin-bottom: 10px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5); /* لون الحدود مع شفافية */
+}
+
+.fullscreen-menu-content ul li a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li a:hover {
+    color: #000;
+}
+
+
+/* Close button styles */
+.close-btn {
+    color: white;
+    width: 44px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* محاذاة النص في المنتصف */
+    font-size: 16px; /* حجم الخط للنص */
+    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
+    background: transparent; /* إزالة الخلفية */
+    border: none; /* إزالة الحدود إن وجدت */
+    position: relative; /* السماح بتعديل مكان العنصر */
+    top: -16px; /* رفع الزر بمقدار 10 بكسل للأعلى */
+    transition: color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
+}
+
+/* Hover effect */
+.close-btn:hover {
+    color: #444; /* تغيير لون النص عند التمرير فوق الزر */
+}
+
+
+
+
+/* Show and hide buttons based on menu state */
+.fullscreen-menu.open ~ .navbar .close-btn {
+    display: block; /* Show close button when menu is open */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 45px;
+    }
+    .navbar-content .navbar-brand {
+        font-size: 18px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 10px;
+    }
+    .fullscreen-menu-content ul li {
+        margin-bottom: 5px;
+    }
+    .fullscreen-menu-content ul li a {
+        font-size: 16px;
+    }
+    .close-btn {
+        font-size: 34px; /* Adjust for smaller screens */
+    }
+}
+    
         
         body[dir="rtl"] {
             font-family: 'Cairo', Arial, sans-serif;
@@ -253,24 +323,25 @@
 
 <body>
 <!-- Header with Navbar -->
-   <!-- Header with Navbar -->
- <header>
+    <!-- Header with Navbar -->
+   <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <div class="navbar-brand mr-auto">
-                </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <button class="close-btn" id="closeMenuBtn"><i class="fas fa-times"></i></button>
             </div>
         </nav>
     </header>
+
     <div class="fullscreen-menu" id="fullscreenMenu">
-        <span class="close-btn">&times;</span>
-        <!-- زر الإغلاق في سطر واحد مع فاصل -->
         <div class="fullscreen-menu-content">
-            <ul><br><br>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="...ابحث">
+                <button class="search-button">بحث</button>
+            </div>
+            <ul>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="news1.html">أخبار</a></li>
                 <li><a href="first1.html">الفريق الأول</a></li>
@@ -281,6 +352,12 @@
                 <li><a href="video1.html">أشرطة فيديو</a></li>
                 <li><a href="contac1.html">تواصل معنا</a></li>
             </ul>
+        </div>
+    </div>
+<section class="news-section">
+    <div class="container">
+        <div class="row" id="articlesContainer">
+            <!-- Articles will be dynamically inserted here -->
         </div>
     </div>
 <section class="news-section">
@@ -317,65 +394,71 @@
     
 <!-- Dark Mode Toggle Script -->
 <script>
-      // Close the fullscreen menu when clicking outside of it or on close button
-        $(document).ready(function() {
-            // Toggle fullscreen menu
-            $('.navbar-toggler').click(function() {
-                $('#fullscreenMenu').toggleClass('open');
-            });
+    // Open fullscreen menu
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+    document.querySelector('.close-btn').style.display = 'block'; // Show close button
+    document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+});
 
-            // Close the fullscreen menu when clicking outside of it
-            $(document).mouseup(function(e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
+// Close fullscreen menu
+document.getElementById('closeMenuBtn').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+    document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+    document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+});
 
-            // Close the fullscreen menu when close button is clicked
-            $('.close-btn').click(function() {
-                $('#fullscreenMenu').removeClass('open');
-            });
-        });
+// Ensure that the navbar-toggler button is displayed when the menu is closed
+function updateNavbarButtons() {
+    const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+    document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+    document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+}
 
-    const body = document.body;
-    const navbarBrand = document.querySelector('.navbar-brand');
+// Update navbar buttons visibility on page load and resize
+window.addEventListener('load', updateNavbarButtons);
+window.addEventListener('resize', updateNavbarButtons);
 
-    navbarBrand.addEventListener('click', function() {
-        if (body.classList.contains('light-mode')) {
-            body.classList.remove('light-mode');
-            body.classList.add('dark-mode');
-        } else {
-            body.classList.remove('dark-mode');
-            body.classList.add('light-mode');
-        }
-    });
+   // Article carousel functionality
 
    function displayArticles() {
     const articlesContainer = document.getElementById('articlesContainer');
     const articles = [
          {
-        title: 'أنتوني بادجو":أنا معجب بأنصار المولودية  وما يفعلونه ....وكنت اتابع النادي قبل إلتحاقي به',
-      content: 'أدلى الوافد الجديد لبيت العميد ،المدافع الايفواري ستيفن أنتوني بادجو  بتصريحات لصفحة الرسمية لنادي مولودية الجزائر ، على هامش التحاقه  بتربص الفريق في مدينة رين الفرنسية',
-        imageUrl: 'badj.jpg',
-        date: '2024/08/03',
-        author: 'برنجي اسماء'
+        title: 'مباراة الإياب بين العميد و المنستيري',
+                    content: 'تتجه أنظار عشاق كرة القدم إلى مباراة الإياب المنتظرة بين مولودية الجزائر و الإتحاد الرياضي المنستيري، والتي تُعد لقاء الحسم في إطار المسابقات القارية<br><br> تأتي هذه المباراة بعد لقاء الذهاب الذي شهد فوز الإتحاد الرياضي المنستيري بـ𝟭-𝟬 على أرضه، مما يزيد من التحدي الذي يواجهه الفريق الجزائري في لقاء العودة<br><br> المباراة ستقام في ملعب الشهيد علي عمار المدعو "علي لابوانت" بالدويرة" مساء يوم السبت بداية من الساعة 𝟭𝟵:𝟬𝟬',
+                    imageUrl: 'll.jpg',
+                    date: '20:30',
+                    author: 'الثلاثاء 17 سبتمبر 2024 '
+    },
+           {
+         title: 'ديلور يطلق أولى تصريحاته',
+                    content: 'الوافد الجديد لصفوف مولودية الجزائر أندي ديلور عبر عن حماسه و فخره بالإنضمام إلى النادي العريق من خلال منشور على حسابه الرسمي<br><br> أشار ديلور إلى أنه سعيد للغاية بإرتداء ألوان مولودية الجزائر و تمثيل المدينة و الجزائر<br><br> و قد أشاد بالاهتمام الصادق من النادي و الطموح الذي دفعه لإتخاذ هذه الخطوة، معبّرًا عن شكره لرئيس النادي الحاج رجم على إحترافيته و شغفه، و كذلك للمدرب أمير بوميل على إهتمامه<br><br> تعهد ديلور بوضع كل قوته في خدمة النادي و الجزائر، واعدًا جماهير الفريق بالإلتقاء سريعًا على أرضية الملعب',
+                    imageUrl: 'aa.jpg',
+                    date: '22:20',
+                    author: 'الأحد 15 سبتمبر 2024 '
+    },
+           {
+       title: 'تصريحات رئيس الفريق حاج رجم',
+                    content: 'في تصريحاته الأخيرة، أكد رئيس مجلس إدارة مولودية الجزائر، محمد حكيم حاج رجم، على المكانة الكبيرة التي يحظى بها النادي، مشيرًا إلى أن الإنتدابات التي قام بها النادي خلال فترة الإنتقالات الصيفية كانت مدروسة بعناية بالتعاون مع المدرب<br><br> وذكر أن الفريق ركز على إختيار اللاعبين الأهم الذين يحتاجهم النادي لتقوية صفوفه وفق إحتياجات المدرب والمجموعة<br><br> كما أعرب حاج رجم عن رضاه عن فترة الإنتقالات، معتبرًا أن النادي قد أجرى ميركاتو يتماشى مع تطلعات الجماهير<br><br>و فيما يتعلق بقضية الدولي الجزائري أندي ديلور، أكد أن النادي توصل إلى حل ودي مع نادي أم صلال دون أي مشاكل',
+                    imageUrl: 'bb.jpg',
+                    date: '11:30',
+                    author: 'لأربعاء 11 سبتمبر 2024'
     },
              {
-                title: 'النيجيري ايوالا على أعتاب العميد',
-                content: 'يقترب جناح العربي الكويتي النيجيري أنايو إيوالا صاحب 25سنة من التوقيع في مولودية الجزائر لتعويض رحيل يوسف بلايلي<br>في حال توصل  إدارة الحاج رجم لاتفاق رسمي مع ادارة العربي الكويتي سيكون أخر ورقة أجنيبة في المولودية. وتعد إحصائيات النيجري ايوالا  هذا الموسم طيبة نوعا ما بعد 21 مباراة  لعبها في البطولة الكويتية سجل من خلالها 4 أهداف أما في كأس الإتحاد الأسيوي فخاض اربع مباريات  (مباراة واحدة لعبها بشكل كامل) و  لم يسجل أي هدف ، و حسب موقع ترانسفير ماركت فإن قيمة اللاعب ايوالا تباع 600 ألف أورو<br>ادارة العميد ترى بأن اللاعب السابق لترجي التونسي و شباب بلوزداد أفضل من يمكنه تعويض مغادرة يوسف بلايلي ، وستتواصل الإدارة في ساعات القليلة القادمة مع نظيرتها من نادي العربي الكويتي  بخصوص ورقة تسريحه',
-                imageUrl: 'iwa.jpg',
-                link: 'https://www.facebook.com/share/p/4kCnxHrRVvZ7wfS9/',
-                date: '2024/7/31',
-                author: 'برنجي اسماء'
+             title: 'سوناطراك تتعاقد مع شركة صيانة',
+                    content: 'مجمع سوناطراك قد أبرم عقدًا مع شركة أجنبية متخصصة في تسيير الملاعب، و التي ستتولى إدارة ملعب الشهيد علي عمار، المدعو " علي لابوانت " في الدويرة<br><br> يهدف هذا التعاقد إلى تحسين إدارة الملعب، مما قد يشمل تحسين الصيانة، و تطوير المرافق، و تعزيز تجربة المشجعين خلال المباريات و الأحداث الرياضية',
+                    imageUrl: 'ff.jpg',
+                    date: '17:30',
+                    author: 'الثلاثاء 3 سبتمبر 2024'
             },
          
     {
-        title: 'اللاعب يوسف داو سافر لفرنسا',
-        content: 'اللاعب يوسف داو سافر لفرنسا مع البعثة من أجل إكمال العلاج و ليس لإجراء التربص',
-        imageUrl: 'dao1.jpg',
-        date: '2024/07/27',
-        author: 'برنجي اسماء'
+       title: 'بينارة يغادر رديف مولودية الجزائر',
+                    content: 'اللاعب الشاب عماد الدين بينارة، الذي تألق سابقًا في صفوف رديف مولودية الجزائر، إنتقل رسميًا إلى نادي شبيبة الأبيار<br><br> حيث يعتبر هذا الإنتقال خطوة مهمة في مسيرة اللاعب الطموحة، حيث يسعى للحصول على فرصة أكبر لإبراز موهبته و تطوير أدائه على المستوى التنافسي<br><br> و بينما أمضى سنوات في تكوينه مع الفئات الشبانية لمولودية الجزائر، يأمل بينارة أن يكون إضافة قوية لفريق شبيبة الأبيار',
+                    imageUrl: 'binar.jpg',
+                    date: '13:30',
+                    author: 'الثلاثاء 20 اوت 2024' 
     }
 ];
 
@@ -384,12 +467,12 @@
         const articleHTML = `
             <div class="col-lg-6">
                 <article class="article">
-                    <img src="${article.imageUrl}" alt="${article.title}">
+                  <h2>${article.title}</h2>
                     <div class="meta">
                         <span class="date">${article.date}</span> |
                         <span class="author">${article.author}</span>
                     </div>
-                    <h2>${article.title}</h2>
+                     <img src="${article.imageUrl}" alt="${article.title}">
                     <p>${article.content}</p>
                 </article>
             </div>
