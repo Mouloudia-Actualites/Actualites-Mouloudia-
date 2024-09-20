@@ -186,23 +186,28 @@
     }
 }
     
+/* General styles */
+.info-section {
+    padding: 20px 0;
+}
 
-        .info-section {
-            padding: 6px;
-            background-color: #f8f9fa;
-        }
+.section-title {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
 
-        .section-title {
-            display: inline-block;
-            margin: 0 15px;
-            cursor: pointer;
-            color: #000;
-            transition: color 0.3s;
-        }
-
-        .section-title:hover {
-            color: #0056b3; /* Hover color */
-        }
+/* Styles for smaller devices */
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 18px;
+        margin: 0 5px;
+    }
+    .info-section {
+        padding: 10px 0;
+    }
+}
 
        
          
