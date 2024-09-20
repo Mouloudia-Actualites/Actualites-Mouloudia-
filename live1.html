@@ -7,279 +7,53 @@
     <title>Mouloudia Actualités - النتائج المباشرة</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
     <link rel="icon" type="image/x-icon" href="mca.png">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9568912999082528"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9568912999082528" crossorigin="anonymous"></script>
     <style>
         /* Global styles */
-  body {
+        body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #000;
             transition: background-color 0.5s, color 0.5s;
-            position: relative; /* Ensure body has relative position for absolute positioning */
+            position: relative;
         }
 
-     .navbar {
+        .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
-            /* Ensures the image covers the entire navbar */
             background-repeat: no-repeat;
-            /* Prevents the image from repeating */
             background-position: center;
-            /* Centers the image in the navbar */
         }
-        
-        .navbar-dark .navbar-toggler {
-            border: none;
-            color: white;
-        }
-        
-        .navbar-dark .navbar-toggler-icon {
-            color: white;
-            width: 44px;
-            height: 27px;
-        }
-        
+
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
-            /* Right-align text */
         }
-        
+
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-/* Adjust the navbar for the full-screen menu */
-.fullscreen-menu.open ~ .navbar .navbar-toggler {
-    display: none; /* Hide toggle button when menu is open */
 
-}
-
-.search-bar {
-    display: flex;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.search-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    font-size: 16px;
-}
-
-.search-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #000; /* اللون الأساسي للزر */
-    color: white;
-    border-radius: 0 5px 5px 0;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-button:hover {
-    background-color: #0056b3; /* تغيير اللون عند التمرير فوق الزر */
-}
-/* Fullscreen Menu */
-.fullscreen-menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 60px);
-    background-color: #fff;
-    z-index: 1001;
-    display: none;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-}
-
-.fullscreen-menu.open {
-    display: block;
-}
-
-.fullscreen-menu-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 60px);
-    box-sizing: border-box;
-    position: relative;
-}
-
-.fullscreen-menu-content ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    direction: rtl;
-    text-align: right;
-}
-
-.fullscreen-menu-content ul li {
-  margin-bottom: 10px;
-    border-bottom: 1px solid rgba(204, 204, 204, 0.5); /* لون الحدود مع شفافية */
-}
-
-.fullscreen-menu-content ul li a {
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    text-align: right;
-}
-
-.fullscreen-menu-content ul li a:hover {
-    color: #000;
-}
-
-
-/* Close button styles */
-.close-btn {
-    color: white;
-    width: 44px;
-    height: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* محاذاة النص في المنتصف */
-    font-size: 16px; /* حجم الخط للنص */
-    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
-    background: transparent; /* إزالة الخلفية */
-    border: none; /* إزالة الحدود إن وجدت */
-    position: relative; /* السماح بتعديل مكان العنصر */
-    top: -16px; /* رفع الزر بمقدار 10 بكسل للأعلى */
-    transition: color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
-}
-
-/* Hover effect */
-.close-btn:hover {
-    color: #444; /* تغيير لون النص عند التمرير فوق الزر */
-}
-
-
-
-
-/* Show and hide buttons based on menu state */
-.fullscreen-menu.open ~ .navbar .close-btn {
-    display: block; /* Show close button when menu is open */
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        height: 45px;
-    }
-    .navbar-content .navbar-brand {
-        font-size: 18px;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        padding: 8px 10px;
-    }
-    .fullscreen-menu-content ul li {
-        margin-bottom: 5px;
-    }
-    .fullscreen-menu-content ul li a {
-        font-size: 16px;
-    }
-    .close-btn {
-        font-size: 34px; /* Adjust for smaller screens */
-    }
-}
-    
-        .hero {
-            background-color:white;
-            background-size: cover;
-            background-position: center;
-            color: #000;
+        /* Sections */
+        .section-title {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 10px 0;
             text-align: center;
-            padding: 80px 0;
+            color: #007bff;
         }
 
-        
-          h1, h2, h3, p {
-    font-family: 'Cairo', Arial, sans-serif;
-    /* Adjust styles as needed */
-}
-
-
-      .carousel-container {
-            width: 90%;
-            max-width: 1000px;
-            overflow-x: auto;
-            /* السماح بالتمرير الأفقي */
-            scroll-snap-type: x mandatory;
-            display: flex;
-            scroll-behavior: smooth;
-            background-color: #ffffff;
-            border-radius: 10px;
-            border: 2px solid #ccc;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            position: relative;
-            margin-left: 20px;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        
-        
-        .carousel-slide {
-            flex: 0 0 auto;
-            scroll-snap-align: center;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-right: 10px;
-            height: 400px;
-            /* تحديد ارتفاع الحاوية */
-            width: calc(100% - 20px);
-            /* عرض الصورة مع مراعاة المسافة على الجانبين */
-        }
-        
-     .carousel-slide img {
-    width: 100%;
-    /* عرض الصورة بما يتناسب مع الحاوية */
-    height: 100%;
-    /* ملء ارتفاع الحاوية */
-    object-fit: contain;
-    /* عرض الصورة بالكامل بدون قص */
-    border-radius: 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-top: 0; /* تعيين margin-top إلى 0 */
-}
-
-        /* Dark Mode Styles */
-        body.dark-mode {
-            background-color: #343a40;
-            color: #fff;
-        }
-
-        body.dark-mode .navbar {
-            background-color: #212529;
-        }
-
-        body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
-        }
-
-        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        body.dark-mode .match {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
-        }
-
-        body.dark-mode .match .score {
-            color: #fff;
+        .section-content {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #fff;
         }
 
         /* Media Query for Mobile Devices */
@@ -287,49 +61,14 @@
             .navbar-brand img {
                 width: 40px;
             }
-
-        
         }
-
-        
-        /* Dark Mode Table Styles */
-        body.dark-mode table {
-            background-color: #424242;
-            color: #fff;
-        }
-
-        body.dark-mode table th,
-        body.dark-mode table td {
-            border-color: #757575;
-            background-color: #424242;
-        }
-         footer {
-            color: #fff;
-            padding: 15px 0;
-            text-align: center;
-            background-image: url('footr.jpg');
-            background-size: contain;
-            /* Resize the image to fit within the footer */
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            /* Center text horizontally within .center-container */
-        }
-        
-        
     </style>
 </head>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo&display=swap">
 
-<body>   
- <!-- Header with Navbar -->
-   <header>
+<body>
+    <!-- Header with Navbar -->
+    <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
@@ -352,102 +91,62 @@
                 <li><a href="news1.html">الفريق الرديف</a></li>
                 <li><a href="reserve1.html">فئات الشبانية</a></li>
                 <li><a href="histoir1.html">التاريخ و الأرشيف</a></li>
-                  <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
                 <li><a href="video1.html">الرياضات الاخرى</a></li>
                 <li><a href="live1.html">نتائج المباريات</a></li>
                 <li><a href="contac1.html">تواصل معنا</a></li>
-                 <li><a href="contactt1.html">من نحن؟</a></li>
+                <li><a href="contactt1.html">من نحن؟</a></li>
             </ul>
         </div>
     </div>
- <br> <section class="image-before-icons">
+
+    <section>
         <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <img src="class.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
-                </div>
+            <h2 class="section-title" onclick="toggleSection('results')">النتائج</h2>
+            <div class="section-content" id="results">
+                <p>محتوى نتائج المباريات يظهر هنا.</p>
+            </div>
+
+            <h2 class="section-title" onclick="toggleSection('table')">الجدول</h2>
+            <div class="section-content" id="table">
+                <p>محتوى الجدول يظهر هنا.</p>
+            </div>
+
+            <h2 class="section-title" onclick="toggleSection('ranking')">الترتيب</h2>
+            <div class="section-content" id="ranking">
+                <p>محتوى الترتيب يظهر هنا.</p>
             </div>
         </div>
-    </section><br>
-<section>
-        <div class="carousel-container">
-            <!-- Photo 1 -->
-            <div class="carousel-slide">
-                <img src="8.jpg" alt="Photo 1">
-            </div>
+    </section>
 
-            <!-- Photo 2 -->
-            <div class="carousel-slide">
-                <img src="9.jpg" alt="Photo 2">
-            </div>
-   <!-- Photo 6 -->
-            <div class="carousel-slide">
-                <img src="004.jpg" alt="Photo 6">
-            </div>
-            
-            <!-- Photo 3 -->
-            <div class="carousel-slide">
-                <img src="100.jpg" alt="Photo 3">
-            </div>
-
-            <!-- Photo 4 -->
-            <div class="carousel-slide">
-                <img src="110.jpg" alt="Photo 4">
-            </div>
-
-            <!-- Photo 5 -->
-            <div class="carousel-slide">
-                <img src="120.jpg" alt="Photo 5">
-            </div>
-        </div>
-    </section> <br>
-    
-
- <section class="image-before-icons">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
-                </div>
-            </div>
-        </div>
-    </section><br>
     <footer class="text-center py-4">
-      
+        <p>حقوق النشر © 2024 جميع الحقوق محفوظة.</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-          // Open fullscreen menu
-document.querySelector('.navbar-toggler').addEventListener('click', function() {
-    document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
-    document.querySelector('.close-btn').style.display = 'block'; // Show close button
-    document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
-});
+        // Open fullscreen menu
+        document.querySelector('.navbar-toggler').addEventListener('click', function () {
+            document.getElementById('fullscreenMenu').classList.add('open');
+            document.querySelector('.close-btn').style.display = 'block';
+            document.querySelector('.navbar-toggler').style.display = 'none';
+        });
 
-// Close fullscreen menu
-document.getElementById('closeMenuBtn').addEventListener('click', function() {
-    document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
-    document.querySelector('.close-btn').style.display = 'none'; // Hide close button
-    document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
-});
+        // Close fullscreen menu
+        document.getElementById('closeMenuBtn').addEventListener('click', function () {
+            document.getElementById('fullscreenMenu').classList.remove('open');
+            document.querySelector('.close-btn').style.display = 'none';
+            document.querySelector('.navbar-toggler').style.display = 'block';
+        });
 
-// Ensure that the navbar-toggler button is displayed when the menu is closed
-function updateNavbarButtons() {
-    const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
-    document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
-    document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
-}
-
-// Update navbar buttons visibility on page load and resize
-window.addEventListener('load', updateNavbarButtons);
-window.addEventListener('resize', updateNavbarButtons);
-
-   // Article carousel functionality
+        // Toggle section visibility
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.style.display = section.style.display === 'none' || section.style.display === '' ? 'block' : 'none';
+        }
     </script>
 </body>
 
 </html>
-
-
