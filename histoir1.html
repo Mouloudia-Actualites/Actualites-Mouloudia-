@@ -334,42 +334,8 @@
     <!-- News Section -->
     <section class="news-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- First Article -->
-                    <article class="article">
-                        <img src="" alt="صورة المقالة 1">
-                        <h2 style="text-align: right;"> </h2>
-                        <p></p>
-                        
-                    </article>
-                    <!-- Second Article -->
-                    <article class="article">
-                        <img src="" alt="صورة المقالة 2">
-                        <h2 style="text-align: right;"> </h2>
-                        <p></p>
-                      <h2 style="text-align: right;">  </h2>
-                        <p></p>
-                    </article>
-                    <article class="article">
-                        <img src="" alt="صورة المقالة 2">
-                        <h2 style="text-align: right;"></h2>
-                        <p></p>
-                       
-                    </article>
-                    <article class="article">
-                        <img src="" alt="صورة المقالة 2">
-                        <h2 style="text-align: right;"></h2>
-                        <p></p>
-                       
-                    </article>
-                    <article class="article">
-                        <img src="" alt="صورة المقالة 2">
-                        <h2 style="text-align: right;"></h2>
-                        <p></p>
-                    
-                    </article>
-                </div>
+            <div class="row" id="articlesContainer">
+                <!-- Articles will be dynamically inserted here -->
             </div>
         </div>
     </section>
@@ -417,7 +383,64 @@ function updateNavbarButtons() {
 window.addEventListener('load', updateNavbarButtons);
 window.addEventListener('resize', updateNavbarButtons);
 
-   // Article carousel functionality
+  // Article carousel functionality
+
+   function displayArticles() {
+    const articlesContainer = document.getElementById('articlesContainer');
+    const articles = [
+         {
+        title: 'من 1921 الى 1939',
+                    content: 'تأسس نادي مولودية الجزائر في 7 أغسطس 1921 على يد مجموعة من الشباب الجزائريين بقيادة عبد الرحمن عوف، حيث كانوا يبحثون عن وسيلة للتعبير عن هويتهم الجزائرية في ظل الاستعمار الفرنسي<br><br>واختاروا اسم "مولودية" تيمناً بعيد المولد النبوي الشريف، مما يبرز العلاقة الوثيقة بين الدين والهوية الوطنية آنذاك. في سنواته الأولى، لم يكن التحدي رياضيًا فقط، بل كان النضال من أجل تمثيل الهوية الجزائرية ومحاربة الاضطهاد الثقافي والسياسي. وبدأ الفريق المشاركة في الدوريات المحلية التي كانت تُنظم تحت الاحتلال الفرنسي، ولكن كان دائمًا يُعامل النادي معاملة غير عادلة بسبب هويته الوطنية',
+                    imageUrl: '11.jpg',
+                    
+    },
+           {
+         title: 'من 1940 الى 1962',
+                    content: 'أثبتت مولودية الجزائر نفسها كنادٍ رياضي و مقاوم خلال فترة الإستعمار الفرنسي. رغم الصعوبات، تمكّن الفريق من تحقيق إنجازات ملفتة على المستوى المحلي، و أصبح رمزًا لمقاومة الإحتلال الفرنسي في الجزائر. كان للنادي دور كبير في الحفاظ على الهوية الوطنية من خلال الرياضة، حيث كان لاعبوه و أنصاره منخرطين في المقاومة الثقافية و السياسية<br><br>خلال تلك الفترة، وعلى الرغم من القيود المفروضة عليه، نجح مولودية الجزائر في الفوز بعدة بطولات محلية، وتمكن من التمسك بهويته الإسلامية والوطنية، مما جعله محبوباً لدى الجزائريين كافة.',
+                    imageUrl: '22.jpg',
+                   
+    },
+           {
+       title: 'من 1962 الى 1981',
+                    content: 'بعد الإستقلال في عام 1962، كان من المتوقع أن يشهد النادي مرحلة جديدة من النمو و الإزدهار. بدأت المولودية في المشاركة في البطولات الوطنية، و في عام 1972، حصلت على لقب أول بطولة جزائرية بعد الإستقلال. كان هذا الإنجاز بمثابة بداية لعصر ذهبي للنادي<br><br> في السبعينيات، وصلت المولودية إلى ذروة مجدها بتحقيق عدد من البطولات الهامة على المستويين الوطني والإفريقي<br><br> يُعتبر موسم 1976 أحد أفضل مواسم النادي، حيث تُوّج بلقب دوري أبطال إفريقيا ليصبح أول فريق جزائري يُحقق هذا الإنجاز. كان هذا اللقب مصدر فخر للجزائر بأسرها، حيث وُضع مولودية الجزائر في مصاف الأندية الكبيرة في إفريقيا و العالم العربي',
+                    imageUrl: '33.jpg',
+                    
+    },
+             {
+             title: 'سوناطراك تتعاقد مع شركة صيانة',
+                    content: 'مجمع سوناطراك قد أبرم عقدًا مع شركة أجنبية متخصصة في تسيير الملاعب، و التي ستتولى إدارة ملعب الشهيد علي عمار، المدعو " علي لابوانت " في الدويرة<br><br> يهدف هذا التعاقد إلى تحسين إدارة الملعب، مما قد يشمل تحسين الصيانة، و تطوير المرافق، و تعزيز تجربة المشجعين خلال المباريات و الأحداث الرياضية',
+                    imageUrl: '44.jpg',
+                  
+            },
+         
+    {
+     
+    }
+];
+
+
+    articles.forEach(article => {
+        const articleHTML = `
+            <div class="col-lg-6">
+                <article class="article">
+                  <h2>${article.title}</h2>
+                  
+                     <img src="${article.imageUrl}" alt="${article.title}">
+                    <p>${article.content}</p>
+                </article>
+            </div>
+        `;
+        articlesContainer.innerHTML += articleHTML;
+    });
+}
+
+// Appeler la fonction displayArticles pour charger les articles au chargement de la page
+displayArticles();
+
+</script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     </script>
 </body>
