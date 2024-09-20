@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
@@ -58,75 +58,144 @@
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        /* Fullscreen menu styles */
-        
-        .fullscreen-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            /* Semi-transparent black background */
-            z-index: 1000;
-            /* Ensure it's above other content */
-            display: none;
-            /* Initially hidden */
-            overflow-y: auto;
-            /* Enable scrolling */
-        }
-        
-        .fullscreen-menu.open {
-            display: block;
-            /* Display when open */
-        }
-        
-        .fullscreen-menu-content {
-            position: absolute;
-            top: 6px;
-            /* تعديل حسب الحاجة */
-            right: 10px;
-            /* تعديل حسب الحاجة */
-            transform: translate(0, 0);
-            /* تعديل حسب الحاجة */
-            text-align: right;
-            /* توجيه النص إلى اليمين */
-        }
-        
-        .fullscreen-menu-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .fullscreen-menu-content ul li {
-            margin-bottom: 10px;
-        }
-        
-        .fullscreen-menu-content ul li a {
-            color: #fff;
-            font-size: 24px;
-            text-decoration: none;
-            transition: color 0.3s;
-            display: block;
-            padding: 10px;
-        }
-        
-        .fullscreen-menu-content ul li a:hover {
-            color: #ccc;
-        }
-        
-        .close-btn {
-            position: absolute;
-            top: 2px;
-            /* تعديل حسب الحاجة */
-            left: 10px;
-            /* تعديل لتحديد الزاوية اليسرى */
-            color: #fff;
-            /* تعديل لون النص */
-            font-size: 50px;
-            /* تعديل حجم الخط */
-            cursor: pointer;
-        }
+/* Adjust the navbar for the full-screen menu */
+.fullscreen-menu.open ~ .navbar .navbar-toggler {
+    display: none; /* Hide toggle button when menu is open */
+
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000; /* اللون الأساسي للزر */
+    color: white;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* تغيير اللون عند التمرير فوق الزر */
+}
+/* Fullscreen Menu */
+.fullscreen-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #fff;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fullscreen-menu.open {
+    display: block;
+}
+
+.fullscreen-menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.fullscreen-menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li {
+  margin-bottom: 10px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5); /* لون الحدود مع شفافية */
+}
+
+.fullscreen-menu-content ul li a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li a:hover {
+    color: #000;
+}
+
+
+/* Close button styles */
+.close-btn {
+    color: white;
+    width: 44px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* محاذاة النص في المنتصف */
+    font-size: 16px; /* حجم الخط للنص */
+    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
+    background: transparent; /* إزالة الخلفية */
+    border: none; /* إزالة الحدود إن وجدت */
+    position: relative; /* السماح بتعديل مكان العنصر */
+    top: -16px; /* رفع الزر بمقدار 10 بكسل للأعلى */
+    transition: color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
+}
+
+/* Hover effect */
+.close-btn:hover {
+    color: #444; /* تغيير لون النص عند التمرير فوق الزر */
+}
+
+
+
+
+/* Show and hide buttons based on menu state */
+.fullscreen-menu.open ~ .navbar .close-btn {
+    display: block; /* Show close button when menu is open */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 45px;
+    }
+    .navbar-content .navbar-brand {
+        font-size: 18px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 10px;
+    }
+    .fullscreen-menu-content ul li {
+        margin-bottom: 5px;
+    }
+    .fullscreen-menu-content ul li a {
+        font-size: 16px;
+    }
+    .close-btn {
+        font-size: 34px; /* Adjust for smaller screens */
+    }
+}
         .hero {
             background-color:white;
             background-size: cover;
@@ -251,23 +320,25 @@
 
 <body>
 
-    <header>
+    <!-- Header with Navbar -->
+   <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
-                <div class="navbar-brand mr-auto">
-                </div>
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                <button class="close-btn" id="closeMenuBtn"><i class="fas fa-times"></i></button>
             </div>
         </nav>
     </header>
+
     <div class="fullscreen-menu" id="fullscreenMenu">
-        <span class="close-btn">&times;</span>
-        <!-- زر الإغلاق في سطر واحد مع فاصل -->
         <div class="fullscreen-menu-content">
-            <ul><br><br>
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="...ابحث">
+                <button class="search-button">بحث</button>
+            </div>
+            <ul>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="news1.html">أخبار</a></li>
                 <li><a href="first1.html">الفريق الأول</a></li>
@@ -280,7 +351,6 @@
             </ul>
         </div>
     </div>
-    
 
     <!-- News Section -->
     <section class="news-section">
@@ -307,35 +377,30 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- Custom Script -->
     <script>
-        // Close the fullscreen menu when clicking outside of it or on close button
-        $(document).ready(function() {
-            // Toggle fullscreen menu
-            $('.navbar-toggler').click(function() {
-                $('#fullscreenMenu').toggleClass('open');
-            });
+         // Open fullscreen menu
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+    document.querySelector('.close-btn').style.display = 'block'; // Show close button
+    document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+});
 
-            // Close the fullscreen menu when clicking outside of it
-            $(document).mouseup(function(e) {
-                var container = $("#fullscreenMenu");
-                if (!container.is(e.target) && container.has(e.target).length === 0) {
-                    container.removeClass('open');
-                }
-            });
+// Close fullscreen menu
+document.getElementById('closeMenuBtn').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+    document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+    document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+});
 
-            // Close the fullscreen menu when close button is clicked
-            $('.close-btn').click(function() {
-                $('#fullscreenMenu').removeClass('open');
-            });
-        });
+// Ensure that the navbar-toggler button is displayed when the menu is closed
+function updateNavbarButtons() {
+    const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+    document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+    document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+}
 
-        // Toggle between light and dark mode
-        const body = document.body;
-        const navbarBrand = document.querySelector('.navbar-brand');
-
-        navbarBrand.addEventListener('click', function() {
-            body.classList.toggle('dark-mode');
-        });
-
+// Update navbar buttons visibility on page load and resize
+window.addEventListener('load', updateNavbarButtons);
+window.addEventListener('resize', updateNavbarButtons);
         // Function to display articles dynamically
         function displayArticles() {
             const articlesContainer = document.getElementById('articlesContainer');
