@@ -216,6 +216,135 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+         
+        .hero {
+            background-color: white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        h1,
+        h2,
+        h3,
+        p {
+            font-family: 'Cairo', Arial, sans-serif;
+            /* Adjust styles as needed */
+        }
+        
+        .carousel-container {
+            width: 90%;
+            max-width: 1000px;
+            overflow-x: auto;
+            /* السماح بالتمرير الأفقي */
+            scroll-snap-type: x mandatory;
+            display: flex;
+            scroll-behavior: smooth;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            margin-left: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        .carousel-slide {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 10px;
+            height: 400px;
+            /* تحديد ارتفاع الحاوية */
+            width: calc(100% - 20px);
+            /* عرض الصورة مع مراعاة المسافة على الجانبين */
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            /* عرض الصورة بما يتناسب مع الحاوية */
+            height: 100%;
+            /* ملء ارتفاع الحاوية */
+            object-fit: contain;
+            /* عرض الصورة بالكامل بدون قص */
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 0;
+            /* تعيين margin-top إلى 0 */
+        }
+        /* Dark Mode Styles */
+        
+        body.dark-mode {
+            background-color: #343a40;
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+        
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .match {
+            background-color: #424242;
+            border-color: #757575;
+            color: #fff;
+        }
+        
+        body.dark-mode .match .score {
+            color: #fff;
+        }
+        /* Media Query for Mobile Devices */
+        
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                width: 40px;
+            }
+        }
+        /* Dark Mode Table Styles */
+        
+        body.dark-mode table {
+            background-color: #424242;
+            color: #fff;
+        }
+        
+        body.dark-mode table th,
+        body.dark-mode table td {
+            border-color: #757575;
+            background-color: #424242;
+        }
+        
+        footer {
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
+        }
     </style>
 </head>
 
@@ -264,13 +393,92 @@
                 </div>
             </div>
             <div id="content" class="content">
-                <div id="table" class="content-item">محتوى الجدول هنا</div>
-                <div id="results" class="content-item" style="display:none;">محتوى النتائج هنا</div>
-                <div id="rankings" class="content-item" style="display:none;">محتوى الترتيب هنا</div>
+                <div id="table" class="content-item"><section>
+        <div class="carousel-container">
+            <!-- Photo 1 -->
+            <div class="carousel-slide">
+                <img src="8.jpg" alt="Photo 1">
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="carousel-slide">
+                <img src="9.jpg" alt="Photo 2">
+            </div>
+   <!-- Photo 6 -->
+            <div class="carousel-slide">
+                <img src="004.jpg" alt="Photo 6">
+            </div>
+            
+            <!-- Photo 3 -->
+            <div class="carousel-slide">
+                <img src="100.jpg" alt="Photo 3">
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="carousel-slide">
+                <img src="110.jpg" alt="Photo 4">
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="carousel-slide">
+                <img src="120.jpg" alt="Photo 5">
+            </div>
+        </div>
+    </section> <br></div>
+                <div id="results" class="content-item" style="display:none;"><section>
+        <div class="carousel-container">
+            <!-- Photo 1 -->
+            <div class="carousel-slide">
+                <img src="8.jpg" alt="Photo 1">
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="carousel-slide">
+                <img src="9.jpg" alt="Photo 2">
+            </div>
+   <!-- Photo 6 -->
+            <div class="carousel-slide">
+                <img src="004.jpg" alt="Photo 6">
+            </div>
+            
+            <!-- Photo 3 -->
+            <div class="carousel-slide">
+                <img src="100.jpg" alt="Photo 3">
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="carousel-slide">
+                <img src="110.jpg" alt="Photo 4">
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="carousel-slide">
+                <img src="120.jpg" alt="Photo 5">
+            </div>
+        </div>
+    </section> <br></div>
+                <div id="rankings" class="content-item" style="display:none;"> <section class="image-before-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <img src="class.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
+                </div>
+            </div>
+        </div>
+    </section><br></div>
             </div>
         </div>
     </section>
-
+  <section class="image-before-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
+                </div>
+            </div>
+        </div>
+    </section><br>
+    <footer class="text-center py-4">
     <script>
            // Open fullscreen menu
 document.querySelector('.navbar-toggler').addEventListener('click', function() {
