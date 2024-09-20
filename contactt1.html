@@ -16,7 +16,6 @@
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #000;
-            transition: background-color 0.5s, color 0.5s;
         }
         .navbar {
             background-image: url('mama.jpg');
@@ -31,11 +30,7 @@
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
-            transition: background-color 0.3s;
             text-align: right;
-        }
-        .navbar-dark .navbar-nav .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
         }
         .fullscreen-menu {
             position: fixed;
@@ -47,25 +42,14 @@
             z-index: 1001;
             display: none;
             overflow-y: auto;
-            transition: transform 0.3s ease-in-out;
         }
         .fullscreen-menu.open {
             display: block;
-        }
-        .fullscreen-menu-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            height: calc(100% - 60px);
-            box-sizing: border-box;
-            position: relative;
         }
         .fullscreen-menu-content ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            direction: rtl;
-            text-align: right;
         }
         .fullscreen-menu-content ul li {
             margin-bottom: 10px;
@@ -74,43 +58,13 @@
         .fullscreen-menu-content ul li a {
             color: #000;
             font-size: 18px;
-            text-decoration: none;
-            display: block;
             padding: 10px;
             text-align: right;
         }
-        .close-btn {
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            cursor: pointer;
-            background: transparent;
-            border: none;
-            position: relative;
-            top: -16px;
-            transition: color 0.3s;
-        }
-        .close-btn:hover {
-            color: #444;
-        }
-        @media (max-width: 768px) {
-            .navbar {
-                height: 45px;
-            }
-            .navbar-dark .navbar-nav .nav-link {
-                padding: 8px 10px;
-            }
-            .close-btn {
-                font-size: 34px;
-            }
-        }
-        /* About Section Styles */
         .about-section {
             padding: 50px;
             background-color: #fff;
-            text-align: left;
+            text-align: right;
         }
         .about-section h2 {
             font-size: 2.5rem;
@@ -126,13 +80,8 @@
             background-color: #007bff;
             border-color: #007bff;
             color: #fff;
-            font-size: 1.1rem;
             padding: 10px 20px;
             border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
         }
         footer {
             color: #fff;
@@ -171,7 +120,7 @@
                 <li><a href="news1.html">الفريق الرديف</a></li>
                 <li><a href="reserve1.html">الفئات الشبانية</a></li>
                 <li><a href="histoir1.html">الارشيف</a></li>
-                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li><a href="idr1.html">الطاقم الفني</a></li>
                 <li><a href="video1.html">الرياضات الاخرى</a></li>
                 <li><a href="live1.html">نتائج المباريات</a></li>
                 <li><a href="contac1.html">تواصل معنا</a></li>
@@ -185,56 +134,38 @@
         <div class="container">
             <h2>من نحن؟</h2>
             <p>
-                نحن في مولودية أكتياليتي نمثل مشجعي نادي مولودية الجزائر العظيم، النادي الذي يحمل تاريخًا عريقًا ومكانة مميزة في قلوب الجزائريين.
-                تأسست منصتنا لتكون ملتقى يجمع كل أنصار الفريق العريق، و يسلط الضوء على آخر المستجدات و التطورات التي تهم عشاق اللونين الأخضر و الأحمر.
+                نحن في مولودية أكتياليتي نمثل مشجعي نادي مولودية الجزائر العظيم، النادي الذي يحمل تاريخًا عريقًا.
             </p>
             <p>
-                نطمح إلى أن نكون المصدر الأول لكل ما يخص نادي مولودية الجزائر، من أخبار، تحليلات، آراء و مقابلات حصرية، لنُبقي جماهيرنا دائمًا على إطلاع بكل ما يجري داخل و خارج الملعب.
-            </p>
-            <p>
-                مولودية أكتياليتي ليست مجرد منصة إخبارية، بل هي ساحة تجمع مشجعي النادي على إختلاف خلفياتهم و آرائهم. هدفنا هو توفير مساحة للتفاعل البناء بين المشجعين، و تعزيز روح الإنتماء و الولاء لناديهم، بعيدًا عن الخلافات أو التجاذبات.
+                نطمح إلى أن نكون المصدر الأول لكل ما يخص نادي مولودية الجزائر.
             </p>
             <h4>ما نقدمه في مولودية أكتياليتي؟</h4>
             <ul>
-                <li>ننقل لكم آخر الأخبار حول الفريق، الصفقات، والإداريين.</li>
-                <li>نعرض لكم رؤى تحليلية لأداء الفريق واللاعبين في كل مباراة.</li>
-                <li>نفتح المجال أمام جمهورنا للتعبير عن آرائهم ومشاركة أفكارهم.</li>
-                <li>نهتم بإجراء مقابلات مع لاعبين، مدربين، وأعضاء من إدارة النادي.</li>
+                <li>ننقل لكم آخر الأخبار حول الفريق.</li>
+                <li>نعرض رؤى تحليلية لأداء الفريق.</li>
             </ul>
-            <h4>لماذا نحن؟</h4>
-            <p>
-                لأننا نهتم بأن تكون المعلومة دقيقة و موثوقة. لأننا جزء من هذا المجتمع الكبير الذي يدعم مولودية الجزائر.
-            </p>
-        </div>
-    </section>
-
-    <section class="image-before-icons">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
-                </div>
-            </div>
         </div>
     </section>
 
     <footer class="text-center py-4">
-        <!-- Bootstrap JS and dependencies -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <script>
-            const fullscreenMenu = document.getElementById('fullscreenMenu');
-            const closeMenuBtn = document.getElementById('closeMenuBtn');
-
-            closeMenuBtn.addEventListener('click', () => {
-                fullscreenMenu.classList.remove('open');
-            });
-
-            document.querySelector('.navbar-toggler').addEventListener('click', () => {
-                fullscreenMenu.classList.toggle('open');
-            });
-        </script>
+        <p>جميع الحقوق محفوظة © Mouloudia Actualités 2024</p>
     </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+        closeMenuBtn.addEventListener('click', () => {
+            fullscreenMenu.classList.remove('open');
+        });
+
+        document.querySelector('.navbar-toggler').addEventListener('click', () => {
+            fullscreenMenu.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
