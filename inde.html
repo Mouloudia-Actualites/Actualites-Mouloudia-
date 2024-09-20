@@ -216,7 +216,13 @@
             font-family: 'Cairo', Arial, sans-serif;
         }
         
- .carousel-slide {
+ .carousel-container {
+    display: flex;
+    overflow-x: auto; /* يسمح بالتمرير الأفقي */
+    scroll-snap-type: x mandatory; /* تمكين تقنية التمرير السلس */
+}
+
+.carousel-slide {
     flex: 0 0 auto;
     scroll-snap-align: center;
     display: flex;
@@ -234,6 +240,7 @@
     padding: 0;
     border-radius: 0; /* إزالة الزوايا المستديرة */
 }
+
 
 
         /* Dark Mode Styles */
@@ -988,6 +995,28 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
                  <a href="live1.html#table">
                 <img src="111.jpg" alt="Photo 2">
             </div>
+ <!-- Photo 2 -->
+            <div class="carousel-slide">
+                 <a href="live1.html#table">
+                <img src="222.jpg" alt="Photo 2">
+            </div>
+          <!-- Photo 2 -->
+            <div class="carousel-slide">
+                 <a href="live1.html#table">
+                <img src="333.jpg" alt="Photo 2">
+            </div>
+ <!-- Photo 2 -->
+            <div class="carousel-slide">
+                 <a href="live1.html#table">
+                <img src="444.jpg" alt="Photo 2">
+            </div>
+
+          <!-- Photo 2 -->
+            <div class="carousel-slide">
+                 <a href="live1.html#table">
+                <img src="555.jpg" alt="Photo 2">
+            </div>
+
 
         </div>
     </section> <br><br>
