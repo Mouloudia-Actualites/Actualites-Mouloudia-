@@ -400,8 +400,9 @@ function updateNavbarButtons() {
 window.addEventListener('load', updateNavbarButtons);
 window.addEventListener('resize', updateNavbarButtons);
 
-// Function to display articles dynamically
-function displayArticles() {
+ // Article carousel functionality
+
+   function displayArticles() {
     const articlesContainer = document.getElementById('articlesContainer');
     const articles = [
           {
@@ -433,32 +434,26 @@ function displayArticles() {
                     author: 'السبت 17 اوت 2024'
     }];
 
-    const fragment = document.createDocumentFragment(); // Create a fragment to improve performance
-
-    articles.forEach(article => {
-        const articleDiv = document.createElement('div');
-        articleDiv.classList.add('col-lg-6');
-        
-        articleDiv.innerHTML = `
-            <article class="article">
-                <img src="${article.imageUrl}" alt="${article.title}">
-                <div class="meta">
-                    <span class="date">${article.date}</span> |
-                    <span class="author">${article.author}</span>
-                </div>
-                <h2>${article.title}</h2>
-                <p>${article.content}</p>
-            </article>
+   articles.forEach(article => {
+        const articleHTML = `
+            <div class="col-lg-6">
+                <article class="article">
+                  <h2>${article.title}</h2>
+                    <div class="meta">
+                        <span class="date">${article.date}</span> |
+                        <span class="author">${article.author}</span>
+                    </div>
+                     <img src="${article.imageUrl}" alt="${article.title}">
+                    <p>${article.content}</p>
+                </article>
+            </div>
         `;
-
-        fragment.appendChild(articleDiv);
+        articlesContainer.innerHTML += articleHTML;
     });
-
-    articlesContainer.appendChild(fragment); // Add fragment to the container
 }
 
-// Call the displayArticles function to load articles on page load
-window.addEventListener('load', displayArticles);
+// Appeler la fonction displayArticles pour charger les articles au chargement de la page
+displayArticles();
 
         
     </script>
