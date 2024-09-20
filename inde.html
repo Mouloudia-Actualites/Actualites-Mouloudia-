@@ -1085,136 +1085,135 @@ referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         <!-- Custom JS -->
         <!-- Scripts -->
-     <script>
- // Open fullscreen menu
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
-            document.querySelector('.close-btn').style.display = 'block'; // Show close button
-            document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
-        });
+ <script>
+// Open fullscreen menu
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+    document.querySelector('.close-btn').style.display = 'block'; // Show close button
+    document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+});
 
-        // Close fullscreen menu
-        document.getElementById('closeMenuBtn').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
-            document.querySelector('.close-btn').style.display = 'none'; // Hide close button
-            document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
-        });
+// Close fullscreen menu
+document.getElementById('closeMenuBtn').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+    document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+    document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+});
 
-        // Ensure that the navbar-toggler button is displayed when the menu is closed
-        function updateNavbarButtons() {
-            const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
-            document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
-            document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
-        }
+// Ensure that the navbar-toggler button is displayed when the menu is closed
+function updateNavbarButtons() {
+    const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+    document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+    document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+}
 
-        // Update navbar buttons visibility on page load and resize
-        window.addEventListener('load', updateNavbarButtons);
-        window.addEventListener('resize', updateNavbarButtons);
+// Update navbar buttons visibility on page load and resize
+window.addEventListener('load', updateNavbarButtons);
+window.addEventListener('resize', updateNavbarButtons);
 
+// Article carousel functionality
+const articleGrid = document.getElementById('articleGrid');
+const articles = document.querySelectorAll('.article');
+let currentIndex = 0;
 
+function updateView() {
+    const articleWidth = articles[0].clientWidth; // Get width of the first article
+    const offset = -currentIndex * articleWidth;  // Calculate offset
+    articleGrid.style.transform = `translateX(${offset}px)`; // Move the container
+}
 
-        // Article carousel functionality
-        const articleGrid = document.getElementById('articleGrid');
-        const articles = document.querySelectorAll('.article');
-        let currentIndex = 0;
+const nextBtn = document.querySelector('.next-btn');
+const prevBtn = document.querySelector('.prev-btn');
 
-        function updateView() {
-            const articleWidth = articles[0].clientWidth; // Get width of the first article
-            const offset = -currentIndex * articleWidth;  // Calculate offset
-            articleGrid.style.transform = `translateX(${offset}px)`; // Move the container
-        }
-
-        const nextBtn = document.querySelector('.next-btn');
-        const prevBtn = document.querySelector('.prev-btn');
-
-        // Next button click event
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < articles.length - 1) {
-                currentIndex++;
-                updateView();
-            }
-        });
-
-        // Previous button click event
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateView();
-            }
-        });
-
-        // Adjust view on window resize to handle dynamic widths
-        window.addEventListener('resize', updateView);
-
-        // Swipe functionality with Hammer.js
-        const mc = new Hammer(articleGrid);
-
-        mc.on('swipeleft', function() {
-            if (currentIndex < articles.length - 1) {
-                currentIndex++;
-                updateView();
-            }
-        });
-
-        mc.on('swiperight', function() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateView();
-            }
-        });
-
-        // Initial positioning to ensure the first article is centered
+// Next button click event
+nextBtn.addEventListener('click', () => {
+    if (currentIndex < articles.length - 1) {
+        currentIndex++;
         updateView();
+    }
+});
+
+// Previous button click event
+prevBtn.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateView();
+    }
+});
+
+// Adjust view on window resize to handle dynamic widths
+window.addEventListener('resize', updateView);
+
+// Swipe functionality with Hammer.js
+const mc = new Hammer(articleGrid);
+
+mc.on('swipeleft', function() {
+    if (currentIndex < articles.length - 1) {
+        currentIndex++;
+        updateView();
+    }
+});
+
+mc.on('swiperight', function() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateView();
+    }
+});
+
+// Initial positioning to ensure the first article is centered
+updateView();
+
+// JavaScript to handle dragging (swiping) articles
+document.querySelectorAll('.articleContainer').forEach(articleContainer => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    articleContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        articleContainer.classList.add('active');
+        startX = e.pageX - articleContainer.offsetLeft;
+        scrollLeft = articleContainer.scrollLeft;
     });
-       // JavaScript to handle dragging (swiping) articles
-        document.querySelectorAll('.articleContainer').forEach(articleContainer => {
-            let isDown = false;
-            let startX;
-            let scrollLeft;
 
-            articleContainer.addEventListener('mousedown', (e) => {
-                isDown = true;
-                articleContainer.classList.add('active');
-                startX = e.pageX - articleContainer.offsetLeft;
-                scrollLeft = articleContainer.scrollLeft;
-            });
+    articleContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+        articleContainer.classList.remove('active');
+    });
 
-            articleContainer.addEventListener('mouseleave', () => {
-                isDown = false;
-                articleContainer.classList.remove('active');
-            });
+    articleContainer.addEventListener('mouseup', () => {
+        isDown = false;
+        articleContainer.classList.remove('active');
+    });
 
-            articleContainer.addEventListener('mouseup', () => {
-                isDown = false;
-                articleContainer.classList.remove('active');
-            });
+    articleContainer.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - articleContainer.offsetLeft;
+        const walk = (x - startX) * 2; // Scroll faster
+        articleContainer.scrollLeft = scrollLeft - walk; // Scroll direction for LTR
+    });
 
-            articleContainer.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - articleContainer.offsetLeft;
-                const walk = (x - startX) * 2; // Scroll faster
-                articleContainer.scrollLeft = scrollLeft - walk; // Scroll direction for LTR
-            });
+    articleContainer.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - articleContainer.offsetLeft;
+        scrollLeft = articleContainer.scrollLeft;
+    });
 
-            articleContainer.addEventListener('touchstart', (e) => {
-                isDown = true;
-                startX = e.touches[0].pageX - articleContainer.offsetLeft;
-                scrollLeft = articleContainer.scrollLeft;
-            });
+    articleContainer.addEventListener('touchend', () => {
+        isDown = false;
+    });
 
-            articleContainer.addEventListener('touchend', () => {
-                isDown = false;
-            });
-
-            articleContainer.addEventListener('touchmove', (e) => {
-                if (!isDown) return;
-                const x = e.touches[0].pageX - articleContainer.offsetLeft;
-                const walk = (x - startX) * 2;
-                articleContainer.scrollLeft = scrollLeft - walk; // Scroll direction for LTR
-            });
-        });
+    articleContainer.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - articleContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        articleContainer.scrollLeft = scrollLeft - walk; // Scroll direction for LTR
+    });
+});
 </script>
+
 
 
 </body>
