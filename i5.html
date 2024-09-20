@@ -60,8 +60,37 @@
 /* Adjust the navbar for the full-screen menu */
 .fullscreen-menu.open ~ .navbar .navbar-toggler {
     display: none; /* Hide toggle button when menu is open */
+
 }
 
+.search-bar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff; /* اللون الأساسي للزر */
+    color: white;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* تغيير اللون عند التمرير فوق الزر */
+}
 /* Fullscreen Menu */
 .fullscreen-menu {
     position: fixed;
