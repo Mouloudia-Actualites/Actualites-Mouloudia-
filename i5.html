@@ -339,38 +339,36 @@
 
     <!-- Custom JS -->
   <!-- Custom JS -->
-<script>
-    // Open fullscreen menu
-    document.querySelector('.navbar-toggler').addEventListener('click', function() {
-        document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
-        document.querySelector('.close-btn').style.display = 'block'; // Show close button
-        document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
-    });
+    <script>
+        // Open fullscreen menu
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+            document.querySelector('.close-btn').style.display = 'block'; // Show close button
+            document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+        });
 
-    // Close fullscreen menu
-    document.getElementById('closeMenuBtn').addEventListener('click', function() {
-        document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
-        document.querySelector('.close-btn').style.display = 'none'; // Hide close button
-        document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
-    });
+        // Close fullscreen menu
+        document.getElementById('closeMenuBtn').addEventListener('click', function() {
+            document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+            document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+            document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+        });
 
-    // Ensure that the navbar-toggler button is displayed when the menu is closed
-    function updateNavbarButtons() {
-        const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
-        document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
-        document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
-    }
+        // Ensure that the navbar-toggler button is displayed when the menu is closed
+        function updateNavbarButtons() {
+            const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+            document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+            document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+        }
 
-    // Update navbar buttons visibility on page load and resize
-    window.addEventListener('load', updateNavbarButtons);
-    window.addEventListener('resize', updateNavbarButtons);
-     });
+        // Update navbar buttons visibility on page load and resize
+        window.addEventListener('load', updateNavbarButtons);
+        window.addEventListener('resize', updateNavbarButtons);
 
-     // Function to display articles dynamically
+        // Function to display articles dynamically
         function displayArticles() {
             const articlesContainer = document.getElementById('articlesContainer');
-            const articles = [ 
-              
+            const articles = [
                 {
                     title: 'رديف العميد يسقط في خرجته الأولى',
                     content: 'إفتتح رديف مولودية الجزائر موسمه الجديد بخيبة أمل، حيث سقط في فخ الهزيمة أمام نظيره رديف شبيبة القبائل بنتيجة 3-1 في مباراة شهدت تنافسًا كبيرًا على أرضية ميدان ملعب 1 نوفمبر 1954 بتيزي وزو<br><br> جاءت هذه النتيجة مخيبة لآمال الفريق العاصمي الذي كان يتطلع لبداية قوية، في حين أن شبيبة القبائل حققت إنتصارًا يعزز معنويات الفريق في بداية مشواره',
@@ -384,14 +382,13 @@
                 const articleHTML = `
                     <div class="col-lg-6">
                         <article class="article">
-                          <h2>${article.title}</h2>
+                            <h2>${article.title}</h2>
                             <div class="meta">
                                 <span class="date">${article.date}</span> |
                                 <span class="author">${article.author}</span>
                             </div>
-                            <img src="${article.imageUrl}" alt="${article.title}">
+                            <img src="${article.imageUrl}" alt="${article.title}" class="img-fluid">
                             <p>${article.content}</p>
-                         
                         </article>
                     </div>
                 `;
@@ -400,8 +397,8 @@
         }
 
         // Call the displayArticles function to load articles on page load
-        displayArticles();
-</script>
+        window.addEventListener('load', displayArticles);
+    </script>
 
 
 </body>
