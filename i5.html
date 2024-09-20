@@ -187,7 +187,98 @@
         font-size: 34px; /* Adjust for smaller screens */
     }
 }
+         .hero {
+            background-color:white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
+        }
 
+          
+        .news-section {
+            padding: 80px 0;
+        }
+
+        .article {
+            margin-bottom: 40px;
+            text-align: right; /* Align text to right */
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: right; /* Align heading to right */
+        }
+
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+        }
+
+        .article .meta {
+            font-size: 1rem;
+            color: #6c757d;
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        .article .meta .author {
+            float: right;
+        }
+
+        .article .meta .date {
+            float: ;
+        }
+
+        .article .btn-primary {
+            float: right; /* Align button to the right */
+        }
+
+        .explore-more {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .explore-more .facebook-post {
+            max-width: 100%;
+            height: auto;
+            border: none;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .explore-more .read-more-link {
+            display: block;
+            margin-top: 20px;
+        }
+   footer {
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
+        }
 
     </style>
 </head>
@@ -223,7 +314,24 @@
             </ul>
         </div>
     </div>
-
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+            <div class="row" id="articlesContainer">
+                <!-- Articles will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+  <br> <section class="image-before-icons">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
+                </div>
+            </div>
+        </div>
+    </section><br>
+    <footer class="text-center py-4">
     <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
@@ -256,6 +364,43 @@
     // Update navbar buttons visibility on page load and resize
     window.addEventListener('load', updateNavbarButtons);
     window.addEventListener('resize', updateNavbarButtons);
+     });
+
+     // Function to display articles dynamically
+        function displayArticles() {
+            const articlesContainer = document.getElementById('articlesContainer');
+            const articles = [ 
+              
+                {
+                    title: 'رديف العميد يسقط في خرجته الأولى',
+                    content: 'إفتتح رديف مولودية الجزائر موسمه الجديد بخيبة أمل، حيث سقط في فخ الهزيمة أمام نظيره رديف شبيبة القبائل بنتيجة 3-1 في مباراة شهدت تنافسًا كبيرًا على أرضية ميدان ملعب 1 نوفمبر 1954 بتيزي وزو<br><br> جاءت هذه النتيجة مخيبة لآمال الفريق العاصمي الذي كان يتطلع لبداية قوية، في حين أن شبيبة القبائل حققت إنتصارًا يعزز معنويات الفريق في بداية مشواره',
+                    imageUrl: '03.jpg',
+                    date: '20:20',
+                    author: 'الخميس 19 سبتمبر 2024'
+                }
+            ];
+
+            articles.forEach(article => {
+                const articleHTML = `
+                    <div class="col-lg-6">
+                        <article class="article">
+                          <h2>${article.title}</h2>
+                            <div class="meta">
+                                <span class="date">${article.date}</span> |
+                                <span class="author">${article.author}</span>
+                            </div>
+                            <img src="${article.imageUrl}" alt="${article.title}">
+                            <p>${article.content}</p>
+                         
+                        </article>
+                    </div>
+                `;
+                articlesContainer.innerHTML += articleHTML;
+            });
+        }
+
+        // Call the displayArticles function to load articles on page load
+        displayArticles();
 </script>
 
 
