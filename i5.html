@@ -146,10 +146,21 @@
 
 /* Close button styles */
 .close-btn {
-     color: white;
-            width: 44px;
-            height: 27px;
+    color: white;
+    width: 44px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* محاذاة النص في المنتصف */
+    font-size: 16px; /* حجم الخط للنص */
+    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
+    transition: background-color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
 }
+
+.close-btn:hover {
+    background-color: #444; /* لون خلفية أغمق عند التمرير فوق الزر */
+}
+
 
 /* Show and hide buttons based on menu state */
 .fullscreen-menu.open ~ .navbar .close-btn {
