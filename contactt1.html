@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>    <!-- Bootstrap CSS -->
+    <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="mca.png">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
@@ -18,208 +18,110 @@
             color: #000;
             transition: background-color 0.5s, color 0.5s;
         }
-         .navbar {
+        .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
-            /* Ensures the image covers the entire navbar */
             background-repeat: no-repeat;
-            /* Prevents the image from repeating */
             background-position: center;
-            /* Centers the image in the navbar */
         }
-        
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
         }
-        
-        .navbar-dark .navbar-toggler-icon {
-            color: white;
-            width: 44px;
-            height: 27px;
-        }
-        
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
-            /* Right-align text */
         }
-        
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
-/* Adjust the navbar for the full-screen menu */
-.fullscreen-menu.open ~ .navbar .navbar-toggler {
-    display: none; /* Hide toggle button when menu is open */
-
-}
-
-.search-bar {
-    display: flex;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.search-input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    font-size: 16px;
-}
-
-.search-button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #000; /* اللون الأساسي للزر */
-    color: white;
-    border-radius: 0 5px 5px 0;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-button:hover {
-    background-color: #0056b3; /* تغيير اللون عند التمرير فوق الزر */
-}
-/* Fullscreen Menu */
-.fullscreen-menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    height: calc(100% - 60px);
-    background-color: #fff;
-    z-index: 1001;
-    display: none;
-    overflow-y: auto;
-    transition: transform 0.3s ease-in-out;
-}
-
-.fullscreen-menu.open {
-    display: block;
-}
-
-.fullscreen-menu-content {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 60px);
-    box-sizing: border-box;
-    position: relative;
-}
-
-.fullscreen-menu-content ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    direction: rtl;
-    text-align: right;
-}
-
-.fullscreen-menu-content ul li {
-  margin-bottom: 10px;
-    border-bottom: 1px solid rgba(204, 204, 204, 0.5); /* لون الحدود مع شفافية */
-}
-
-.fullscreen-menu-content ul li a {
-    color: #000;
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    text-align: right;
-}
-
-.fullscreen-menu-content ul li a:hover {
-    color: #000;
-}
-
-
-/* Close button styles */
-.close-btn {
-    color: white;
-    width: 44px;
-    height: 27px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* محاذاة النص في المنتصف */
-    font-size: 16px; /* حجم الخط للنص */
-    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
-    background: transparent; /* إزالة الخلفية */
-    border: none; /* إزالة الحدود إن وجدت */
-    position: relative; /* السماح بتعديل مكان العنصر */
-    top: -16px; /* رفع الزر بمقدار 10 بكسل للأعلى */
-    transition: color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
-}
-
-/* Hover effect */
-.close-btn:hover {
-    color: #444; /* تغيير لون النص عند التمرير فوق الزر */
-}
-
-
-
-
-/* Show and hide buttons based on menu state */
-.fullscreen-menu.open ~ .navbar .close-btn {
-    display: block; /* Show close button when menu is open */
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        height: 45px;
-    }
-    .navbar-content .navbar-brand {
-        font-size: 18px;
-    }
-    .navbar-dark .navbar-nav .nav-link {
-        padding: 8px 10px;
-    }
-    .fullscreen-menu-content ul li {
-        margin-bottom: 5px;
-    }
-    .fullscreen-menu-content ul li a {
-        font-size: 16px;
-    }
-    .close-btn {
-        font-size: 34px; /* Adjust for smaller screens */
-    }
-}
-
-        /* Section Styles */
+        .fullscreen-menu {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100% - 60px);
+            background-color: #fff;
+            z-index: 1001;
+            display: none;
+            overflow-y: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .fullscreen-menu.open {
+            display: block;
+        }
+        .fullscreen-menu-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 60px);
+            box-sizing: border-box;
+            position: relative;
+        }
+        .fullscreen-menu-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            direction: rtl;
+            text-align: right;
+        }
+        .fullscreen-menu-content ul li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+        }
+        .fullscreen-menu-content ul li a {
+            color: #000;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            text-align: right;
+        }
+        .close-btn {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            position: relative;
+            top: -16px;
+            transition: color 0.3s;
+        }
+        .close-btn:hover {
+            color: #444;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                height: 45px;
+            }
+            .navbar-dark .navbar-nav .nav-link {
+                padding: 8px 10px;
+            }
+            .close-btn {
+                font-size: 34px;
+            }
+        }
+        /* About Section Styles */
         .about-section {
             padding: 50px;
             background-color: #fff;
-            text-align: center;
+            text-align: left;
         }
-
         .about-section h2 {
             font-size: 2.5rem;
             color: #000;
             margin-bottom: 30px;
         }
-
-        .about-section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .about-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .about-section ul li {
+        .about-section p, .about-section ul li {
             font-size: 1.2rem;
             line-height: 1.8;
             color: #333;
         }
-
         .btn-primary {
             background-color: #007bff;
             border-color: #007bff;
@@ -229,45 +131,24 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-
         .btn-primary:hover {
             background-color: #0056b3;
-            border-color: #0056b3;
         }
-
-        .btn-primary:focus {
-            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-        }
-footer {
+        footer {
             color: #fff;
             padding: 15px 0;
             text-align: center;
             background-image: url('footr.jpg');
             background-size: contain;
-            /* Resize the image to fit within the footer */
             background-position: center;
             background-repeat: no-repeat;
         }
-        
-        .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-            /* Center text horizontally within .center-container */
-        }
-        .about-section {
-    padding: 50px;
-    background-color: #fff;
-    text-align: left; /* تغيير المحاذاة إلى اليسار */
-}
-
     </style>
 </head>
 
 <body>
     <!-- Header with Navbar -->
-   <header>
+    <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
                 <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
@@ -284,20 +165,21 @@ footer {
                 <input type="text" class="search-input" placeholder="...ابحث">
                 <button class="search-button">بحث</button>
             </div>
-               <ul>
+            <ul>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="first1.html">الفريق الاول</a></li>
                 <li><a href="news1.html">الفريق الرديف</a></li>
                 <li><a href="reserve1.html">الفئات الشبانية</a></li>
                 <li><a href="histoir1.html">الارشيف</a></li>
-                  <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
                 <li><a href="video1.html">الرياضات الاخرى</a></li>
                 <li><a href="live1.html">نتائج المباريات</a></li>
                 <li><a href="contac1.html">تواصل معنا</a></li>
-                 <li><a href="contactt1.html">من نحن؟</a></li>
+                <li><a href="contactt1.html">من نحن؟</a></li>
             </ul>
         </div>
     </div>
+
     <!-- About Section -->
     <section class="about-section">
         <div class="container">
@@ -326,7 +208,7 @@ footer {
         </div>
     </section>
 
- <section class="image-before-icons">
+    <section class="image-before-icons">
         <div class="container">
             <div class="row">
                 <div class="col text-center">
@@ -334,109 +216,25 @@ footer {
                 </div>
             </div>
         </div>
-    </section><br>
+    </section>
 
-  <footer class="text-center py-4">
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-<!-- Dark Mode Toggle Script -->
-<script>
-    // Open fullscreen menu
-document.querySelector('.navbar-toggler').addEventListener('click', function() {
-    document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
-    document.querySelector('.close-btn').style.display = 'block'; // Show close button
-    document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
-});
+    <footer class="text-center py-4">
+        <!-- Bootstrap JS and dependencies -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+            const fullscreenMenu = document.getElementById('fullscreenMenu');
+            const closeMenuBtn = document.getElementById('closeMenuBtn');
 
-// Close fullscreen menu
-document.getElementById('closeMenuBtn').addEventListener('click', function() {
-    document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
-    document.querySelector('.close-btn').style.display = 'none'; // Hide close button
-    document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
-});
+            closeMenuBtn.addEventListener('click', () => {
+                fullscreenMenu.classList.remove('open');
+            });
 
-// Ensure that the navbar-toggler button is displayed when the menu is closed
-function updateNavbarButtons() {
-    const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
-    document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
-    document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
-}
-
-// Update navbar buttons visibility on page load and resize
-window.addEventListener('load', updateNavbarButtons);
-window.addEventListener('resize', updateNavbarButtons);
-
-   // Article carousel functionality
-
-   function displayArticles() {
-    const articlesContainer = document.getElementById('articlesContainer');
-    const articles = [
-         {
-        title: 'مباراة الإياب بين العميد و المنستيري',
-                    content: 'تتجه أنظار عشاق كرة القدم إلى مباراة الإياب المنتظرة بين مولودية الجزائر و الإتحاد الرياضي المنستيري، والتي تُعد لقاء الحسم في إطار المسابقات القارية<br><br> تأتي هذه المباراة بعد لقاء الذهاب الذي شهد فوز الإتحاد الرياضي المنستيري بـ𝟭-𝟬 على أرضه، مما يزيد من التحدي الذي يواجهه الفريق الجزائري في لقاء العودة<br><br> المباراة ستقام في ملعب الشهيد علي عمار المدعو "علي لابوانت" بالدويرة" مساء يوم السبت بداية من الساعة 𝟭𝟵:𝟬𝟬',
-                    imageUrl: 'll.jpg',
-                    date: '20:30',
-                    author: 'الثلاثاء 17 سبتمبر 2024 '
-    },
-           {
-         title: 'ديلور يطلق أولى تصريحاته',
-                    content: 'الوافد الجديد لصفوف مولودية الجزائر أندي ديلور عبر عن حماسه و فخره بالإنضمام إلى النادي العريق من خلال منشور على حسابه الرسمي<br><br> أشار ديلور إلى أنه سعيد للغاية بإرتداء ألوان مولودية الجزائر و تمثيل المدينة و الجزائر<br><br> و قد أشاد بالاهتمام الصادق من النادي و الطموح الذي دفعه لإتخاذ هذه الخطوة، معبّرًا عن شكره لرئيس النادي الحاج رجم على إحترافيته و شغفه، و كذلك للمدرب أمير بوميل على إهتمامه<br><br> تعهد ديلور بوضع كل قوته في خدمة النادي و الجزائر، واعدًا جماهير الفريق بالإلتقاء سريعًا على أرضية الملعب',
-                    imageUrl: 'aa.jpg',
-                    date: '22:20',
-                    author: 'الأحد 15 سبتمبر 2024 '
-    },
-           {
-       title: 'تصريحات رئيس الفريق حاج رجم',
-                    content: 'في تصريحاته الأخيرة، أكد رئيس مجلس إدارة مولودية الجزائر، محمد حكيم حاج رجم، على المكانة الكبيرة التي يحظى بها النادي، مشيرًا إلى أن الإنتدابات التي قام بها النادي خلال فترة الإنتقالات الصيفية كانت مدروسة بعناية بالتعاون مع المدرب<br><br> وذكر أن الفريق ركز على إختيار اللاعبين الأهم الذين يحتاجهم النادي لتقوية صفوفه وفق إحتياجات المدرب والمجموعة<br><br> كما أعرب حاج رجم عن رضاه عن فترة الإنتقالات، معتبرًا أن النادي قد أجرى ميركاتو يتماشى مع تطلعات الجماهير<br><br>و فيما يتعلق بقضية الدولي الجزائري أندي ديلور، أكد أن النادي توصل إلى حل ودي مع نادي أم صلال دون أي مشاكل',
-                    imageUrl: 'bb.jpg',
-                    date: '11:30',
-                    author: 'لأربعاء 11 سبتمبر 2024'
-    },
-             {
-             title: 'سوناطراك تتعاقد مع شركة صيانة',
-                    content: 'مجمع سوناطراك قد أبرم عقدًا مع شركة أجنبية متخصصة في تسيير الملاعب، و التي ستتولى إدارة ملعب الشهيد علي عمار، المدعو " علي لابوانت " في الدويرة<br><br> يهدف هذا التعاقد إلى تحسين إدارة الملعب، مما قد يشمل تحسين الصيانة، و تطوير المرافق، و تعزيز تجربة المشجعين خلال المباريات و الأحداث الرياضية',
-                    imageUrl: 'ff.jpg',
-                    date: '17:30',
-                    author: 'الثلاثاء 3 سبتمبر 2024'
-            },
-         
-    {
-       title: 'بينارة يغادر رديف مولودية الجزائر',
-                    content: 'اللاعب الشاب عماد الدين بينارة، الذي تألق سابقًا في صفوف رديف مولودية الجزائر، إنتقل رسميًا إلى نادي شبيبة الأبيار<br><br> حيث يعتبر هذا الإنتقال خطوة مهمة في مسيرة اللاعب الطموحة، حيث يسعى للحصول على فرصة أكبر لإبراز موهبته و تطوير أدائه على المستوى التنافسي<br><br> و بينما أمضى سنوات في تكوينه مع الفئات الشبانية لمولودية الجزائر، يأمل بينارة أن يكون إضافة قوية لفريق شبيبة الأبيار',
-                    imageUrl: 'binar.jpg',
-                    date: '13:30',
-                    author: 'الثلاثاء 20 اوت 2024' 
-    }
-];
-
-
-    articles.forEach(article => {
-        const articleHTML = `
-            <div class="col-lg-6">
-                <article class="article">
-                  <h2>${article.title}</h2>
-                    <div class="meta">
-                        <span class="date">${article.date}</span> |
-                        <span class="author">${article.author}</span>
-                    </div>
-                     <img src="${article.imageUrl}" alt="${article.title}">
-                    <p>${article.content}</p>
-                </article>
-            </div>
-        `;
-        articlesContainer.innerHTML += articleHTML;
-    });
-}
-
-// Appeler la fonction displayArticles pour charger les articles au chargement de la page
-displayArticles();
-
-</script>
-
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+            document.querySelector('.navbar-toggler').addEventListener('click', () => {
+                fullscreenMenu.classList.toggle('open');
+            });
+        </script>
+    </footer>
 </body>
 </html>
