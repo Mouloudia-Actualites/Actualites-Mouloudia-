@@ -4,124 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="mca.png">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Inline Styles -->
     <style>
+     /* Global styles */
         body {
-            font-family: 'Cairo', Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #000;
-            transition: background-color 0.5s, color 0.5s;
-            position: relative;
-        }
-
-        .navbar {
+    font-family: 'Cairo', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #000;
+    transition: background-color 0.5s, color 0.5s;
+    position: relative;
+}
+/* Navbar styles */
+/* Navbar styles */
+    .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
+            /* Ensures the image covers the entire navbar */
             background-repeat: no-repeat;
+            /* Prevents the image from repeating */
             background-position: center;
+            /* Centers the image in the navbar */
         }
-
+        
         .navbar-dark .navbar-toggler {
             border: none;
             color: white;
         }
-
+        
+        .navbar-dark .navbar-toggler-icon {
+            color: white;
+            width: 44px;
+            height: 27px;
+        }
+        
         .navbar-dark .navbar-nav .nav-link {
             color: #000;
             padding: 10px 15px;
             transition: background-color 0.3s;
             text-align: right;
+            /* Right-align text */
         }
-
+        
         .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
+/* Adjust the navbar for the full-screen menu */
+.fullscreen-menu.open ~ .navbar .navbar-toggler {
+    display: none; /* Hide toggle button when menu is open */
 
-        .fullscreen-menu {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            width: 100%;
-            height: calc(100% - 60px);
-            background-color: #fff;
-            z-index: 1001;
-            display: none;
-            overflow-y: auto;
-            transition: transform 0.3s ease-in-out;
-        }
+}
 
-        .fullscreen-menu.open {
-            display: block;
-        }
+.search-bar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
 
-        .fullscreen-menu-content {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            height: calc(100% - 60px);
-            box-sizing: border-box;
-        }
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
 
-        .fullscreen-menu-content ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            direction: rtl;
-            text-align: right;
-        }
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000; /* اللون الأساسي للزر */
+    color: white;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-        .fullscreen-menu-content ul li {
-            margin-bottom: 10px;
-            border-bottom: 1px solid rgba(204, 204, 204, 0.5);
-        }
+.search-button:hover {
+    background-color: #0056b3; /* تغيير اللون عند التمرير فوق الزر */
+}
+/* Fullscreen Menu */
+.fullscreen-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #fff;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
 
-        .fullscreen-menu-content ul li a {
-            color: #000;
-            font-size: 18px;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            text-align: right;
-        }
+.fullscreen-menu.open {
+    display: block;
+}
 
-        .fullscreen-menu-content ul li a:hover {
-            color: #000;
-        }
+.fullscreen-menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    box-sizing: border-box;
+    position: relative;
+}
 
-        .close-btn {
-            color: white;
-            width: 44px;
-            height: 27px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.fullscreen-menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+}
 
-        .close-btn:hover {
-            background-color: #444;
-        }
+.fullscreen-menu-content ul li {
+  margin-bottom: 10px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5); /* لون الحدود مع شفافية */
+}
 
-        @media (max-width: 768px) {
-            .navbar {
-                height: 45px;
-            }
-            .fullscreen-menu-content ul li {
-                margin-bottom: 5px;
-            }
-            .fullscreen-menu-content ul li a {
-                font-size: 16px;
-            }
-            .close-btn {
-                font-size: 34px;
-            }
-        }
+.fullscreen-menu-content ul li a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li a:hover {
+    color: #000;
+}
+
+/* Close button styles */
+.close-btn {
+    color: white;
+    width: 44px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* محاذاة النص في المنتصف */
+    font-size: 16px; /* حجم الخط للنص */
+    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
+    transition: background-color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
+}
+
+.close-btn:hover {
+    background-color: #444; /* لون خلفية أغمق عند التمرير فوق الزر */
+}
+
+
+/* Show and hide buttons based on menu state */
+.fullscreen-menu.open ~ .navbar .close-btn {
+    display: block; /* Show close button when menu is open */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 45px;
+    }
+    .navbar-content .navbar-brand {
+        font-size: 18px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 10px;
+    }
+    .fullscreen-menu-content ul li {
+        margin-bottom: 5px;
+    }
+    .fullscreen-menu-content ul li a {
+        font-size: 16px;
+    }
+    .close-btn {
+        font-size: 34px; /* Adjust for smaller screens */
+    }
+}
+
+
     </style>
 </head>
 
@@ -148,7 +215,7 @@
                 <li><a href="news1.html">أخبار</a></li>
                 <li><a href="first1.html">الفريق الأول</a></li>
                 <li><a href="reserve1.html">فريق الرديف</a></li>
-                <li><a href="idr1.html">الطاقم الفني</a></li>
+                <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
                 <li><a href="histoir1.html">تاريخ مولودية الجزائر</a></li>
                 <li><a href="live1.html">نتائج مباشرة</a></li>
                 <li><a href="video1.html">أشرطة فيديو</a></li>
@@ -157,30 +224,41 @@
         </div>
     </div>
 
+    <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.querySelector('.navbar-toggler').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').classList.add('open');
-            document.querySelector('.close-btn').style.display = 'block';
-            document.querySelector('.navbar-toggler').style.display = 'none';
-        });
 
-        document.getElementById('closeMenuBtn').addEventListener('click', function() {
-            document.getElementById('fullscreenMenu').classList.remove('open');
-            document.querySelector('.close-btn').style.display = 'none';
-            document.querySelector('.navbar-toggler').style.display = 'block';
-        });
+    <!-- Custom JS -->
+  <!-- Custom JS -->
+<script>
+    // Open fullscreen menu
+    document.querySelector('.navbar-toggler').addEventListener('click', function() {
+        document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+        document.querySelector('.close-btn').style.display = 'block'; // Show close button
+        document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+    });
 
-        function updateNavbarButtons() {
-            const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
-            document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
-            document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
-        }
+    // Close fullscreen menu
+    document.getElementById('closeMenuBtn').addEventListener('click', function() {
+        document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+        document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+        document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+    });
 
-        window.addEventListener('load', updateNavbarButtons);
-        window.addEventListener('resize', updateNavbarButtons);
-    </script>
+    // Ensure that the navbar-toggler button is displayed when the menu is closed
+    function updateNavbarButtons() {
+        const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+        document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+        document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+    }
+
+    // Update navbar buttons visibility on page load and resize
+    window.addEventListener('load', updateNavbarButtons);
+    window.addEventListener('resize', updateNavbarButtons);
+</script>
+
+
 </body>
+
 </html>
