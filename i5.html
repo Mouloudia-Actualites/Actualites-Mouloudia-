@@ -154,12 +154,16 @@
     justify-content: center; /* محاذاة النص في المنتصف */
     font-size: 16px; /* حجم الخط للنص */
     cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
-    transition: background-color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
+    background: transparent; /* إزالة الخلفية */
+    border: none; /* إزالة الحدود إن وجدت */
+    transition: color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
 }
 
+/* Hover effect */
 .close-btn:hover {
-    background-color: #444; /* لون خلفية أغمق عند التمرير فوق الزر */
+    color: #444; /* تغيير لون النص عند التمرير فوق الزر */
 }
+
 
 
 /* Show and hide buttons based on menu state */
