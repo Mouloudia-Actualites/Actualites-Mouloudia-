@@ -215,16 +215,17 @@
         body[dir="rtl"] {
             font-family: 'Cairo', Arial, sans-serif;
         }
-  .carousel-container {
+.carousel-container {
     display: flex;
     overflow-x: auto; /* يسمح بالتمرير الأفقي */
     scroll-snap-type: x mandatory; /* تمكين تقنية التمرير السلس */
     white-space: nowrap; /* جعل العناصر في نفس السطر */
-}      
- .carousel-slide {
+}
+
+.carousel-slide {
     flex: 0 0 auto;
     scroll-snap-align: center;
-    display: flex;
+    display: inline-block; /* لجعل كل صورة في سطر واحد */
     justify-content: center;
     align-items: center;
     padding: 0 20px; /* إضافة مسافة من اليمين واليسار */
@@ -251,6 +252,7 @@
         object-fit: contain;
     }
 }
+
 
         /* Dark Mode Styles */
         
