@@ -240,6 +240,13 @@
     border-radius: 0; /* إزالة الزوايا المستديرة */
 }
 
+/* استجابة للهواتف */
+@media (max-width: 600px) {
+    .carousel-slide img {
+        height: auto; /* لضبط الارتفاع حسب نسبة العرض */
+        object-fit: contain; /* لضمان عرض الصورة بالكامل بدون اقتطاع */
+    }
+}
 
 
         /* Dark Mode Styles */
