@@ -216,43 +216,36 @@
             font-family: 'Cairo', Arial, sans-serif;
         }
         
- .carousel-container {
-    display: flex;
-    overflow-x: auto; /* يسمح بالتمرير الأفقي */
-    scroll-snap-type: x mandatory; /* تمكين تقنية التمرير السلس */
-}
-
-.carousel-slide {
+ .carousel-slide {
     flex: 0 0 auto;
     scroll-snap-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 20px; /* إضافة مسافة من اليمين واليسار */
 }
 
-/* لتحديد الحجم الأقصى للصورة على الشاشات الكبيرة */
 .carousel-slide img {
     width: 100%;
-    max-width: 1000px; /* تحديد العرض الأقصى للصورة على الشاشات الكبيرة */
+    max-width: 1000px;
     height: 100%;
-    max-height: 600px; /* تحديد الارتفاع الأقصى */
-    object-fit: cover; /* لجعل الصورة تغطي المساحة بالكامل */
+    max-height: 600px;
+    object-fit: cover;
     margin: 0;
     padding: 0;
-    border-radius: 0; /* إزالة الزوايا المستديرة */
+    border-radius: 0;
 }
 
 /* استجابة للهواتف */
 @media (max-width: 600px) {
     .carousel-slide img {
         width: 100%;
-        max-width: 100%; /* جعل العرض 100% بالنسبة للشاشة الصغيرة */
-        height: auto; /* لضبط الارتفاع حسب نسبة العرض */
-        max-height: 400px; /* تحديد الارتفاع الأقصى على الهواتف */
-        object-fit: contain; /* لضمان عرض الصورة بالكامل بدون اقتطاع */
+        max-width: 100%;
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
     }
 }
-
 
         /* Dark Mode Styles */
         
