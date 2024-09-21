@@ -159,36 +159,95 @@
     color: #444; /* تغيير لون النص عند التمرير فوق الزر */
 }
 
-        .about-section {
-            padding: 50px;
-            background-color: #fff;
-            text-align: right;
+     .article {
+            margin-bottom: 40px;
+            text-align: right; /* Align text to right */
         }
-        .about-section h2 {
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h2 {
             font-size: 2.5rem;
-            color: #000;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            text-align: right; /* Align heading to right */
         }
-        .about-section p, .about-section ul li {
-            font-size: 1.2rem;
+
+        .article p {
+            font-size: 1.1rem;
             line-height: 1.8;
-            color: #333;
+            /* Text alignment to right is handled automatically with dir="rtl" */
         }
+
         .btn-primary {
             background-color: #007bff;
             border-color: #007bff;
             color: #fff;
+            font-size: 1.1rem;
             padding: 10px 20px;
             border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        footer {
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
+
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
+        }
+
+        h2, p, a {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
+             footer {
             color: #fff;
             padding: 15px 0;
             text-align: center;
             background-image: url('footr.jpg');
             background-size: contain;
+            /* Resize the image to fit within the footer */
             background-position: center;
             background-repeat: no-repeat;
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
         }
     </style>
 </head>
@@ -227,24 +286,19 @@
         </div>
     </div>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <h2>من نحن؟</h2>
-            <p>
-                نحن في مولودية أكتياليتي نمثل مشجعي نادي مولودية الجزائر العظيم، النادي الذي يحمل تاريخًا عريقًا.
-            </p>
-            <p>
-                نطمح إلى أن نكون المصدر الأول لكل ما يخص نادي مولودية الجزائر.
-            </p>
-            <h4>ما نقدمه في مولودية أكتياليتي؟</h4>
-            <ul>
-                <li>ننقل لكم آخر الأخبار حول الفريق.</li>
-                <li>نعرض رؤى تحليلية لأداء الفريق.</li>
-            </ul>
+<section class="news-section">
+    <div class="container">
+        <div class="row" id="articlesContainer">
+            <!-- Articles will be dynamically inserted here -->
         </div>
-    </section>
-
+    </div>
+<section class="news-section">
+    <div class="container">
+        <div class="row" id="articlesContainer">
+            <!-- Articles will be dynamically inserted here -->
+        </div>
+    </div>
+</section>
     <footer class="text-center py-4">
         
 
@@ -253,16 +307,71 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        const fullscreenMenu = document.getElementById('fullscreenMenu');
-        const closeMenuBtn = document.getElementById('closeMenuBtn');
+      // Open fullscreen menu
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+    document.querySelector('.close-btn').style.display = 'block'; // Show close button
+    document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+});
 
-        closeMenuBtn.addEventListener('click', () => {
-            fullscreenMenu.classList.remove('open');
-        });
+// Close fullscreen menu
+document.getElementById('closeMenuBtn').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+    document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+    document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+});
 
-        document.querySelector('.navbar-toggler').addEventListener('click', () => {
-            fullscreenMenu.classList.toggle('open');
-        });
+// Ensure that the navbar-toggler button is displayed when the menu is closed
+function updateNavbarButtons() {
+    const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+    document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+    document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+}
+
+// Update navbar buttons visibility on page load and resize
+window.addEventListener('load', updateNavbarButtons);
+window.addEventListener('resize', updateNavbarButtons);
+
+   // Article carousel functionality
+
+   function displayArticles() {
+    const articlesContainer = document.getElementById('articlesContainer');
+    const articles = [
+         {
+        title: 'من نحن',
+                    content: 'نحن في مولودية أكتياليتي نمثل مشجعي نادي مولودية الجزائر العظيم، النادي الذي يحمل تاريخًا عريقًا ومكانة مميزة في قلوب الجزائريين. تأسست منصتنا لتكون ملتقى يجمع كل أنصار الفريق العريق، و يسلط الضوء على آخر المستجدات و التطورات التي تهم عشاق اللونين الأخضر و الأحمر<br><br> نطمح إلى أن نكون المصدر الأول لكل ما يخص نادي مولودية الجزائر، من أخبار، تحليلات، آراء و مقابلات حصرية، لنُبقي جماهيرنا دائمًا على إطلاع بكل ما يجري داخل و خارج الملعب<br><br>مولودية أكتياليتي ليست مجرد منصة إخبارية، بل هي ساحة تجمع مشجعي النادي على إختلاف خلفياتهم و آرائهم. هدفنا هو توفير مساحة للتفاعل البناء بين المشجعين، و تعزيز روح الإنتماء و الولاء لناديهم، بعيدًا عن الخلافات أو التجاذبات',
+                    
+    },
+           {
+         title: 'ما نقدمه في مولودية أكتياليتي؟',
+                    content: 'ننقل لكم آخر الأخبار حول الفريق، الصفقات، والإداريين كما نعرض لكم رؤى تحليلية لأداء الفريق واللاعبين في كل مباراة بالإضافة إلى أننا نفتح المجال أمام جمهورنا للتعبير عن آرائهم ومشاركة أفكارهم نهتم بإجراء مقابلات مع لاعبين، مدربين، وأعضاء من إدارة النادي',
+                    
+    },
+         
+    {
+       title: 'لماذا نحن؟ ',
+                    content: 'لأننا نهتم بأن تكون المعلومة دقيقة و موثوقة. لأننا جزء من هذا المجتمع الكبير الذي يدعم مولودية الجزائر',
+                  
+    }
+];
+
+
+    articles.forEach(article => {
+        const articleHTML = `
+            <div class="col-lg-6">
+                <article class="article">
+                  <h2>${article.title}</h2>
+                    <p>${article.content}</p>
+                </article>
+            </div>
+        `;
+        articlesContainer.innerHTML += articleHTML;
+    });
+}
+
+// Appeler la fonction displayArticles pour charger les articles au chargement de la page
+displayArticles();
+
     </script>
 </body>
 </html>
