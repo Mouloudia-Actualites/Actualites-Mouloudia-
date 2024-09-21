@@ -215,7 +215,12 @@
         body[dir="rtl"] {
             font-family: 'Cairo', Arial, sans-serif;
         }
-        
+  .carousel-container {
+    display: flex;
+    overflow-x: auto; /* يسمح بالتمرير الأفقي */
+    scroll-snap-type: x mandatory; /* تمكين تقنية التمرير السلس */
+    white-space: nowrap; /* جعل العناصر في نفس السطر */
+}      
  .carousel-slide {
     flex: 0 0 auto;
     scroll-snap-align: center;
