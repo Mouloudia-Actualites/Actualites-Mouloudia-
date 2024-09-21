@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
     
     <style>
-        /* Global styles */
+      
+  /* Global styles */
         body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
@@ -247,13 +248,25 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
             text-align: right; /* Align heading to right */
+            color:black
         }
 
         .article p {
             font-size: 1.1rem;
             line-height: 1.8;
             /* Text alignment to right is handled automatically with dir="rtl" */
+            color:black
+                 text-align: right; /* Align heading to right */
         }
+       h2 a {
+    color: black;
+    text-decoration: none; /* اختياري لإزالة التسطير تحت الروابط */
+}
+
+h2 a:hover {
+    color: black;
+}
+
 
         .btn-primary {
             background-color: #007bff;
@@ -302,7 +315,7 @@
         h2, p, a {
             font-family: 'Cairo', Arial, sans-serif;
         }
-             footer {
+       footer {
             color: #fff;
             padding: 15px 0;
             text-align: center;
@@ -320,7 +333,8 @@
             height: 100%;
             /* Center text horizontally within .center-container */
         }
-        }
+      
+
     </style>
 </head>
 
@@ -360,14 +374,72 @@
     </div>
 <section class="news-section">
     <div class="container">
-        <div class="row" id="articlesContainer">
-            <!-- Articles will be dynamically inserted here -->
-        </div>
-    </div>
-<section class="news-section">
-    <div class="container">
-        <div class="row" id="articlesContainer">
-            <!-- Articles will be dynamically inserted here -->
+        <div class="row">
+            <!-- Article 1 -->
+            <div class="col-md-3">
+                <div class="article">
+                         <!-- Article 2 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="a1.html">دراوي يتلقى إصابة خفيفة</a></h2>
+                    <!-- Article Image -->
+                    <img src="02.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+          <p>السبت 21 سبتمبر 2024- 13:55</p>
+                </div>
+            </div>
+
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="A.html">مباراة الإياب بين العميد و المنستيري</a></h2>
+                    <!-- Article Image -->
+                    <img src="ll.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>االثلاثاء 17 سبتمبر 2024 -20:30</p>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i2.html">ديلور يطلق أولى تصريحاته</a></h2>
+                    <!-- Article Image -->
+                    <img src="aa.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>الاحد 15 سبتمبر 2024-20:20</p>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i3.html">تصريحات رئيس الفريق حاج رجم</a></h2>
+                    <!-- Article Image -->
+                    <img src="bb.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>الاربعاء 11 سبتمبر 2024-11:30</p>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i4.html">سوناطراك تتعاقد مع شركة صيانة</a></h2>
+
+                    <!-- Article Image -->
+                    <img src="ff.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>الثلاثاء 3 سبتمبر 2024-17:30</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
