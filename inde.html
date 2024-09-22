@@ -219,42 +219,25 @@
     display: flex;
     overflow-x: auto; /* يسمح بالتمرير الأفقي */
     scroll-snap-type: x mandatory; /* تمكين تقنية التمرير السلس */
-    white-space: nowrap; /* جعل العناصر في نفس السطر */
-    padding: 0 50px; /* إضافة مسافة خارجية على الجوانب لرؤية الصورة كاملة */
-    scroll-padding: 0 50px; /* إضافة مسافة تمرير لضمان ظهور الصورة بالكامل */
-    background-color: white; /* خلفية بيضاء لحاوية الصور */
 }
 
 .carousel-slide {
     flex: 0 0 auto;
     scroll-snap-align: center;
-    display: inline-block; /* لجعل كل صورة في سطر واحد */
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 20px; /* إضافة مسافة من اليمين واليسار */
-    background-color: white; /* خلفية بيضاء لكل صورة */
+    width: 100%; /* عرض الصورة يملأ الشاشة */
+    height: 400px; /* ارتفاع ثابت للصورة */
 }
 
 .carousel-slide img {
     width: 100%;
-    max-width: 1000px;
     height: 100%;
-    max-height: 600px;
-    object-fit: cover;
+    object-fit: cover; /* لجعل الصورة تغطي المساحة بالكامل */
     margin: 0;
     padding: 0;
-    border-radius: 0;
-}
-
-/* استجابة للهواتف */
-@media (max-width: 600px) {
-    .carousel-slide img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        max-height: 400px;
-        object-fit: contain;
-    }
+    border-radius: 0; /* إزالة الزوايا المستديرة */
 }
 
 
