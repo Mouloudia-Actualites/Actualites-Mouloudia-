@@ -1,27 +1,38 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mouloudia Actualités - فيديوهات</title>
+    <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="mca.png">
     <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
-
+    
     <style>
-        /* Global styles */
+      
+  /* Global styles */
         body {
             font-family: 'Cairo', Arial, sans-serif;
             background-color: #f8f9fa;
             color: #000;
             transition: background-color 0.5s, color 0.5s;
-            position: relative; /* Ensure body has relative position for absolute positioning */
+        }
+ 
+        
+        .hero {
+            background-color:white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
         }
 
-      
       .navbar {
             background-image: url('mama.jpg');
             background-size: cover;
@@ -193,51 +204,94 @@
     }
 }
     
-        .hero {
-            background-color:white;
-            background-size: cover;
-            background-position: center;
-            color: #000;
+        
+        body[dir="rtl"] {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
+
+        /* Section for Social Icons */
+        .social-icons {
             text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 24px; /* Icon size */
+            margin: 0 10px; /* Space between icons */
+            color: #343a40; /* Default icon color */
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #dc3545; /* Icon color on hover */
+        }
+
+      
+
+        .news-section {
             padding: 80px 0;
         }
-         
-     
-        
-        .videos-section {
-            padding: 80px 0;
-        }
-        
-        .video-thumbnail {
+
+        .article {
             margin-bottom: 40px;
-            background-color: #fff;
-            padding: 20px;
+            text-align: right; /* Align text to right */
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
         }
-        
-        .video-thumbnail h2 {
-            font-size: 2rem;
+
+        .article h2 {
+            font-size: 2.5rem;
             margin-bottom: 10px;
-            text-align: right; /* Aligner le texte à droite */
+            text-align: right; /* Align heading to right */
+            color:black
         }
-        
-        .video-thumbnail .video-preview {
-            /* Style pour la miniature de la vidéo */
-            width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        
-        .video-thumbnail .video-description {
+
+        .article p {
             font-size: 1.1rem;
-            text-align: right; /* Aligner le texte à droite */
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+            color:black
+                 text-align: right; /* Align heading to right */
         }
-        
-        /* Styles pour le mode sombre */
-        body.dark-mode {
-            background-color: #343a40;
+       h2 a {
+    color: black;
+    text-decoration: none; /* اختياري لإزالة التسطير تحت الروابط */
+}
+
+h2 a:hover {
+    color: black;
+}
+
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
             color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
         }
 
         body.dark-mode .navbar {
@@ -245,29 +299,22 @@
         }
 
         body.dark-mode .navbar-dark .navbar-nav .nav-link {
-            color: #fff;
+            color: #fff; /* Red text */
         }
 
         body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        body.dark-mode .video-thumbnail {
-            background-color: #424242;
-            border-color: #757575;
-            color: #fff;
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
         }
 
-        body.dark-mode .list-unstyled {
-            color: #000; /* Couleur noire */
-        }
-
-        body.dark-mode .video-thumbnail .video-description {
-            color: #fff; /* Couleur blanche */
-        }
-
-        body.dark-mode .video-thumbnail h2 {
-            color: #fff;
+        h2, p, a {
+            font-family: 'Cairo', Arial, sans-serif;
         }
        footer {
             color: #fff;
@@ -287,12 +334,14 @@
             height: 100%;
             /* Center text horizontally within .center-container */
         }
-        
+      
+
     </style>
 </head>
-<body>
 
-  <!-- Header with Navbar -->
+<body>
+<!-- Header with Navbar -->
+    <!-- Header with Navbar -->
    <header>
         <nav class="navbar navbar-expand-md navbar-dark">
             <div class="container">
@@ -310,7 +359,7 @@
                 <input type="text" class="search-input" placeholder="...ابحث">
                 <button class="search-button">بحث</button>
             </div>
-          <ul>
+              <ul>
                 <li><a href="inde.html">الصفحة الرئيسية</a></li>
                 <li><a href="first1.html">الفريق الاول</a></li>
                 <li><a href="news1.html">الفريق الرديف</a></li>
@@ -324,51 +373,76 @@
             </ul>
         </div>
     </div>
-    <section class="videos-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="video-thumbnail">
-                        <h2><a href=""></a></h2>
-                        <a href="">
-                            <img src="" alt="" class="video-preview">
-                        </a>
-                        <p class="video-description"> </p>
-                        <!-- Ajouter ici le lecteur vidéo ou le lien -->
-                    </div>
-                    <div class="video-thumbnail">
-                        <h2><a href=""></a></h2>
-                        <a href="">
-                            <img src="" alt="" class="video-preview">
-                        </a>
-                        <!-- Ajouter ici le lecteur vidéo ou le lien -->
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="sidebar">
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="image-before-icons">
-        <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <img src="ssiiitt.jpg" class="img-fluid" alt="Image Description" onclick="openImage('ssiiitt.jpg')"><br>
-                </div>
-            </div>
-        </div>
-    </section><br>
-    <footer class="text-center py-4">
-      
+<section class="news-section">
+    <div class="container">
+        <div class="row">
+            <!-- Article 1 -->
+            <div class="col-md-3">
+                <div class="article">
+                         <!-- Article 2 -->
+            <div class="col-md-3">
+                <div class="article">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-           // Open fullscreen menu
+                       <!-- Article Title (Clickable) -->
+                    <h2><a href="i9.html">العداء قواند يلتحق بالمولودية</a></h2>
+                    <!-- Article Image -->
+                    <img src="oo.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p></p>
+                </div>
+            </div>
+                 <!-- Article 2 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i10.html">رباعي كرة اليد يعود للعميد</a></h2>
+                    <!-- Article Image -->
+                    <img src="pp.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p></p>
+                </div>
+            </div>
+                <!-- Article 2 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i11.html"></a>تعزية</h2>
+                    <!-- Article Image -->
+                    <img src="qq.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p></p>
+                </div>
+            </div>
+                
+            <!-- Article 4 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i12.html">ملعب الدويرة يدشن رسميًا</a></h2>
+
+                    <!-- Article Image -->
+                    <img src="rr.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+  <footer class="text-center py-4">
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+<!-- Dark Mode Toggle Script -->
+<script>
+    // Open fullscreen menu
 document.querySelector('.navbar-toggler').addEventListener('click', function() {
     document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
     document.querySelector('.close-btn').style.display = 'block'; // Show close button
@@ -394,6 +468,11 @@ window.addEventListener('load', updateNavbarButtons);
 window.addEventListener('resize', updateNavbarButtons);
 
    // Article carousel functionality
-    </script>
+
+</script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
 </body>
 </html>
