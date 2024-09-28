@@ -1,1 +1,517 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouloudia Actualités - أخبار مولودية الجزائر</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="mca.png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    
+    <style>
+      
+  /* Global styles */
+        body {
+            font-family: 'Cairo', Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #000;
+            transition: background-color 0.5s, color 0.5s;
+        }
+ 
+        
+        .hero {
+            background-color:white;
+            background-size: cover;
+            background-position: center;
+            color: #000;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+      .navbar {
+            background-image: url('mama.jpg');
+            background-size: cover;
+            /* Ensures the image covers the entire navbar */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            background-position: center;
+            /* Centers the image in the navbar */
+        }
+        
+        .navbar-dark .navbar-toggler {
+            border: none;
+            color: white;
+        }
+        
+        .navbar-dark .navbar-toggler-icon {
+            color: white;
+            width: 44px;
+            height: 27px;
+        }
+        
+        .navbar-dark .navbar-nav .nav-link {
+            color: #000;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+            text-align: right;
+            /* Right-align text */
+        }
+        
+        .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+/* Adjust the navbar for the full-screen menu */
+.fullscreen-menu.open ~ .navbar .navbar-toggler {
+    display: none; /* Hide toggle button when menu is open */
+
+}
+
+.search-bar {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000; /* اللون الأساسي للزر */
+    color: white;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* تغيير اللون عند التمرير فوق الزر */
+}
+/* Fullscreen Menu */
+.fullscreen-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: #fff;
+    z-index: 1001;
+    display: none;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.fullscreen-menu.open {
+    display: block;
+}
+
+.fullscreen-menu-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.fullscreen-menu-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li {
+  margin-bottom: 10px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.5); /* لون الحدود مع شفافية */
+}
+
+.fullscreen-menu-content ul li a {
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    text-align: right;
+}
+
+.fullscreen-menu-content ul li a:hover {
+    color: #000;
+}
+
+
+/* Close button styles */
+.close-btn {
+    color: white;
+    width: 44px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* محاذاة النص في المنتصف */
+    font-size: 16px; /* حجم الخط للنص */
+    cursor: pointer; /* تغيير المؤشر عند التمرير فوق الزر */
+    background: transparent; /* إزالة الخلفية */
+    border: none; /* إزالة الحدود إن وجدت */
+    position: relative; /* السماح بتعديل مكان العنصر */
+    top: -16px; /* رفع الزر بمقدار 10 بكسل للأعلى */
+    transition: color 0.3s; /* تأثير التغيير عند التمرير فوق الزر */
+}
+
+/* Hover effect */
+.close-btn:hover {
+    color: #444; /* تغيير لون النص عند التمرير فوق الزر */
+}
+
+
+
+
+/* Show and hide buttons based on menu state */
+.fullscreen-menu.open ~ .navbar .close-btn {
+    display: block; /* Show close button when menu is open */
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 45px;
+    }
+    .navbar-content .navbar-brand {
+        font-size: 18px;
+    }
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 8px 10px;
+    }
+    .fullscreen-menu-content ul li {
+        margin-bottom: 5px;
+    }
+    .fullscreen-menu-content ul li a {
+        font-size: 16px;
+    }
+    .close-btn {
+        font-size: 34px; /* Adjust for smaller screens */
+    }
+}
+    
+        
+        body[dir="rtl"] {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
+
+        /* Section for Social Icons */
+        .social-icons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 24px; /* Icon size */
+            margin: 0 10px; /* Space between icons */
+            color: #343a40; /* Default icon color */
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #dc3545; /* Icon color on hover */
+        }
+
+      
+
+        .news-section {
+            padding: 80px 0;
+        }
+
+        .article {
+            margin-bottom: 40px;
+            text-align: right; /* Align text to right */
+        }
+
+        .article img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: right; /* Align heading to right */
+            color:black
+        }
+
+        .article p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            /* Text alignment to right is handled automatically with dir="rtl" */
+            color:black
+                 text-align: right; /* Align heading to right */
+        }
+       h2 a {
+    color: black;
+    text-decoration: none; /* اختياري لإزالة التسطير تحت الروابط */
+}
+
+h2 a:hover {
+    color: black;
+}
+
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .btn-primary:focus {
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #212529;
+            color: #fff; /* Green text */
+        }
+
+        body.dark-mode .navbar {
+            background-color: #212529;
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link {
+            color: #fff; /* Red text */
+        }
+
+        body.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .explore-more {
+            background-color: #343a40; /* Dark grey background */
+            border-color: #6c757d; /* Medium grey border */
+            color: #fff; /* Green text */
+            padding: 20px;
+        }
+
+        h2, p, a {
+            font-family: 'Cairo', Arial, sans-serif;
+        }
+       footer {
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            background-image: url('footr.jpg');
+            background-size: contain;
+            /* Resize the image to fit within the footer */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            /* Center text horizontally within .center-container */
+        }
+      
+
+    </style>
+</head>
+
+<body>
+<!-- Header with Navbar -->
+    <!-- Header with Navbar -->
+   <header>
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <button class="close-btn" id="closeMenuBtn"><i class="fas fa-times"></i></button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="fullscreen-menu" id="fullscreenMenu">
+        <div class="fullscreen-menu-content">
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="...ابحث">
+                <button class="search-button">بحث</button>
+            </div>
+              <ul>
+                <li><a href="inde.html">الصفحة الرئيسية</a></li>
+                <li><a href="first1.html">الفريق الاول</a></li>
+                <li><a href="news1.html">الفريق الرديف</a></li>
+                <li><a href="reserve1.html">الفئات الشبانية</a></li>
+                <li><a href="histoir1.html">التاريخ و الأرشيف</a></li>
+                  <li class="nav-item"><a class="nav-link" href="idr1.html">الطاقم الفني</a></li>
+                <li><a href="video1.html">الرياضات الاخرى</a></li>
+                <li><a href="live1.html">نتائج المباريات</a></li>
+                <li><a href="contac1.html">تواصل معنا</a></li>
+                 <li><a href="contactt1.html">من نحن؟</a></li>
+            </ul>
+        </div>
+    </div>
+<section class="news-section">
+    <div class="container">
+        <div class="row">
+            <!-- Article 1 -->
+            <div class="col-md-3">
+                <div class="article">
+                         <!-- Article 2 -->
+            <div class="col-md-3">
+                <div class="article">
+
+                       <!-- Article Title (Clickable) -->
+                    <h2><a href="i111.html">مولودية الجزائر تتعادل أمام الباك</a></h2>
+                    <!-- Article Image -->
+                    <img src="011.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>الجمعة 27 سبتمبر 2024 - 20:00</p>
+                </div>
+            </div>
+                 <!-- Article Title (Clickable) -->
+                    <h2><a href="a3.html">المولودية تواجه أتلتيك بارادو</a></h2>
+                    <!-- Article Image -->
+                    <img src="05.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>13:55-الثلاثاء 24 سبتمبر</p>
+                </div>
+            </div>
+               <!-- Article Title (Clickable) -->
+                    <h2><a href="a2.html">المولودية إلى دور المجموعات</a></h2>
+                    <!-- Article Image -->
+                    <img src="a3.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>'13:55-السبت 21 سبتمبر</p>
+                </div>
+            </div>
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="a1.html">دراوي يتلقى إصابة خفيفة</a></h2>
+                    <!-- Article Image -->
+                    <img src="a2.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+              <p>السبت 21 سبتمبر 2024- 13:55</p>
+                </div>
+            </div>
+
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="A.html">مباراة الإياب بين العميد و المنستيري</a></h2>
+                    <!-- Article Image -->
+                    <img src="a1.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>االثلاثاء 17 سبتمبر 2024 -20:30</p>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i2.html">ديلور يطلق أولى تصريحاته</a></h2>
+                    <!-- Article Image -->
+                    <img src="aa1.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>الاحد 15 سبتمبر 2024-20:20</p>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i3.html">تصريحات رئيس الفريق حاج رجم</a></h2>
+                    <!-- Article Image -->
+                    <img src="bb.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>الاربعاء 11 سبتمبر 2024-11:30</p>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="col-md-3">
+                <div class="article">
+                    <!-- Article Title (Clickable) -->
+                    <h2><a href="i4.html">سوناطراك تتعاقد مع شركة صيانة</a></h2>
+
+                    <!-- Article Image -->
+                    <img src="ff.jpg" class="img-fluid" alt="Article Image">
+
+                    <!-- Date and Time -->
+                    <p>الثلاثاء 3 سبتمبر 2024-17:30</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+  <footer class="text-center py-4">
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+<!-- Dark Mode Toggle Script -->
+<script>
+    // Open fullscreen menu
+document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.add('open'); // Show menu
+    document.querySelector('.close-btn').style.display = 'block'; // Show close button
+    document.querySelector('.navbar-toggler').style.display = 'none'; // Hide toggle button
+});
+
+// Close fullscreen menu
+document.getElementById('closeMenuBtn').addEventListener('click', function() {
+    document.getElementById('fullscreenMenu').classList.remove('open'); // Hide menu
+    document.querySelector('.close-btn').style.display = 'none'; // Hide close button
+    document.querySelector('.navbar-toggler').style.display = 'block'; // Show toggle button
+});
+
+// Ensure that the navbar-toggler button is displayed when the menu is closed
+function updateNavbarButtons() {
+    const isMenuOpen = document.getElementById('fullscreenMenu').classList.contains('open');
+    document.querySelector('.navbar-toggler').style.display = isMenuOpen ? 'none' : 'block';
+    document.querySelector('.close-btn').style.display = isMenuOpen ? 'block' : 'none';
+}
+
+// Update navbar buttons visibility on page load and resize
+window.addEventListener('load', updateNavbarButtons);
+window.addEventListener('resize', updateNavbarButtons);
+
+   // Article carousel functionality
+
+</script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>
